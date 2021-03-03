@@ -1,0 +1,1372 @@
+<!DOCTYPE html><html lang="en"><head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="Morouu"><meta name="copyright" content="Morouu"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>zip 格式说明 | Morouu的大狗窝 ●'◡'●</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_ed8vp4atwoj.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="shortcut icon" type="image/svg+xml" href="/logo.jpg"><link rel="mask-icon" href="/logo.jpg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"morblog.cc","root":"/","title":"Morouu的大狗窝","version":"1.5.1","mode":"time","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"local_search":{"path":"/search.xml"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><meta name="description" content="记录一下一些东西咯（指搞MISC太难了，只能慢慢来~~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zip 格式说明">
+<meta property="og:url" content="https://morblog.cc/posts/36646/index.html">
+<meta property="og:site_name" content="Morouu的大狗窝 ●&#39;◡&#39;●">
+<meta property="og:description" content="记录一下一些东西咯（指搞MISC太难了，只能慢慢来~~">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/12/26/jxoN1bmkfAHpwKY.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/26/nAQX2Uiq7vVafBY.png">
+<meta property="article:published_time" content="2020-12-26T06:35:26.000Z">
+<meta property="article:modified_time" content="2021-03-03T14:48:11.776Z">
+<meta property="article:author" content="Morouu">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="备忘录">
+<meta property="article:tag" content="杂项">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/26/jxoN1bmkfAHpwKY.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><canvas id="trianglifyContainer"></canvas><script defer src="https://cdn.jsdelivr.net/npm/trianglify@4/dist/trianglify.bundle.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  const pattern = trianglify({
+    width: 800,
+    height: 600,
+    cellSize: 75,
+    palette: ["YlGnBu", "GnBu", "Purples", "Blues"],
+  });
+  const canvasOpts = {
+    applyCssScaling: false
+  }
+  document.body.appendChild(pattern.toCanvas(trianglifyContainer, canvasOpts));
+});</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Morouu"><img width="96" loading="lazy" src="/images/tx.png" alt="Morouu"><span class="site-author-status" title="即便是到了最灰暗的时候，也决不要放弃">😊</span></a><div class="site-author-name"><a href="/about/">Morouu</a></div><span class="site-name">Morouu的大狗窝 ●'◡'●</span><sub class="site-subtitle">从何时起开始害怕遥望星辰.</sub><div class="site-desciption">一个不相信命运却总想着时刻保持温柔的家伙</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">22</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">29</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">16</span></a></div><div class="site-state-item"><a href="/about/"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span></a></div><a class="site-state-item hty-icon-button" href="https://morblog.cc" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=fWedgqUErGcge7o_VeuMGd-rvqF6ofu0&amp;noverify=0" title="QQ 229292073" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/morouu" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://u.wechat.com/MD4_hJ7v3BFP-TEc54DBoS4" title="Wechat" target="_blank" style="color:#1AAD19"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-2-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:morouure@gmail.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:pink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-open-arm-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#zip-%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">zip 格式说明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#zip-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-number">1.1.</span> <span class="toc-text">zip 官方文档</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Overall-ZIP-file-format"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">Overall .ZIP file format:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84-zip-%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">简单的 .zip 格式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#local-file-header-gt-%E6%96%87%E4%BB%B6%E6%A0%87%E5%A4%B4%EF%BC%9A"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">[local file header] -&gt; 文件标头：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#file-data-gt-%E6%96%87%E4%BB%B6%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">[file data] -&gt; 文件数据：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#data-descriptor-gt-%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0%E7%AC%A6%EF%BC%9A"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">[data descriptor] -&gt; 数据描述符：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#central-directory-gt-%E4%B8%AD%E5%BF%83%E7%9B%AE%E5%BD%95%EF%BC%9A"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">[central directory] -&gt; 中心目录：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">简单的实例：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9-yyds-txt-%E4%BB%A5%E5%8F%8A-trytry-txt%EF%BC%88%E6%9C%AA%E5%8A%A0%E5%AF%86%EF%BC%89%EF%BC%9A"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">压缩 yyds.txt 以及 trytry.txt（未加密）：</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/CRYPTO/" style="font-size: 17.14px; color: #6d90af">CRYPTO</a> <a href="/tags/CTF/" style="font-size: 24.86px; color: #2c81d1">CTF</a> <a href="/tags/MISC/" style="font-size: 14.57px; color: #8394a4">MISC</a> <a href="/tags/PHP/" style="font-size: 12px; color: #999">PHP</a> <a href="/tags/Python/" style="font-size: 12px; color: #999">Python</a> <a href="/tags/WEB/" style="font-size: 27.43px; color: #167ddc">WEB</a> <a href="/tags/%E5%90%AC%E5%90%8E%E6%84%9F/" style="font-size: 17.14px; color: #6d90af">听后感</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 12px; color: #999">备忘录</a> <a href="/tags/%E5%A4%A7%E5%AE%B6%E5%A5%BD/" style="font-size: 12px; color: #999">大家好</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 30px; color: #0078e7">安全</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 17.14px; color: #6d90af">工具</a> <a href="/tags/%E6%9D%82%E9%A1%B9/" style="font-size: 12px; color: #999">杂项</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E8%80%8C%E5%B7%B2/" style="font-size: 12px; color: #999">测试文章而已</a> <a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 19.71px; color: #578bba">渗透</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 22.29px; color: #4286c6">随笔</a> <a href="/tags/%E9%9D%9E%E9%A2%84%E6%9C%9F/" style="font-size: 12px; color: #999">非预期</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://morblog.cc/posts/36646/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Morouu"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Morouu的大狗窝 ●'◡'●"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">zip 格式说明</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <span class="post-meta-icon-text">Posted on</span> <time title="Created: 2020-12-26 14:35:26" itemprop="dateCreated datePublished" datetime="2020-12-26T14:35:26+08:00">2020-12-26</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <span class="post-meta-icon-text">Edited on</span> <time title="Modified: 2021-03-03 22:48:11" itemprop="dateModified" datetime="2021-03-03T22:48:11+08:00">2021-03-03</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="Word count in article">3.8k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="Reading time">17m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">备忘录</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">格式说明</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/zip%E6%A0%BC%E5%BC%8F/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">zip格式</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag" href="/tags/%E5%AE%89%E5%85%A8/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">安全</span></a><a class="tag" href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">备忘录</span></a><a class="tag" href="/tags/%E6%9D%82%E9%A1%B9/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">杂项</span></a></span></div><div class="post-author"><div class="author-avatar"><img src="https://www.gravatar.com/avatar/78b1c437d72cc247eeac098553bbf4a6?s=20&amp;d=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FYunYouJun%2Fcdn%2Fimg%2Favatar%2Fnone.jpg"></div><span class="author-name">morouu</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p><em>记录一下一些东西咯（指搞MISC太难了，只能慢慢来~~</em></p>
+<span id="more"></span>
+
+<h1 id="zip-格式说明"><a href="#zip-格式说明" class="headerlink" title="zip 格式说明"></a>zip 格式说明</h1><hr>
+<h2 id="zip-官方文档"><a href="#zip-官方文档" class="headerlink" title="zip 官方文档"></a>zip 官方文档</h2><p>​    该文参考了关于官方在 2004.04.26 发布的 6.2.0 版本的zip格式（地址：<a target="_blank" rel="noopener" href="https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.2.0.txt%EF%BC%89">https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.2.0.txt）</a></p>
+<p>​    emmm，表格似乎看不清啊！问题不大我弄了一个pdf的链接：<a target="_blank" rel="noopener" href="http://175.24.114.225/2020-12-16.pdf">http://175.24.114.225/2020-12-16.pdf</a></p>
+<p>​    首先看以下的摘录：</p>
+<h4 id="Overall-ZIP-file-format"><a href="#Overall-ZIP-file-format" class="headerlink" title="Overall .ZIP file format:"></a>Overall .ZIP file format:</h4><pre class="language-python" data-language="python"><code class="language-python">Overall <span class="token punctuation">.</span>ZIP <span class="token builtin">file</span> <span class="token builtin">format</span><span class="token punctuation">:</span>
+
+    <span class="token punctuation">[</span>local <span class="token builtin">file</span> header <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token punctuation">[</span><span class="token builtin">file</span> data <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>data descriptor <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token punctuation">.</span> 
+    <span class="token punctuation">.</span>
+    <span class="token punctuation">.</span>
+    <span class="token punctuation">[</span>local <span class="token builtin">file</span> header n<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span><span class="token builtin">file</span> data n<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>data descriptor n<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>archive decryption header<span class="token punctuation">]</span> <span class="token punctuation">(</span>EFS<span class="token punctuation">)</span>
+    <span class="token punctuation">[</span>archive extra data record<span class="token punctuation">]</span> <span class="token punctuation">(</span>EFS<span class="token punctuation">)</span>
+    <span class="token punctuation">[</span>central directory<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>zip64 end of central directory record<span class="token punctuation">]</span>
+    <span class="token punctuation">[</span>zip64 end of central directory locator<span class="token punctuation">]</span> 
+    <span class="token punctuation">[</span>end of central directory record<span class="token punctuation">]</span></code></pre>
+
+<p>​    对应的指代分别为</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span>local <span class="token builtin">file</span> header <span class="token number">1</span><span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	文件标头
+<span class="token punctuation">[</span><span class="token builtin">file</span> data <span class="token number">1</span><span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	文件数据
+<span class="token punctuation">[</span>data descriptor <span class="token number">1</span><span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	数据描述符
+<span class="token punctuation">.</span> 
+<span class="token punctuation">.</span>
+<span class="token punctuation">.</span>
+<span class="token punctuation">[</span>local <span class="token builtin">file</span> header n<span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	第n个文件标头
+<span class="token punctuation">[</span><span class="token builtin">file</span> data n<span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	第n个文件数据
+<span class="token punctuation">[</span>data descriptor n<span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	第n个数据描述符
+<span class="token punctuation">[</span>archive decryption header<span class="token punctuation">]</span> <span class="token punctuation">(</span>EFS<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存档解密头（EFS<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>archive extra data record<span class="token punctuation">]</span> <span class="token punctuation">(</span>EFS<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存档额外数据记录（EFS）
+<span class="token punctuation">[</span>central directory<span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录
+<span class="token punctuation">[</span>zip64 end of central directory record<span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	zip64中心目录记录结尾
+<span class="token punctuation">[</span>zip64 end of central directory locator<span class="token punctuation">]</span> 	<span class="token operator">-</span><span class="token operator">></span>	zip64中心目录定位器结尾
+<span class="token punctuation">[</span>end of central directory record<span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录记录结尾</code></pre>
+
+<p>​    其中，<code>[local file header]</code>，<code>[file data]</code>以及<code>[data descriptor]</code>都是可以重复多次的（理论上说每压缩一个文件，这 <strong>3个</strong> 片段都会重复一遍）。</p>
+<p>​    而在咱们的操作系统上，一个简单的 <strong>.zip</strong> 格式实际上为  <code>[local file header]</code> + <code>[file data]</code> + <code>[data descriptor]</code> + <code>[central directory]</code> + <code>[end of central directroy record]</code>，对没错就是这些emmm：</p>
+<ul>
+<li><p>文件标头</p>
+</li>
+<li><p>文件数据</p>
+</li>
+<li><p>数据描述符<em>（于标识该文件压缩结束，该结构只有在相应的header中通用标记字段的第３位设为１时才会出现，紧接在压缩文件源数据后。这个数据描述符只用在不能对输出的 ZIP 文件进行检索时使用。例如：在一个不能检索的驱动器（如：磁带机上）上的 ZIP 文件中。如果是磁盘上的ZIP文件一般没有这个数据描述符。）</em></p>
+</li>
+<li><p>中心目录</p>
+</li>
+<li><p>中心目录记录结尾</p>
+</li>
+</ul>
+<p>​    然后现在来简单的说一下这四个格式呗。</p>
+<hr>
+<h2 id="简单的-zip-格式"><a href="#简单的-zip-格式" class="headerlink" title="简单的 .zip 格式"></a>简单的 <strong>.zip</strong> 格式</h2><h4 id="local-file-header-gt-文件标头："><a href="#local-file-header-gt-文件标头：" class="headerlink" title="[local file header] -&gt; 文件标头："></a><strong>[local file header] -&gt; 文件标头：</strong></h4><pre class="language-python" data-language="python"><code class="language-python">Local <span class="token builtin">file</span> header<span class="token punctuation">:</span>
+
+        local <span class="token builtin">file</span> header signature     <span class="token number">4</span> <span class="token builtin">bytes</span>  <span class="token punctuation">(</span><span class="token number">0x04034b50</span><span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	文件标头，占用<span class="token number">4</span>个字节 <span class="token punctuation">(</span>在winhex中相当于 <span class="token number">504B0304</span><span class="token punctuation">)</span>
+        version needed to extract       <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	解压所需 `pkware` 最低版本，占用<span class="token number">2</span>个字节
+        general purpose bit flag        <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	通用位标记符，占用<span class="token number">2</span>个字节（一般用作判断是否加密）
+        compression method              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩方法，占用<span class="token number">2</span>个字节
+        last mod <span class="token builtin">file</span> time              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件最后修改时间，占用<span class="token number">2</span>个字节（<span class="token number">24</span>小时制）
+        last mod <span class="token builtin">file</span> date              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件最后修改日期，占用<span class="token number">2</span>个字节
+        crc<span class="token operator">-</span><span class="token number">32</span>                          <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	校验码，占用<span class="token number">4</span>个字节
+        compressed size                 <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩后的大小，占用<span class="token number">4</span>个字节
+        uncompressed size               <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩前的大小，占用<span class="token number">4</span>个字节
+        <span class="token builtin">file</span> name length                <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件名长度，占用<span class="token number">2</span>个字节
+        extra field length              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	扩展区长度，占用<span class="token number">2</span>个字节
+
+        <span class="token builtin">file</span> name <span class="token punctuation">(</span>variable size<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存文件名的位置，占用 <span class="token punctuation">[</span>文件名长度<span class="token punctuation">]</span> 的字节
+        extra field <span class="token punctuation">(</span>variable size<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存扩展内容的位置，占用 <span class="token punctuation">[</span>扩展区长度<span class="token punctuation">]</span> 的字节
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Bytes</th>
+<th>Description</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>4</td>
+<td>Local file header signature = 0x04034b50 (read as a little-endian number)</td>
+<td>文件头标识，值固定(0x04034b50)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>Version needed to extract (minimum)</td>
+<td>解压文件所需 <code>pkware</code> 最低版本</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>General purpose bit flag</td>
+<td>通用比特标志位(置比特0位=加密，详情见后)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>Compression method</td>
+<td>压缩方式</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2</td>
+<td>File last modification time</td>
+<td>文件最后修改时间</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2</td>
+<td>File last modification date</td>
+<td>文件最后修改日期</td>
+</tr>
+<tr>
+<td>14</td>
+<td>4</td>
+<td>CRC-32</td>
+<td>CRC-32校验码</td>
+</tr>
+<tr>
+<td>18</td>
+<td>4</td>
+<td>Compressed size</td>
+<td>压缩后的大小</td>
+</tr>
+<tr>
+<td>22</td>
+<td>4</td>
+<td>Uncompressed size</td>
+<td>压缩前的大小</td>
+</tr>
+<tr>
+<td>26</td>
+<td>2</td>
+<td>File name length (n)</td>
+<td>文件名长度</td>
+</tr>
+<tr>
+<td>28</td>
+<td>2</td>
+<td>Extra field length (m)</td>
+<td>扩展区长度</td>
+</tr>
+<tr>
+<td>30</td>
+<td>n</td>
+<td>File name</td>
+<td>文件名</td>
+</tr>
+<tr>
+<td>30+n</td>
+<td>m</td>
+<td>Extra field</td>
+<td>扩展区</td>
+</tr>
+</tbody></table>
+<h4 id="file-data-gt-文件数据："><a href="#file-data-gt-文件数据：" class="headerlink" title="[file data] -&gt; 文件数据："></a><strong>[file data] -&gt; 文件数据：</strong></h4><pre class="language-python" data-language="python"><code class="language-python">Immediately following the local header <span class="token keyword">for</span> a <span class="token builtin">file</span>
+      <span class="token keyword">is</span> the compressed <span class="token keyword">or</span> stored data <span class="token keyword">for</span> the <span class="token builtin">file</span><span class="token punctuation">.</span> 
+      The series of <span class="token punctuation">[</span>local <span class="token builtin">file</span> header<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token builtin">file</span> data<span class="token punctuation">]</span><span class="token punctuation">[</span>data
+      descriptor<span class="token punctuation">]</span> repeats <span class="token keyword">for</span> each <span class="token builtin">file</span> <span class="token keyword">in</span> the <span class="token punctuation">.</span>ZIP archive<span class="token punctuation">.</span> 
+      
+<span class="token comment"># emmm，姑且当作是文件压缩的内容或存储的内容好了</span></code></pre>
+
+<h4 id="data-descriptor-gt-数据描述符："><a href="#data-descriptor-gt-数据描述符：" class="headerlink" title="[data descriptor] -&gt; 数据描述符："></a><strong>[data descriptor] -&gt; 数据描述符：</strong></h4><pre class="language-python" data-language="python"><code class="language-python">data descriptor<span class="token punctuation">:</span>
+    
+		data descriptor signature     4bytes	<span class="token punctuation">(</span><span class="token number">0x08074b50</span><span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	数据描述符标头，占用<span class="token number">4</span>个字节 <span class="token punctuation">(</span>在winhex中相当于 <span class="token number">504B0708</span><span class="token punctuation">)</span>
+        crc<span class="token operator">-</span><span class="token number">32</span>                          <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	校验码，占用<span class="token number">4</span>个字节
+        compressed size                 <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩后的大小，占用<span class="token number">4</span>个字节
+        uncompressed size               <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩前的大小，占用<span class="token number">4</span>个字节
+        </code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Bytes</th>
+<th>Description</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>4</td>
+<td>crc-32</td>
+<td>CRC-32校验码</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>compressed size</td>
+<td>压缩后的大小</td>
+</tr>
+<tr>
+<td>8</td>
+<td>4</td>
+<td>uncompressed size</td>
+<td>压缩前的大小</td>
+</tr>
+</tbody></table>
+<h4 id="central-directory-gt-中心目录："><a href="#central-directory-gt-中心目录：" class="headerlink" title="[central directory] -&gt; 中心目录："></a><strong>[central directory] -&gt; 中心目录：</strong></h4><pre class="language-python" data-language="python"><code class="language-python">Central directory structure<span class="token punctuation">:</span>
+
+     <span class="token punctuation">[</span><span class="token builtin">file</span> header <span class="token number">1</span><span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	这里相当于说，有多少个文件被压缩，就有多少个 <span class="token punctuation">[</span><span class="token builtin">file</span> header<span class="token punctuation">]</span>（相对于 <span class="token punctuation">[</span>central directory<span class="token punctuation">]</span> 来说的标头）
+     <span class="token punctuation">.</span>
+     <span class="token punctuation">.</span>
+     <span class="token punctuation">.</span> 
+     <span class="token punctuation">[</span><span class="token builtin">file</span> header n<span class="token punctuation">]</span>
+     <span class="token punctuation">[</span>digital signature<span class="token punctuation">]</span>	<span class="token operator">-</span><span class="token operator">></span>	emmm，这应该是<span class="token number">6.2</span>新引入的对中心目录结构的压缩加密存储的签名记录吧，不是很清楚，总之简单的<span class="token builtin">zip</span>文件是没有这玩意的
+
+     File header<span class="token punctuation">:</span>
+
+       central <span class="token builtin">file</span> header signature   <span class="token number">4</span> <span class="token builtin">bytes</span>  <span class="token punctuation">(</span><span class="token number">0x02014b50</span><span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录文件标头，占用<span class="token number">4</span>个字节（在winhex中相当于 <span class="token number">504B0201</span>）
+       version made by                 <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩所用的 pkware 版本，占用<span class="token number">2</span>个字节
+       version needed to extract       <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	解压所需 pkware 的最低版本，占用<span class="token number">2</span>个字节
+       general purpose bit flag        <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	通用位标记符，占用<span class="token number">2</span>个字节（一般用作判断是否加密）
+       compression method              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩方法，占用<span class="token number">2</span>个字节
+       last mod <span class="token builtin">file</span> time              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件最后修改时间，占用<span class="token number">2</span>个字节（<span class="token number">24</span>小时制）
+       last mod <span class="token builtin">file</span> date              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件最后修改日期，占用<span class="token number">2</span>个字节
+       crc<span class="token operator">-</span><span class="token number">32</span>                          <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	校验码，占用<span class="token number">4</span>个字节
+       compressed size                 <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩后的大小，占用<span class="token number">4</span>个字节
+       uncompressed size               <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	压缩前的大小，占用<span class="token number">4</span>个字节
+       <span class="token builtin">file</span> name length                <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件名长度，占用<span class="token number">2</span>个字节
+       extra field length              <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	扩展区长度，占用<span class="token number">2</span>个字节
+       <span class="token builtin">file</span> comment length             <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件注释长度，占用<span class="token number">2</span>个字节
+       disk number start               <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	文件开始位置的磁盘编号，占用<span class="token number">2</span>个字节
+       internal <span class="token builtin">file</span> attributes        <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	内部文件属性，占用<span class="token number">2</span>个字节
+       external <span class="token builtin">file</span> attributes        <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	外部文件属性，占用<span class="token number">2</span>个字节
+       relative offset of local header <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	本地文件标头即是<span class="token punctuation">[</span>local <span class="token builtin">file</span> header<span class="token punctuation">]</span>相对偏移量，占用<span class="token number">4</span>个字节
+
+       <span class="token builtin">file</span> name <span class="token punctuation">(</span>variable size<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存文件名的位置，占用 <span class="token punctuation">[</span>文件名长度<span class="token punctuation">]</span> 的字节
+       extra field <span class="token punctuation">(</span>variable size<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存扩展内容的位置，占用 <span class="token punctuation">[</span>扩展区长度<span class="token punctuation">]</span> 的字节
+       <span class="token builtin">file</span> comment <span class="token punctuation">(</span>variable size<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存文件注释的位置，占用 <span class="token punctuation">[</span>文件注释长度<span class="token punctuation">]</span> 的字节
+
+     Digital signature<span class="token punctuation">:</span>
+
+       header signature                <span class="token number">4</span> <span class="token builtin">bytes</span>  <span class="token punctuation">(</span><span class="token number">0x05054b50</span><span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	数字签名标头，占用<span class="token number">4</span>个字节（在winhex中相当于 <span class="token number">504b0505</span>）
+       size of data                    <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	数字签名长度，占用<span class="token number">2</span>个字节
+       signature data <span class="token punctuation">(</span>variable size<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存数字签名的位置，占用 <span class="token punctuation">[</span>数字签名长度<span class="token punctuation">]</span> 的字节
+
+     With the introduction of the Central Directory Encryption 
+     feature <span class="token keyword">in</span> version <span class="token number">6.2</span> of this specification<span class="token punctuation">,</span> the Central 
+     Directory Structure may be stored both compressed <span class="token keyword">and</span> encrypted<span class="token punctuation">.</span> 
+     Although <span class="token keyword">not</span> required<span class="token punctuation">,</span> it <span class="token keyword">is</span> assumed when encrypting the
+     Central Directory Structure<span class="token punctuation">,</span> that it will be compressed
+     <span class="token keyword">for</span> greater storage efficiency<span class="token punctuation">.</span>  Information on the
+     Central Directory Encryption feature can be found <span class="token keyword">in</span> the section
+     describing the Strong Encryption Specification<span class="token punctuation">.</span> The Digital 
+     Signature record will be neither compressed nor encrypted<span class="token punctuation">.</span></code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Bytes</th>
+<th>Description</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>4</td>
+<td>Central directory file header signature = 0x02014b50</td>
+<td>中心目录文件header标识=（0x02014b50）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>Version made by</td>
+<td>压缩所用的 <code>pkware</code> 版本</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>Version needed to extract (minimum)</td>
+<td>解压所需 <code>pkware</code> 的最低版本</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>General purpose bit flag</td>
+<td>通用位标记</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2</td>
+<td>Compression method</td>
+<td>压缩方法</td>
+</tr>
+<tr>
+<td>12</td>
+<td>2</td>
+<td>File last modification time</td>
+<td>文件最后修改时间</td>
+</tr>
+<tr>
+<td>14</td>
+<td>2</td>
+<td>File last modification date</td>
+<td>文件最后修改日期</td>
+</tr>
+<tr>
+<td>16</td>
+<td>4</td>
+<td>CRC-32</td>
+<td>CRC-32校验码</td>
+</tr>
+<tr>
+<td>20</td>
+<td>4</td>
+<td>Compressed size</td>
+<td>压缩后的大小</td>
+</tr>
+<tr>
+<td>24</td>
+<td>4</td>
+<td>Uncompressed size</td>
+<td>压缩前的大小</td>
+</tr>
+<tr>
+<td>28</td>
+<td>2</td>
+<td>File name length (n)</td>
+<td>文件名长度</td>
+</tr>
+<tr>
+<td>30</td>
+<td>2</td>
+<td>Extra field length (m)</td>
+<td>扩展区长度</td>
+</tr>
+<tr>
+<td>32</td>
+<td>2</td>
+<td>File comment length (k)</td>
+<td>文件注释长度</td>
+</tr>
+<tr>
+<td>34</td>
+<td>2</td>
+<td>Disk number where file starts</td>
+<td>文件开始位置的磁盘编号</td>
+</tr>
+<tr>
+<td>36</td>
+<td>2</td>
+<td>Internal file attributes</td>
+<td>内部文件属性</td>
+</tr>
+<tr>
+<td>38</td>
+<td>4</td>
+<td>External file attributes</td>
+<td>外部文件属性</td>
+</tr>
+<tr>
+<td>42</td>
+<td>4</td>
+<td>relative offset of local header</td>
+<td>本地文件标头即是[local file header]相对偏移量</td>
+</tr>
+<tr>
+<td>46</td>
+<td>n</td>
+<td>File name</td>
+<td>目录文件名</td>
+</tr>
+<tr>
+<td>46+n</td>
+<td>m</td>
+<td>Extra field</td>
+<td>扩展区</td>
+</tr>
+<tr>
+<td>46+n+m</td>
+<td>k</td>
+<td>File comment</td>
+<td>文件注释内容</td>
+</tr>
+</tbody></table>
+<p><strong>[end of central directroy record] -&gt; 中心目录记录结尾：</strong></p>
+<pre class="language-python" data-language="python"><code class="language-python">End of central directory record<span class="token punctuation">:</span>
+
+        end of central <span class="token builtin">dir</span> signature    <span class="token number">4</span> <span class="token builtin">bytes</span>  <span class="token punctuation">(</span><span class="token number">0x06054b50</span><span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录结尾标头，占用<span class="token number">4</span>个字节（在winhex中相当于 <span class="token number">504B0605</span>）
+        number of this disk             <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	当前的磁盘号，占用<span class="token number">2</span>个字节
+        
+        number of the disk <span class="token keyword">with</span> the
+        start of the central directory  <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录开始位置的磁盘号，占用<span class="token number">2</span>个字节
+        
+        total number of entries <span class="token keyword">in</span> the
+        central directory on this disk  <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	该磁盘上所记录的中心目录数量，占用<span class="token number">2</span>个字节
+        
+        total number of entries <span class="token keyword">in</span>
+        the central directory           <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录实体总数，占用<span class="token number">2</span>个字节
+        
+        size of the central directory   <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录的大小，占用<span class="token number">4</span>个字节
+        
+        offset of start of central
+        directory <span class="token keyword">with</span> respect to
+        the starting disk number        <span class="token number">4</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	中心目录起始位置相对于起始磁盘号的偏移量，占用<span class="token number">4</span>个字节
+        
+        <span class="token punctuation">.</span>ZIP <span class="token builtin">file</span> comment length        <span class="token number">2</span> <span class="token builtin">bytes</span>	<span class="token operator">-</span><span class="token operator">></span>	<span class="token punctuation">.</span><span class="token builtin">zip</span>文件注释长度，占用<span class="token number">2</span>个字节
+        <span class="token punctuation">.</span>ZIP <span class="token builtin">file</span> comment       <span class="token punctuation">(</span>variable size<span class="token punctuation">)</span>	<span class="token operator">-</span><span class="token operator">></span>	存<span class="token punctuation">.</span><span class="token builtin">zip</span>文件注释的位置，占用 <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token builtin">zip</span>文件注释长度<span class="token punctuation">]</span> 的字节
+        </code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Offset</th>
+<th>Bytes</th>
+<th>Description</th>
+<th>译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>4</td>
+<td>End of central directory signature = 0x06054b50</td>
+<td>中心目录结束标记（0x06054b50）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>Number of this disk</td>
+<td>当前磁盘编号</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>number of the disk with the start of the central directory</td>
+<td>中心目录开始位置的磁盘编号</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>total number of entries in the central directory on this disk</td>
+<td>该磁盘上所记录的中心目录数量</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2</td>
+<td>total number of entries in the central directory</td>
+<td>中心目录结构总数</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4</td>
+<td>Size of central directory (bytes)</td>
+<td>中心目录的大小</td>
+</tr>
+<tr>
+<td>16</td>
+<td>4</td>
+<td>offset of start of central directory with respect to the starting disk number</td>
+<td>中心目录起始位置相对于起始磁盘号的偏移量</td>
+</tr>
+<tr>
+<td>20</td>
+<td>2</td>
+<td>.ZIP file comment length(n)</td>
+<td>注释长度</td>
+</tr>
+<tr>
+<td>22</td>
+<td>n</td>
+<td>.ZIP Comment</td>
+<td>注释内容</td>
+</tr>
+</tbody></table>
+<p>​    （表格摘自：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a200710716/article/details/51644421">https://blog.csdn.net/a200710716/article/details/51644421</a></p>
+<hr>
+<h2 id="简单的实例："><a href="#简单的实例：" class="headerlink" title="简单的实例："></a>简单的实例：</h2><h4 id="压缩-yyds-txt-以及-trytry-txt（未加密）："><a href="#压缩-yyds-txt-以及-trytry-txt（未加密）：" class="headerlink" title="压缩 yyds.txt 以及 trytry.txt（未加密）："></a>压缩 <code>yyds.txt</code> 以及 <code>trytry.txt</code>（未加密）：</h4><p>​    文件内容如下图：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/26/jxoN1bmkfAHpwKY.png" alt="image-20201226125903450.png" loading="lazy"></p>
+</blockquote>
+<p>​    将这两个文件压缩好了，然后使用 <code>010 edior</code> 来查看，得到如下图：</p>
+<blockquote>
+<p><img src="https://i.loli.net/2020/12/26/nAQX2Uiq7vVafBY.png" alt="image-20201226130222027.png" loading="lazy"></p>
+</blockquote>
+<p>​        那么，用简单的表格来分析一下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Offset</th>
+<th align="center">Start</th>
+<th align="center">End</th>
+<th align="center">Bytes</th>
+<th align="center">Content</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><a href="">Local File Header</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><em><strong>LOCAL FILE HEADER  1</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0000h</td>
+<td align="center">0000h</td>
+<td align="center">0004h</td>
+<td align="center">4</td>
+<td align="center">50 4B 03 04</td>
+<td align="center">(trytry.txt) 文件标头</td>
+</tr>
+<tr>
+<td align="center">0004h</td>
+<td align="center">0005h</td>
+<td align="center">0006h</td>
+<td align="center">2</td>
+<td align="center">14 00</td>
+<td align="center">解压文件所需 <code>pkware</code> 最低版本</td>
+</tr>
+<tr>
+<td align="center">0006h</td>
+<td align="center">0007h</td>
+<td align="center">0008h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">通用位标记符</td>
+</tr>
+<tr>
+<td align="center">0008h</td>
+<td align="center">0009h</td>
+<td align="center">000Ah</td>
+<td align="center">2</td>
+<td align="center">08 00</td>
+<td align="center">压缩方式</td>
+</tr>
+<tr>
+<td align="center">000Ah</td>
+<td align="center">000Bh</td>
+<td align="center">000Ch</td>
+<td align="center">2</td>
+<td align="center">3C 67</td>
+<td align="center">文件最后修改时间</td>
+</tr>
+<tr>
+<td align="center">000Ch</td>
+<td align="center">000Dh</td>
+<td align="center">000Eh</td>
+<td align="center">2</td>
+<td align="center">9A 51</td>
+<td align="center">文件最后修改日期</td>
+</tr>
+<tr>
+<td align="center">000Eh</td>
+<td align="center">000Fh</td>
+<td align="center">0012h</td>
+<td align="center">4</td>
+<td align="center">6C 84 7D BE</td>
+<td align="center">crc-32校验码</td>
+</tr>
+<tr>
+<td align="center">0012h</td>
+<td align="center">0013h</td>
+<td align="center">0016h</td>
+<td align="center">4</td>
+<td align="center">06 00 00 00</td>
+<td align="center">压缩后的大小</td>
+</tr>
+<tr>
+<td align="center">0016h</td>
+<td align="center">0017h</td>
+<td align="center">001Ah</td>
+<td align="center">4</td>
+<td align="center">09 00 00 00</td>
+<td align="center">压缩前的大小</td>
+</tr>
+<tr>
+<td align="center">001Ah</td>
+<td align="center">001Bh</td>
+<td align="center">001Ch</td>
+<td align="center">2</td>
+<td align="center">0A 00</td>
+<td align="center">文件名长度</td>
+</tr>
+<tr>
+<td align="center">001Ch</td>
+<td align="center">001Dh</td>
+<td align="center">001Eh</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">扩展区长度</td>
+</tr>
+<tr>
+<td align="center">001Eh</td>
+<td align="center">001Fh</td>
+<td align="center">0027h</td>
+<td align="center">10</td>
+<td align="center">74 72 79 74 72 79 2E 74 78 74</td>
+<td align="center">文件名内容</td>
+</tr>
+<tr>
+<td align="center">0027h</td>
+<td align="center">0027h</td>
+<td align="center">0027h</td>
+<td align="center">0</td>
+<td align="center">Null</td>
+<td align="center">扩展区内容</td>
+</tr>
+<tr>
+<td align="center"><em><strong>FILE DATA 1</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0027h</td>
+<td align="center">0028h</td>
+<td align="center">002Dh</td>
+<td align="center">6</td>
+<td align="center">2B 29 AA 84 20 00</td>
+<td align="center">(trytry.txt) 文件数据</td>
+</tr>
+<tr>
+<td align="center"><em><strong>DATA DESCRIPTOR 1</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">002Dh</td>
+<td align="center">002Dh</td>
+<td align="center">002Dh</td>
+<td align="center">0</td>
+<td align="center">Null</td>
+<td align="center">(trytry.txt) 数据描述符</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><em><strong>LOCAL FILE HEADER  2</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">002Eh</td>
+<td align="center">002Eh</td>
+<td align="center">0031h</td>
+<td align="center">4</td>
+<td align="center">50 4B 03 04</td>
+<td align="center">(yyds.txt) 文件标头</td>
+</tr>
+<tr>
+<td align="center">0031h</td>
+<td align="center">0032h</td>
+<td align="center">0033h</td>
+<td align="center">2</td>
+<td align="center">14 00</td>
+<td align="center">解压文件所需 <code>pkware</code> 的最低版本</td>
+</tr>
+<tr>
+<td align="center">0033h</td>
+<td align="center">0034h</td>
+<td align="center">0035h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">通用位标记符</td>
+</tr>
+<tr>
+<td align="center">0035h</td>
+<td align="center">0036h</td>
+<td align="center">0037h</td>
+<td align="center">2</td>
+<td align="center">08 00</td>
+<td align="center">压缩方式</td>
+</tr>
+<tr>
+<td align="center">0037h</td>
+<td align="center">0038h</td>
+<td align="center">0039h</td>
+<td align="center">2</td>
+<td align="center">37 67</td>
+<td align="center">文件最后修改时间</td>
+</tr>
+<tr>
+<td align="center">0039h</td>
+<td align="center">003Ah</td>
+<td align="center">003Bh</td>
+<td align="center">2</td>
+<td align="center">9A 51</td>
+<td align="center">文件最后修改日期</td>
+</tr>
+<tr>
+<td align="center">003Ch</td>
+<td align="center">003Ch</td>
+<td align="center">003Fh</td>
+<td align="center">4</td>
+<td align="center">D3 4F 70 57</td>
+<td align="center">crc-32校验码</td>
+</tr>
+<tr>
+<td align="center">003Fh</td>
+<td align="center">0040h</td>
+<td align="center">0043h</td>
+<td align="center">4</td>
+<td align="center">0A 00 00 00</td>
+<td align="center">压缩后的大小</td>
+</tr>
+<tr>
+<td align="center">0043h</td>
+<td align="center">0044h</td>
+<td align="center">0047h</td>
+<td align="center">4</td>
+<td align="center">16 00 00 00</td>
+<td align="center">压缩前的大小</td>
+</tr>
+<tr>
+<td align="center">0047h</td>
+<td align="center">0048h</td>
+<td align="center">0049h</td>
+<td align="center">2</td>
+<td align="center">08 00</td>
+<td align="center">文件名长度</td>
+</tr>
+<tr>
+<td align="center">0049h</td>
+<td align="center">004Ah</td>
+<td align="center">004Bh</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">扩展区长度</td>
+</tr>
+<tr>
+<td align="center">004Bh</td>
+<td align="center">004Ch</td>
+<td align="center">0053h</td>
+<td align="center">8</td>
+<td align="center">79 79 64 73 2E 74 78 74</td>
+<td align="center">文件名内容</td>
+</tr>
+<tr>
+<td align="center">0053h</td>
+<td align="center">0053h</td>
+<td align="center">0053h</td>
+<td align="center">0</td>
+<td align="center">Null</td>
+<td align="center">扩展区内容</td>
+</tr>
+<tr>
+<td align="center"><em><strong>FILE DATA 2</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0053h</td>
+<td align="center">0054h</td>
+<td align="center">005Dh</td>
+<td align="center">10</td>
+<td align="center">CB 48 84 42 30 51 91 09 81 00</td>
+<td align="center">(yyds.txt) 文件数据</td>
+</tr>
+<tr>
+<td align="center"><em><strong>DATA DESCRIPTOR 2</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">005Dh</td>
+<td align="center">005Dh</td>
+<td align="center">005Dh</td>
+<td align="center">0</td>
+<td align="center">Null</td>
+<td align="center">(yyds.txt) 数据描述符</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><a href="">Central Directory Header</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><em><strong>FILE HEADER 1</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">005Eh</td>
+<td align="center">005Eh</td>
+<td align="center">0061h</td>
+<td align="center">4</td>
+<td align="center">50 4B 01 02</td>
+<td align="center">(trytry.txt) 中心目录文件标头</td>
+</tr>
+<tr>
+<td align="center">0061h</td>
+<td align="center">0062h</td>
+<td align="center">0063h</td>
+<td align="center">2</td>
+<td align="center">3F 00</td>
+<td align="center">压缩所用的 <code>pkware</code> 版本</td>
+</tr>
+<tr>
+<td align="center">0063h</td>
+<td align="center">0064h</td>
+<td align="center">0065h</td>
+<td align="center">2</td>
+<td align="center">14 00</td>
+<td align="center">解压所需 <code>pkware</code> 的最低版本</td>
+</tr>
+<tr>
+<td align="center">0065h</td>
+<td align="center">0066h</td>
+<td align="center">0067h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">通用位标记</td>
+</tr>
+<tr>
+<td align="center">0067h</td>
+<td align="center">0068h</td>
+<td align="center">0069h</td>
+<td align="center">2</td>
+<td align="center">08 00</td>
+<td align="center">压缩方法</td>
+</tr>
+<tr>
+<td align="center">0069h</td>
+<td align="center">006Ah</td>
+<td align="center">006Bh</td>
+<td align="center">2</td>
+<td align="center">3C 67</td>
+<td align="center">文件最后修改时间</td>
+</tr>
+<tr>
+<td align="center">006Bh</td>
+<td align="center">006Ch</td>
+<td align="center">006Dh</td>
+<td align="center">2</td>
+<td align="center">9A 51</td>
+<td align="center">文件最后修改日期</td>
+</tr>
+<tr>
+<td align="center">006Dh</td>
+<td align="center">006Eh</td>
+<td align="center">0072h</td>
+<td align="center">4</td>
+<td align="center">6C 84 7D BE</td>
+<td align="center">crc-32校验码</td>
+</tr>
+<tr>
+<td align="center">0072h</td>
+<td align="center">0073h</td>
+<td align="center">0075h</td>
+<td align="center">4</td>
+<td align="center">06 00 00 00</td>
+<td align="center">压缩后的大小</td>
+</tr>
+<tr>
+<td align="center">0075h</td>
+<td align="center">0076h</td>
+<td align="center">0079h</td>
+<td align="center">4</td>
+<td align="center">09 00 00 00</td>
+<td align="center">压缩前的大小</td>
+</tr>
+<tr>
+<td align="center">0079h</td>
+<td align="center">007Ah</td>
+<td align="center">007Bh</td>
+<td align="center">2</td>
+<td align="center">0A 00</td>
+<td align="center">文件名长度</td>
+</tr>
+<tr>
+<td align="center">007Bh</td>
+<td align="center">007Ch</td>
+<td align="center">007Dh</td>
+<td align="center">2</td>
+<td align="center">24 00</td>
+<td align="center">扩展区长度</td>
+</tr>
+<tr>
+<td align="center">007Dh</td>
+<td align="center">007Eh</td>
+<td align="center">007Fh</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">文件注释长度</td>
+</tr>
+<tr>
+<td align="center">007Fh</td>
+<td align="center">0080h</td>
+<td align="center">0081h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">文件开始位置的磁盘编号</td>
+</tr>
+<tr>
+<td align="center">0081h</td>
+<td align="center">0082h</td>
+<td align="center">0083h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">内部文件属性</td>
+</tr>
+<tr>
+<td align="center">0083h</td>
+<td align="center">0084h</td>
+<td align="center">0087h</td>
+<td align="center">4</td>
+<td align="center">20 00 00 00</td>
+<td align="center">外部文件属性</td>
+</tr>
+<tr>
+<td align="center">0087h</td>
+<td align="center">0088h</td>
+<td align="center">008Bh</td>
+<td align="center">4</td>
+<td align="center">00 00 00 00</td>
+<td align="center">本地文件标头即是***[LOCAL FILE HEADER 1]<em><strong>相对偏移量</strong>(offset值)</em>*</td>
+</tr>
+<tr>
+<td align="center">008Bh</td>
+<td align="center">008Ch</td>
+<td align="center">0095h</td>
+<td align="center">10</td>
+<td align="center">74 72 79 74 72 79 2E 74 78 74</td>
+<td align="center">文件名内容</td>
+</tr>
+<tr>
+<td align="center">0095h</td>
+<td align="center">0096h</td>
+<td align="center">00B9h</td>
+<td align="center">36</td>
+<td align="center">0A 00 20 00 00 00 00 00 01 00 18 00 02 E7 7A AC 43 DB D6 01 16 37 CE AC 43 DB D6 01 91 A8 31 A8 43 DB D6 01</td>
+<td align="center">扩展区内容</td>
+</tr>
+<tr>
+<td align="center">00B9h</td>
+<td align="center">00B9h</td>
+<td align="center">00B9h</td>
+<td align="center">0</td>
+<td align="center">Null</td>
+<td align="center">文件注释内容</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><em><strong>FILE HEADER 2</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">00BAh</td>
+<td align="center">00BAh</td>
+<td align="center">00BDh</td>
+<td align="center">4</td>
+<td align="center">50 4B 01 02</td>
+<td align="center">(yyds.txt) 中心目录文件标头</td>
+</tr>
+<tr>
+<td align="center">00BDh</td>
+<td align="center">00BEh</td>
+<td align="center">00BFh</td>
+<td align="center">2</td>
+<td align="center">3F 00</td>
+<td align="center">压缩所用的 <code>pkware</code> 版本</td>
+</tr>
+<tr>
+<td align="center">00BFh</td>
+<td align="center">00C0h</td>
+<td align="center">00C1h</td>
+<td align="center">2</td>
+<td align="center">14 00</td>
+<td align="center">解压所需 <code>pkware</code> 的最低版本</td>
+</tr>
+<tr>
+<td align="center">00C1h</td>
+<td align="center">00C2h</td>
+<td align="center">00C3h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">通用位标记</td>
+</tr>
+<tr>
+<td align="center">00C3h</td>
+<td align="center">00C4h</td>
+<td align="center">00C5h</td>
+<td align="center">2</td>
+<td align="center">08 00</td>
+<td align="center">压缩方法</td>
+</tr>
+<tr>
+<td align="center">00C5h</td>
+<td align="center">00C6h</td>
+<td align="center">00C7h</td>
+<td align="center">2</td>
+<td align="center">37 67</td>
+<td align="center">文件最后修改时间</td>
+</tr>
+<tr>
+<td align="center">00C7h</td>
+<td align="center">00C8h</td>
+<td align="center">00C9h</td>
+<td align="center">2</td>
+<td align="center">9A 51</td>
+<td align="center">文件最后修改日期</td>
+</tr>
+<tr>
+<td align="center">00C9h</td>
+<td align="center">00CAh</td>
+<td align="center">00CDh</td>
+<td align="center">4</td>
+<td align="center">D3 4F 70 57</td>
+<td align="center">crc-32校验码</td>
+</tr>
+<tr>
+<td align="center">00CDh</td>
+<td align="center">00CEh</td>
+<td align="center">00D1</td>
+<td align="center">4</td>
+<td align="center">0A 00 00 00</td>
+<td align="center">压缩后的大小</td>
+</tr>
+<tr>
+<td align="center">00D1</td>
+<td align="center">00D2</td>
+<td align="center">00D5h</td>
+<td align="center">4</td>
+<td align="center">16 00 00 00</td>
+<td align="center">压缩前的大小</td>
+</tr>
+<tr>
+<td align="center">00D5h</td>
+<td align="center">00D6h</td>
+<td align="center">00D7h</td>
+<td align="center">2</td>
+<td align="center">08 00</td>
+<td align="center">文件名长度</td>
+</tr>
+<tr>
+<td align="center">00D7h</td>
+<td align="center">00D8h</td>
+<td align="center">00D9h</td>
+<td align="center">2</td>
+<td align="center">24 00</td>
+<td align="center">扩展区长度</td>
+</tr>
+<tr>
+<td align="center">00D9h</td>
+<td align="center">00DAh</td>
+<td align="center">00DBh</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">文件注释长度</td>
+</tr>
+<tr>
+<td align="center">00DBh</td>
+<td align="center">00DCh</td>
+<td align="center">00DDh</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">文件开始位置的磁盘编号</td>
+</tr>
+<tr>
+<td align="center">00DDh</td>
+<td align="center">00DEh</td>
+<td align="center">00DFh</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">内部文件属性</td>
+</tr>
+<tr>
+<td align="center">00DFh</td>
+<td align="center">00E0h</td>
+<td align="center">00E3</td>
+<td align="center">4</td>
+<td align="center">20 00 00 00</td>
+<td align="center">外部文件属性</td>
+</tr>
+<tr>
+<td align="center">00E3h</td>
+<td align="center">00E4h</td>
+<td align="center">00E7h</td>
+<td align="center">4</td>
+<td align="center">2E 00 00 00</td>
+<td align="center">本地文件标头即是***[LOCAL FILE HEADER 2]<em><strong>相对偏移量</strong>(offset值)</em>*</td>
+</tr>
+<tr>
+<td align="center">00E7h</td>
+<td align="center">00E8h</td>
+<td align="center">00EFh</td>
+<td align="center">8</td>
+<td align="center">79 79 64 73 2E 74 78 74</td>
+<td align="center">文件名内容</td>
+</tr>
+<tr>
+<td align="center">00EFh</td>
+<td align="center">00F0h</td>
+<td align="center">0113h</td>
+<td align="center">36</td>
+<td align="center">0A 00 20 00 00 00 00 00 01 00 18 00 FC D9 0F A6 43 D8 D6 01 CE C7 48 B2 43 DB D6 01 48 1E AE 67 43 DB D6 01</td>
+<td align="center">扩展区内容</td>
+</tr>
+<tr>
+<td align="center">0113h</td>
+<td align="center">0113h</td>
+<td align="center">0113h</td>
+<td align="center">0</td>
+<td align="center">Null</td>
+<td align="center">文件注释内容</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><a href="">end of central directroy record</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><em><strong>END</strong></em></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">0114h</td>
+<td align="center">0114h</td>
+<td align="center">0117h</td>
+<td align="center">4</td>
+<td align="center">50 4B 05 06</td>
+<td align="center">中心目录结束标头</td>
+</tr>
+<tr>
+<td align="center">0117h</td>
+<td align="center">0118h</td>
+<td align="center">0119h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">当前磁盘号</td>
+</tr>
+<tr>
+<td align="center">0119h</td>
+<td align="center">011Ah</td>
+<td align="center">011Bh</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">中心目录开始位置的磁盘编号</td>
+</tr>
+<tr>
+<td align="center">011Bh</td>
+<td align="center">011Ch</td>
+<td align="center">011Dh</td>
+<td align="center">2</td>
+<td align="center">02 00</td>
+<td align="center">该磁盘上所记录的中心目录实体数量</td>
+</tr>
+<tr>
+<td align="center">011Dh</td>
+<td align="center">011Eh</td>
+<td align="center">011Fh</td>
+<td align="center">2</td>
+<td align="center">02 00</td>
+<td align="center">中心目录实体总数</td>
+</tr>
+<tr>
+<td align="center">011Fh</td>
+<td align="center">0120h</td>
+<td align="center">0123h</td>
+<td align="center">4</td>
+<td align="center">B6 00 00 00</td>
+<td align="center">中心目录的大小</td>
+</tr>
+<tr>
+<td align="center">0123h</td>
+<td align="center">0124h</td>
+<td align="center">0127h</td>
+<td align="center">4</td>
+<td align="center">5E 00 00 00</td>
+<td align="center">中心目录起始位置相对于初始磁盘号的偏移量</td>
+</tr>
+<tr>
+<td align="center">0127h</td>
+<td align="center">0128h</td>
+<td align="center">0129h</td>
+<td align="center">2</td>
+<td align="center">00 00</td>
+<td align="center">.zip文件注释长度</td>
+</tr>
+<tr>
+<td align="center">0129h</td>
+<td align="center">0129h</td>
+<td align="center">0129h</td>
+<td align="center">0</td>
+<td align="center">Null</td>
+<td align="center">.zip文件注释内容</td>
+</tr>
+</tbody></table>
+<hr>
+<p>​    后边再把加密补上吧！！！</p>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">我会时刻留存着你不经意遗落的余温</div><div id="qr" style="display:none;"><div style="display:inline-block"><a href="/images/zfbdsm.jpg"><img loading="lazy" src="/images/zfbdsm.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a href="/images/qqdsm.png"><img loading="lazy" src="/images/qqdsm.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></span></div></div><div style="display:inline-block"><a href="/images/wxdsm.png"><img loading="lazy" src="/images/wxdsm.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>morouu</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://morblog.cc/posts/36646/" title="zip 格式说明">https://morblog.cc/posts/36646/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless otherwise stated.</li></ul><script>document.addEventListener('copy', function (event) {
+  const clipboardData = event.clipboardData || window.clipboardData;
+  if (!clipboardData) { return; }
+  const text = window.getSelection().toString();
+  if (text) {
+    event.preventDefault();
+    clipboardData.setData('text/plain', text + '\n\nPost author: morouu\nPost link: https://morblog.cc/posts/36646/\nCopyright Notice: All articles in this blog are licensed under CC BY-NC-SA 4.0 unless otherwise stated.');
+  }
+});</script></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/posts/58789/" rel="prev" title="XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/posts/28417/" rel="next" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><span class="post-nav-text">XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么呀？</span><br></div><div id="lv-container" data-id="city" data-uid="MTAyMC81MjIxNS8yODY5NQ=="><script>(function(d, s) {
+  var j, e = d.getElementsByTagName(s)[0];
+  if (typeof LivereTower === 'function') { return; }
+  j = d.createElement(s);
+  j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+  j.async = true;
+  e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> Morouu</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v5.4.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.5.1</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-03-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="Total Visitors"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="Total Views"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="/js/search/local-search.js" defer></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="Searching..." value=""></div><div id="local-search-result"></div></div><div id="aplayer"></div><script>window.addEventListener("DOMContentLoaded", () => {
+  const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    fixed: true,
+    autoplay: true,
+    theme: "#0078E7",
+    loop: "all",
+    order: "random",
+    preload: "auto",
+    audio: [{"name":"想う気持ち","artist":"伊賀拓郎","url":"/mlist/想う気持ち.flac","cover":"/hm.jpg"},{"name":"幸せな時間","artist":"伊賀拓郎","url":"/mlist/幸せな時間.flac","cover":"/hm.jpg"},{"name":"優しさを感じて","artist":"伊賀拓郎","url":"/mlist/優しさを感じて.flac","cover":"/hm.jpg"},{"name":"Silent express","artist":"出羽良彰","url":"/mlist/Silent express.flac","cover":"/hm.jpg"},{"name":"優しさに包まれて","artist":"橋本由香利","url":"/mlist/優しさに包まれて.mp3","cover":"/hm.jpg"},{"name":"失恋","artist":"橋本由香利","url":"/mlist/失恋.mp3","cover":"/hm.jpg"},{"name":"いつも何度でも","artist":"宗次郎","url":"/mlist/いつも何度でも.flac","cover":"/hm.jpg"}],
+    volume: 0.7,
+    mutex: true,
+    lrcType: 0,
+    listFolded: true,
+    listMaxHeight: "340px",
+    storageName: "aplayer-setting"
+  });
+});</script></div><!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/js/index.js"></script><div id="widget-tree">
+      <ul><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/">CTF</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/">2020</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/2020%E7%A5%A5%E4%BA%91%E6%9D%AF/">2020祥云杯</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/949/" title="2020祥云杯CTF部分WP"><i class="post-icon gg-file-document"></i>2020祥云杯CTF部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/DASCTF%E4%BA%94%E6%9C%88%E8%B5%9B%E6%9A%A8-DASCTF-3rd/">DASCTF五月赛暨 DASCTF 3rd</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41566/" title="DASCTF 五月赛暨 DASCTF 3rd 部分WP"><i class="post-icon gg-file-document"></i>DASCTF 五月赛暨 DASCTF 3rd 部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/WMCTF/">WMCTF</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/6393/" title="WMCTF部分WP"><i class="post-icon gg-file-document"></i>WMCTF部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E6%88%98%E7%96%AB-Hardme%E9%9D%9E%E9%A2%84%E6%9C%9F/">XCTF高校战疫(Hardme非预期)</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/60343/" title="XCTF高校战疫(Hardme非预期)"><i class="post-icon gg-file-document"></i>XCTF高校战疫(Hardme非预期)</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-HarmonyOS%E5%92%8CHMS%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/58789/" title="XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(华为云场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/27220/" title="XCTF高校网络安全专题挑战赛(华为云场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(华为云场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E9%B2%B2%E9%B9%8F%E8%AE%A1%E7%AE%97%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/28417/" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/%E5%AE%89%E6%B4%B5%E6%9D%AF/">安洵杯</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/53426/" title="第三届安洵杯CTF部分WP"><i class="post-icon gg-file-document"></i>第三届安洵杯CTF部分WP</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2021/">2021</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2021/HGAMECTF/">HGAMECTF</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41333/" title="HGAMECTF2021 部分WP"><i class="post-icon gg-file-document"></i>HGAMECTF2021 部分WP</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/">Tools</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/curl-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">curl 简单使用说明</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41930/" title="curl 简单的使用"><i class="post-icon gg-file-document"></i>curl 简单的使用</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/socat-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">socat 简单使用说明</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/42912/" title="socat 简单的使用"><i class="post-icon gg-file-document"></i>socat 简单的使用</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/">Tryhackme</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Blaster/">Blaster</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/54801/" title="<Tryhackme> - Blaster"><i class="post-icon gg-file-document"></i><Tryhackme> - Blaster</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Blue/">Blue</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/11017/" title="<Tryhackme> - Blue"><i class="post-icon gg-file-document"></i><Tryhackme> - Blue</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Ice/">Ice</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/14197/" title="<Tryhackme> - Ice"><i class="post-icon gg-file-document"></i><Tryhackme> - Ice</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/RP-Burp-Suite/">RP Burp Suite</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/47588/" title="<Tryhackme> - RP Burp Suite"><i class="post-icon gg-file-document"></i><Tryhackme> - RP Burp Suite</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/WP/">WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/53426/" title="第三届安洵杯CTF部分WP"><i class="post-icon gg-file-document"></i>第三届安洵杯CTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/6393/" title="WMCTF部分WP"><i class="post-icon gg-file-document"></i>WMCTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/58789/" title="XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41566/" title="DASCTF 五月赛暨 DASCTF 3rd 部分WP"><i class="post-icon gg-file-document"></i>DASCTF 五月赛暨 DASCTF 3rd 部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/60343/" title="XCTF高校战疫(Hardme非预期)"><i class="post-icon gg-file-document"></i>XCTF高校战疫(Hardme非预期)</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/28417/" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/949/" title="2020祥云杯CTF部分WP"><i class="post-icon gg-file-document"></i>2020祥云杯CTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/27220/" title="XCTF高校网络安全专题挑战赛(华为云场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(华为云场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41333/" title="HGAMECTF2021 部分WP"><i class="post-icon gg-file-document"></i>HGAMECTF2021 部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/">格式说明</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/zip%E6%A0%BC%E5%BC%8F/">zip格式</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/36646/" title="zip 格式说明"><i class="post-icon gg-file-document"></i>zip 格式说明</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/%E5%B0%8F%E5%B7%A5%E5%85%B7/">小工具</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/%E5%B0%8F%E5%B7%A5%E5%85%B7/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7/">简单的随机数生成工具</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/26192/" title="简单的随机数生成工具"><i class="post-icon gg-file-document"></i>简单的随机数生成工具</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8%E7%A5%9E%E7%BB%8F%E8%B4%A8/">日常神经质</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/19676/" title="《遥不可及的你》听后随想"><i class="post-icon gg-file-document"></i>《遥不可及的你》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/2135/" title="《不来也不去》听后随想"><i class="post-icon gg-file-document"></i>《不来也不去》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/26306/" title="《无赖》听后随想"><i class="post-icon gg-file-document"></i>《无赖》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/9438/" title="大家好，是时候写一下这个玩意儿了啦"><i class="post-icon gg-file-document"></i>大家好，是时候写一下这个玩意儿了啦</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/17846/" title="这是一篇测试文章"><i class="post-icon gg-file-document"></i>这是一篇测试文章</a></li></ul></li></ul></li></ul>
+        <div id="widget-tree-button">
+          <i class="gg-chevron-right"></i>
+        </div>
+      </div><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":225,"height":450},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
