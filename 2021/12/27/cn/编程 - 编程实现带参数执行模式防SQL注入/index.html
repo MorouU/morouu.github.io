@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Morouu的大狗窝 ●&#39;◡&#39;●"/>
+  <meta name="keyword" content="Morouu,morouu"/>
+  <link rel="shortcut icon" href="/img/avatar/mdx.png"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/2021/12/27/cn/编程 - 编程实现带参数执行模式防SQL注入/">
+  <title>
+    
+      编程 - 编程实现带参数执行模式防SQL注入 - Morouu的大狗窝 ●&#39;◡&#39;●
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'dmantick/morcruiser'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Morouu的大狗窝 ●&#39;◡&#39;●</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/bgtop.jpg');
+      --intro-header-background-image-url-post: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210408173750.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210408173750.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/bgtop.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210408173750.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210408173750.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210408173750.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/morouu2.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#安全" title="安全">安全</a>
+              
+              <a class="tag" href="/tags/#PHP" title="PHP">PHP</a>
+              
+              <a class="tag" href="/tags/#Python" title="Python">Python</a>
+              
+              <a class="tag" href="/tags/#SQL" title="SQL">SQL</a>
+              
+              <a class="tag" href="/tags/#Golang" title="Golang">Golang</a>
+              
+            </div>
+            <h1>编程 - 编程实现带参数执行模式防SQL注入</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by morouu on
+              2021-12-27
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count" >37</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">7.7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container" style="margin-left: 10%;">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>编程 - 编程实现带参数执行模式防SQL注入</h1>
+<hr>
+<h2 id="功能">- 功能 -</h2>
+<ul>
+<li>通过数据库访问的 <strong>prepare / bindparam / exec</strong> 模式访问数据库，防止通过将用户输入拼接到SQL语句执行可能导致的SQL注入。</li>
+</ul>
+<h2 id="要求">- 要求 -</h2>
+<ul>
+<li>可选用任意数据库和任意编程语言；</li>
+<li>能够演示拼接SQL语句导致SQL注入的情况；</li>
+<li>通过带参执行反SQL注入。</li>
+</ul>
+<hr>
+<h2 id="编程配置">- 编程配置 -</h2>
+<ul>
+<li>语言：PHP PYTHON GOLANG</li>
+<li>数据库：MYSQLv5.7.28</li>
+<li>系统：WIN10.0.19041</li>
+</ul>
+<h2 id="数据库测试结构">- 数据库测试结构 -</h2>
+<ul>
+<li>数据库：<code>hg</code></li>
+<li>表名：<code>userinfo</code></li>
+<li>字段：<code>userID</code> <code>userName</code> <code>userEmail</code> <code>userPass</code> <code>userSalt</code> <code>userLoginIP</code> <code>userLoginTime</code></li>
+</ul>
+<p>其中，表的结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">esc userinfo;</span><br><span class="line">+---------------+--------------+------+-----+---------+----------------+</span><br><span class="line">| Field         | Type         | Null | Key | Default | Extra          |</span><br><span class="line">+---------------+--------------+------+-----+---------+----------------+</span><br><span class="line">| userID        | int(11)      | NO   | PRI | NULL    | auto_increment |</span><br><span class="line">| userName      | varchar(64)  | NO   |     | NULL    |                |</span><br><span class="line">| userEmail     | varchar(128) | NO   |     | NULL    |                |</span><br><span class="line">| userPass      | varchar(64)  | NO   |     | NULL    |                |</span><br><span class="line">| userSalt      | varchar(32)  | NO   |     | NULL    |                |</span><br><span class="line">| userLoginIP   | varchar(32)  | NO   |     | NULL    |                |</span><br><span class="line">| userLoginTime | datetime     | NO   |     | NULL    |                |</span><br><span class="line">+---------------+--------------+------+-----+---------+----------------+</span><br></pre></td></tr></table></figure>
+<h2 id="实现">- 实现 -</h2>
+<p>这里分别使用 <code>PHP</code> <code>PYTHON</code> <code>GOLANG</code> 去实现 <strong>prepare</strong> <strong>exec</strong> 以及 <strong>bindparam</strong> 模式，同时给出 <strong>绝对安全</strong> 和 <strong>存在注入</strong> 的比较。</p>
+<h3 id="PHP-实现-prepare-模式">- PHP 实现 prepare 模式 -</h3>
+<p>首先，这里的主要危险点暂且定为关于数据库 <strong>INSERT</strong> 数据的注入。那么简单的做一个 <strong>用户注册</strong> 的前端，如图：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321163012.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321163012138"></p>
+<p>此时大致处理逻辑为：</p>
+<ul>
+<li>-&gt; 获取用户传入注册信息</li>
+<li>-&gt; 检查邮箱和/用户名/个人昵称是否重复</li>
+<li>-&gt; 将hash加密的密码以及其他信息 <strong>INSERT</strong> 到数据库中</li>
+</ul>
+<p>而关于检查是否重复这一部分，会涉及到 <strong>SELECT</strong> 查询，由于重点暂且为 <strong>INSERT</strong> 部分，有关 <strong>SELECT</strong> 就先定为 <strong>绝对安全</strong> 吧。然后会在 <strong>INSERT</strong> 布设 <strong>绝对安全</strong> 和 <strong>存在注入</strong> 的对比。</p>
+<h4 id="代码实现">- 代码实现 -</h4>
+<p>这个是关于配置的文件，文件名为 <code>./lib/config.php</code> ：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Config</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="built_in">static</span> <span class="keyword">public</span>	<span class="variable">$APP_SQL_HOST</span> = <span class="string">&#x27;127.0.0.1&#x27;</span>;</span><br><span class="line">	<span class="built_in">static</span> <span class="keyword">public</span>	<span class="variable">$APP_SQL_PORT</span> = <span class="number">3306</span>;</span><br><span class="line">	<span class="built_in">static</span> <span class="keyword">public</span>	<span class="variable">$APP_SQL_USER</span> = <span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">	<span class="built_in">static</span> <span class="keyword">public</span>	<span class="variable">$APP_SQL_PASS</span> = <span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">	<span class="built_in">static</span> <span class="keyword">public</span>	<span class="variable">$APP_SQL_DATABASE</span> = <span class="string">&#x27;hg&#x27;</span>;</span><br><span class="line">	<span class="built_in">static</span> <span class="keyword">public</span>	<span class="variable">$APP_SQL_TABLE_PRE</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>然后是关于数据库调用包装的文件，文件名为 <code>./lib/sql.php</code>：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">require_once</span> <span class="string">&quot;./config.php&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># SQL -&gt; MYSQL调用</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SQL</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="built_in">static</span> <span class="keyword">public</span> <span class="variable">$SQL_OBJ</span>;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span> = <span class="keyword">new</span> PDO(<span class="string">&quot;mysql:host=&quot;</span>.Config::<span class="variable">$APP_SQL_HOST</span>.<span class="string">&quot;;port=&quot;</span>.Config::<span class="variable">$APP_SQL_PORT</span>.<span class="string">&quot;;dbname=&quot;</span>.Config::<span class="variable">$APP_SQL_DATABASE</span>.<span class="string">&quot;;charset=utf8&quot;</span>, Config::<span class="variable">$APP_SQL_USER</span>, Config::<span class="variable">$APP_SQL_PASS</span>);</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>) &#123;</span><br><span class="line">			<span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span> = <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">$this</span>-&gt;check();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 检查数据库是否成功连接</span></span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (is_null(<span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>)) &#123;</span><br><span class="line">			<span class="keyword">die</span>(<span class="string">&quot;Can&#x27;t not connect SQL~&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 查询格式</span></span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">queryFormat</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span>, <span class="keyword">String</span> <span class="variable">$pad</span> = <span class="string">&#x27;AND&#x27;</span>, <span class="variable">$new_array</span> = []</span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">foreach</span> (<span class="variable">$array</span> <span class="keyword">as</span> <span class="variable">$key</span>) &#123;</span><br><span class="line">			array_push(<span class="variable">$new_array</span>, <span class="string">&quot;`<span class="subst">&#123;$key&#125;</span>` = ? &quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> join(<span class="string">&quot; <span class="subst">&#123;$pad&#125;</span> &quot;</span>, <span class="variable">$new_array</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 插入格式（安全）</span></span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertValueFormat</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27;(&#x27;</span> . join(<span class="string">&#x27;,&#x27;</span>, array_map(<span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$v</span></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&#x27; ? &#x27;</span>;</span><br><span class="line">		&#125;, <span class="variable">$array</span>)) . <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 插入格式（注入）</span></span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertValueFormatInject</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27;(&#x27;</span> . join(<span class="string">&#x27;,&#x27;</span>, array_map(<span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$v</span></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&quot;&#x27;<span class="subst">&#123;$v&#125;</span>&#x27;&quot;</span>;</span><br><span class="line">		&#125;, <span class="variable">$array</span>)) . <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertColumnFormat</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span></span>)</span>&#123;</span><br><span class="line">		<span class="comment"># 安全</span></span><br><span class="line">		<span class="keyword">foreach</span>(<span class="variable">$array</span> <span class="keyword">as</span> <span class="variable">$v</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(stripos(<span class="variable">$v</span>,<span class="string">&#x27;`&#x27;</span>) !== <span class="literal">false</span>)&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27;(`&#x27;</span> . join(<span class="string">&#x27;`,`&#x27;</span>,<span class="variable">$array</span>) . <span class="string">&#x27;`)&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 查询方法（安全）</span></span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">query</span>(<span class="params"><span class="keyword">String</span> <span class="variable">$table</span>, <span class="keyword">array</span> <span class="variable">$conditions</span>, <span class="keyword">String</span> <span class="variable">$extraString</span> = <span class="string">&#x27;&#x27;</span>, <span class="variable">$re</span> = []</span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">self</span>::check()) &#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="keyword">if</span>(count(<span class="variable">$conditions</span>) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">					<span class="variable">$q</span> = <span class="string">&quot;SELECT * FROM `&quot;</span> . Config::<span class="variable">$APP_SQL_TABLE_PRE</span> . <span class="variable">$table</span> . <span class="string">&quot;` WHERE &quot;</span> . <span class="built_in">self</span>::queryFormat(array_keys(<span class="variable">$conditions</span>))  . <span class="variable">$extraString</span>;</span><br><span class="line">					<span class="variable">$r</span> = <span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>-&gt;prepare(<span class="variable">$q</span>);</span><br><span class="line">					<span class="variable">$r</span>-&gt;execute(array_values(<span class="variable">$conditions</span>));</span><br><span class="line">					<span class="keyword">if</span> (<span class="variable">$g</span> = <span class="variable">$r</span>-&gt;fetchall(PDO::FETCH_ASSOC)) &#123;</span><br><span class="line">						<span class="keyword">foreach</span> (<span class="variable">$g</span> <span class="keyword">as</span> <span class="variable">$row</span>) &#123;</span><br><span class="line">							array_push(<span class="variable">$re</span>, <span class="variable">$row</span>);</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">return</span> <span class="variable">$re</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					</span><br><span class="line">					<span class="variable">$q</span> = <span class="string">&quot;SELECT * FROM `&quot;</span> . Config::<span class="variable">$APP_SQL_TABLE_PRE</span> . <span class="variable">$table</span> . <span class="string">&#x27;`&#x27;</span> . <span class="variable">$extraString</span>;</span><br><span class="line">					<span class="variable">$r</span> = <span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>-&gt;query(<span class="variable">$q</span>);</span><br><span class="line">					</span><br><span class="line">					<span class="keyword">foreach</span>(<span class="variable">$r</span>-&gt;fetchall(PDO::FETCH_ASSOC) <span class="keyword">as</span> <span class="variable">$row</span>) &#123;</span><br><span class="line">						array_push(<span class="variable">$re</span>, <span class="variable">$row</span>);</span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">					<span class="keyword">return</span> <span class="variable">$re</span>;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$_</span>) &#123;</span><br><span class="line">				<span class="keyword">die</span>(<span class="string">&#x27;ERROR -&gt; &#x27;</span> . <span class="variable">$_</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment"># 插入方法（安全）</span></span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insert</span>(<span class="params"><span class="keyword">String</span> <span class="variable">$table</span>, <span class="keyword">array</span> <span class="variable">$insert</span>, <span class="keyword">String</span> <span class="variable">$extraString</span> = <span class="string">&#x27;&#x27;</span></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">self</span>::check()) &#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="variable">$q</span> = <span class="string">&quot;INSERT INTO `&quot;</span> . Config::<span class="variable">$APP_SQL_TABLE_PRE</span> . <span class="variable">$table</span> . <span class="string">&quot;`&quot;</span> . <span class="built_in">self</span>::insertColumnFormat(array_keys(<span class="variable">$insert</span>)) . <span class="string">&quot; VALUES &quot;</span> . <span class="built_in">self</span>::insertValueFormat(array_values(<span class="variable">$insert</span>))  . <span class="variable">$extraString</span>;</span><br><span class="line">				<span class="variable">$r</span> = <span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>-&gt;prepare(<span class="variable">$q</span>);</span><br><span class="line">				<span class="keyword">return</span> <span class="variable">$affected_rows</span> = <span class="variable">$r</span>-&gt;execute(array_values(<span class="variable">$insert</span>));</span><br><span class="line">				</span><br><span class="line">			&#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$_</span>) &#123;</span><br><span class="line">				<span class="keyword">die</span>(<span class="string">&#x27;ERROR -&gt; &#x27;</span> . <span class="variable">$_</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 插入方法（注入）</span></span><br><span class="line">	<span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertInject</span>(<span class="params"><span class="keyword">String</span> <span class="variable">$table</span>, <span class="keyword">array</span> <span class="variable">$insert</span>, <span class="keyword">String</span> <span class="variable">$extraString</span> = <span class="string">&#x27;&#x27;</span></span>)</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">self</span>::check()) &#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="variable">$q</span> = <span class="string">&quot;INSERT INTO `&quot;</span> . Config::<span class="variable">$APP_SQL_TABLE_PRE</span> . <span class="variable">$table</span> . <span class="string">&quot;`&quot;</span> . <span class="built_in">self</span>::insertColumnFormat(array_keys(<span class="variable">$insert</span>)) . <span class="string">&quot; VALUES &quot;</span> . <span class="built_in">self</span>::insertValueFormatInject(array_values(<span class="variable">$insert</span>))  . <span class="variable">$extraString</span>;</span><br><span class="line">				<span class="variable">$r</span> = <span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>-&gt;prepare(<span class="variable">$q</span>);</span><br><span class="line">				<span class="keyword">return</span> <span class="variable">$affected_rows</span> = <span class="variable">$r</span>-&gt;execute();</span><br><span class="line">			</span><br><span class="line">			&#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$_</span>) &#123;</span><br><span class="line">				<span class="keyword">die</span>(<span class="string">&#x27;ERROR -&gt; &#x27;</span> . <span class="variable">$_</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>至于查询部分的代码就先略过了。</p>
+<h4 id="注入分析">- 注入分析 -</h4>
+<p>我们观察一下表和代码的 <strong>INSERT</strong> 语句，不难看出将会有 <strong>6</strong> 个字段被 <strong>INSERT</strong>， 其中语句为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `userinfo`(`userName`,`userEmail`,`userPass`,`userSalt`,`userLoginIP`,`userLoginTime`) <span class="keyword">VALUES</span> (<span class="string">&#x27;[用户名]&#x27;</span>,<span class="string">&#x27;[邮箱]&#x27;</span>,<span class="string">&#x27;[密码hash]&#x27;</span>,<span class="string">&#x27;[盐值]&#x27;</span>,<span class="string">&#x27;[IP]&#x27;</span>,<span class="string">&#x27;[最后登录时间]&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>那么这里可以从 用户名 这里进行 <strong>2</strong> 种攻击方式的 <strong>注入攻击</strong> ，分别是：</p>
+<blockquote>
+<p>基于时间/布尔盲注</p>
+</blockquote>
+<p>其中，基于时间的盲注 <strong>payload</strong> 可以为如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 猜解数据库用户名</span><br><span class="line"><span class="number">123</span><span class="string">&#x27;,if((select((mid(lpad(bin(ord(mid(user(),1,1))),7,0x30),1,1)))),sleep(1),[脏数据]),[脏数据],[脏数据],[脏数据],[脏数据]);#</span></span><br></pre></td></tr></table></figure>
+<p>实际上被数据库执行的为如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `userinfo`(`userName`,`userEmail`,`userPass`,`userSalt`,`userLoginIP`,`userLoginTime`) <span class="keyword">VALUES</span> (<span class="string">&#x27;123&#x27;</span>,if((<span class="keyword">select</span>((mid(lpad(bin(ord(mid(<span class="keyword">user</span>(),<span class="number">1</span>,<span class="number">1</span>))),<span class="number">7</span>,<span class="number">0x30</span>),<span class="number">1</span>,<span class="number">1</span>)))),sleep(<span class="number">1</span>),[脏数据]),[脏数据],[脏数据],[脏数据],[脏数据]);#<span class="string">&#x27;,&#x27;</span>[邮箱]<span class="string">&#x27;,&#x27;</span>[密码hash]<span class="string">&#x27;,&#x27;</span>[盐值]<span class="string">&#x27;,&#x27;</span>[IP]<span class="string">&#x27;,&#x27;</span>[最后登录时间]<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>显然，注释符已经将后边的内容给去掉了，形成了一个合法的 <strong>INSERT</strong> 语句。并且由于这里使用了 <strong>[脏数据]</strong> ，也就是永远不会 <strong>注册成功</strong> ，而当条件成立时也会触发 <strong>sleep(1)</strong>，那么就不会有很大的动静。</p>
+<p>而基于布尔的盲注相较于基于时间的盲注是比较鸡肋的，大致的 <strong>payload</strong> 可以为如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 才接数据库用户名</span><br><span class="line"><span class="number">123</span><span class="string">&#x27;,if((select((mid(lpad(bin(ord(mid(user(),1,1))),7,0x30),1,1)))),[脏数据],[合法数据]),[合法数据],[合法数据],[合法数据],[合法数据]);#</span></span><br></pre></td></tr></table></figure>
+<p>被数据库执行的为如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `userinfo`(`userName`,`userEmail`,`userPass`,`userSalt`,`userLoginIP`,`userLoginTime`) <span class="keyword">VALUES</span> (<span class="string">&#x27;123&#x27;</span>,if((<span class="keyword">select</span>((mid(lpad(bin(ord(mid(<span class="keyword">user</span>(),<span class="number">1</span>,<span class="number">1</span>))),<span class="number">7</span>,<span class="number">0x30</span>),<span class="number">1</span>,<span class="number">1</span>)))),[脏数据],[合法数据]),[合法数据],[合法数据],[合法数据],[合法数据]);#<span class="string">&#x27;,&#x27;</span>[邮箱]<span class="string">&#x27;,&#x27;</span>[密码hash]<span class="string">&#x27;,&#x27;</span>[盐值]<span class="string">&#x27;,&#x27;</span>[IP]<span class="string">&#x27;,&#x27;</span>[最后登录时间]<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>简单来说，即是当条件成立时就会将 <strong>[脏数据]</strong> 给 <strong>INSERT</strong> 到字段中，此时 <strong>INSERT</strong> 操作是不能成功的，即会显示 <strong>注册失败</strong> ；反之，如若条件不成立，那么将会把 <strong>[合法数据]</strong> 给 <strong>INSERT</strong> 到字段中，此时 <strong>INSERT</strong> 操作是成功的，会显示 <strong>注册成功</strong> 。（鸡肋就在于一旦条件成立就会多添加一个用户，会有很大动静）</p>
+<blockquote>
+<p>增添多个用户</p>
+</blockquote>
+<p>这个就比较简单，涉及到了关于 <strong>mysql</strong> 数据库中语句的连通性，比如可以构造一个 <strong>payload</strong> 如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># <span class="keyword">INSERT</span>多个用户</span><br><span class="line"><span class="number">123</span><span class="string">&#x27;,[合法数据],[合法数据],[合法数据],[合法数据],[合法数据]),([第二个用户],[合法数据],[合法数据],[合法数据],[合法数据],[合法数据]),([第三个用户],[合法数据],[合法数据],[合法数据],[合法数据],[合法数据]);#</span></span><br></pre></td></tr></table></figure>
+<p>那么，被执行的结果如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `userinfo`(`userName`,`userEmail`,`userPass`,`userSalt`,`userLoginIP`,`userLoginTime`) <span class="keyword">VALUES</span> (<span class="string">&#x27;123&#x27;</span>,[合法数据],[合法数据],[合法数据],[合法数据],[合法数据]),([第二个用户],[合法数据],[合法数据],[合法数据],[合法数据],[合法数据]),([第三个用户],[合法数据],[合法数据],[合法数据],[合法数据],[合法数据]);#<span class="string">&#x27;,&#x27;</span>[邮箱]<span class="string">&#x27;,&#x27;</span>[密码hash]<span class="string">&#x27;,&#x27;</span>[盐值]<span class="string">&#x27;,&#x27;</span>[IP]<span class="string">&#x27;,&#x27;</span>[最后登录时间]<span class="string">&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>该注释的注释了，也就相当于一个合法的 <strong>INSERT</strong> 语句。</p>
+<h4 id="绝对安全">- 绝对安全 -</h4>
+<p>这里先来看一下关键代码，</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 插入格式（安全）</span></span><br><span class="line"><span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertValueFormat</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="string">&#x27;(&#x27;</span> . join(<span class="string">&#x27;,&#x27;</span>, array_map(<span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$v</span></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&#x27; ? &#x27;</span>;</span><br><span class="line">	&#125;, <span class="variable">$array</span>)) . <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertColumnFormat</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span></span>)</span>&#123;</span><br><span class="line">	<span class="comment"># 安全</span></span><br><span class="line">	<span class="keyword">foreach</span>(<span class="variable">$array</span> <span class="keyword">as</span> <span class="variable">$v</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(stripos(<span class="variable">$v</span>,<span class="string">&#x27;`&#x27;</span>) !== <span class="literal">false</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&#x27;(`&#x27;</span> . join(<span class="string">&#x27;`,`&#x27;</span>,<span class="variable">$array</span>) . <span class="string">&#x27;`)&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 插入方法（安全）</span></span><br><span class="line"><span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insert</span>(<span class="params"><span class="keyword">String</span> <span class="variable">$table</span>, <span class="keyword">array</span> <span class="variable">$insert</span>, <span class="keyword">String</span> <span class="variable">$extraString</span> = <span class="string">&#x27;&#x27;</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">self</span>::check()) &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="variable">$q</span> = <span class="string">&quot;INSERT INTO `&quot;</span> . Config::<span class="variable">$APP_SQL_TABLE_PRE</span> . <span class="variable">$table</span> . <span class="string">&quot;`&quot;</span> . <span class="built_in">self</span>::insertColumnFormat(array_keys(<span class="variable">$insert</span>)) . <span class="string">&quot; VALUES &quot;</span> . <span class="built_in">self</span>::insertValueFormat(array_values(<span class="variable">$insert</span>))  . <span class="variable">$extraString</span>;</span><br><span class="line">			<span class="variable">$r</span> = <span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>-&gt;prepare(<span class="variable">$q</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="variable">$affected_rows</span> = <span class="variable">$r</span>-&gt;execute(array_values(<span class="variable">$insert</span>));</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$_</span>) &#123;</span><br><span class="line">			<span class="keyword">die</span>(<span class="string">&#x27;ERROR -&gt; &#x27;</span> . <span class="variable">$_</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显然，这里使用了 <strong>prepare</strong> 模式，其中 <strong>预拼接的语句</strong> 为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `userinfo`(`userName`,`userEmail`,`userPass`,`userSalt`,`userLoginIP`,`userLoginTime`) <span class="keyword">VALUES</span> ( ? , ? , ? , ? , ? , ? )</span><br></pre></td></tr></table></figure>
+<p>然后在下边的代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$r</span> = <span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>-&gt;prepare(<span class="variable">$q</span>);</span><br><span class="line"><span class="variable">$r</span>-&gt;execute(array_values(<span class="variable">$insert</span>));</span><br></pre></td></tr></table></figure>
+<p>对上边的 <strong>预拼接的语句</strong> 当作 <strong>数据库语句</strong> 进行 <strong>预处理</strong> 后再将传入的参数填补进去了，此时用户输入的参数也就不会直接被当作 <strong>数据库语句</strong> 去执行了，那么注入也就可以被避免。</p>
+<p>这里可以做一个即为简单的演示，比如使用时间盲注：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span><span class="string">&#x27;,if(1,sleep(5),0),1,2,3,4);#</span></span><br></pre></td></tr></table></figure>
+<p>瞬间回显，无等待：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321171811.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321171811339"></p>
+<p>再看一下数据库的内容：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321171905.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321171905207"></p>
+<p>显然成功的被放进去了，也就是说是安全的了。</p>
+<h4 id="存在注入">- 存在注入 -</h4>
+<p>接下来到存在注入了，先看一下关键代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 插入格式（注入）</span></span><br><span class="line"><span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertValueFormatInject</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="string">&#x27;(&#x27;</span> . join(<span class="string">&#x27;,&#x27;</span>, array_map(<span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$v</span></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;&#x27;<span class="subst">&#123;$v&#125;</span>&#x27;&quot;</span>;</span><br><span class="line">	&#125;, <span class="variable">$array</span>)) . <span class="string">&#x27;)&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertColumnFormat</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$array</span></span>)</span>&#123;</span><br><span class="line">	<span class="comment"># 安全</span></span><br><span class="line">	<span class="keyword">foreach</span>(<span class="variable">$array</span> <span class="keyword">as</span> <span class="variable">$v</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(stripos(<span class="variable">$v</span>,<span class="string">&#x27;`&#x27;</span>) !== <span class="literal">false</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">&#x27;(`&#x27;</span> . join(<span class="string">&#x27;`,`&#x27;</span>,<span class="variable">$array</span>) . <span class="string">&#x27;`)&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 插入方法（注入）</span></span><br><span class="line"><span class="built_in">static</span> <span class="function"><span class="keyword">function</span> <span class="title">insertInject</span>(<span class="params"><span class="keyword">String</span> <span class="variable">$table</span>, <span class="keyword">array</span> <span class="variable">$insert</span>, <span class="keyword">String</span> <span class="variable">$extraString</span> = <span class="string">&#x27;&#x27;</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">self</span>::check()) &#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="variable">$q</span> = <span class="string">&quot;INSERT INTO `&quot;</span> . Config::<span class="variable">$APP_SQL_TABLE_PRE</span> . <span class="variable">$table</span> . <span class="string">&quot;`&quot;</span> . <span class="built_in">self</span>::insertColumnFormat(array_keys(<span class="variable">$insert</span>)) . <span class="string">&quot; VALUES &quot;</span> . <span class="built_in">self</span>::insertValueFormatInject(array_values(<span class="variable">$insert</span>))  . <span class="variable">$extraString</span>;</span><br><span class="line">			<span class="variable">$r</span> = <span class="built_in">self</span>::<span class="variable">$SQL_OBJ</span>-&gt;prepare(<span class="variable">$q</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="variable">$affected_rows</span> = <span class="variable">$r</span>-&gt;execute();</span><br><span class="line">		</span><br><span class="line">		&#125; <span class="keyword">catch</span> (<span class="built_in">Exception</span> <span class="variable">$_</span>) &#123;</span><br><span class="line">			<span class="keyword">die</span>(<span class="string">&#x27;ERROR -&gt; &#x27;</span> . <span class="variable">$_</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里虽然说使用了 <strong>prepare</strong> 进行预处理语句，然而 <strong>预拼接的语句</strong> 直接为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> `userinfo`(`userName`,`userEmail`,`userPass`,`userSalt`,`userLoginIP`,`userLoginTime`) <span class="keyword">VALUES</span> ([合法数据],[合法数据],[合法数据],[合法数据],[合法数据],[合法数据])</span><br></pre></td></tr></table></figure>
+<p>由于 <strong>预拼接的语句</strong> 会被当作 <strong>数据库语句</strong> 进行 <strong>预处理</strong> ，而那么 <strong>预拼接的语句</strong> 中存在对用户输入参数的直接拼接，此时也就会存在注入了。</p>
+<p>比如做一个简单演示，增添多个用户：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span><span class="string">&#x27;,&#x27;</span>a<span class="variable">@a</span>.com<span class="string">&#x27;,&#x27;</span><span class="number">1</span><span class="string">&#x27;,&#x27;</span><span class="number">2</span><span class="string">&#x27;,&#x27;</span><span class="number">3</span><span class="string">&#x27;,&#x27;</span><span class="number">2000</span><span class="number">-01</span><span class="number">-01</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span><span class="string">&#x27;),(&#x27;</span><span class="number">321</span><span class="string">&#x27;,&#x27;</span>a<span class="variable">@aa</span>,com<span class="string">&#x27;,&#x27;</span><span class="number">1</span><span class="string">&#x27;,&#x27;</span><span class="number">2</span><span class="string">&#x27;,&#x27;</span><span class="number">3</span><span class="string">&#x27;,&#x27;</span><span class="number">2000</span><span class="number">-01</span><span class="number">-01</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span><span class="string">&#x27;);#</span></span><br></pre></td></tr></table></figure>
+<p>这里是显示注册成功了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321172838.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321172838419"></p>
+<p>那么查看一下数据库：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321172856.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321172856555"></p>
+<p>可以看到有多个用户被添加了，即成功进行了注入攻击。</p>
+<h3 id="PYTHON-实现-exec-模式">- PYTHON 实现 exec 模式 -</h3>
+<p>那么，这里的主要危险点暂且定为关于数据库 <strong>SELECT</strong> 数据的注入，也就是在用户登录时的注入。可以简单做一个 <strong>用户登录</strong> 的前端：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321173150.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321173150360"></p>
+<p>此时大致处理逻辑为：</p>
+<ul>
+<li>-&gt; 获取用户传入登录信息</li>
+<li>-&gt; 检查验证码、csrftoken等是否正确</li>
+<li>-&gt; 检查用户名/邮箱是否存在，且密码正确</li>
+<li>-&gt; 更新用户最后登录IP以及登录时间</li>
+</ul>
+<p>显然于检查是用户名/邮箱以及密码这一块，会涉及到 <strong>SELECT</strong> 查询，而在后边的更新操作会涉及到 UPDATE ，由于重点暂且为 <strong>SELECT</strong> 部分，有关 <strong>UPDATE</strong> 就先定为 <strong>绝对安全</strong> 吧。然后会在 <strong>UPDATE</strong> 布设 <strong>绝对安全</strong> 和 <strong>存在注入</strong> 的对比。</p>
+<h4 id="代码实现-2">- 代码实现 -</h4>
+<p>这是配置文件，文件名为 <code>./globals/constant.py</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot; --- 数据库 --- &quot;&quot;&quot;</span></span><br><span class="line">SQL_CONFIG = &#123;</span><br><span class="line">    <span class="string">&quot;host&quot;</span>:<span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">    <span class="string">&quot;user&quot;</span>:<span class="string">&quot;root&quot;</span>,</span><br><span class="line">    <span class="string">&quot;passwd&quot;</span>:<span class="string">&quot;root&quot;</span>,</span><br><span class="line">    <span class="string">&quot;port&quot;</span>:<span class="number">3306</span>,</span><br><span class="line">    <span class="string">&quot;charset&quot;</span>:<span class="string">&quot;utf8&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">SQL_DATABASE = <span class="string">&quot;hg&quot;</span></span><br><span class="line">SQL_TABLE_PRE = <span class="string">&quot;&quot;</span></span><br><span class="line">SQL_TABLES=&#123;</span><br><span class="line">    <span class="string">&quot;adminLogin&quot;</span> : SQL_TABLE_PRE + <span class="string">&quot;userinfo&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于数据库调用的包装，文件名为 <code>./module/SqlControl.py</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SQLConnect</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Todo: SQLConnect</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string">        @host -&gt; str `default:localhost`</span></span><br><span class="line"><span class="string">        @user -&gt; str `default:root`</span></span><br><span class="line"><span class="string">        @passwd -&gt; str `default:`</span></span><br><span class="line"><span class="string">        @port -&gt; int `default:3306`</span></span><br><span class="line"><span class="string">        @charset -&gt; str `default:utf8`</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        @Return ||Dict||</span></span><br><span class="line"><span class="string">        @</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultDict = &#123;</span><br><span class="line">        <span class="string">&quot;host&quot;</span>: <span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">        <span class="string">&quot;user&quot;</span>: <span class="string">&quot;root&quot;</span>,</span><br><span class="line">        <span class="string">&quot;passwd&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="string">&quot;port&quot;</span>: <span class="number">3306</span>,</span><br><span class="line">        <span class="string">&quot;charset&quot;</span>: <span class="string">&quot;utf8&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    db = <span class="literal">None</span></span><br><span class="line">    point = <span class="literal">None</span></span><br><span class="line">    isConnect = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, **interfaces</span>):</span></span><br><span class="line">        <span class="keyword">if</span> interfaces <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">for</span> k, v <span class="keyword">in</span> interfaces.items():</span><br><span class="line">                self.defaultDict[k] = v <span class="keyword">if</span> self.defaultDict[k] != v <span class="keyword">else</span> self.defaultDict[k]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connect</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;连接数据库&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.db = pymysql.connect(host=self.defaultDict[<span class="string">&quot;host&quot;</span>], user=self.defaultDict[<span class="string">&quot;user&quot;</span>],</span><br><span class="line">                                      password=self.defaultDict[<span class="string">&quot;passwd&quot;</span>], charset=self.defaultDict[<span class="string">&quot;charset&quot;</span>],</span><br><span class="line">                                      port=self.defaultDict[<span class="string">&quot;port&quot;</span>])</span><br><span class="line">            self.point = self.db.cursor()</span><br><span class="line">            self.isConnect = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">disconnect</span>(<span class="params">self</span>) -&gt; <span class="built_in">bool</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;关闭数据库连接&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> self.isConnect:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                self.db.close()</span><br><span class="line">                self.point.close()</span><br><span class="line">                self.isConnect = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__insertColumnFormat</span>(<span class="params">keys: <span class="built_in">list</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;(`&quot;</span> + <span class="string">&quot;`,`&quot;</span>.join(keys) + <span class="string">&quot;`)&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__insertValueFormat</span>(<span class="params">values: <span class="built_in">list</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;(&quot;</span> + <span class="string">&quot;,&quot;</span>.join([<span class="string">&#x27;%s&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(values))]) + <span class="string">&quot;)&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__queryColumn</span>(<span class="params">keys:<span class="built_in">list</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;`&quot;</span> + <span class="string">&quot;`,`&quot;</span>.join(keys) + <span class="string">&quot;`&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__queryForm</span>(<span class="params">keys: <span class="built_in">list</span>, pad: <span class="built_in">str</span> = <span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot; <span class="subst">&#123;pad&#125;</span> &quot;</span>.join([<span class="string">f&quot;`<span class="subst">&#123;each&#125;</span>` = %s&quot;</span> <span class="keyword">for</span> each <span class="keyword">in</span> keys])</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__queryFormInject</span>(<span class="params">data: <span class="built_in">dict</span>, pad: <span class="built_in">str</span> = <span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot; <span class="subst">&#123;pad&#125;</span> &quot;</span>.join([<span class="string">f&quot;`<span class="subst">&#123;key&#125;</span>` = &#x27;<span class="subst">&#123;value&#125;</span>&#x27;&quot;</span> <span class="keyword">for</span> key,value <span class="keyword">in</span> data.items()])</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Function: select_db</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string">        @name -&gt; str `default:`</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        @Return ||Bool||</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">select_db</span>(<span class="params">self, name: <span class="built_in">str</span></span>) -&gt; <span class="built_in">bool</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;选择数据库&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> self.isConnect:</span><br><span class="line">            self.db.select_db(name)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Function: query</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string">        @table -&gt; str `default:`</span></span><br><span class="line"><span class="string">        @columns -&gt; list `default:`</span></span><br><span class="line"><span class="string">        @conditions -&gt; dict `default:`</span></span><br><span class="line"><span class="string">        @extraString -&gt; str `default:`</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        @Return ||Tuple||</span></span><br><span class="line"><span class="string">        @</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">query</span>(<span class="params">self,table: <span class="built_in">str</span>,columns:<span class="built_in">list</span>,conditions:<span class="built_in">dict</span>,extraString:<span class="built_in">str</span>,pad:<span class="built_in">str</span>=<span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">dict</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;数据查询&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> self.isConnect:</span><br><span class="line">            col = self.__queryColumn(columns) <span class="keyword">if</span> <span class="built_in">len</span>(columns) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">&quot;*&quot;</span></span><br><span class="line">            q = <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + <span class="string">&quot; WHERE &quot;</span> + self.__queryForm(<span class="built_in">list</span>(conditions.keys()),pad = pad) + extraString <span class="keyword">if</span> <span class="built_in">len</span>(conditions) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + extraString</span><br><span class="line">            self.point.execute(query = q,args=<span class="built_in">tuple</span>(conditions.values()))</span><br><span class="line">            self.db.commit()</span><br><span class="line">            <span class="keyword">return</span> self.point.fetchall()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">            Function: queryInject</span></span><br><span class="line"><span class="string">            ---</span></span><br><span class="line"><span class="string">            @table -&gt; str `default:`</span></span><br><span class="line"><span class="string">            @columns -&gt; list `default:`</span></span><br><span class="line"><span class="string">            @conditions -&gt; dict `default:`</span></span><br><span class="line"><span class="string">            @extraString -&gt; str `default:`</span></span><br><span class="line"><span class="string">            ---</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">            @Return ||Tuple||</span></span><br><span class="line"><span class="string">            @</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">queryInject</span>(<span class="params">self, table: <span class="built_in">str</span>, columns: <span class="built_in">list</span>, conditions: <span class="built_in">dict</span>, extraString: <span class="built_in">str</span>, pad: <span class="built_in">str</span> = <span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">dict</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;数据查询&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> self.isConnect:</span><br><span class="line">            col = self.__queryColumn(columns) <span class="keyword">if</span> <span class="built_in">len</span>(columns) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">&quot;*&quot;</span></span><br><span class="line">            q = <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + <span class="string">&quot; WHERE &quot;</span> + self.__queryFormInject(conditions,pad=pad) + extraString <span class="keyword">if</span> <span class="built_in">len</span>(conditions) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + extraString</span><br><span class="line">            self.point.execute(query=q)</span><br><span class="line">            self.db.commit()</span><br><span class="line">            <span class="keyword">return</span> self.point.fetchall()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        Function: update</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string">        @table -&gt; str `default:`</span></span><br><span class="line"><span class="string">        @update -&gt; dict `default:`</span></span><br><span class="line"><span class="string">        @condition -&gt; dict `default:`</span></span><br><span class="line"><span class="string">        @extraString -&gt; str `default:`</span></span><br><span class="line"><span class="string">        ---</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        @Return ||Int||</span></span><br><span class="line"><span class="string">        @</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span>(<span class="params">self,table:<span class="built_in">str</span>, update:<span class="built_in">dict</span>,conditions:<span class="built_in">dict</span>,extraString:<span class="built_in">str</span>,pad:<span class="built_in">str</span>=<span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;数据更新&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> self.isConnect:</span><br><span class="line">            q = <span class="string">f&quot;UPDATE `<span class="subst">&#123;table&#125;</span>` SET &quot;</span> + self.__queryForm(<span class="built_in">list</span>(update.keys()),pad = <span class="string">&quot;,&quot;</span>) + <span class="string">&quot; WHERE &quot;</span> + self.__queryForm(<span class="built_in">list</span>(conditions.keys()),pad = pad) + extraString <span class="keyword">if</span> <span class="built_in">len</span>(conditions) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">f&quot;UPDATE `<span class="subst">&#123;table&#125;</span>` SET &quot;</span> + self.__queryForm(<span class="built_in">list</span>(update.keys()),pad = <span class="string">&quot;,&quot;</span>) + extraString</span><br><span class="line">            r = self.point.execute(query = q,args = <span class="built_in">tuple</span>(<span class="built_in">list</span>(update.values()) + <span class="built_in">list</span>(conditions.values())))</span><br><span class="line">            self.db.commit()</span><br><span class="line">            <span class="keyword">return</span> r</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+<p>有关查询部分的代码就先略过。</p>
+<h4 id="注入分析-2">- 注入分析 -</h4>
+<p>这里来简单观察一下有关表和代码的 <strong>SELECT</strong> 语句，不难看出大致语句为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先判断用户名/邮箱是否正确</span></span><br><span class="line">SELECT * FROM `userinfo` WHERE `userName` = <span class="string">&#x27;[用户名]&#x27;</span> OR `userEmail` = <span class="string">&#x27;[邮箱]&#x27;</span></span><br><span class="line"><span class="comment"># 若能选择得到，则再判断选择到的密码hash和输入的密码的hash是否一致</span></span><br></pre></td></tr></table></figure>
+<p>由于这是有关 <strong>用户登录</strong> 界面的注入，且再加上判断逻辑，可以从 用户名 这里进行 <strong>1</strong> 种攻击方式的 <strong>注入攻击</strong> ：</p>
+<blockquote>
+<p>基于时间盲注</p>
+</blockquote>
+<p>毕竟基于布尔的盲注是不太可能的，因为现在普遍无论用户名还是密码错误都只会返回同样的错误提示，就没有区分点来进行布尔判断了。</p>
+<p>以下是一个很简单 <strong>payload</strong> 进行时间盲注：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 比如当形如substr被过滤时可以用left+right构成逐个字符盲注猜解</span></span><br><span class="line"><span class="number">123</span><span class="string">&#x27;^if((select(right((left(lpad(bin(ord(right((left(user(),1)),1))),7,&#x27;</span><span class="number">0</span><span class="string">&#x27;),1)),1))),sleep(1),1)#</span></span><br></pre></td></tr></table></figure>
+<p>实际上被数据库执行的为如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM `userinfo` WHERE (`userName` = <span class="string">&#x27;123&#x27;</span>^<span class="keyword">if</span>((select(right((left(lpad(<span class="built_in">bin</span>(<span class="built_in">ord</span>(right((left(user(),<span class="number">1</span>)),<span class="number">1</span>))),<span class="number">7</span>,<span class="string">&#x27;0&#x27;</span>),<span class="number">1</span>)),<span class="number">1</span>))),sleep(<span class="number">1</span>),<span class="number">1</span>)<span class="comment">#&#x27; OR `userEmail` = &#x27;[邮箱]&#x27;)</span></span><br></pre></td></tr></table></figure>
+<p>显然后边的语句全被注释了，那么也就能够执行咱们的盲注猜解语句了。</p>
+<h4 id="绝对安全-2">- 绝对安全 -</h4>
+<p>还是先来看一下关键代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> @staticmethod</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__queryForm</span>(<span class="params">keys: <span class="built_in">list</span>, pad: <span class="built_in">str</span> = <span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">       <span class="keyword">return</span> <span class="string">f&quot; <span class="subst">&#123;pad&#125;</span> &quot;</span>.join([<span class="string">f&quot;`<span class="subst">&#123;each&#125;</span>` = %s&quot;</span> <span class="keyword">for</span> each <span class="keyword">in</span> keys])</span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__queryColumn</span>(<span class="params">keys:<span class="built_in">list</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">       <span class="keyword">return</span> <span class="string">&quot;`&quot;</span> + <span class="string">&quot;`,`&quot;</span>.join(keys) + <span class="string">&quot;`&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query</span>(<span class="params">self,table: <span class="built_in">str</span>,columns:<span class="built_in">list</span>,conditions:<span class="built_in">dict</span>,extraString:<span class="built_in">str</span>,pad:<span class="built_in">str</span>=<span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">dict</span>:</span></span><br><span class="line">       <span class="string">&quot;&quot;&quot;数据查询&quot;&quot;&quot;</span></span><br><span class="line">       <span class="keyword">if</span> self.isConnect:</span><br><span class="line">           col = self.__queryColumn(columns) <span class="keyword">if</span> <span class="built_in">len</span>(columns) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">&quot;*&quot;</span></span><br><span class="line">           q = <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + <span class="string">&quot; WHERE &quot;</span> + self.__queryForm(<span class="built_in">list</span>(conditions.keys()),pad = pad) + extraString <span class="keyword">if</span> <span class="built_in">len</span>(conditions) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + extraString</span><br><span class="line">           <span class="built_in">print</span>(q)</span><br><span class="line">           self.point.execute(query = q,args=<span class="built_in">tuple</span>(conditions.values()))</span><br><span class="line">           self.db.commit()</span><br><span class="line">           <span class="keyword">return</span> self.point.fetchall()</span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           <span class="keyword">return</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>不难看出，这里使用了 <strong>exec</strong> 模式，简单来说即是执行一个较为完整的 <strong>存储过程</strong> ，其中 <strong>预存储的语句</strong> 为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `userinfo` <span class="keyword">WHERE</span> `userEmail` <span class="operator">=</span> <span class="operator">%</span>s <span class="keyword">OR</span> `userName` <span class="operator">=</span> <span class="operator">%</span>s </span><br></pre></td></tr></table></figure>
+<p>在下边的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.point.execute(query = q,args=<span class="built_in">tuple</span>(conditions.values()))</span><br><span class="line">self.db.commit()</span><br></pre></td></tr></table></figure>
+<p>还是会对将上边的 <strong>预存储的语句</strong> 当作 <strong>数据库语句</strong> 进行 <strong>预处理</strong> 后再将传入的参数填补进去了，此时用户输入的参数也就不会直接被当作 <strong>数据库语句</strong> 去执行了，那么注入也就可以被避免。</p>
+<p>比如做一个很简单的时间盲注的演示：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">morouu<span class="string">&#x27;^if(1,sleep(10),0);#</span></span><br></pre></td></tr></table></figure>
+<p>OK，用户名并没有被逃逸：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321190137.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321190137784"></p>
+<p>显然是没有成功进行注入攻击了。</p>
+<h4 id="存在注入-2">- 存在注入 -</h4>
+<p>关键的代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">   @staticmethod</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__queryFormInject</span>(<span class="params">data: <span class="built_in">dict</span>, pad: <span class="built_in">str</span> = <span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">       <span class="keyword">return</span> <span class="string">f&quot; <span class="subst">&#123;pad&#125;</span> &quot;</span>.join([<span class="string">f&quot;`<span class="subst">&#123;key&#125;</span>` = &#x27;<span class="subst">&#123;value&#125;</span>&#x27;&quot;</span> <span class="keyword">for</span> key,value <span class="keyword">in</span> data.items()])</span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__queryColumn</span>(<span class="params">keys:<span class="built_in">list</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">       <span class="keyword">return</span> <span class="string">&quot;`&quot;</span> + <span class="string">&quot;`,`&quot;</span>.join(keys) + <span class="string">&quot;`&quot;</span></span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">queryInject</span>(<span class="params">self, table: <span class="built_in">str</span>, columns: <span class="built_in">list</span>, conditions: <span class="built_in">dict</span>, extraString: <span class="built_in">str</span>, pad: <span class="built_in">str</span> = <span class="string">&quot;AND&quot;</span></span>) -&gt; <span class="built_in">dict</span>:</span></span><br><span class="line">       <span class="string">&quot;&quot;&quot;数据查询&quot;&quot;&quot;</span></span><br><span class="line">       <span class="keyword">if</span> self.isConnect:</span><br><span class="line">           col = self.__queryColumn(columns) <span class="keyword">if</span> <span class="built_in">len</span>(columns) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">&quot;*&quot;</span></span><br><span class="line">           q = <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + <span class="string">&quot; WHERE &quot;</span> + self.__queryFormInject(conditions,pad=pad) + extraString <span class="keyword">if</span> <span class="built_in">len</span>(conditions) &gt; <span class="number">0</span> <span class="keyword">else</span> <span class="string">f&quot;SELECT <span class="subst">&#123;col&#125;</span> FROM `<span class="subst">&#123;table&#125;</span>`&quot;</span> + extraString</span><br><span class="line">           self.point.execute(query=q)</span><br><span class="line">           self.db.commit()</span><br><span class="line">           <span class="keyword">return</span> self.point.fetchall()</span><br><span class="line">       <span class="keyword">else</span>:</span><br><span class="line">           <span class="keyword">return</span> &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>还是老问题，虽然说是使用了 <strong>预存储过程</strong> ， 然而 <strong>预存储语句</strong> 是存在用户输入内容的，实际上就相当于：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `userinfo` <span class="keyword">WHERE</span> `userName` <span class="operator">=</span> [合法数据] <span class="keyword">OR</span> `userEmail` <span class="operator">=</span> [合法数据]</span><br></pre></td></tr></table></figure>
+<p>由于用户输入的内容会在 <strong>预存储过程</strong> 中被当作 <strong>数据库语句</strong> 进行处理，也就有可能发生注入了。</p>
+<p>比如一个简单的盲注，同时用错误的密码：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">morouu<span class="string">&#x27;^if(1,sleep(5),0);#</span></span><br></pre></td></tr></table></figure>
+<p>这里是页面卡住了，一直卡着不止 <strong>5</strong> 秒，这说明 <strong>预存储过程</strong> 出错了。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321191517.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321191517365"></p>
+<p>如果改成以下语句，并且用错误密码去登录：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">morouu<span class="string">&#x27;^if(1,0,sleep(5));#</span></span><br></pre></td></tr></table></figure>
+<p>此时可以得到一个 <strong>用户名/密码错误</strong> 的提示，也就可以用 <strong>是否卡住</strong> 和 <strong>用户/密码错误</strong> 提示来进行盲注了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321193244.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321193243998"></p>
+<p>而如果此时保证输入正确的密码，并使用以下语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">morouu<span class="string">&#x27;and(1);#</span></span><br></pre></td></tr></table></figure>
+<p>并且输入该用户正确的密码 <strong>123</strong>，此时 <strong>预存储语句</strong> 为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `userinfo` <span class="keyword">WHERE</span> `userName` <span class="operator">=</span> <span class="string">&#x27;morouu&#x27;</span><span class="keyword">and</span>(<span class="number">1</span>);#<span class="string">&#x27; OR `userEmail` = &#x27;</span>morouu<span class="string">&#x27;and(1);#&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>实际上处理的语句即为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `userinfo` <span class="keyword">WHERE</span> `userName` <span class="operator">=</span> <span class="string">&#x27;morouu&#x27;</span><span class="keyword">and</span>(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>那么是可以登录成功的：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321192811.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321192811076"></p>
+<p>显然语句是被成功注入进去了，也就是成功进行注入攻击。</p>
+<h3 id="GOLANG-实现-bindparam-模式">- GOLANG 实现 bindparam 模式 -</h3>
+<p>上边的已经有关 <strong>用户注册</strong> 和 <strong>用户登录</strong> 了，这里的主要危险点也暂且定为关于数据库 <strong>SELECT</strong> 数据的注入，也就是在查询用户信息时的注入。可以简单做一个 <strong>用户查询</strong> 的前端：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321193611.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321193611305"></p>
+<p>此时大致处理逻辑为：</p>
+<ul>
+<li>-&gt; 获取用户传入查询信息</li>
+<li>-&gt; 检查uuid等是否正确</li>
+<li>-&gt; 检查用户ID是否存在并返回查询结果流</li>
+</ul>
+<p>那么检查用户ID是否存在也就涉及到 <strong>SELECT</strong> 查询，这里会在 <strong>SELECT</strong> 布设 <strong>绝对安全</strong> 和 <strong>存在注入</strong> 的对比。</p>
+<h4 id="代码实现-3">- 代码实现 -</h4>
+<p>由于 <strong>GOLANG</strong> 属于强类型语言，直接传参做一个简单的demo好了。</p>
+<p>配置的 <strong>dbConfig</strong> 包，路径 <code>github.com/morouu/config</code>，</p>
+<p><code>database.go</code> 文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> dbConfig</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> DBConfig = <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>&#123;</span><br><span class="line">	<span class="string">&quot;host&quot;</span>:     <span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">	<span class="string">&quot;user&quot;</span>:     <span class="string">&quot;root&quot;</span>,</span><br><span class="line">	<span class="string">&quot;pass&quot;</span>:     <span class="string">&quot;root&quot;</span>,</span><br><span class="line">	<span class="string">&quot;database&quot;</span>: <span class="string">&quot;hg&quot;</span>,</span><br><span class="line">	<span class="string">&quot;port&quot;</span>:     <span class="string">&quot;3306&quot;</span>,</span><br><span class="line">	<span class="string">&quot;charset&quot;</span>:  <span class="string">&quot;utf8&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> TableConfig = <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>&#123;</span><br><span class="line">	<span class="string">&quot;queryTable&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;prefix&quot;</span>:    <span class="string">&quot;&quot;</span>,</span><br><span class="line">		<span class="string">&quot;tableName&quot;</span>: <span class="string">&quot;userinfo&quot;</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现对数据库调用包装的 <code>sqllib</code> 包，路径 <code>github,com/morouu/lib/sql</code> ，</p>
+<p><code>connect.go</code> 文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sqllib</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;database/sql&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;strings&quot;</span></span><br><span class="line"></span><br><span class="line">	_ <span class="string">&quot;github.com/go-sql-driver/mysql&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dbType <span class="keyword">string</span> = <span class="string">&quot;mysql&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Connect</span><span class="params">(interfaces <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>)</span> <span class="params">(*sql.DB, error)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	params := []<span class="keyword">string</span>&#123;<span class="string">&quot;host&quot;</span>, <span class="string">&quot;user&quot;</span>, <span class="string">&quot;pass&quot;</span>, <span class="string">&quot;port&quot;</span>, <span class="string">&quot;database&quot;</span>, <span class="string">&quot;charset&quot;</span>&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> k, _ := <span class="keyword">range</span> interfaces &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> !isValueList(k, params) &#123;</span><br><span class="line"></span><br><span class="line">			log.Fatalf(<span class="string">&quot;params error -&gt; %s&quot;</span>, k)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	dbInfo := strings.Join([]<span class="keyword">string</span>&#123;interfaces[<span class="string">&quot;user&quot;</span>], <span class="string">&quot;:&quot;</span>, interfaces[<span class="string">&quot;pass&quot;</span>], <span class="string">&quot;@tcp(&quot;</span>, interfaces[<span class="string">&quot;host&quot;</span>], <span class="string">&quot;:&quot;</span>, interfaces[<span class="string">&quot;port&quot;</span>], <span class="string">&quot;)/&quot;</span>, interfaces[<span class="string">&quot;database&quot;</span>], <span class="string">&quot;?charset=&quot;</span>, interfaces[<span class="string">&quot;charset&quot;</span>]&#125;, <span class="string">&quot;&quot;</span>)</span><br><span class="line">	dbIns, err := sql.Open(dbType, dbInfo)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	dbIns.SetConnMaxLifetime(<span class="number">1000</span>)</span><br><span class="line">	dbIns.SetMaxIdleConns(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err = dbIns.Ping(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, err</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	log.Println(<span class="string">&quot;&lt;&lt;&lt; Connect success! &gt;&gt;&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> dbIns, <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>func.go</code> 文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sqllib</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;strings&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isValueList</span><span class="params">(value <span class="keyword">string</span>, list []<span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> _, v := <span class="keyword">range</span> list &#123;</span><br><span class="line">		<span class="keyword">if</span> v == value &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqlColConnect</span><span class="params">(col []<span class="keyword">string</span>)</span> <span class="params">(result <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(col) == <span class="number">1</span> &amp;&amp; col[<span class="number">0</span>] == <span class="string">&quot;*&quot;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;*&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> k, s := <span class="keyword">range</span> col &#123;</span><br><span class="line">		col[k] = <span class="string">&quot;`&quot;</span> + s + <span class="string">&quot;`&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	result = strings.Join(col, <span class="string">&quot;,&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqlConditionConnect</span><span class="params">(condition <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, pad <span class="keyword">string</span>)</span> <span class="params">(result <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	conStr := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="number">0</span>, <span class="built_in">len</span>(condition))</span><br><span class="line">	<span class="keyword">if</span> pad == <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		pad = <span class="string">&quot; AND &quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> k, _ := <span class="keyword">range</span> condition &#123;</span><br><span class="line">		conStr = <span class="built_in">append</span>(conStr, k+<span class="string">&quot; = ?&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	result = <span class="string">&quot;(&quot;</span> + strings.Join(conStr, pad) + <span class="string">&quot;)&quot;</span></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqlConditionConnectInject</span><span class="params">(condition <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, pad <span class="keyword">string</span>)</span> <span class="params">(result <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	conStr := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="number">0</span>, <span class="built_in">len</span>(condition))</span><br><span class="line">	<span class="keyword">if</span> pad == <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		pad = <span class="string">&quot; AND &quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> k, v := <span class="keyword">range</span> condition &#123;</span><br><span class="line">		conStr = <span class="built_in">append</span>(conStr, k+<span class="string">&quot; = &#x27;&quot;</span>+v.(<span class="keyword">string</span>)+<span class="string">&quot;&#x27;&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	result = <span class="string">&quot;(&quot;</span> + strings.Join(conStr, pad) + <span class="string">&quot;)&quot;</span></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>query.go</code> 文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sqllib</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;database/sql&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/morouu/config&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">QuerySafe</span><span class="params">(db *sql.DB, table <span class="keyword">string</span>, prefix <span class="keyword">string</span>, col []<span class="keyword">string</span>, condition <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, extraString <span class="keyword">string</span>)</span> <span class="params">([]tableInterface, error)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> sqlStr <span class="keyword">string</span> = <span class="string">&quot;SELECT &quot;</span> + sqlColConnect(col) + <span class="string">&quot; from `&quot;</span> + prefix + table + <span class="string">&quot;` WHERE &quot;</span> + sqlConditionConnect(condition, <span class="string">&quot; AND &quot;</span>) + extraString</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> params []<span class="keyword">interface</span>&#123;&#125; = <span class="built_in">make</span>([]<span class="keyword">interface</span>&#123;&#125;, <span class="number">0</span>, <span class="built_in">len</span>(condition))</span><br><span class="line">	<span class="keyword">var</span> tableData = <span class="built_in">make</span>([]tableInterface, <span class="number">0</span>)</span><br><span class="line">	<span class="keyword">for</span> _, v := <span class="keyword">range</span> condition &#123;</span><br><span class="line">		params = <span class="built_in">append</span>(params, v)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 使用参数化查询即可避免SQL注入</span></span><br><span class="line">	rows, err := db.Query(sqlStr, params...)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Panicln(err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> table == dbConfig.TableConfig[<span class="string">&quot;queryTable&quot;</span>][<span class="string">&quot;tableName&quot;</span>] &#123;</span><br><span class="line">		<span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">			<span class="keyword">var</span> userRow userinfo</span><br><span class="line">			err := rows.Scan(&amp;userRow.userID, &amp;userRow.userName, &amp;userRow.userEmail, &amp;userRow.userPass, &amp;userRow.userSalt, &amp;userRow.userLoginIP, &amp;userRow.userLoginTime)</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				log.Panicln(err)</span><br><span class="line">			&#125;</span><br><span class="line">			tableData = <span class="built_in">append</span>(tableData, userRow)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> tableData, <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">QueryInject</span><span class="params">(db *sql.DB, table <span class="keyword">string</span>, prefix <span class="keyword">string</span>, col []<span class="keyword">string</span>, condition <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, extraString <span class="keyword">string</span>)</span> <span class="params">([]tableInterface, error)</span></span> &#123;</span><br><span class="line">	<span class="comment">// 如若直接手动拼接查询会存在SQL注入</span></span><br><span class="line">	<span class="keyword">var</span> sqlStr <span class="keyword">string</span> = <span class="string">&quot;SELECT &quot;</span> + sqlColConnect(col) + <span class="string">&quot; FROM `&quot;</span> + prefix + table + <span class="string">&quot;` WHERE &quot;</span> + sqlConditionConnectInject(condition, <span class="string">&quot; AND &quot;</span>) + extraString</span><br><span class="line">	<span class="keyword">var</span> tableData = <span class="built_in">make</span>([]tableInterface, <span class="number">0</span>)</span><br><span class="line">	rows, err := db.Query(sqlStr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Panicln(err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> table == dbConfig.TableConfig[<span class="string">&quot;queryTable&quot;</span>][<span class="string">&quot;tableName&quot;</span>] &#123;</span><br><span class="line">		<span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">			<span class="keyword">var</span> userRow userinfo</span><br><span class="line">			err := rows.Scan(&amp;userRow.userID, &amp;userRow.userName, &amp;userRow.userEmail, &amp;userRow.userPass, &amp;userRow.userSalt, &amp;userRow.userLoginIP, &amp;userRow.userLoginTime)</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				log.Panicln(err)</span><br><span class="line">			&#125;</span><br><span class="line">			tableData = <span class="built_in">append</span>(tableData, userRow)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> tableData, <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><code>tableStruct.go</code> 文件：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> sqllib</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;strconv&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> tableInterface <span class="keyword">interface</span> &#123;</span><br><span class="line">	GetStruct() <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> userinfo <span class="keyword">struct</span> &#123;</span><br><span class="line">	userID        <span class="keyword">int64</span></span><br><span class="line">	userName      <span class="keyword">string</span></span><br><span class="line">	userEmail     <span class="keyword">string</span></span><br><span class="line">	userPass      <span class="keyword">string</span></span><br><span class="line">	userSalt      <span class="keyword">string</span></span><br><span class="line">	userLoginIP   <span class="keyword">string</span></span><br><span class="line">	userLoginTime <span class="keyword">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s userinfo)</span> <span class="title">GetStruct</span><span class="params">()</span> <span class="params">(reMap <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	reMap = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span>, <span class="number">6</span>)</span><br><span class="line">	reMap[<span class="string">&quot;userID&quot;</span>] = strconv.FormatInt(s.userID, <span class="number">10</span>)</span><br><span class="line">	reMap[<span class="string">&quot;userName&quot;</span>] = s.userName</span><br><span class="line">	reMap[<span class="string">&quot;userEmail&quot;</span>] = s.userEmail</span><br><span class="line">	reMap[<span class="string">&quot;userPass&quot;</span>] = s.userPass</span><br><span class="line">	reMap[<span class="string">&quot;userSalt&quot;</span>] = s.userSalt</span><br><span class="line">	reMap[<span class="string">&quot;userLoginIP&quot;</span>] = s.userLoginIP</span><br><span class="line">	reMap[<span class="string">&quot;userLoginTime&quot;</span>] = s.userLoginTime</span><br><span class="line">	<span class="keyword">return</span> reMap</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>其他的传参代码就先略过了。</p>
+<h4 id="注入分析-3">- 注入分析 -</h4>
+<p>那么简单分析一下有关表和代码的 <strong>SELECT</strong> 语句，得到大致语句为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `userinfo` <span class="keyword">WHERE</span> ( userID <span class="operator">=</span> <span class="string">&#x27;[用户ID]&#x27;</span> )</span><br></pre></td></tr></table></figure>
+<p>显然这时关于通过 <strong>用户ID</strong> 来查询用户信息的逻辑了，一般来说可以从 <strong>用户ID</strong> 使用 <strong>2</strong> 种攻击方式进行注入攻击：</p>
+<blockquote>
+<p>基于任意方式的盲注</p>
+</blockquote>
+<p>这就比较简单了，比如基于时间盲注的 <strong>payload</strong> 可以如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 如果sleep被过滤，可以用笛卡尔积</span></span><br><span class="line"><span class="number">123</span><span class="string">&#x27;^if(1,((select count(*) from information_schema.tables a,information_schema.tables b,information_schema.tables c)),0));#</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 当然还可以用benchmark执行多次语句</span></span><br><span class="line"><span class="number">123</span><span class="string">&#x27;^if(1,benchmark(7000000,md5(&#x27;</span><span class="number">123</span><span class="string">&#x27;)),0));#</span></span><br></pre></td></tr></table></figure>
+<p>而被数据库执行的为如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `userinfo` <span class="keyword">WHERE</span> ( userID <span class="operator">=</span> <span class="string">&#x27;123&#x27;</span><span class="operator">^</span>if(<span class="number">1</span>,((<span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> information_schema.tables a,information_schema.tables b,information_schema.tables c)),<span class="number">0</span>));#<span class="string">&#x27; )</span></span><br></pre></td></tr></table></figure>
+<p>实际上也就是将用户的语句给嵌进去执行了，而注释符又将后边多余的影响语句合法性的内容给去掉了。</p>
+<blockquote>
+<p>联合查询的回显注入</p>
+</blockquote>
+<p>联合查询实际也是依靠 <strong>union</strong> 来进行多记录查询，简单的 <strong>payload</strong> 可以如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 除了information_schema，还是可以用其他数据库的视图来查看当前数据库的所有表的</span></span><br><span class="line"><span class="number">123</span><span class="string">&#x27;)/**/union/**/select/**/1,user(),version(),(select/**/group_concat(table_name)/**/from/**/information_schema.tables/**/where/**/table_schema=database()),(select/**/group_concat(table_name)/**/from/**/sys.schema_table_statistics/**/where/**/table_schema=database()),(select/**/group_concat(object_name)/**/from/**/performance_schema.table_io_waits_summary_by_table/**/where/**/OBJECT_SCHEMA=database()),(&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>被数据库执行的为如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `userinfo` <span class="keyword">WHERE</span> ( userID <span class="operator">=</span> <span class="string">&#x27;123&#x27;</span>)<span class="comment">/**/</span><span class="keyword">union</span><span class="comment">/**/</span><span class="keyword">select</span><span class="comment">/**/</span><span class="number">1</span>,<span class="keyword">user</span>(),version(),(<span class="keyword">select</span><span class="comment">/**/</span>group_concat(table_name)<span class="comment">/**/</span><span class="keyword">from</span><span class="comment">/**/</span>information_schema.tables<span class="comment">/**/</span><span class="keyword">where</span><span class="comment">/**/</span>table_schema<span class="operator">=</span>database()),(<span class="keyword">select</span><span class="comment">/**/</span>group_concat(table_name)<span class="comment">/**/</span><span class="keyword">from</span><span class="comment">/**/</span>sys.schema_table_statistics<span class="comment">/**/</span><span class="keyword">where</span><span class="comment">/**/</span>table_schema<span class="operator">=</span>database()),(<span class="keyword">select</span><span class="comment">/**/</span>group_concat(object_name)<span class="comment">/**/</span><span class="keyword">from</span><span class="comment">/**/</span>performance_schema.table_io_waits_summary_by_table<span class="comment">/**/</span><span class="keyword">where</span><span class="comment">/**/</span>OBJECT_SCHEMA<span class="operator">=</span>database()),(<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>此时就能够通过追加记录来查到其他内容了。</p>
+<h4 id="绝对安全-3">- 绝对安全 -</h4>
+<p>依然是关键代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqlColConnect</span><span class="params">(col []<span class="keyword">string</span>)</span> <span class="params">(result <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(col) == <span class="number">1</span> &amp;&amp; col[<span class="number">0</span>] == <span class="string">&quot;*&quot;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;*&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> k, s := <span class="keyword">range</span> col &#123;</span><br><span class="line">		col[k] = <span class="string">&quot;`&quot;</span> + s + <span class="string">&quot;`&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	result = strings.Join(col, <span class="string">&quot;,&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sqlConditionConnect</span><span class="params">(condition <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, pad <span class="keyword">string</span>)</span> <span class="params">(result <span class="keyword">string</span>)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	conStr := <span class="built_in">make</span>([]<span class="keyword">string</span>, <span class="number">0</span>, <span class="built_in">len</span>(condition))</span><br><span class="line">	<span class="keyword">if</span> pad == <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		pad = <span class="string">&quot; AND &quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> k, _ := <span class="keyword">range</span> condition &#123;</span><br><span class="line">		conStr = <span class="built_in">append</span>(conStr, k+<span class="string">&quot; = ?&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	result = <span class="string">&quot;(&quot;</span> + strings.Join(conStr, pad) + <span class="string">&quot;)&quot;</span></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">QuerySafe</span><span class="params">(db *sql.DB, table <span class="keyword">string</span>, prefix <span class="keyword">string</span>, col []<span class="keyword">string</span>, condition <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">interface</span>&#123;&#125;, extraString <span class="keyword">string</span>)</span> <span class="params">([]tableInterface, error)</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> sqlStr <span class="keyword">string</span> = <span class="string">&quot;SELECT &quot;</span> + sqlColConnect(col) + <span class="string">&quot; from `&quot;</span> + prefix + table + <span class="string">&quot;` WHERE &quot;</span> + sqlConditionConnect(condition, <span class="string">&quot; AND &quot;</span>) + extraString</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> params []<span class="keyword">interface</span>&#123;&#125; = <span class="built_in">make</span>([]<span class="keyword">interface</span>&#123;&#125;, <span class="number">0</span>, <span class="built_in">len</span>(condition))</span><br><span class="line">	<span class="keyword">var</span> tableData = <span class="built_in">make</span>([]tableInterface, <span class="number">0</span>)</span><br><span class="line">	<span class="keyword">for</span> _, v := <span class="keyword">range</span> condition &#123;</span><br><span class="line">		params = <span class="built_in">append</span>(params, v)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 使用参数化查询即可避免SQL注入</span></span><br><span class="line">	rows, err := db.Query(sqlStr, params...)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Panicln(err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> table == dbConfig.TableConfig[<span class="string">&quot;queryTable&quot;</span>][<span class="string">&quot;tableName&quot;</span>] &#123;</span><br><span class="line">		<span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">			<span class="keyword">var</span> userRow userinfo</span><br><span class="line">			err := rows.Scan(&amp;userRow.userID, &amp;userRow.userName, &amp;userRow.userEmail, &amp;userRow.userPass, &amp;userRow.userSalt, &amp;userRow.userLoginIP, &amp;userRow.userLoginTime)</span><br><span class="line">			<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">				log.Panicln(err)</span><br><span class="line">			&#125;</span><br><span class="line">			tableData = <span class="built_in">append</span>(tableData, userRow)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">nil</span>, <span class="literal">nil</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> tableData, <span class="literal">nil</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这里实际上使用了 <strong>bindparam</strong> 模式，即是对传入的参数进行 <strong>参数绑定</strong> ，简单来说即是告诉数据库，用户输入的内容是 <strong>查询的参数</strong> 不参与 <strong>数据库语句</strong> 的编译。</p>
+<p>其中，<strong>数据库语句</strong> 为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> `userinfo` <span class="keyword">WHERE</span> (userID <span class="operator">=</span> ?)</span><br></pre></td></tr></table></figure>
+<p>然后进行 <strong>参数绑定</strong> ：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> params []<span class="keyword">interface</span>&#123;&#125; = <span class="built_in">make</span>([]<span class="keyword">interface</span>&#123;&#125;, <span class="number">0</span>, <span class="built_in">len</span>(condition))</span><br><span class="line"><span class="keyword">for</span> _, v := <span class="keyword">range</span> condition &#123;</span><br><span class="line">		params = <span class="built_in">append</span>(params, v)</span><br><span class="line">	&#125;</span><br><span class="line">rows, err := db.Query(sqlStr, params...)</span><br></pre></td></tr></table></figure>
+<p>由于用户输入的 查询的参数 被告知数据库这只是 <strong>查询参数</strong> ，因而不会参与 <strong>数据库语句</strong> 的编译，那么也就无法从 <strong>查询的参数</strong> 这里逃逸从而形成注入攻击了。</p>
+<p>比如输入以下的简单联合注入：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span><span class="string">&#x27;)/**/union/**/select/**/1,user(),version(),database(),2,3,(&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>这里还是返回了 <strong>userID</strong> 为 <strong>1</strong> 的数据结果，实际上也就是把后边的 <code>')/**/union/**/select/**/1,user(),version(),database(),2,3,('1</code> 内容给忽略了，没能成功逃逸出去：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321204735.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321204735859"></p>
+<p>因为没能成功逃逸，注入攻击也就没能成功了。</p>
+<h4 id="存在注入-3">- 存在注入 -</h4>
+<p>还是关键代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">func sqlColConnect(col []string) (result string) &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(col) == <span class="number">1</span> &amp;&amp; col[<span class="number">0</span>] == <span class="string">&quot;*&quot;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;*&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> k, s := <span class="built_in">range</span> col &#123;</span><br><span class="line">		col[k] = <span class="string">&quot;`&quot;</span> + s + <span class="string">&quot;`&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	result = strings.Join(col, <span class="string">&quot;,&quot;</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">func sqlConditionConnectInject(condition <span class="built_in">map</span>[string]interface&#123;&#125;, pad string) (result string) &#123;</span><br><span class="line"></span><br><span class="line">	conStr := make([]string, <span class="number">0</span>, <span class="built_in">len</span>(condition))</span><br><span class="line">	<span class="keyword">if</span> pad == <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		pad = <span class="string">&quot; AND &quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> k, v := <span class="built_in">range</span> condition &#123;</span><br><span class="line">		conStr = append(conStr, k+<span class="string">&quot; = &#x27;&quot;</span>+v.(string)+<span class="string">&quot;&#x27;&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	result = <span class="string">&quot;(&quot;</span> + strings.Join(conStr, pad) + <span class="string">&quot;)&quot;</span></span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line">&#125;</span><br><span class="line">func QueryInject(db *sql.DB, table string, prefix string, col []string, condition <span class="built_in">map</span>[string]interface&#123;&#125;, extraString string) ([]tableInterface, error) &#123;</span><br><span class="line">	// 如若直接手动拼接查询会存在SQL注入</span><br><span class="line">	var sqlStr string = <span class="string">&quot;SELECT &quot;</span> + sqlColConnect(col) + <span class="string">&quot; FROM `&quot;</span> + prefix + table + <span class="string">&quot;` WHERE &quot;</span> + sqlConditionConnectInject(condition, <span class="string">&quot; AND &quot;</span>) + extraString</span><br><span class="line">	var tableData = make([]tableInterface, <span class="number">0</span>)</span><br><span class="line">	rows, err := db.Query(sqlStr)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		log.Panicln(err)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> table == dbConfig.TableConfig[<span class="string">&quot;queryTable&quot;</span>][<span class="string">&quot;tableName&quot;</span>] &#123;</span><br><span class="line">		<span class="keyword">for</span> rows.Next() &#123;</span><br><span class="line">			var userRow userinfo</span><br><span class="line">			err := rows.Scan(&amp;userRow.userID, &amp;userRow.userName, &amp;userRow.userEmail, &amp;userRow.userPass, &amp;userRow.userSalt, &amp;userRow.userLoginIP, &amp;userRow.userLoginTime)</span><br><span class="line">			<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">				log.Panicln(err)</span><br><span class="line">			&#125;</span><br><span class="line">			tableData = append(tableData, userRow)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nil, nil</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> tableData, nil</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>这个是直接将用户传入的 <strong>查询的参数</strong> 直接拼接到了进行要编译的 <strong>数据库语句</strong> 里边了，并没有进行 <strong>参数绑定</strong> ，是极有可能存在注入的。而语句即为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> `userinfo` <span class="keyword">WHERE</span> (userID <span class="operator">=</span> [合法数据])</span><br></pre></td></tr></table></figure>
+<p>还是简单的联合注入查当前数据库存在的表名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span><span class="string">&#x27;)/**/union/**/select/**/1,user(),version(),(select/**/group_concat(table_name)/**/from/**/information_schema.tables/**/where/**/table_schema=database()),(select/**/group_concat(table_name)/**/from/**/sys.schema_table_statistics/**/where/**/table_schema=database()),(select/**/group_concat(object_name)/**/from/**/performance_schema.table_io_waits_summary_by_table/**/where/**/OBJECT_SCHEMA=database()),(&#x27;</span><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>显然是成功查询到表名了：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321205737.png?x-oss-process=image/auto-orient,1/interlace,1" alt="image-20210321205737305"></p>
+<p>那么也就说明该注入攻击是成功了。</p>
+<h2 id="总结">- 总结 -</h2>
+<p>上边是分别通过使用 <code>PHP</code> <code>PYTHON</code> <code>GOLANG</code> 模拟一个简单的用户和数据库交互过程，其中也分别调用了 <strong>prepare</strong> <strong>exec</strong> <strong>bindparam</strong> 模式进行对比。不妨做一个简单的说明。</p>
+<h4 id="prepare">- prepare -</h4>
+<p>先组一个 <strong>预拼接的语句</strong> ，让后将其当作 <strong>数据库语句</strong> 进行 <strong>预处理</strong> ，最后再将用户传入的参数填补进去了，此时用户输入的参数也就不会直接被当作 <strong>数据库语句</strong> 去执行了，那么注入也就可以被避免。</p>
+<h4 id="exec">- exec -</h4>
+<p>和 <strong>prepare</strong> 差不多的处理过程，不过是组一个 <strong>预存储的语句</strong> ，后边和 <strong>prepare</strong> 的处理流程基本相同。只是 <strong>exec</strong> 相较于 <strong>prepare</strong> 比较好的地方是，由于 <strong>exec</strong> 实现的是一个 预存储过程 ，在这个过程中如果存在有关时间的阻塞，例如 <strong>sleep()</strong> 之类的函数调用就会卡住，可以迷惑攻击者；当然这也可能意味着这个数据库连接可能 <strong>无法立即释放</strong> ，大规模请求可能会导致服务器负载。</p>
+<h4 id="bindparam">- bindparam -</h4>
+<p>这个相较于上边 <strong>2</strong> 个是完全不一样的，关键点在于对传入的参数进行的 <strong>参数绑定</strong> ，也就是告诉数据库，用户输入的内容是 <strong>查询的参数</strong> 不参与 <strong>数据库语句</strong> 的编译，那么也就可以避免用户输入的内容被数据库当作 <strong>数据库语句</strong> 执行了。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/2021/12/27/cn/说明 - socat的简单使用/" data-toggle="tooltip" data-placement="top" title="说明 - socat的简单使用">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/2021/12/27/cn/练习 - Ubuntu19渗透/" data-toggle="tooltip" data-placement="top" title="练习 - Ubuntu19渗透">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。也欢迎您共享此博客，以便更多人可以参与。如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=编程 - 编程实现带参数执行模式防SQL注入&body=Hi,I found this website and thought you might like it http://yoursite-url/2021/12/27/cn/编程 - 编程实现带参数执行模式防SQL注入/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Mon Dec 27 2021 14:10:21 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">编程 - 编程实现带参数执行模式防SQL注入</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- 功能 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A6%81%E6%B1%82"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 要求 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BC%96%E7%A8%8B%E9%85%8D%E7%BD%AE"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 编程配置 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">- 数据库测试结构 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">- 实现 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PHP-%E5%AE%9E%E7%8E%B0-prepare-%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">- PHP 实现 prepare 模式 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">1.5.1.1.</span> <span class="toc-nav-text">- 代码实现 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.5.1.2.</span> <span class="toc-nav-text">- 注入分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%9D%E5%AF%B9%E5%AE%89%E5%85%A8"><span class="toc-nav-number">1.5.1.3.</span> <span class="toc-nav-text">- 绝对安全 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%98%E5%9C%A8%E6%B3%A8%E5%85%A5"><span class="toc-nav-number">1.5.1.4.</span> <span class="toc-nav-text">- 存在注入 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PYTHON-%E5%AE%9E%E7%8E%B0-exec-%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">- PYTHON 实现 exec 模式 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-2"><span class="toc-nav-number">1.5.2.1.</span> <span class="toc-nav-text">- 代码实现 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E5%88%86%E6%9E%90-2"><span class="toc-nav-number">1.5.2.2.</span> <span class="toc-nav-text">- 注入分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%9D%E5%AF%B9%E5%AE%89%E5%85%A8-2"><span class="toc-nav-number">1.5.2.3.</span> <span class="toc-nav-text">- 绝对安全 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%98%E5%9C%A8%E6%B3%A8%E5%85%A5-2"><span class="toc-nav-number">1.5.2.4.</span> <span class="toc-nav-text">- 存在注入 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GOLANG-%E5%AE%9E%E7%8E%B0-bindparam-%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">1.5.3.</span> <span class="toc-nav-text">- GOLANG 实现 bindparam 模式 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-3"><span class="toc-nav-number">1.5.3.1.</span> <span class="toc-nav-text">- 代码实现 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%B3%A8%E5%85%A5%E5%88%86%E6%9E%90-3"><span class="toc-nav-number">1.5.3.2.</span> <span class="toc-nav-text">- 注入分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%9D%E5%AF%B9%E5%AE%89%E5%85%A8-3"><span class="toc-nav-number">1.5.3.3.</span> <span class="toc-nav-text">- 绝对安全 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%98%E5%9C%A8%E6%B3%A8%E5%85%A5-3"><span class="toc-nav-number">1.5.3.4.</span> <span class="toc-nav-text">- 存在注入 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">- 总结 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#prepare"><span class="toc-nav-number">1.6.0.1.</span> <span class="toc-nav-text">- prepare -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#exec"><span class="toc-nav-number">1.6.0.2.</span> <span class="toc-nav-text">- exec -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#bindparam"><span class="toc-nav-number">1.6.0.3.</span> <span class="toc-nav-text">- bindparam -</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#安全" title="安全">安全</a>
+            
+            <a class="tag" href="/tags/#PHP" title="PHP">PHP</a>
+            
+            <a class="tag" href="/tags/#Python" title="Python">Python</a>
+            
+            <a class="tag" href="/tags/#SQL" title="SQL">SQL</a>
+            
+            <a class="tag" href="/tags/#Golang" title="Golang">Golang</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>朋友们</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://www.cnblogs.com/Yhck/" target="_blank">Yhck</a>
+          </li>
+          
+          <li>
+            <a href="https://www.cnblogs.com/wkzb/" target="_blank">beiwo</a>
+          </li>
+          
+          <li>
+            <a href="https://leohearts.com/" target="_blank">Leohearts</a>
+          </li>
+          
+          <li>
+            <a href="https://longlone.best/" target="_blank">Longlone</a>
+          </li>
+          
+          <li>
+            <a href="http://na0hblog.top/" target="_blank">Na0h</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Morouu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+         &copy; 2021
+		 <i class="icon-smile"></i>
+          morouu
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        <div class=" copyright text-muted live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"> 0 天 0 小时 0 分 0 秒</span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-12-27T20:23:15');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div>
+		</p>
+		
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color=''></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+    <!-- Line start -->
+    <script async="text/javascript" src="/js/line.js"></script>
+    <!-- Line end -->
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-haru/02"},"display":{"position":"right","width":225,"height":225,"right":125},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
