@@ -245,19 +245,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               归档
@@ -268,10 +255,12 @@
           
           
           
+          
+          
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              标签
+              分类
               
               
             </a>
@@ -283,6 +272,17 @@
             <a href="/about/">
               
               关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -459,13 +459,13 @@
       <!-- 标签云 -->
       <div id='tag_cloud' class="tags">
         
+        <a href="#开发" title="开发" rel="1">开发</a>
+        
         <a href="#ctf" title="ctf" rel="2">ctf</a>
         
         <a href="#工具" title="工具" rel="2">工具</a>
         
         <a href="#实验" title="实验" rel="1">实验</a>
-        
-        <a href="#开发" title="开发" rel="1">开发</a>
         
         <a href="#备忘录" title="备忘录" rel="1">备忘录</a>
         
@@ -474,6 +474,31 @@
       </div>
 
       <!-- 标签列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="开发">
+          <span class="tag-text">开发</span>
+        </span>
+        
+        <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+        <div class="post-preview">
+          <a href="/2345857970/">
+            <h2 class="post-title">
+              小工具 - 简单的随机数生成工具
+              
+              -- cn
+              
+            </h2>
+            
+          </a>
+          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+      </div>
       
       <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="ctf">
@@ -574,31 +599,6 @@
           <a href="/4281309277/">
             <h2 class="post-title">
               编程 - 编程实现带参数执行模式防SQL注入
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-          <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="开发">
-          <span class="tag-text">开发</span>
-        </span>
-        
-        <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-        <div class="post-preview">
-          <a href="/2345857970/">
-            <h2 class="post-title">
-              小工具 - 简单的随机数生成工具
               
               -- cn
               

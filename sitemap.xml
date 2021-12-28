@@ -135,7 +135,14 @@
   </url>
   
   <url>
-    <loc>https://morblog.cc/tags/WEB/</loc>
+    <loc>https://morblog.cc/tags/CRYPTO/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/tags/PHP/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -143,6 +150,13 @@
   
   <url>
     <loc>https://morblog.cc/tags/Python/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/tags/WEB/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -170,21 +184,7 @@
   </url>
   
   <url>
-    <loc>https://morblog.cc/tags/PHP/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://morblog.cc/tags/Golang/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/tags/CRYPTO/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -221,6 +221,13 @@
 
   
   <url>
+    <loc>https://morblog.cc/categories/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://morblog.cc/categories/ctf/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -236,13 +243,6 @@
   
   <url>
     <loc>https://morblog.cc/categories/%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/categories/%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
