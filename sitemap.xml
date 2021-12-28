@@ -135,27 +135,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/WEB/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/tags/Python/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/tags/SSTI/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite-url/tags/CRYPTO/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -170,7 +149,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://yoursite-url/tags/Python/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/WEB/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/SSTI/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -185,6 +178,20 @@
   
   <url>
     <loc>http://yoursite-url/tags/Golang/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/tags/%E6%B8%97%E9%80%8F/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -211,21 +218,7 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>http://yoursite-url/tags/%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>http://yoursite-url/categories/ctf/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
   <url>
     <loc>http://yoursite-url/categories/%E5%BC%80%E5%8F%91/</loc>
@@ -235,7 +228,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://yoursite-url/categories/ctf/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -249,7 +242,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
+    <loc>http://yoursite-url/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -257,6 +250,13 @@
   
   <url>
     <loc>http://yoursite-url/categories/%E6%B8%97%E9%80%8F/</loc>
+    <lastmod>2021-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite-url/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
     <lastmod>2021-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
