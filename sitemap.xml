@@ -4,88 +4,7 @@
   <url>
     <loc>https://morblog.cc/404.html</loc>
     
-    <lastmod>2021-12-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/2946623354/</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/1147913200/</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/1350283815/</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/860061965/</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/2345857970/</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/1756077890/</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/4281309277/</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/categories/index.html</loc>
-    
-    <lastmod>2021-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/archive/index.html</loc>
-    
-    <lastmod>2021-12-27</lastmod>
+    <lastmod>2021-12-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -94,6 +13,33 @@
   <url>
     <loc>https://morblog.cc/tags/index.html</loc>
     
+    <lastmod>2021-12-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/categories/index.html</loc>
+    
+    <lastmod>2021-12-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/archive/index.html</loc>
+    
+    <lastmod>2021-12-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/posts/2946623354/</loc>
+    
     <lastmod>2021-12-27</lastmod>
     
     <changefreq>monthly</changefreq>
@@ -101,7 +47,61 @@
   </url>
   
   <url>
-    <loc>https://morblog.cc/4258246850/</loc>
+    <loc>https://morblog.cc/posts/1147913200/</loc>
+    
+    <lastmod>2021-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/posts/1350283815/</loc>
+    
+    <lastmod>2021-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/posts/860061965/</loc>
+    
+    <lastmod>2021-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/posts/2345857970/</loc>
+    
+    <lastmod>2021-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/posts/4281309277/</loc>
+    
+    <lastmod>2021-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/posts/1756077890/</loc>
+    
+    <lastmod>2021-12-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/posts/4258246850/</loc>
     
     <lastmod>2021-12-27</lastmod>
     
@@ -121,7 +121,7 @@
 
   <url>
     <loc>https://morblog.cc/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -129,91 +129,91 @@
   
   <url>
     <loc>https://morblog.cc/tags/%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/CRYPTO/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/PHP/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/Python/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/tags/WEB/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/tags/SSTI/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/tags/WEB/</loc>
+    <lastmod>2021-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/tags/SSTI/</loc>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/SQL/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/Golang/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/tags/%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/tags/%E6%9D%82%E9%A1%B9/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/ctf/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/tags/trick/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/tags/%E6%9D%82%E9%A1%B9/</loc>
+    <lastmod>2021-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/tags/%E6%B8%97%E9%80%8F/</loc>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -222,42 +222,42 @@
   
   <url>
     <loc>https://morblog.cc/categories/%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/categories/ctf/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/categories/%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/categories/ctf/</loc>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/categories/%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2021-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://morblog.cc/categories/%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://morblog.cc/categories/%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
-    <lastmod>2021-12-28</lastmod>
+    <lastmod>2021-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://morblog.cc/categories/%E6%B8%97%E9%80%8F/</loc>
+    <lastmod>2021-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
