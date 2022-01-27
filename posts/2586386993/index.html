@@ -242,9 +242,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              关于
+              分类
               
               
             </a>
@@ -275,9 +275,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
+              关于
               
               
             </a>
@@ -983,13 +983,13 @@
 <p>再往下看有关 <code>bz2</code> 的内容，其实也是一样的👇</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201242311387.png" alt="image-20220124231140249"></p>
 <p>以上遇到了 <code>gz</code> 和 <code>bz2</code> 的文件内容时，先将其解压了，然后再将解压得到的内容再进行一遍循环判断。</p>
-<p>如果对这两个格式的的处理方式做一个说明，其实等价于以下步骤👇</p>
+<p>如果对这两个格式的的处理方式做一个说明，不妨以 <code>gz</code> 为例，先做以下步骤👇</p>
 <ul>
 <li><code>生成一个phar文件，名为a.phar</code></li>
 <li><code>将a.phar打包成a.phar.gz文件</code></li>
 </ul>
-<p>当用 <code>phar://path/a.phar.gz</code> 协议去解析这个 <code>a.phar.gz</code> 文件时，会先将 <code>a.phar.gz</code> 的第一个文件解压成临时文件，然后将这个临时文件的内容(也就是 <code>a.phar</code> 文件的内容)作为 <code>phar</code> 格式内容去解析罢。</p>
-<p>那么继续往下看，下一个就到了 对<code>zip</code> 头部的判断👇</p>
+<p>然后当用 <code>phar://path/a.phar.gz</code> 协议去解析这个 <code>a.phar.gz</code> 文件时，会先将 <code>a.phar.gz</code> 解压成临时文件，再将这个临时文件的内容(也就是 <code>a.phar</code> 文件的内容)作为 <code>phar</code> 格式内容去解析罢。</p>
+<p>那么继续往下看，下一个就到了对<code>zip</code> 头部的判断👇</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201242325964.png" alt="image-20220124232525916"></p>
 <p>将文件指针设为文件尾部后直接调用了 <code>phar_parse_zipfile</code> 函数。</p>
 <p>然后是对 <code>tar</code> 的判断👇</p>
@@ -997,7 +997,7 @@
 <p>这个就比较简单粗暴了，直接判断一次性获取的值是否大于 <code>512</code> 字节，若大于则判断其是否为 <code>tar</code> 文件，若为就直接调用 <code>phar_parse_tarfile</code> 函数。</p>
 <p>最后就到了默认的 <code>phar</code> 归档格式以及上面 <code>gz</code> 和 <code>bz2</code> 解压完后的二次解析内容的归宿了👇</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202201242347056.png" alt="image-20220124234732998"></p>
-<p>先是判断如果内容中存在 <code>token</code> 变量，也就是 <code>__HALT_COMPILER();</code> 就会调用 <code>phar_parse_pharfile</code> 函数。另外要提的是，如果一次循环未找到关键的头部就会一直循环找，这也是为什么默认的 <code>phar</code> 归档格式可以在签名加 <code>脏字符</code> 的原因了。</p>
+<p>先是判断如果内容中存在 <code>token</code> 变量，也就是 <code>__HALT_COMPILER();</code> 就会调用 <code>phar_parse_pharfile</code> 函数。另外要提的是，如果一次循环未找到关键的头部就会一直循环找，这也是为什么默认的 <code>phar</code> 归档格式可以在前面加 <code>脏字符</code> 的原因了。</p>
 <h3 id="格式">- 格式 -</h3>
 <p>由上面的分析就可以得出，实际上对于 <code>phar</code> 触发 <code>反序列化</code> 不止是 <code>phar</code> 归档格式才能够触发，像是以下格式都能够触发👇</p>
 <ul>
