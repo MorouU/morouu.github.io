@@ -253,6 +253,17 @@
           
           
           <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/tags/">
               
               标签
@@ -267,17 +278,6 @@
             <a href="/archive/">
               
               归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              分类
               
               
             </a>
@@ -467,41 +467,35 @@
       <!-- Post Container -->
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>说明 - zip格式说明</h1>
-<hr>
-<h2 id="zip-官方文档">- zip 官方文档 -</h2>
-<p>该文参考了关于官方在 2004.04.26 发布的 6.2.0 版本的zip格式（地址：<a target="_blank" rel="noopener" href="https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.2.0.txt%EF%BC%89">https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.2.0.txt）</a></p>
-<h3 id="摘录">- 摘录 -</h3>
-<p>Overall .ZIP file format:</p>
+        <h1 id="说明-zip格式说明"><a href="#说明-zip格式说明" class="headerlink" title="说明 - zip格式说明"></a>说明 - zip格式说明</h1><hr>
+<h2 id="zip-官方文档"><a href="#zip-官方文档" class="headerlink" title="- zip 官方文档 -"></a>- zip 官方文档 -</h2><p> 该文参考了关于官方在 2004.04.26 发布的 6.2.0 版本的zip格式（地址：<a target="_blank" rel="noopener" href="https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.2.0.txt）">https://pkware.cachefly.net/webdocs/APPNOTE/APPNOTE-6.2.0.txt）</a></p>
+<h3 id="摘录"><a href="#摘录" class="headerlink" title="- 摘录 -"></a>- 摘录 -</h3><p>Overall .ZIP file format:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Overall .ZIP file <span class="built_in">format</span>:</span><br><span class="line"></span><br><span class="line">    [local file header <span class="number">1</span>]</span><br><span class="line">    [file data <span class="number">1</span>]</span><br><span class="line">    [data descriptor <span class="number">1</span>]</span><br><span class="line">    . </span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    [local file header n]</span><br><span class="line">    [file data n]</span><br><span class="line">    [data descriptor n]</span><br><span class="line">    [archive decryption header] (EFS)</span><br><span class="line">    [archive extra data record] (EFS)</span><br><span class="line">    [central directory]</span><br><span class="line">    [zip64 end of central directory record]</span><br><span class="line">    [zip64 end of central directory locator] </span><br><span class="line">    [end of central directory record]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>对应的指代分别为：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[local file header <span class="number">1</span>]	-&gt;	文件标头</span><br><span class="line">[file data <span class="number">1</span>]	-&gt;	文件数据</span><br><span class="line">[data descriptor <span class="number">1</span>]	-&gt;	数据描述符</span><br><span class="line">. </span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">[local file header n]	-&gt;	第n个文件标头</span><br><span class="line">[file data n]	-&gt;	第n个文件数据</span><br><span class="line">[data descriptor n]	-&gt;	第n个数据描述符</span><br><span class="line">[archive decryption header] (EFS)	-&gt;	存档解密头（EFS)</span><br><span class="line">[archive extra data record] (EFS)	-&gt;	存档额外数据记录（EFS）</span><br><span class="line">[central directory]	-&gt;	中心目录</span><br><span class="line">[zip64 end of central directory record]	-&gt;	zip64中心目录记录结尾</span><br><span class="line">[zip64 end of central directory locator] 	-&gt;	zip64中心目录定位器结尾</span><br><span class="line">[end of central directory record]	-&gt;	中心目录记录结尾</span><br></pre></td></tr></table></figure>
 <p>其中，<strong>[local file header]</strong>，<strong>[file data]</strong> 以及 <strong>[data descriptor]</strong> 都是可以重复多次的（理论上说每压缩一个文件，这 3个 片段都会重复一遍）。</p>
 <p>而在咱们的操作系统上，一个简单的 <strong>.zip</strong> 格式实际上为 <strong>[local file header]</strong> + <strong>[file data]</strong> + <strong>[data descriptor]</strong> + <strong>[central directory]</strong> + <strong>[end of central directroy record]</strong>，对没错就是这些：</p>
 <ul>
-<li>
-<p>文件标头</p>
-</li>
-<li>
-<p>文件数据</p>
-</li>
-<li>
-<p>数据描述符（于标识该文件压缩结束，该结构只有在相应的header中通用标记字段的第３位设为１时才会出现，紧接在压缩文件源数据后。这个数据描述符只用在不能对输出的 ZIP 文件进行检索时使用。例如：在一个不能检索的驱动器（如：磁带机上）上的 ZIP 文件中。如果是磁盘上的ZIP文件一般没有这个数据描述符。）</p>
-</li>
-<li>
-<p>中心目录</p>
-</li>
-<li>
-<p>中心目录记录结尾</p>
-</li>
+<li>文件标头</li>
 </ul>
-<p>然后现在来简单的说一下这四个格式呗。</p>
+<ul>
+<li>文件数据</li>
+</ul>
+<ul>
+<li>数据描述符（于标识该文件压缩结束，该结构只有在相应的header中通用标记字段的第３位设为１时才会出现，紧接在压缩文件源数据后。这个数据描述符只用在不能对输出的 ZIP 文件进行检索时使用。例如：在一个不能检索的驱动器（如：磁带机上）上的 ZIP 文件中。如果是磁盘上的ZIP文件一般没有这个数据描述符。）</li>
+</ul>
+<ul>
+<li>中心目录</li>
+</ul>
+<ul>
+<li>中心目录记录结尾</li>
+</ul>
+<p> 然后现在来简单的说一下这四个格式呗。</p>
 <hr>
-<h2 id="简单的-zip-格式">- 简单的 .zip 格式 -</h2>
-<h3 id="local-file-header">- [local file header] -</h3>
-<p>文件标头格式：</p>
+<h2 id="简单的-zip-格式"><a href="#简单的-zip-格式" class="headerlink" title="- 简单的 .zip 格式 -"></a>- 简单的 .zip 格式 -</h2><h3 id="local-file-header"><a href="#local-file-header" class="headerlink" title="- [local file header] -"></a>- [local file header] -</h3><p>文件标头格式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Local file header:</span><br><span class="line"></span><br><span class="line">        local file header signature     <span class="number">4</span> <span class="built_in">bytes</span>  (<span class="number">0x04034b50</span>)	-&gt;	文件标头，占用<span class="number">4</span>个字节 (在winhex中相当于 504B0304)</span><br><span class="line">        version needed to extract       <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	解压所需 `pkware` 最低版本，占用<span class="number">2</span>个字节</span><br><span class="line">        general purpose bit flag        <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	通用位标记符，占用<span class="number">2</span>个字节（一般用作判断是否加密）</span><br><span class="line">        compression method              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	压缩方法，占用<span class="number">2</span>个字节</span><br><span class="line">        last mod file time              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件最后修改时间，占用<span class="number">2</span>个字节（<span class="number">24</span>小时制）</span><br><span class="line">        last mod file date              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件最后修改日期，占用<span class="number">2</span>个字节</span><br><span class="line">        crc-<span class="number">32</span>                          <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	校验码，占用<span class="number">4</span>个字节</span><br><span class="line">        compressed size                 <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	压缩后的大小，占用<span class="number">4</span>个字节</span><br><span class="line">        uncompressed size               <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	压缩前的大小，占用<span class="number">4</span>个字节</span><br><span class="line">        file name length                <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件名长度，占用<span class="number">2</span>个字节</span><br><span class="line">        extra field length              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	扩展区长度，占用<span class="number">2</span>个字节</span><br><span class="line"></span><br><span class="line">        file name (variable size)	-&gt;	存文件名的位置，占用 [文件名长度] 的字节</span><br><span class="line">        extra field (variable size)	-&gt;	存扩展内容的位置，占用 [扩展区长度] 的字节</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>对应表格：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -592,13 +586,13 @@
 </tr>
 </tbody>
 </table>
-<h3 id="file-data">- [file data] -</h3>
-<p>文件数据格式：</p>
+</div>
+<h3 id="file-data"><a href="#file-data" class="headerlink" title="- [file data] -"></a>- [file data] -</h3><p>文件数据格式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Immediately following the local header <span class="keyword">for</span> a file</span><br><span class="line">      <span class="keyword">is</span> the compressed <span class="keyword">or</span> stored data <span class="keyword">for</span> the file. </span><br><span class="line">      The series of [local file header][file data][data</span><br><span class="line">      descriptor] repeats <span class="keyword">for</span> each file <span class="keyword">in</span> the .ZIP archive. </span><br><span class="line">      </span><br><span class="line"><span class="comment"># emmm，姑且当作是文件压缩的内容或存储的内容好了</span></span><br></pre></td></tr></table></figure>
-<h3 id="data-descriptor">- [data descriptor] -</h3>
-<p>数据描述符格式：</p>
+<h3 id="data-descriptor"><a href="#data-descriptor" class="headerlink" title="- [data descriptor] -"></a>- [data descriptor] -</h3><p>数据描述符格式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data descriptor:</span><br><span class="line">    </span><br><span class="line">		data descriptor signature     4<span class="built_in">bytes</span>	(<span class="number">0x08074b50</span>)	-&gt;	数据描述符标头，占用<span class="number">4</span>个字节 (在winhex中相当于 504B0708)</span><br><span class="line">        crc-<span class="number">32</span>                          <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	校验码，占用<span class="number">4</span>个字节</span><br><span class="line">        compressed size                 <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	压缩后的大小，占用<span class="number">4</span>个字节</span><br><span class="line">        uncompressed size               <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	压缩前的大小，占用<span class="number">4</span>个字节</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>对应表格：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -629,10 +623,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="central-directory">- [central directory] -</h3>
-<p>中心目录格式：</p>
+</div>
+<h3 id="central-directory"><a href="#central-directory" class="headerlink" title="- [central directory] -"></a>- [central directory] -</h3><p>中心目录格式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">Central directory structure:</span><br><span class="line"></span><br><span class="line">     [file header <span class="number">1</span>]	-&gt;	这里相当于说，有多少个文件被压缩，就有多少个 [file header]（相对于 [central directory] 来说的标头）</span><br><span class="line">     .</span><br><span class="line">     .</span><br><span class="line">     . </span><br><span class="line">     [file header n]</span><br><span class="line">     [digital signature]	-&gt;	emmm，这应该是<span class="number">6.2</span>新引入的对中心目录结构的压缩加密存储的签名记录吧，不是很清楚，总之简单的<span class="built_in">zip</span>文件是没有这玩意的</span><br><span class="line"></span><br><span class="line">     File header:</span><br><span class="line"></span><br><span class="line">       central file header signature   <span class="number">4</span> <span class="built_in">bytes</span>  (<span class="number">0x02014b50</span>)	-&gt;	中心目录文件标头，占用<span class="number">4</span>个字节（在winhex中相当于 504B0201）</span><br><span class="line">       version made by                 <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	压缩所用的 pkware 版本，占用<span class="number">2</span>个字节</span><br><span class="line">       version needed to extract       <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	解压所需 pkware 的最低版本，占用<span class="number">2</span>个字节</span><br><span class="line">       general purpose bit flag        <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	通用位标记符，占用<span class="number">2</span>个字节（一般用作判断是否加密）</span><br><span class="line">       compression method              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	压缩方法，占用<span class="number">2</span>个字节</span><br><span class="line">       last mod file time              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件最后修改时间，占用<span class="number">2</span>个字节（<span class="number">24</span>小时制）</span><br><span class="line">       last mod file date              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件最后修改日期，占用<span class="number">2</span>个字节</span><br><span class="line">       crc-<span class="number">32</span>                          <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	校验码，占用<span class="number">4</span>个字节</span><br><span class="line">       compressed size                 <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	压缩后的大小，占用<span class="number">4</span>个字节</span><br><span class="line">       uncompressed size               <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	压缩前的大小，占用<span class="number">4</span>个字节</span><br><span class="line">       file name length                <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件名长度，占用<span class="number">2</span>个字节</span><br><span class="line">       extra field length              <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	扩展区长度，占用<span class="number">2</span>个字节</span><br><span class="line">       file comment length             <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件注释长度，占用<span class="number">2</span>个字节</span><br><span class="line">       disk number start               <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	文件开始位置的磁盘编号，占用<span class="number">2</span>个字节</span><br><span class="line">       internal file attributes        <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	内部文件属性，占用<span class="number">2</span>个字节</span><br><span class="line">       external file attributes        <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	外部文件属性，占用<span class="number">2</span>个字节</span><br><span class="line">       relative offset of local header <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	本地文件标头即是[local file header]相对偏移量，占用<span class="number">4</span>个字节</span><br><span class="line"></span><br><span class="line">       file name (variable size)	-&gt;	存文件名的位置，占用 [文件名长度] 的字节</span><br><span class="line">       extra field (variable size)	-&gt;	存扩展内容的位置，占用 [扩展区长度] 的字节</span><br><span class="line">       file comment (variable size)	-&gt;	存文件注释的位置，占用 [文件注释长度] 的字节</span><br><span class="line"></span><br><span class="line">     Digital signature:</span><br><span class="line"></span><br><span class="line">       header signature                <span class="number">4</span> <span class="built_in">bytes</span>  (<span class="number">0x05054b50</span>)	-&gt;	数字签名标头，占用<span class="number">4</span>个字节（在winhex中相当于 504b0505）</span><br><span class="line">       size of data                    <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	数字签名长度，占用<span class="number">2</span>个字节</span><br><span class="line">       signature data (variable size)	-&gt;	存数字签名的位置，占用 [数字签名长度] 的字节</span><br><span class="line"></span><br><span class="line">     With the introduction of the Central Directory Encryption </span><br><span class="line">     feature <span class="keyword">in</span> version <span class="number">6.2</span> of this specification, the Central </span><br><span class="line">     Directory Structure may be stored both compressed <span class="keyword">and</span> encrypted. </span><br><span class="line">     Although <span class="keyword">not</span> required, it <span class="keyword">is</span> assumed when encrypting the</span><br><span class="line">     Central Directory Structure, that it will be compressed</span><br><span class="line">     <span class="keyword">for</span> greater storage efficiency.  Information on the</span><br><span class="line">     Central Directory Encryption feature can be found <span class="keyword">in</span> the section</span><br><span class="line">     describing the Strong Encryption Specification. The Digital </span><br><span class="line">     Signature record will be neither compressed nor encrypted.</span><br></pre></td></tr></table></figure>
 <p>对应表格：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -765,10 +760,11 @@
 </tr>
 </tbody>
 </table>
-<h3 id="end-of-central-directroy-record">- [end of central directroy record] -</h3>
-<p>中心目录记录结尾格式：</p>
+</div>
+<h3 id="end-of-central-directroy-record"><a href="#end-of-central-directroy-record" class="headerlink" title="- [end of central directroy record] -"></a>- [end of central directroy record] -</h3><p>中心目录记录结尾格式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">End of central directory record:</span><br><span class="line"></span><br><span class="line">        end of central <span class="built_in">dir</span> signature    <span class="number">4</span> <span class="built_in">bytes</span>  (<span class="number">0x06054b50</span>)	-&gt;	中心目录结尾标头，占用<span class="number">4</span>个字节（在winhex中相当于 504B0605）</span><br><span class="line">        number of this disk             <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	当前的磁盘号，占用<span class="number">2</span>个字节</span><br><span class="line">        </span><br><span class="line">        number of the disk <span class="keyword">with</span> the</span><br><span class="line">        start of the central directory  <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	中心目录开始位置的磁盘号，占用<span class="number">2</span>个字节</span><br><span class="line">        </span><br><span class="line">        total number of entries <span class="keyword">in</span> the</span><br><span class="line">        central directory on this disk  <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	该磁盘上所记录的中心目录数量，占用<span class="number">2</span>个字节</span><br><span class="line">        </span><br><span class="line">        total number of entries <span class="keyword">in</span></span><br><span class="line">        the central directory           <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	中心目录实体总数，占用<span class="number">2</span>个字节</span><br><span class="line">        </span><br><span class="line">        size of the central directory   <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	中心目录的大小，占用<span class="number">4</span>个字节</span><br><span class="line">        </span><br><span class="line">        offset of start of central</span><br><span class="line">        directory <span class="keyword">with</span> respect to</span><br><span class="line">        the starting disk number        <span class="number">4</span> <span class="built_in">bytes</span>	-&gt;	中心目录起始位置相对于起始磁盘号的偏移量，占用<span class="number">4</span>个字节</span><br><span class="line">        </span><br><span class="line">        .ZIP file comment length        <span class="number">2</span> <span class="built_in">bytes</span>	-&gt;	.<span class="built_in">zip</span>文件注释长度，占用<span class="number">2</span>个字节</span><br><span class="line">        .ZIP file comment       (variable size)	-&gt;	存.<span class="built_in">zip</span>文件注释的位置，占用 [.<span class="built_in">zip</span>文件注释长度] 的字节</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
 <p>对应表格：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -835,15 +831,16 @@
 </tr>
 </tbody>
 </table>
-<p>（表格摘自：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a200710716/article/details/51644421%EF%BC%89">https://blog.csdn.net/a200710716/article/details/51644421）</a></p>
+</div>
+<p> （表格摘自：<a target="_blank" rel="noopener" href="https://blog.csdn.net/a200710716/article/details/51644421）">https://blog.csdn.net/a200710716/article/details/51644421）</a></p>
 <hr>
-<h2 id="简单的实例">- 简单的实例 -</h2>
-<p>压缩 <code>yyds.txt</code> 以及 <code>trytry.txt</code>（未加密）：</p>
+<h2 id="简单的实例"><a href="#简单的实例" class="headerlink" title="- 简单的实例 -"></a>- 简单的实例 -</h2><p>压缩 <code>yyds.txt</code> 以及 <code>trytry.txt</code>（未加密）：</p>
 <p>文件内容如下图：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112271718207.png" alt="image-20201226125903450.png"></p>
 <p>将这两个文件压缩好了，然后使用 010 edior 来查看，得到如下图：</p>
 <p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112271718579.png" alt="image-20201226130222027.png"></p>
-<p>那么，用简单的表格来分析一下：</p>
+<p> 那么，用简单的表格来分析一下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1622,10 +1619,10 @@
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
-<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
+</div>
 
 
         <hr>
@@ -1750,7 +1747,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">说明 - zip格式说明</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#zip-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- zip 官方文档 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%91%98%E5%BD%95"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">- 摘录 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84-zip-%E6%A0%BC%E5%BC%8F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 简单的 .zip 格式 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#local-file-header"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- [local file header] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#file-data"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">- [file data] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#data-descriptor"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">- [data descriptor] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#central-directory"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">- [central directory] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#end-of-central-directroy-record"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">- [end of central directroy record] -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 简单的实例 -</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E8%AF%B4%E6%98%8E-zip%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">说明 - zip格式说明</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#zip-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">- zip 官方文档 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%91%98%E5%BD%95"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">- 摘录 -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84-zip-%E6%A0%BC%E5%BC%8F"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">- 简单的 .zip 格式 -</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#local-file-header"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">- [local file header] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#file-data"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">- [file data] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#data-descriptor"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">- [data descriptor] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#central-directory"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">- [central directory] -</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#end-of-central-directroy-record"><span class="toc-nav-number">1.2.5.</span> <span class="toc-nav-text">- [end of central directroy record] -</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">- 简单的实例 -</span></a></li></ol></li></ol>
         
         </div>
       </aside>
