@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-V3C5GQ73TE"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-V3C5GQ73TE');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?x";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Morouu的大狗窝 ●&#39;◡&#39;●"/>
+  <meta name="keyword" content="Morouu,morouu"/>
+  <link rel="shortcut icon" href="//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302341051.png"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="https://morblog.cc/posts/3773534811/">
+  <title>
+    
+      学习笔记 - 关于非负大整数计算的一些想法 - Morouu的大狗窝 ●&#39;◡&#39;●
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'dmantick/morcruiser'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Morouu的大狗窝 ●&#39;◡&#39;●</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
+      --intro-header-background-image-url-post: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201604215.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201604215.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302332090.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201604215.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201604215.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201604215.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_fixed,w_1920,h_1080'); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('//morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202112302343273.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#程序设计" title="程序设计">程序设计</a>
+              
+              <a class="tag" href="/tags/#算法" title="算法">算法</a>
+              
+            </div>
+            <h1>学习笔记 - 关于非负大整数计算的一些想法</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by morouu on
+              2022-05-20
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count" >47</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">11k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container" style="margin-left: 10%;">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h1 id="关于大非负整数计算的一些想法"><a href="#关于大非负整数计算的一些想法" class="headerlink" title="关于大非负整数计算的一些想法"></a>关于大非负整数计算的一些想法</h1><hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>就是说，关于吾等人在看 《算法分析与设计》 时坐大牢，随便找点其他的乐子当作兴趣玩玩了。不得说，现在个人的感受是，早知道当年还不如选算法，搞安全搞得头疼，说到底就是搞各种测试啥的，搞算法搞得头秃（起码头不疼 (●ˇ∀ˇ●)。</p>
+<p><del><strong>主要还是卷不动了</strong></del></p>
+<p>不妨就当作一些奇怪的想法，当作随笔写写看了。</p>
+<hr>
+<h2 id="绪论（瞎扯）"><a href="#绪论（瞎扯）" class="headerlink" title="绪论（瞎扯）"></a>绪论（瞎扯）</h2><p>一些简单数值运算实例，比方说加法、乘法、幂次乘法啥的，其实归根到底还是对加法的灵活运用，个人的感觉（大概？）。这就像是说像一个很简单代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">bigInt N;</span><br><span class="line">a = a + N;</span><br></pre></td></tr></table></figure>
+<p>以上这样看起来似乎非常非常的简单，但实际上如果再往深一层考虑的话是可以扯出很多东西来的。就这个 <code>int a = 1</code> 而言，显然是限定了这个变量 <code>a</code> 是一个 <code>int</code> 型，也就是熟知的数据类型。</p>
+<p>在 <strong>数据结构</strong> 中对高级语言的数据类型的解释是 <strong>一组性质相同的值的集合和定义在该值集上的一组方法的总称</strong> 。从中可知，这个 <strong>值集</strong> 是有范围的 ，而且根据操作系统而定。一般来说，如果是大于等于 <code>32</code> 位系统， <code>int</code> 类型的大小为 <code>4</code> 个字节；对于小于 <code>32</code> 位系统， <code>int</code> 类型的大小为 <code>2</code> 个字节（这也是为啥有些C教材里面的关于 <code>int</code> 类型的答案是 <code>2</code> 字节长度）。</p>
+<p>当然，就目前来说吾等人的想法并不想深究这个玩意，只是表示假设想写的所有内容都是以 <code>64</code> 位为例（相当于指针大小为 <code>8</code> 位大小，可以用 <code>unsigned long long int</code> 来强转指针的歪门邪道 <del><strong>随便说说</strong></del>）。另外下述的所有 <code>long</code> 实际上和 <code>long int</code> 以及 <code>int</code> 一致的，都是 <code>4</code> 个字节，而 <code>long long int</code> 是 <code>8</code> 个字节。回归来说，上面的 <code>int a</code> 的最大大小为 <code>4</code> 个字节，而又由于这是一个有符号数，则第 <code>1</code> 位用来表示符号，这也就是其值集为整数 <code>-2^31 ~ 2^31-1</code> 的原因， 这也就是什么 <strong>补码</strong> <strong>反码</strong> 的内容了，比方说 <strong>负数值(原码) = 补码 - 1 AND 取反</strong> ，当然，无论如何，符号位永远不变！</p>
+<p>那么瞎扯完毕，对于 <code>int a</code> 运算的值的有效计算位数为 <code>4 * 8 - 1(符号位) = 31</code> 位，凡是无论多大的整数 <code>N</code>（位数很高的整数）都会自然而然的强行在化为 <code>int a</code> 类型的值集范围（假设看作强转成与 <code>int</code> 位数相同的类型）内进行运算，并且当 <code>N</code> 的位数 <code>bit(N)</code> 有 <code>bit(N) &gt;= 8</code> 时（不包括 <code>N</code> 的符号位）那么 <code>a</code> 的符号位也会被计算到，这实际上可以人为地将 <code>N</code> 的低 <code>8</code> 位看成 <code>unsigned int</code> 类型，所以说当所要计算的数足够大时，会改变原有数值如 <code>a</code> 的符号（溢出），这是不可接受的。</p>
+<p>正因为高级程序设计语言所提供的 <strong>数据类型</strong> 在很多时候无法满足一些 “大宇宙” 问题（如某某曾对有关如何对全宇宙的所有事物进行排序时采用归并排序的荒谬思路），说简单点比如关于素数 <code>P</code> 的判定充要条件</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201610523.png" alt="image-20220520161057447"></p>
+<p>当 <code>P</code> 足够大时，阶乘的计算量可想而知（超过常规 <strong>数据类型</strong> 所能表示的大小）；亦或是需要求一些比较大，但不完全大的数值，比如某些毫无意义的值 <code>520 ^ 520</code> 啥的，自定义一个 <strong>大整数</strong> 是很有必要的！</p>
+<hr>
+<h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><h3 id="简单加法"><a href="#简单加法" class="headerlink" title="简单加法"></a>简单加法</h3><p>先从最最简单的加法运算来进行分析罢。</p>
+<p>对于一个数，如先做以下赋值：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201611277.png" alt="image-20220520161111203"></p>
+<p>这对所有人（九漏🐟除外）来说如果计算以下式子：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201611391.png" alt="image-20220520161124313"></p>
+<p>简直就是随意随意呀。这里之所以能这么快得出答案是因为脑子已经习惯了 <code>10</code> 进制的计算（有志者或大佬除外），并且在计算机中对已给定的 <strong>数据类型</strong> 也有相关明确的计算规则，不需要人为的进行计算规则的实现。</p>
+<p>但是！上面已经说了，高级程序设计语言给定的 <strong>数据类型</strong> 还不够！现在所给的 <strong>数据类型</strong> （也就是<code>Integer</code> ）并不是高级程序设计语言已经给定好的 <strong>数据类型</strong> ，而是一个能表示很大很大（<del><strong>位数小于内存大小的位数</strong></del>）的数值的 <strong>数据类型</strong>  ，也就是说这是一个自定义的、只能用以存储人为给定数值的 <strong>数据类型</strong> ，那就必须得人为地为其实现计算规则。</p>
+<p>为此，由于最小存储单位为 <strong>位</strong> ，这里以 <strong>位运算</strong> 的角度来分析一下上述式子进行计算的过程，首先是 <code>A = 10</code> ，从 <strong>二进制</strong> 角度来看，其值显然为 <code>A = 1010</code> ；而 <code>B = 1</code> 。对 <code>A</code> 和 <code>B</code> 做求和运算，即 <code>A + B</code> 实际上也就是：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201611649.png" alt="image-20220520161141583"></p>
+<p>对于 <code>Σ = A + B = 1011</code> 的结果简单说来就是，<strong>低位对齐，各位作和</strong> ，由于并没有满足进位，再来看存在进位的例子 <code>A + C</code> ，也就是</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201611878.png" alt="image-20220520161155808"></p>
+<p> 此时，还是先 <strong>低位对齐</strong> ，然后进行 <strong>各位作和</strong> 运算，设进位标识符为 <code>F</code>：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201612399.png" alt="image-20220520161230315"></p>
+<p>通过对上述部分的分析，不难看出和 <code>Σ</code> 第 <code>n</code> 位数的值符合以下的规则：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201612834.png" alt="image-20220520161244739"></p>
+<p>总结来说可以看作当且仅当 <code>(A[n] + C[n] + F) % 2 = 1</code> 时候 <code>Σ[n] = 1</code> ，而 <code>(A[n] + C[n] + F) % 2 = 0</code> 时候 <code>Σ[n] = 0</code> 。</p>
+<p>因此可以简化为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201612098.png" alt="image-20220520161258020"></p>
+<p>至于关于 <code>F</code> 的值，若设 <code>pi[n]</code> 为变量 <code>i</code> 第 <code>n</code> 位计算前的初值，且 <code>pF</code> 为 <code>F</code> 当前的值，也不难看出，当有 <code>2</code> 个数值参与运算时（两个数的位数同长）符合以下规则：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201613172.png" alt="image-20220520161311079"></p>
+<p>显然，若 <code>pF = 0</code> ，只有当 <code>pA[n]</code> 和 <code>pC[n]</code> 都满足 <code>pA[n] = pC[n] = 1</code> 时，<code>F = 1</code>，而对 <code>pF = 1</code> 只要 <code>pA[n] = 1</code> 或 <code>pB[n] = 1</code> 即可使得 <code>F = 1</code> 。</p>
+<p>简而言之，可以写成</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201613264.png" alt="image-20220520161322191"></p>
+<p>如果其中一个数值（如设为 <code>A</code>）已算完，但此时 <code>F = 1</code> ，需要对另一个数（如设为 <code>C</code>）进行补位，则满足以下规则：</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201613276.png" alt="image-20220520161335208"></p>
+<p>以及</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201613686.png" alt="image-20220520161348623"></p>
+<p>由于作简单的加算至多加到原数的 <code>2</code> 倍，因而以二进制来说，最终结果的 <strong>位</strong> 长度至多增加 <code>1</code> 位，也就是说，若设两个数 <code>P</code> 和 <code>Q</code> ，则 <code>P + Q</code> 的和的二进制 <strong>位</strong> 最大长度为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201613127.png" alt="image-20220520161357067"></p>
+<p>由此可知，如果由上述的规则将 <code>Integer</code> 类型进行加法运算，可以先将其转换为二进制，然后再进行 <strong>低位对齐，各位作和</strong> ，同时根据进位标识符 <code>F</code> 进行补位，易知，在最差的情况下 <strong>时间复杂度</strong> 为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201614933.png" alt="image-20220520161410866"></p>
+<p>这是什么概念呢，如果 <code>P</code> 和 <code>Q</code> 当作十进制数来看，<strong>时间复杂度</strong> 相当于</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201614267.png" alt="image-20220520161427207"></p>
+<p>这么一看，效率还是比较可观的。</p>
+<h3 id="简单乘法"><a href="#简单乘法" class="headerlink" title="简单乘法"></a>简单乘法</h3><p>说到乘法，以小学的思维来看若取 <code>R = P * Q</code> ，则可以把看作 <code>R</code> 看作是 <code>Q</code> 个 <code>P</code> （或 <code>P</code> 个 <code>Q</code> ）相加的结果。这么看，怎么说呢，能用，但不完全够用（<del><strong>用吾等人师傅的话来说就是，所以其他人和其他人的使用者也就只能处在同一水平的圈子里了</strong></del>）。</p>
+<p>假设以上面所述的方法来计算乘法，而再使用上一小节所述的加法实现法来对乘法进行实现，在不考虑效率，而只求结果的情况下，确实可行，但弊端也很明显——计算过程过于简单（搭积木水平）了。在最坏的情况下，无论所算的数的值是如何，若设</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201614246.png" alt="image-20220520161444179"></p>
+<p>在最坏情况下，<strong>时间复杂度</strong> 可以达到</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201614096.png" alt="image-20220520161456033"></p>
+<p>其中 <code>β</code> 为修正值，因为每次做加法运算都有可能出现进位的情况，而 <code>M</code> 和 <code>N</code> 的值只与最大数值本身有关，这是很不好的结果。</p>
+<p>那么，若以初中的思维来看一下有关数 <code>R = P * Q</code> 的计算过程，众所周知，乘法是符合 <strong>结合律</strong> 和 <strong>分配律</strong> 的，不妨先以 <strong>结合律</strong> 的思想来做一个简单讨论。</p>
+<p>此时若设对任意正整数 <code>K &gt; 0</code> ，有 <code>R = P * (K * Q/K)</code> ，也可看作</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201615261.png" alt="image-20220520161510195"></p>
+<p>设</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201615110.png" alt="image-20220520161522045"></p>
+<p>还可看作</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201653176.png" alt="image-20220520165312119"></p>
+<p>或</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201615418.png" alt="image-20220520161544358"></p>
+<p>此时也就可以人为地对通过对 <code>K</code> 值的构造来找到特定的、能使得对 <code>P</code> 和 <code>Q</code> 有利（或只对 <code>P</code> 或 <code>Q</code> 有利，或相比直接计算更效率）的情况。</p>
+<p>但是，由于 <code>P</code> 和 <code>Q</code> 都同为大整数，而上述式子所述的 <code>K</code> 值显然得满足为 <code>Q</code> 的非平凡因子，否则得到的结果会出现浮点数或无意义；同时，即便是找到了对应的 <code>K</code> 值，在计算 <code>K/Q</code> 时仍需要解决另一大与乘法类似的问题——除法（若将除法看作是乘倒数），这有点就像是进入了一个递归；并且若以上述方式作为分解，并不一定能够降低过程中进行加法运算的数量，甚至可能会比直接计算更多。</p>
+<p>当然，可能对 <strong>结合律</strong> 应该也是有解的，就是说吾等人才疏学浅，就先不拓展了。</p>
+<p>若再以 <strong>分配律</strong> 进行讨论，不妨将 <code>R = P * Q</code> 中的 <code>Q</code> 表示为 <code>Q = K1 + K2 + K3 ... + Kn</code>，则原式有</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201616665.png" alt="image-20220520161624604"></p>
+<p>再次进行分解还可以看作是</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201616805.png" alt="image-20220520161635746"></p>
+<p>如果就此来看，似乎是比 <strong>结合律</strong> 更复杂了，且加法运算并没有得到改善。但是其中的 <code>K1 K2 K3 ... Kn</code> 如果从搞安全的角度看来，可以说成是 ”部分完全可控“（存在一种构造序列使得在部分个体满足一定条件时，其他部分完全可控） 的，既然是 ”部分完全可控“ 的，不妨以二进制的思想再来进行考虑。</p>
+<p>显而易见，任何该 <code>Integer</code> 类型值集内数值（若计算结果为非负整数）都是可以使用二进制来表示，若对 <code>Q</code> 进行二进制分解，可得</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201616574.png" alt="image-20220520161647506"></p>
+<p>其中使得 <code>m = n</code> ，再将 <code>Ci</code> (<code>i = 1,2,3, ... m</code>)  和  <code>Ki</code> (<code>i = 1,2,3, ... n</code>) 进行切合，带入上式，可得</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201617325.png" alt="image-20220520161706252"></p>
+<p>再进行简化成</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201617004.png" alt="image-20220520161732944"></p>
+<p>此时不妨将 <code>R</code> 看作一个 <strong>复合函数</strong> ，如设</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201617799.png" alt="image-20220520161748738"></p>
+<p>其中 <code>P</code> 为非负整数，<code>Ci</code> 为 <code>i = 1,2,3, ... m</code> 的给定序列。</p>
+<p>现在先对 <code>m</code> 值进行分析，由于这个 <code>Ci</code> 序列由 <code>Q</code> 分解得到，若以集合 <code>S</code> 来表示 <code>Ci</code> ，则</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201618255.png" alt="image-20220520161802188"></p>
+<p>即，求集合 <code>S</code> 的值只需要对 <code>Q</code> 进行移位运算（如向右移动 <code>j</code> 位），若其第 <code>1</code> 位值为 <code>1</code> 则称 <code>(2^Cj)</code> 为构成 <code>Q</code> 的一部分。显然移位运算和与运算属于 <strong>位运算</strong> ，是很效率的。其次，由于 <code>Q</code> 在一般情况下二进制表示是存在 <code>0</code> 的，也就是说，对 <code>m</code> 的取值，有</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201618598.png" alt="image-20220520161813539"></p>
+<p>其中 <code>|S|</code> 为集合 <code>S</code> 的元素数量，这样就使得在计算总和时进行加法运算的数量有可能得以减少。再次，对于 <code>Ci</code> 序列，不难看出总有 <code>Ca &lt; Cb</code> 当且仅当 <code>a &lt; b</code> ，这就意味着若从 <code>Q</code> 的最高位开始求集合 <code>S</code> ，所得到的结果是 <strong>有序</strong> 的（降序），而对于以二进制表示的计算形如 <code>(2^Ci)*P</code> 实际上可以看作是 <code>P</code> 的二进制表示向左移动 <code>Ci</code> 位；若结合 <strong>有序</strong> 集合 <code>S</code> ，那么设</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201618294.png" alt="image-20220520161833235"></p>
+<p>则后一个结果 <code>Ca</code> 就能由前一个结果 <code>Cb</code> 通过向右移动 <code>b - a</code> 位得到。即对集合 <code>S</code> 内的所有</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201618495.png" alt="image-20220520161845423"></p>
+<p>只需在通过 <code>P</code> 由高到低移位得到第一个（设为 <code>Cb</code>）结果后，其直接后继的值（设为 <code>Ca</code>）可通过其直接前驱 <code>Cb</code> 移动 <code>b - a</code> 位得到，在最坏情况下，构造该集合 <code>S</code> 的 <strong>时间复杂度</strong> 为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201618714.png" alt="image-20220520161856659"></p>
+<p>同时，在 <strong>复合函数</strong> <code>R(Ci,P)</code> 中，若将其看成一个多项式，则每一个 <code>Ci</code> 都对应一个子式</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201619347.png" alt="image-20220520161907287"></p>
+<p>则在求该函数的值时在最后会对这些子项进行一个求和，求和的数量为 <code>m</code> 。</p>
+<p>再对每一个子式进行分析，显而易见，对任一</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201619868.png" alt="image-20220520161918812"></p>
+<p>进行求和时，若代入上一小结所述的方法，则该对子项加法运算时，在最坏的情况下，计算这对子项和的 <strong>时间复杂度</strong> 为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201619731.png" alt="image-20220520161928672"></p>
+<p>其实就是会多计算 <code>Ca</code> 或 <code>Cb</code>的值，因为在集合 <code>S</code> 中无相同的值，即 <code>Ca != Cb</code> ，因此在进行加法运算时，按照 <strong>低位对齐，各位作和</strong> 的规则，最坏的情况是指计算过程进 <code>1</code> 位的情况，此时所进行计算的 <strong>位</strong> 长度就为 <code>Max&#123;Ca,Cb&#125; + bit(P) + 1</code> 。</p>
+<p>那么由此可以得出，若在最坏的情况下，整个乘法运算所需要的 <strong>时间复杂度</strong> 约为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201619136.png" alt="image-20220520161948079"></p>
+<p>或</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201620350.png" alt="image-20220520162002284"></p>
+<p>即主要还是和 <code>Q</code> 有关，且主要影响的是在集合 <code>S</code> 的构成部分。如果使用该方法，实际运用时可以考虑分解较小的乘数。</p>
+<h3 id="幂次乘法"><a href="#幂次乘法" class="headerlink" title="幂次乘法"></a>幂次乘法</h3><p>相较于简单加法和简单乘法，对幂次乘法来说，更像是在简单乘法的基础上再做乘法。不妨还是先以小学的角度来看有关幂次乘法的计算，如给定一个 <code>R = P^Q</code>自然而然地想到，相当于 <code>Q</code> 个 <code>P</code> （或 <code>P</code> 个 <code>Q</code>）进行相乘得到的结果。而乘法运算在如此角度来看，原型为多个数值的累加，以此再进行分解，将第 <code>i</code> 趟 <code>P</code>  自乘得到的结果记为 <code>L&#123;i&#125;</code> ，则可以得到递推式</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201620324.png" alt="image-20220520162013259"></p>
+<p>即</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201620026.png" alt="image-20220520162026965"></p>
+<p>若以这种思想进行计算，每一趟乘法都需要做 <code>P</code> 次的加法运算，设 <code>U&#123;i&#125;&#123;j&#125;</code> 为在做第 <code>j</code> 次加法运算时第 <code>j-1</code>次得到的和，在最坏的情况下，第 <code>i</code> 趟乘法所作的加法运算的 <strong>时间复杂度</strong> 为 </p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201620940.png" alt="image-20220520162058866"></p>
+<p>由于对第 <code>i</code> 趟乘法中 <code>L&#123;i&#125;</code> 的每一次加法运算不可能每一次都会进位，所以 <code>ɑ</code> 仅作为一个修正值看待。</p>
+<p>不难得出总的 <strong>时间复杂度</strong> 为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201621728.png" alt="image-20220520162112671"></p>
+<p>或</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201621877.png" alt="image-20220520162124801"></p>
+<p>不妨先对 <code>bit(L&#123;i&#125;)</code> 进行分析，由于对任意</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201621386.png" alt="image-20220520162145317"></p>
+<p>显然总有</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201621030.png" alt="image-20220520162155974"></p>
+<p>而对任意 <code>bit(L&#123;i&#125;)</code> 存在</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201622524.png" alt="image-20220520162211462"></p>
+<p>若以最坏情况来看，即对每一个 <code>bit(L&#123;i+1&#125;) = bit(L&#123;i&#125;) + bit(P)</code> ，这就类似于等差数列求和了，<strong>时间复杂度</strong> 还可表示为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201622017.png" alt="image-20220520162227962"></p>
+<p>其中，再将对第 <code>i</code> 趟乘法求和过程进行适当简化，不妨设 <code>M[i]</code> 为第 <code>i</code> 趟求和过程中对 <strong>位</strong> 的操作数，可由</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201622995.png" alt="image-20220520162238938"></p>
+<p>得</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201622588.png" alt="image-20220520162256519"></p>
+<p>易知</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201623688.png" alt="image-20220520162320627"></p>
+<p>那么</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201623741.png" alt="image-20220520162333677"></p>
+<p>整理可得</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201623325.png" alt="image-20220520162348263"></p>
+<p>而</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201623217.png" alt="image-20220520162358165"></p>
+<p>可见，如果直接按加法进行运算，在最坏的情况下，其 <strong>时间复杂度</strong> 是很大的，且受 <strong>位</strong> 影响不如值本身大，这对以二进制表示法来进行计算是很糟糕的。</p>
+<p>若以上一小节所述的乘法来进行运算，则可以设第 <code>i</code> 趟 <code>P</code>  自乘得到的结果记为 <code>F&#123;i&#125;</code> ，得到递推式</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201624530.png" alt="image-20220520162410473"></p>
+<p>做一下简单的代入，很容易得到 <strong>时间复杂度</strong> </p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201624651.png" alt="image-20220520162425594"></p>
+<p>或</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201624837.png" alt="image-20220520162440777"></p>
+<p>显然，后者为较佳的选择，不妨再对后者进行讨论。</p>
+<p>由上面已知，对于 <code>bit(F&#123;i+1&#125;)</code> 最坏情况下为 <code>bit(F&#123;i+1&#125;) = bit(F&#123;i&#125;) + bit(P)</code> ，那么在以后者为前提，最坏情况下，还可以写成</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201624683.png" alt="image-20220520162453627"></p>
+<p>化简可得</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201625444.png" alt="image-20220520162509388"></p>
+<p>由此可见，起决定性作用的关键还是在 <code>Q</code> 上，因此若想加快幂次乘法的效率，就得从 <code>Q</code> 的优化入手。</p>
+<hr>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="求幂算法"><a href="#求幂算法" class="headerlink" title="求幂算法"></a>求幂算法</h3><p>由上一章已经得出，若想对幂次乘法的计算做优化，就必须优化 <code>Q</code> ，而 <code>Q</code> 实际上在上一章的定义中为递推式的长度，也可以称为连乘的次数。</p>
+<p>不妨先设 <code>E</code> 为求 <code>R = P^Q</code> 时所作的乘法数量，则此时根据前面所述的内容，可知 <code>E = Q</code>，用伪代码可以做以下表示</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">pow</span><span class="params">(Integer P, Integer Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(P == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	Integer R = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>([<span class="number">1.</span>.Q])&#123;</span><br><span class="line">		R = R * P;		</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> R;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>显然这是比较通俗易懂的思想，但并没有能对 <code>E</code> 做到优化，可以以此为基础继续向下讨论。</p>
+<p>首先，不难注意到 <code>Q</code> 作为幂次也是属于非负整数值集，且对于幂次的运算由于底数 <code>P</code>  相同，也就可以看作是对总幂次 <code>Q</code> 的加法链分解。当然最小加法链属于 <strong>NP完全问题</strong> ，可求但代价有些大，不如用其他类似的、效果近似的方式使得让 <code>E</code> 尽可能的小于 <code>Q</code> ，这样就将幂次多连乘的问题分解成了求 <code>Q</code> 的次优加法链的问题。</p>
+<p>现在来讨论第一种方案，对 <code>Q</code> 的值做一下分解</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201625897.png" alt="image-20220520162525845"></p>
+<p>其中对任意</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201625889.png" alt="image-20220520162537830"></p>
+<p>若设 <code>R&#123;i&#125;</code> 为第 <code>i</code> 趟乘法得到的值，则确保了</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201625949.png" alt="image-20220520162548894"></p>
+<p>即对当前所求的结果，总能从对前一个结果做平方得到。同时，为确保连续性，<code>K1</code> 的值必须为 <code>1</code> ，用以表示 <code>P</code> 的初值。在最理想的情况下，也就是恰好存在这样一个关于 <code>K</code> 的序列，则做的乘数 <code>E</code> 恰好就为 <code>bit(Q)</code> 。</p>
+<p>但并非所有数都能分解成这样的理想 <code>K</code> 序列，最简单的例子，如</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201626624.png" alt="image-20220520162603571"></p>
+<p>不难看出，在对 <code>12</code> 分解过程中，存在后一个 <code>Kj ≠ 2*Ki</code> 的情况，为此，就不能够简单的将这一步骤的结果以上一步结果的平方来表示了。</p>
+<p>如果对 <code>K</code> 序列的理想值进行分析，显然可以看作是一个包含 <code>1</code> 的非负偶数集，即当存在 <code>Kj ≠ 2*Ki</code> 情况时，<code>Kj</code> 必然是非负偶数集的补集， <code>Kj</code> 为一个正奇数。应对这类情况的正确做法是，若当前期望得到的 <code>Kj</code> 值为奇数时，而此时上一步得到的 <code>2*Ki</code> 与期望值得到的 <code>Kj</code> 不符时，需要 <code>2*Ki</code> 补 “1” ，也就是将上一步结果与 <code>P</code> 做乘法运算，以弥补差值。</p>
+<p>这样也就可以得到关于新的 <code>K</code> 的递归式</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201626782.png" alt="image-20220520162616718"></p>
+<p>还可以得到关于 <code>R&#123;i&#125;</code> 的递推式</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201626136.png" alt="image-20220520162630076"></p>
+<p>根据上述递推式，可写出以下递归函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">pow</span><span class="params">(Integer P, Integer Q)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(Q == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(Q == <span class="number">1</span>) <span class="keyword">return</span> P;</span><br><span class="line">    </span><br><span class="line">    Integer R = <span class="built_in">pow</span>(P,Q &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    R = R * R;</span><br><span class="line">    <span class="keyword">if</span>(Q % <span class="number">2</span> == <span class="number">1</span>)&#123;</span><br><span class="line">        R = R * P;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> R;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中递归段 <code>Q &gt;&gt; 1</code> 相当于 <code>Q / 2</code> (向下取整)，根据当前分解得到的的 <code>K</code> 值是否为奇数决定在最后是否再将上一步骤的结果乘上 <code>P</code> (补 “1”) 。</p>
+<p>显然，该算法需要的 <strong>空间复杂度</strong> 为递归最大层数</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201626492.png" alt="image-20220520162645440"></p>
+<p>若将做乘法运算的次数 <code>E</code> 看作 <strong>时间复杂度</strong> 的计算单位，则 <strong>时间复杂度</strong> 为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201626737.png" alt="image-20220520162657684"></p>
+<p>其中， <code>C</code> 为 <code>K</code> 序列中奇数的数量。</p>
+<p>若再对该算法进行讨论，易知，这是一个非尾递归函数，而一般来说，这类递归函数是可以用通过栈来模拟等价成非递归的递推形式。但如果使用栈来进行模拟意义不大，显然栈的深度和该算法递归时的 <strong>空间复杂度</strong> 一致，这样其 <strong>空间复杂度</strong> 并没有得到改善。</p>
+<p>那么不妨对栈内所需存储的数据内容进行分析，由于每次调用内层递归时，<code>Q</code> 的值都会时原来的二分之一，即可看作向右移动 <code>1</code> 位，而判断是否为奇数看的是当前层 <code>Q</code> 二进制表示的第 <code>1</code> 位是否为 <code>1</code> 。也就是说，若忽略对当 <code>Q</code> 为奇数时的处理，则该算法可以作为尾递归来看待，此时，栈的作用就很明显了，是用以记录当前层 <code>Q</code> 的值是否为奇数的判断，以便在结束内层递归进行子问题组合时决定当前层是否乘上 <code>P</code> (补 “1”)。</p>
+<p>实际上，若设 <code>i</code> 为算法的第 <code>i</code> 层递归调用（若将首次调用看作是第 <code>1</code> 层），则将当前层 <code>Q</code>的值即可看作是 <code>Ki</code> ，且满足</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201627891.png" alt="image-20220520162713831"></p>
+<p>此时也就可以通过将 <code>Q</code> 通过向右移位 <code>i</code> 层来获取当前层的 <code>Ki</code> 值，可写出以下递推函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Integer <span class="title">pow2</span><span class="params">(Integer P, Integer Q)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(Q == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	Integer len = <span class="number">0</span>;</span><br><span class="line">	Integer R = P;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(Integer i = Q; i &gt; <span class="number">0</span>; len ++,i = i &gt;&gt; <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(len = len - <span class="number">2</span>; len &gt;= <span class="number">0</span>; len --)&#123;</span><br><span class="line">		R = R * ((Q &gt;&gt; len)&amp;<span class="number">1</span> ? R * P : R);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">return</span> R;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这个算法中多了一个 <code>len</code> 变量，用以记录 <code>Q</code> 值二进制表示的 <strong>位</strong> 的长度，然后通过对<code>Q</code> 和 <code>len</code> 的相关计算来模拟上述递归算法中第 <code>len - 1</code> 层递归的情况，以便决定是否乘上 <code>P</code> (补 “1”)。</p>
+<p>总的来说相比递归算法其 <strong>空间复杂度</strong> 降低到了</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201627471.png" alt="image-20220520162727419"></p>
+<p>但相对的，需要知道 <code>Q</code> 值二进制表示的 <strong>位</strong> 的长度，多了一层计算，则一般 <strong>时间按复杂度</strong> 为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201627942.png" alt="image-20220520162738882"></p>
+<p>若设 <code>C</code> 为序列 <code>K</code> 中奇数的数量，显然有 <code>C ≤ bit(Q)</code>，不妨取 <code>C = bit(Q)/2</code> ，则乘法运算的次数 <code>E</code> 可表示为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201627457.png" alt="image-20220520162754406"></p>
+<p>即在对幂次为 <code>Q</code> 的求幂算法中，只需要做 <code>E</code> 次乘法，这相较于直接做连乘是有很大改进的。</p>
+<h3 id="猜想"><a href="#猜想" class="headerlink" title="猜想"></a>猜想</h3><p>在上一小节中，是将 <code>Q</code> 分解成了关于 <code>2*Kn</code> 的递归式，这样总可以找到</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201628572.png" alt="image-20220520162804520"></p>
+<p>即在 <code>K</code> 序列中，任何值不相等且是 <strong>有序</strong> 的，若设 <code>Ki</code> 是 <code>Kj</code> 的直接前驱，当知道了 <code>Ki</code> 的值，通过很简单的计算就能得到 <code>Kj</code> 的值。</p>
+<p>但从另一个角度来看，由于 <code>Q</code> 是属于非负整数值集，如果设 <code>[*]</code> 为向下取整符号，则将其分解成</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201628092.png" alt="image-20220520162816042"></p>
+<p>也就是说若能确定一个 <code>C</code> 的值使得该等式成立，所需要的乘法运算次数就能降低至</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201628047.png" alt="image-20220520162827997"></p>
+<p>那么解决该问题的关键是如何求 <code>C</code> 值，并且 <code>C</code> 值最好能由 <code>Q</code> 或在求 <code>P^(2^[log2(Q)])</code> 的过程中通过简单的计算得到，但似乎不太可能。</p>
+<hr>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="链串法"><a href="#链串法" class="headerlink" title="链串法"></a>链串法</h3><p>由于C语言每次申请动态变量只能以”字节”为单位，无法精确到”位”，为节省空间，不妨借鉴 <strong>链块串</strong> 的结构，根据 <strong>位</strong> 长来申请尽量少的字节，并用一个记录当前位数的变量来约束大整数的运算长度。</p>
+<p>易知，一个字节等于 <code>8</code> 个 <strong>位</strong> ，所以若设 <code>[*]</code> 为向上取整符号，且 <code>size</code> 为字节长度， <code>bits</code> 为 <strong>位</strong> 长，那么满足以下关系</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201630759.png" alt="image-20220520163045701"></p>
+<p>接着来讨论如何对某个字节的指定 <strong>位</strong> 进行操作，若设需要操作的位为第 <code>n</code> 个字节的第 <code>i</code> 位，且 <code>n&#123;i&#125;</code> 为第 <code>n</code> 字节的第 <code>i</code> 位（后文皆同）。当期望该 <code>i</code> 位的值为 <code>0</code> 时，需要将第 <code>n</code> 个字节和一个值为 <code>2^i</code> 的修正字节 <code>m</code> 的取反做与运算，即构造除第 <code>i</code> 位为 <code>0</code> 其他位全为 <code>1</code> 的字节；而当期望该 <code>i</code> 位的值为 <code>1</code> 时，则需要将第 <code>n</code> 个字节和一个值恰好为 <code>2^i</code> 的修正字节 <code>m</code> 做或运算，保证除了第 <code>i</code> 位为 <code>1</code> 外，其他位都为 <code>0</code> 。</p>
+<p>至于修正字节 <code>m</code> 可以由 <code>0x80</code> 向右移动 <code>8-i</code> 或 <code>1</code> 向左移动 <code>i</code> 位得到，以第二种方式为例，可得</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201628960.png" alt="image-20220520162858907"></p>
+<p>然后是关于存储的格式，为方便当作加法运算时能够很快的做到 <strong>低位对齐</strong> ，设可以由低位开始，有序存储到 <code>n = 0,1,2, ... size</code> 的字节上。通俗地说，若将这些存储的字节看作数组，则相当于将数值二进制位从低到高，存到字节数组的从左到右(若设最左的下标号为 <code>0</code> ，往右升序增 <code>1</code>) ，这样在做加法运算时，仅需让两个数的字节数组从下标为 <code>0</code> 的开始遍历计算即可。</p>
+<p>但在做乘法运算时是需要进行数值二进制向左移动数位，若以这样的方式进行存储，在进行左移位运算时，就必须将字节数组中的所有值相对的往右移位。由于对字节数组变量扩容时，只能是往下标大的方向，无法在字节数组的左边补 <code>0</code> ，因此需要将内容整体先向右移动，然后在其前面补上 <code>0</code> 。并且在推出下一个分解乘数时(即需要做右移位运算)，还需将整个内容向左移动，显然是很不效率的。</p>
+<p>为解决这种情况，可在做乘法运算时，将存储方式反过来，即将低位放到字节数组下标最高处，这样扩容时可以直接在更高的下标处补 <code>0</code> ，而在推出下一个分解乘数时，只需改变表示总位的长度。</p>
+<p>除此之外，还得考虑一些情况，如两数相加或相乘若其中一数为 <code>0</code> 则无需继续计算，返回另一数或 <code>0</code> 等等。</p>
+<p>按照上述讨论，可使用C类语言写出对应代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大整数计算</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INTEGER_DEFAULT_SIZE 10</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Integer</span>&#123;</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> byte;</span><br><span class="line">		<span class="keyword">int</span> size;</span><br><span class="line">		<span class="keyword">int</span> bits;</span><br><span class="line">		byte *pointer;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 返回最高位所在的字节下标 </span></span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">len</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">this</span>-&gt;bits &gt;&gt; <span class="number">3</span>) + (<span class="keyword">this</span>-&gt;bits%<span class="number">8</span> &gt; <span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 判断字节数组是否为有效 </span></span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">null</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>-&gt;pointer == <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 判断是否为空值 </span></span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">null</span>() || <span class="keyword">this</span>-&gt;size == <span class="number">0</span> || <span class="keyword">this</span>-&gt;bits == <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 判断第p位的值是否为 &quot;1&quot; </span></span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">bit</span><span class="params">(<span class="keyword">int</span> p)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(p &lt; <span class="number">0</span>  || p &gt;= <span class="keyword">this</span>-&gt;size) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">this</span>-&gt;pointer[p &gt;&gt; <span class="number">3</span>] &gt;&gt; (<span class="number">7</span> - p % <span class="number">8</span>))&amp;<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 扩容 </span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">expand</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">int</span> newSize = <span class="keyword">this</span>-&gt;size &gt; <span class="number">1024</span> ? <span class="keyword">this</span>-&gt;size + <span class="number">1024</span> : <span class="keyword">this</span>-&gt;size * <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">int</span> newLen = (newSize &gt;&gt; <span class="number">3</span>) + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">realloc</span>(<span class="keyword">this</span>-&gt;pointer,<span class="built_in"><span class="keyword">sizeof</span></span>(byte)*newSize);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="built_in">len</span>(); i &lt; newLen; i++)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer[i] = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = newSize;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 复制 </span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">copy</span><span class="params">(<span class="keyword">const</span> Integer &amp;i)</span></span>&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = i.size;</span><br><span class="line">			<span class="keyword">this</span>-&gt;bits = i.bits;</span><br><span class="line">			<span class="keyword">if</span>(i.size &lt;= <span class="number">0</span> || i.bits &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(<span class="keyword">this</span>-&gt;size,<span class="built_in"><span class="keyword">sizeof</span></span>(byte));</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> t = <span class="number">0</span>; t &lt; <span class="built_in">len</span>(); t++)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer[t] = i.pointer[t];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		 </span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">Integer</span>()&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = INTEGER_DEFAULT_SIZE;</span><br><span class="line">			<span class="keyword">this</span>-&gt;bits = <span class="number">0</span>; </span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(<span class="keyword">this</span>-&gt;size,<span class="built_in"><span class="keyword">sizeof</span></span>(byte));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">Integer</span>(<span class="keyword">bool</span> empty)&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">this</span>-&gt;bits = <span class="number">0</span>; </span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">Integer</span>(<span class="keyword">int</span> size)&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;bits = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(size &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(size,<span class="built_in"><span class="keyword">sizeof</span></span>(byte));</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = size;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">Integer</span>(<span class="keyword">const</span> Integer &amp;i)&#123;</span><br><span class="line">			<span class="built_in">copy</span>(i);</span><br><span class="line">		&#125;</span><br><span class="line">		~<span class="built_in">Integer</span>()&#123;</span><br><span class="line">			<span class="keyword">if</span>(!<span class="built_in">null</span>())&#123;</span><br><span class="line">				<span class="built_in">free</span>(<span class="keyword">this</span>-&gt;pointer);</span><br><span class="line">				<span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;bits = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 设为 &quot;0&quot; 或归 &quot;0&quot; 	</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">zero</span><span class="params">(<span class="keyword">bool</span> del)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(del)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;~<span class="built_in">Integer</span>();</span><br><span class="line">				<span class="keyword">this</span>-&gt;size = INTEGER_DEFAULT_SIZE;</span><br><span class="line">				<span class="keyword">this</span>-&gt;bits = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(<span class="keyword">this</span>-&gt;size,<span class="built_in"><span class="keyword">sizeof</span></span>(byte));</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;bits = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 获取两数位最大长度 </span></span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">maxBits</span><span class="params">(<span class="keyword">const</span> Integer i)</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>-&gt;bits &gt; i.bits ? <span class="keyword">this</span>-&gt;bits : i.bits;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 长整数类型转换(64bits)</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">dex2i</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">			<span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">			byte st = <span class="number">0x80</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> tu = <span class="number">0</span>; i &gt; <span class="number">0</span>; tu++)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> tp = <span class="number">0</span>; tp &lt; <span class="number">8</span> &amp;&amp; i &gt; <span class="number">0</span>; tp++)&#123;</span><br><span class="line">					<span class="keyword">this</span>-&gt;pointer[tu] = i&amp;<span class="number">1</span> ? <span class="keyword">this</span>-&gt;pointer[tu] | (st &gt;&gt; tp) : <span class="keyword">this</span>-&gt;pointer[tu] &amp; (~(st &gt;&gt; tp));		</span><br><span class="line">					cur ++;</span><br><span class="line">					i &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">while</span>(cur &gt; <span class="keyword">this</span>-&gt;size)&#123;</span><br><span class="line">						<span class="built_in">expand</span>();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;bits = cur;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 转换为二进制串 </span></span><br><span class="line">		<span class="function"><span class="keyword">char</span> *<span class="title">bin</span><span class="params">()</span></span>&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">int</span> tl = <span class="built_in">len</span>();</span><br><span class="line">			<span class="keyword">int</span> c = <span class="keyword">this</span>-&gt;bits;</span><br><span class="line">			byte st = <span class="number">0x80</span>;</span><br><span class="line">			<span class="keyword">char</span> *s = (<span class="keyword">char</span>*)<span class="built_in">calloc</span>(c + <span class="number">1</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">char</span>));</span><br><span class="line">			s[c] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> tu = <span class="number">0</span>; tu &lt; tl &amp;&amp; c &gt;= <span class="number">0</span>; tu++)&#123;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> tp = <span class="number">0</span>, tv = <span class="number">7</span>; tp &lt; <span class="number">8</span> &amp;&amp; c &gt;= <span class="number">0</span>; tp++, tv--)&#123;</span><br><span class="line">					s[--c] = ((<span class="keyword">this</span>-&gt;pointer[tu] &amp; (st &gt;&gt; tp))&gt;&gt;tv) + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> s;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 等于 </span></span><br><span class="line">		Integer &amp;<span class="keyword">operator</span>=(Integer i)&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;~<span class="built_in">Integer</span>();</span><br><span class="line">			<span class="built_in">copy</span>(i);</span><br><span class="line">			<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 加法运算 </span></span><br><span class="line">		Integer <span class="keyword">operator</span>+(Integer i)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">empty</span>() || i.<span class="built_in">empty</span>())&#123;</span><br><span class="line">				<span class="function">Integer <span class="title">it</span><span class="params">(empty() ? i : *<span class="keyword">this</span>)</span></span>;</span><br><span class="line">				<span class="keyword">return</span> it;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">Integer <span class="title">it</span><span class="params">(maxBits(i) + <span class="number">1</span>)</span></span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">			<span class="keyword">bool</span> a,b;</span><br><span class="line">			<span class="keyword">int</span> itl = it.<span class="built_in">len</span>();</span><br><span class="line">			<span class="keyword">int</span> tl = <span class="keyword">this</span>-&gt;<span class="built_in">len</span>();</span><br><span class="line">			<span class="keyword">int</span> il = i.<span class="built_in">len</span>();</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> tu;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> iu,ip,iv;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> itp,itv,itu;	</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> c = <span class="number">0</span>;	</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 采用关于修正字节的右移方式进行位运算 </span></span><br><span class="line">			byte st = <span class="number">0x80</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 初始化第一个加数		</span></span><br><span class="line">			<span class="keyword">for</span>(tu = <span class="number">0</span>; tu &lt; tl; tu++)&#123;</span><br><span class="line">				it.pointer[tu] = <span class="keyword">this</span>-&gt;pointer[tu];</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 加上第二个加数 </span></span><br><span class="line">			<span class="keyword">for</span>(iu = <span class="number">0</span>; iu &lt; il; iu++)&#123;</span><br><span class="line">				<span class="keyword">for</span>(ip = <span class="number">0</span>, iv = <span class="number">7</span>; ip &lt; <span class="number">8</span> &amp;&amp; c &lt; i.bits; ip ++, iv--)&#123;</span><br><span class="line">					a = (it.pointer[iu] &gt;&gt; iv) &amp; <span class="number">1</span>;</span><br><span class="line">					b = (i.pointer[iu] &gt;&gt; iv) &amp; <span class="number">1</span>;</span><br><span class="line">					it.pointer[iu] = (flag+a+b)&amp;<span class="number">1</span> ? it.pointer[iu] | (st &gt;&gt; ip) : it.pointer[iu] &amp; (~(st &gt;&gt; ip));</span><br><span class="line">					flag = (flag &amp;&amp; (a || b)) || (a &amp;&amp; b);</span><br><span class="line">					c++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 若存在局部进位 </span></span><br><span class="line">			<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">				itp = c % <span class="number">8</span>;</span><br><span class="line">				itv = <span class="number">7</span> - itp;</span><br><span class="line">				itu = c &gt;&gt; <span class="number">3</span>;</span><br><span class="line">				<span class="keyword">while</span>(flag)&#123;</span><br><span class="line">					<span class="keyword">while</span>(itp &lt; <span class="number">8</span> &amp;&amp; flag)&#123;</span><br><span class="line">						a = (it.pointer[itu] &gt;&gt; itv) &amp; <span class="number">1</span>;</span><br><span class="line">						it.pointer[itu] = (flag+a)&amp;<span class="number">1</span> ? it.pointer[itu] | (st &gt;&gt; itp) : it.pointer[itu] &amp; (~(st &gt;&gt; itp));</span><br><span class="line">						flag = (flag &amp;&amp; a) || a;</span><br><span class="line">						itp ++;</span><br><span class="line">						itv --;</span><br><span class="line">					&#125;</span><br><span class="line">					itp = <span class="number">0</span>;</span><br><span class="line">					itv = <span class="number">7</span>;</span><br><span class="line">					itu ++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 若存在整体进位 </span></span><br><span class="line">			it.bits = it.<span class="built_in">bit</span>(it.size - <span class="number">1</span>) ? it.size : it.size - <span class="number">1</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">return</span> it;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 乘法运算 </span></span><br><span class="line">		Integer <span class="keyword">operator</span>*(Integer i)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">empty</span>() || i.<span class="built_in">empty</span>())&#123;</span><br><span class="line">				Integer it;</span><br><span class="line">				it.<span class="built_in">zero</span>(<span class="literal">true</span>);</span><br><span class="line">				<span class="keyword">return</span> it;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">Integer <span class="title">it</span><span class="params">(<span class="keyword">this</span>-&gt;bits + i.bits)</span></span>;</span><br><span class="line">			<span class="function">Integer <span class="title">t</span><span class="params">(<span class="keyword">this</span>-&gt;bits + i.bits)</span></span>;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 优先分解较小的乘数 </span></span><br><span class="line">			Integer *less,*more;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>-&gt;bits &lt; i.bits)&#123;</span><br><span class="line">				less = <span class="keyword">this</span>;</span><br><span class="line">				more = &amp;i;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				less = &amp;i;</span><br><span class="line">				more = <span class="keyword">this</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">bool</span> a,b;</span><br><span class="line">			<span class="keyword">bool</span> flag;</span><br><span class="line">			<span class="keyword">int</span> tl = more-&gt;<span class="built_in">len</span>();</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> im = less-&gt;bits - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> itp,itv,itu;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> tp,tv,tu;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> ip,iv,iu;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> tc;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 采用关于修正字节的左移方式进行位运算 </span></span><br><span class="line">			byte st = <span class="number">1</span>;</span><br><span class="line">			</span><br><span class="line">				<span class="comment">// 高下标存储低位 </span></span><br><span class="line">				itp = (more-&gt;bits + <span class="number">8</span> - <span class="number">1</span>) % <span class="number">8</span>;</span><br><span class="line">				itu = more-&gt;<span class="built_in">len</span>()<span class="number">-1</span>;</span><br><span class="line">				itv = <span class="number">7</span> - itp;</span><br><span class="line"></span><br><span class="line">				tp = <span class="number">0</span>;</span><br><span class="line">				tv = <span class="number">7</span>;</span><br><span class="line">				tu = <span class="number">0</span>;</span><br><span class="line">				tc = <span class="number">0</span>;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">while</span>(tu &lt; tl)&#123;</span><br><span class="line">					</span><br><span class="line">					<span class="keyword">while</span>(tp &lt; <span class="number">8</span> &amp;&amp; tc &lt; more-&gt;bits)&#123;</span><br><span class="line">						</span><br><span class="line">							<span class="keyword">if</span>(itp &lt; <span class="number">0</span>)&#123;</span><br><span class="line">								itu--;</span><br><span class="line">								itp = <span class="number">7</span>,itv = <span class="number">0</span>;</span><br><span class="line">							&#125;</span><br><span class="line">								</span><br><span class="line">							it.pointer[itu] = ((more-&gt;pointer[tu] &gt;&gt; tv) &amp; <span class="number">1</span>) ? it.pointer[itu] | (st&lt;&lt;itv) : it.pointer[itu] &amp; (~(st&lt;&lt;itv));</span><br><span class="line">							tc++;</span><br><span class="line">							itv++,tv --;</span><br><span class="line">							itp--,tp ++;		</span><br><span class="line">						&#125;</span><br><span class="line">					tp = <span class="number">0</span>;</span><br><span class="line">					tv = <span class="number">7</span>;</span><br><span class="line">					tu++;</span><br><span class="line">				&#125;</span><br><span class="line">				it.bits = tc + im;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 分解 </span></span><br><span class="line">				<span class="keyword">while</span>(im &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">					</span><br><span class="line">					<span class="keyword">if</span>(less-&gt;<span class="built_in">bit</span>(im))&#123;</span><br><span class="line">						</span><br><span class="line">						flag = <span class="literal">false</span>;</span><br><span class="line">						</span><br><span class="line">						iu = it.<span class="built_in">len</span>() - <span class="number">1</span>;</span><br><span class="line">						ip = (it.bits + <span class="number">8</span> - <span class="number">1</span>) % <span class="number">8</span>;</span><br><span class="line">						iv = <span class="number">7</span> - ip;</span><br><span class="line">						</span><br><span class="line">						tu = <span class="number">0</span>;</span><br><span class="line">						tp = <span class="number">0</span>;</span><br><span class="line">						tv = <span class="number">7</span>;</span><br><span class="line">						</span><br><span class="line">						<span class="comment">// 对分配律各项做和 </span></span><br><span class="line">						<span class="keyword">while</span>(iu &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">							<span class="keyword">while</span>(ip &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">								<span class="keyword">if</span>(tp &gt;&gt; <span class="number">3</span>)&#123;</span><br><span class="line">									tu ++;</span><br><span class="line">									tp = <span class="number">0</span>;</span><br><span class="line">									tv = <span class="number">7</span>;</span><br><span class="line">								&#125;</span><br><span class="line">								a = (it.pointer[iu] &gt;&gt; iv) &amp; <span class="number">1</span>;</span><br><span class="line">								b = (t.pointer[tu] &gt;&gt; tv) &amp; <span class="number">1</span>;;</span><br><span class="line">								t.pointer[tu] = (flag+a+b)&amp;<span class="number">1</span> ? t.pointer[tu] | (st&lt;&lt;tv) : t.pointer[tu] &amp; (~(st&lt;&lt;tv));</span><br><span class="line">								flag = (flag &amp;&amp; (a || b)) || (a &amp;&amp; b);</span><br><span class="line">								ip--,iv++;</span><br><span class="line">								tp++,tv--;</span><br><span class="line">							&#125;</span><br><span class="line">							ip = <span class="number">7</span>;</span><br><span class="line">							iv = <span class="number">0</span>;</span><br><span class="line">							iu --;</span><br><span class="line">						&#125;</span><br><span class="line">						</span><br><span class="line">						<span class="comment">// 若存在局部进位 </span></span><br><span class="line">						<span class="keyword">while</span>(flag)&#123;</span><br><span class="line">							<span class="keyword">while</span>(tp &lt; <span class="number">8</span> &amp;&amp; flag)&#123;</span><br><span class="line">								a = (t.pointer[tu] &gt;&gt; tv) &amp; <span class="number">1</span>;</span><br><span class="line">								t.pointer[tu] = (flag+a)&amp;<span class="number">1</span> ? t.pointer[tu] | (st&lt;&lt;tv) : t.pointer[tu] &amp; (~(st&lt;&lt;tv));</span><br><span class="line">								flag = (flag &amp;&amp; a) || a;</span><br><span class="line">								tp ++;</span><br><span class="line">								tv --;</span><br><span class="line">							&#125;</span><br><span class="line">							tp = <span class="number">0</span>;</span><br><span class="line">							tv = <span class="number">7</span>;</span><br><span class="line">							tu ++;</span><br><span class="line">						&#125;</span><br><span class="line">						</span><br><span class="line">					&#125;</span><br><span class="line">					im--;</span><br><span class="line">					it.bits--;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 若存在整体进位 </span></span><br><span class="line">				t.bits = t.<span class="built_in">bit</span>(t.size - <span class="number">1</span>) ? t.size : t.size - <span class="number">1</span>;</span><br><span class="line">				</span><br><span class="line">			<span class="keyword">return</span> t;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure>
+<p>理论上使用该链串法可以极大节省存储空间，即对于一个非负整数 <code>P</code> 而言，若设 <code>[*]</code> 为向上取整符号，<code>S(*)</code> 为对应类型的长度，则用该方法需要的字节数组空间为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201631910.png" alt="image-20220520163117851"></p>
+<p>所占的 <strong>位</strong> 空间大小还是比较接近 <code>log2(P)</code>。</p>
+<h3 id="字节法"><a href="#字节法" class="headerlink" title="字节法"></a>字节法</h3><p>在上一小节的链串法中通过修正字节 <code>m</code> 和对应字节的 <code>n</code> 运算来对第 <code>i</code> 个位进行运算，虽然仅仅是位运算级别的移位运算，但当数足够大时造成的效率损失仍然是有的。如在做 <code>P + Q</code> 运算时，若设 <code>C</code> 为两数在进行位运算时修正字节 <code>m</code> 的移位总数量，在最坏的情况下，即存在进位的情况下，且每个字节数组都填满且都进行了对应位运算，容易得出</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201631068.png" alt="image-20220520163131009"></p>
+<p>而在字节法中以空间规避了这种多余的运算，直接在字节数组中用 <code>1</code> 个字节表示大数 <code>1</code> 个位。</p>
+<p>用C类语言表示可得代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 大整数计算</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEFAULT_INTEGER_SIZE 100</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Integer</span>&#123;</span></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> byte;</span><br><span class="line">		<span class="keyword">int</span> size;</span><br><span class="line">		<span class="keyword">int</span> len;</span><br><span class="line">		byte *pointer;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 判断是否为空值 </span></span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>-&gt;pointer == <span class="literal">NULL</span> || <span class="keyword">this</span>-&gt;size == <span class="number">0</span> || <span class="keyword">this</span>-&gt;len == <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 判断字节数组是否为有效 </span></span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">null</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>-&gt;pointer == <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 判断第n位的值是否为 &quot;1&quot; </span></span><br><span class="line">		<span class="function"><span class="keyword">bool</span> <span class="title">bit</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(n &lt; <span class="number">0</span> || n &gt;= <span class="keyword">this</span>-&gt;size) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">			<span class="keyword">return</span> (<span class="keyword">bool</span>)<span class="keyword">this</span>-&gt;pointer[n];</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 扩容 </span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">expand</span><span class="params">()</span></span>&#123;</span><br><span class="line">			<span class="keyword">int</span> newLen = <span class="keyword">this</span>-&gt;size &gt; <span class="number">2048</span> ? <span class="keyword">this</span>-&gt;size += <span class="number">1024</span> : <span class="keyword">this</span>-&gt;size * <span class="number">2</span>;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">realloc</span>(<span class="keyword">this</span>-&gt;pointer,<span class="built_in"><span class="keyword">sizeof</span></span>(byte)*newLen);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="keyword">this</span>-&gt;len;i &lt; newLen; i++)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer[i] = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = newLen;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 复制 </span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">copy</span><span class="params">(Integer i)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(i.<span class="built_in">empty</span>())&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = i.size;</span><br><span class="line">			<span class="keyword">this</span>-&gt;len = i.len;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(<span class="keyword">this</span>-&gt;size,<span class="built_in"><span class="keyword">sizeof</span></span>(byte));</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> t = <span class="number">0</span>;t&lt;<span class="keyword">this</span>-&gt;len;t++)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer[t] = i.pointer[t];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">Integer</span>(<span class="keyword">bool</span> empty)&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">Integer</span>()&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">this</span>-&gt;size = DEFAULT_INTEGER_SIZE;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(DEFAULT_INTEGER_SIZE,<span class="built_in"><span class="keyword">sizeof</span></span>(byte)); </span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">Integer</span>(<span class="keyword">int</span> n)&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span>(n &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(n,<span class="built_in"><span class="keyword">sizeof</span></span>(byte)); </span><br><span class="line">			<span class="keyword">this</span>-&gt;size = n;</span><br><span class="line">		&#125;</span><br><span class="line">		~<span class="built_in">Integer</span>()&#123;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">null</span>())&#123;</span><br><span class="line">				<span class="built_in">free</span>(<span class="keyword">this</span>-&gt;pointer);</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 长整数类型转换(64bits)</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">dex2i</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> tu = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>(i &gt; <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">while</span>(tu &gt; <span class="keyword">this</span>-&gt;size)</span><br><span class="line">					<span class="built_in">expand</span>();</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer[tu] = i &amp; <span class="number">1</span>;</span><br><span class="line">				tu++;</span><br><span class="line">				i &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">this</span>-&gt;len = tu;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 转换为二进制串 </span></span><br><span class="line">		<span class="function"><span class="keyword">char</span> *<span class="title">bin</span><span class="params">()</span></span>&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">empty</span>()) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> tu = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> sp = <span class="keyword">this</span>-&gt;len;</span><br><span class="line">			<span class="keyword">char</span> *s = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">char</span>)*(sp+<span class="number">1</span>));</span><br><span class="line">			</span><br><span class="line">			s[sp--] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">			<span class="keyword">while</span>(sp &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">				s[sp] = <span class="keyword">this</span>-&gt;pointer[tu] + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">				tu++,sp--;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">return</span> s;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 设为 &quot;0&quot; 或归 &quot;0&quot; </span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">zero</span><span class="params">(<span class="keyword">bool</span> del)</span></span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(del)&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;~<span class="built_in">Integer</span>();</span><br><span class="line">				<span class="keyword">this</span>-&gt;size = DEFAULT_INTEGER_SIZE;</span><br><span class="line">				<span class="keyword">this</span>-&gt;len = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">this</span>-&gt;pointer = (byte*)<span class="built_in">calloc</span>(DEFAULT_INTEGER_SIZE,<span class="built_in"><span class="keyword">sizeof</span></span>(byte)); </span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">this</span>-&gt;len = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 获取两数位最大长度 </span></span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">cmpMax</span><span class="params">(Integer i)</span></span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>-&gt;len &gt; i.len ? <span class="keyword">this</span>-&gt;len : i.len;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 等于 </span></span><br><span class="line">		Integer &amp;<span class="keyword">operator</span>=(Integer i)&#123;</span><br><span class="line">			<span class="keyword">this</span>-&gt;~<span class="built_in">Integer</span>();</span><br><span class="line">			<span class="built_in">copy</span>(i);</span><br><span class="line">			<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 加法运算</span></span><br><span class="line">		Integer <span class="keyword">operator</span>+(Integer i)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">empty</span>() || i.<span class="built_in">empty</span>())&#123;</span><br><span class="line">				<span class="function">Integer <span class="title">it</span><span class="params">(empty() ? i : *<span class="keyword">this</span>)</span></span>;</span><br><span class="line">				<span class="keyword">return</span> it;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">Integer <span class="title">it</span><span class="params">(cmpMax(i) + <span class="number">1</span>)</span></span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">			<span class="keyword">bool</span> a,b;</span><br><span class="line">			<span class="keyword">int</span> tl = <span class="keyword">this</span>-&gt;len;</span><br><span class="line">			<span class="keyword">int</span> il = i.len;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> tu,iu;</span><br><span class="line">						</span><br><span class="line">			<span class="comment">// 初始化第一个加数	</span></span><br><span class="line">			<span class="keyword">for</span>(tu = <span class="number">0</span>; tu &lt; tl; tu ++)&#123;</span><br><span class="line">				it.pointer[tu] = <span class="keyword">this</span>-&gt;pointer[tu];</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 加上第二个加数 </span></span><br><span class="line">			<span class="keyword">for</span>(iu = <span class="number">0</span>; iu &lt; il; iu ++)&#123;</span><br><span class="line">				a = it.pointer[iu];</span><br><span class="line">				b = i.pointer[iu];</span><br><span class="line">				it.pointer[iu] = (a+b+flag)&amp;<span class="number">1</span>;</span><br><span class="line">				flag = (flag &amp;&amp; (a || b)) || (a &amp;&amp; b);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 若存在局部进位 </span></span><br><span class="line">			<span class="keyword">while</span>(flag)&#123;</span><br><span class="line">				a = it.pointer[iu];</span><br><span class="line">				it.pointer[iu] = a^flag;</span><br><span class="line">				flag = (flag &amp;&amp; a) || a;</span><br><span class="line">				iu++;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 若存在整体进位 </span></span><br><span class="line">			it.len = it.pointer[it.size - <span class="number">1</span>] ? it.size : it.size - <span class="number">1</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">return</span> it;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 乘法运算 </span></span><br><span class="line">		Integer <span class="keyword">operator</span>*(Integer i)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">empty</span>() || i.<span class="built_in">empty</span>())&#123;</span><br><span class="line">				Integer it;</span><br><span class="line">				it.<span class="built_in">zero</span>(<span class="literal">true</span>);</span><br><span class="line">				<span class="keyword">return</span> it;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="function">Integer <span class="title">it</span><span class="params">(<span class="keyword">this</span>-&gt;len + i.len)</span></span>;</span><br><span class="line">			<span class="function">Integer <span class="title">t</span><span class="params">(<span class="keyword">this</span>-&gt;len + i.len)</span></span>;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 优先分解较小的乘数 </span></span><br><span class="line">			Integer *less,*more;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(<span class="keyword">this</span>-&gt;len &lt; i.len)&#123;</span><br><span class="line">				less = <span class="keyword">this</span>;</span><br><span class="line">				more = &amp;i;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				less = &amp;i;</span><br><span class="line">				more = <span class="keyword">this</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">bool</span> a,b;</span><br><span class="line">			<span class="keyword">bool</span> flag;</span><br><span class="line">			<span class="keyword">int</span> tl = more-&gt;len;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> im = less-&gt;len - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">register</span> <span class="keyword">int</span> tu,itu;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 高下标存储低位 </span></span><br><span class="line">			tu = <span class="number">0</span>, itu = tl - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(tu &lt; tl)&#123;</span><br><span class="line">				it.pointer[itu] = more-&gt;pointer[tu];</span><br><span class="line">				tu ++,itu --;</span><br><span class="line">			&#125;</span><br><span class="line">			it.len = im + tl;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 分解 </span></span><br><span class="line">			<span class="keyword">while</span>(im &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(less-&gt;pointer[im])&#123;</span><br><span class="line">					</span><br><span class="line">					flag = <span class="literal">false</span>;</span><br><span class="line">					</span><br><span class="line">					itu = it.len - <span class="number">1</span>;</span><br><span class="line">					tu = <span class="number">0</span>;</span><br><span class="line">					</span><br><span class="line">					<span class="comment">// 对分配律各项做和 </span></span><br><span class="line">					<span class="keyword">while</span>(itu &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">						a = it.pointer[itu];</span><br><span class="line">						b = t.pointer[tu];</span><br><span class="line">						t.pointer[tu] = (a+b+flag)&amp;<span class="number">1</span>;</span><br><span class="line">						flag = (flag &amp;&amp; (a || b)) || (a &amp;&amp; b);</span><br><span class="line">						itu--, tu++;</span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">					<span class="comment">// 若存在局部进位 </span></span><br><span class="line">					<span class="keyword">while</span>(flag)&#123;</span><br><span class="line">						a = t.pointer[tu];</span><br><span class="line">						t.pointer[tu] = a^flag;</span><br><span class="line">						flag = (flag &amp;&amp; a) || a;</span><br><span class="line">						tu++;</span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">				im --;</span><br><span class="line">				it.len --;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 若存在整体进位 </span></span><br><span class="line">			t.len = t.pointer[t.size - <span class="number">1</span>] ? t.size : t.size - <span class="number">1</span>;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">return</span> t;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>相比于链串法，使用字节法明显代码看起来少了很多，但相对的所占用的存储空间也有所增大。对于一个非负整数 <code>P</code> ，若设<code>[*]</code> 为向上取整符号， <code>S(*)</code> 为对应类型的长度，可以表示为</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201631446.png" alt="image-20220520163147386"></p>
+<p>所占的 <strong>位</strong> 空间大小约为 <code>8*log2(P)</code>。</p>
+<hr>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="大整数加法"><a href="#大整数加法" class="headerlink" title="大整数加法"></a>大整数加法</h3><p>为检测这两个算法对大整数加法的计算效率，如可先分别生成长度为 <code>1000</code> 的大整数序列 <code>A</code> 和 <code>B</code>，然后依次进行加法运算，最后比较所使用的总时间。</p>
+<p>若设 <code>i</code> 为大整数序列 <code>A</code> 或 <code>B</code> 的第 <code>i</code> 个大整数，则有</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201632406.png" alt="image-20220520163200343"></p>
+<p>测试伪代码如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    Integer A,B,C;</span><br><span class="line">    Time begin,end,Total = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">   	<span class="keyword">for</span>([<span class="number">1.</span><span class="number">.1000</span>])&#123;</span><br><span class="line">        A,B = Random();</span><br><span class="line">        </span><br><span class="line">        &#123;</span><br><span class="line">        	begin = Now();</span><br><span class="line">       		C = C + A + B;</span><br><span class="line">        	end = Now();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        A,B = zero();</span><br><span class="line">        Total = Total + (end - begin);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="链串法-1"><a href="#链串法-1" class="headerlink" title="链串法"></a>链串法</h4><p>如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201249933.png" alt="image-20220520124944741"></p>
+<p>一共耗费了 <code>174ms</code>。</p>
+<h4 id="字节法-1"><a href="#字节法-1" class="headerlink" title="字节法"></a>字节法</h4><p>如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201253551.png" alt="image-20220520125301404"></p>
+<p>一共耗费了 <code>120ms</code> 。</p>
+<p>可见若使用字节法约比使用链串法快了约 <code>30%</code> ，这也就是字节对指定位的位运算多消耗的时间。但字节法占用空间约为链串法的 <code>8</code> 倍可以根据实际情况斟酌选择。</p>
+<h3 id="大整数乘法"><a href="#大整数乘法" class="headerlink" title="大整数乘法"></a>大整数乘法</h3><p>接下来是有关乘法的分析，可以和对大整数加法类似，先生成对应的序列 <code>A</code> 和 <code>B</code> 然后将加法运算换为乘法运算，但考虑到做累积可能会差异越来越大，故只计算序列 <code>A</code> 和 <code>B</code> 的乘积的平均时间。</p>
+<p>测试伪代码如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    Integer A,B,C;</span><br><span class="line">    Time begin,end,Total = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">   	<span class="keyword">for</span>([<span class="number">1.</span><span class="number">.1000</span>])&#123;</span><br><span class="line">        A,B = Random();</span><br><span class="line">        </span><br><span class="line">        &#123;</span><br><span class="line">        	begin = Now();</span><br><span class="line">       		C = A * B;</span><br><span class="line">        	end = Now();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        A,B = zero();</span><br><span class="line">        Total = Total + (end - begin);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Total = Total / <span class="number">1000</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="链串法-2"><a href="#链串法-2" class="headerlink" title="链串法"></a>链串法</h4><p>如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201408852.png" alt="image-20220520140807672"></p>
+<p>平均每次计算耗费 <code>151ms</code> 。</p>
+<h4 id="字节法-2"><a href="#字节法-2" class="headerlink" title="字节法"></a>字节法</h4><p>如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201415420.png" alt="image-20220520141527236"></p>
+<p>平均每次计算耗费 <code>94ms</code> 。</p>
+<p>可见字节法相比链串法快了约 <code>37%</code> ，相比加法运算乘法运算的差距更为明显一些。</p>
+<h3 id="大整数乘幂"><a href="#大整数乘幂" class="headerlink" title="大整数乘幂"></a>大整数乘幂</h3><p>对于大整数幂乘的测试，显然若使用随机数来进行测试，幂乘的结果会极大的拉开差异，因此该测试打算分别计算 <code>100</code> 以内质数以及部分数的 <code>12345</code> 次方，然后根据计算的时间进行比对。</p>
+<p>测试伪代码如下</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    Integer C;</span><br><span class="line">    Integer S = &#123;<span class="number">100</span>以内质数&#125; ∪ &#123;<span class="number">10</span>,<span class="number">100</span>,<span class="number">1000</span>,<span class="number">10000</span>&#125;</span><br><span class="line">    Time begin,end;</span><br><span class="line">    </span><br><span class="line">   	<span class="keyword">for</span>([i ∈ S])&#123;</span><br><span class="line">        </span><br><span class="line">        C = i;</span><br><span class="line">        </span><br><span class="line">        &#123;</span><br><span class="line">        	begin = Now();</span><br><span class="line">       		<span class="built_in">pow</span>(C,<span class="number">12345</span>);</span><br><span class="line">        	end = Now();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        C = zero();</span><br><span class="line">        print(end - begin);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同样的，再分别计算 <code>100</code> 以内合数的 <code>12345</code> 次方。</p>
+<p>测试伪代码如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    Integer C;</span><br><span class="line">    Integer S = &#123;<span class="number">100</span>以内合数&#125;</span><br><span class="line">    Time begin,end;</span><br><span class="line">    </span><br><span class="line">   	<span class="keyword">for</span>([i ∈ S])&#123;</span><br><span class="line">        </span><br><span class="line">        C = i;</span><br><span class="line">        </span><br><span class="line">        &#123;</span><br><span class="line">        	begin = <span class="built_in">Now</span>();</span><br><span class="line">       		<span class="built_in">pow</span>(C,<span class="number">12345</span>);</span><br><span class="line">        	end = <span class="built_in">Now</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        C = <span class="built_in">zero</span>();</span><br><span class="line">        <span class="built_in">print</span>(end - begin);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="链串法-3"><a href="#链串法-3" class="headerlink" title="链串法"></a>链串法</h4><p>关于求质数幂次的的结果，如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201432227.png" alt="image-20220520143217093"></p>
+<p>关于求合数幂次的结果，如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201516541.png" alt="image-20220520151614324"></p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201517913.png" alt="image-20220520151708812"></p>
+<h4 id="字节法-3"><a href="#字节法-3" class="headerlink" title="字节法"></a>字节法</h4><p>关于求质数幂次的的结果，如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201445361.png" alt="image-20220520144538232"></p>
+<p>关于求合数幂次的结果，如图所示</p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201455939.png" alt="image-20220520145505709"></p>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205201455115.png" alt="image-20220520145536980"></p>
+<p>可见当计算的结果很大时，链串法由字节对指定位的多余运算造成的效率影响就很明显了。</p>
+<p>由于链串法和字节法都使用上两节所述的求幂算法对求幂时乘法运算的数量进行了优化，且故影响时间的主要因素为基数的大小。同时，不难看出随着基数的增大，除了一些特殊的数，如恰好为 <code>2</code> 的多次方，或存在 <code>2</code> 的多次方的因子时计算的速度相较周围其他数要快一些外，在 <code>100</code> 以内的合数和质数计算时间的增量较为平均。</p>
+<p>若能申请到位空间，就可以节省开辟多余空间的时间，还会更快一些。</p>
+<hr>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>上述的两个方法都是基于 <code>C++</code> 的类实现的，若单纯靠结构和对应的函数来实现会不会快一些呢，经过测试并没有很明显的差异，反而在测试结果中，有多数结果所用耗时比用类进行包装效率还慢一些。</p>
+<p>以下是用结构和函数实现的字节法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BYTE_C 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INT_DEFAULT_SIZE 100</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> BYTE;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Int</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> size;</span><br><span class="line">	<span class="keyword">int</span> len;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> *pointer;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否位空 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">i_Empty</span><span class="params">(Int *t)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> t == <span class="literal">NULL</span> || t-&gt;pointer == <span class="literal">NULL</span> || t-&gt;len == <span class="number">0</span> || t-&gt;size == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 清除 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">i_Del</span><span class="params">(Int *t)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(t-&gt;pointer != <span class="literal">NULL</span>)&#123;</span><br><span class="line">		<span class="built_in">free</span>(t-&gt;pointer);</span><br><span class="line">		t-&gt;pointer = <span class="literal">NULL</span>;</span><br><span class="line">		t-&gt;len = t-&gt;size = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设为 &quot;0&quot; 或归 &quot;0&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">i_Zero</span><span class="params">(Int *t, <span class="keyword">bool</span> del)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(del)&#123;</span><br><span class="line">		i_Del(t);</span><br><span class="line">		t-&gt;pointer = (BYTE*)<span class="built_in">calloc</span>(<span class="number">1</span>,BYTE_C);</span><br><span class="line">		t-&gt;len = t-&gt;size = <span class="number">1</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		t-&gt;len = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取两数位最大长度 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">i_Cmp</span><span class="params">(Int *a, Int *b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a-&gt;len &gt; b-&gt;len ? a-&gt;len : b-&gt;len;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 扩容</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">i_Expand</span><span class="params">(Int *t)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> newLen = t-&gt;size &gt; <span class="number">2048</span> ? t-&gt;size += <span class="number">1024</span> : t-&gt;size * <span class="number">2</span>;</span><br><span class="line">	t-&gt;pointer = (BYTE*)<span class="built_in">realloc</span>(t-&gt;pointer,BYTE_C*newLen);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = t-&gt;len;i &lt; newLen; i++)&#123;</span><br><span class="line">		t-&gt;pointer[i] = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	t-&gt;size = newLen;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 转换为二进制串</span></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">i_Bin</span><span class="params">(Int *t)</span></span>&#123;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">if</span>(i_Empty(t)) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> tu = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> sp = t-&gt;len;</span><br><span class="line">	<span class="keyword">char</span> *s = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*(sp+<span class="number">1</span>));</span><br><span class="line">			</span><br><span class="line">	s[sp--] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">	<span class="keyword">while</span>(sp &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">		s[sp] = t-&gt;pointer[tu] + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">		tu++,sp--;</span><br><span class="line">	&#125;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 长整数类型转换(64bits)</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">i_Dex2i</span><span class="params">(Int *t, <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> tu = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(i &gt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">while</span>(tu &gt; t-&gt;size)</span><br><span class="line">			i_Expand(t);</span><br><span class="line">		t-&gt;pointer[tu] = i &amp; <span class="number">1</span>;</span><br><span class="line">		tu++;</span><br><span class="line">		i &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	t-&gt;len = tu;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Int *<span class="title">i_Init</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Int *i = (Int*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Int));</span><br><span class="line">	i-&gt;len = <span class="number">0</span>;</span><br><span class="line">	i-&gt;size = INT_DEFAULT_SIZE;</span><br><span class="line">	i-&gt;pointer = (BYTE*)<span class="built_in">calloc</span>(INT_DEFAULT_SIZE,BYTE_C);</span><br><span class="line">	<span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Int *<span class="title">i_Init</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	Int *i = (Int*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Int));</span><br><span class="line">	i-&gt;len = <span class="number">0</span>;</span><br><span class="line">	i-&gt;size = n;</span><br><span class="line">	i-&gt;pointer = (BYTE*)<span class="built_in">calloc</span>(n,BYTE_C);</span><br><span class="line">	<span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Int *<span class="title">i_Init</span><span class="params">(Int *c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(c == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	Int *i = (Int*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Int));</span><br><span class="line">	i-&gt;len = c-&gt;len;</span><br><span class="line">	i-&gt;size = c-&gt;size;</span><br><span class="line">	i-&gt;pointer = (BYTE*)<span class="built_in">calloc</span>(i-&gt;size,BYTE_C);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> t = <span class="number">0</span>; t &lt; i-&gt;len ; t++)</span><br><span class="line">		i-&gt;pointer[t] = c-&gt;pointer[t];</span><br><span class="line">	<span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加法运算 </span></span><br><span class="line"><span class="function">Int *<span class="title">i_Add</span><span class="params">(Int *t, Int *i)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(i_Empty(t) || i_Empty(i))&#123;	</span><br><span class="line">		Int *it = i_Init(i_Empty(t) ? i : t );</span><br><span class="line">		<span class="keyword">return</span> it;</span><br><span class="line">	&#125;</span><br><span class="line">			</span><br><span class="line">	Int *it = i_Init(i_Cmp(t,i) + <span class="number">1</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">bool</span> a,b;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> tl = t-&gt;len;</span><br><span class="line">	<span class="keyword">int</span> il = i-&gt;len;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> tu,iu;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(tu = <span class="number">0</span>; tu &lt; tl; tu++)&#123;</span><br><span class="line">		it-&gt;pointer[tu] = t-&gt;pointer[tu];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(iu = <span class="number">0</span>; iu &lt; il; iu++)&#123;</span><br><span class="line">		a = it-&gt;pointer[iu];</span><br><span class="line">		b = i-&gt;pointer[iu];</span><br><span class="line">		it-&gt;pointer[iu] = (a+b+flag) &amp; <span class="number">1</span>;</span><br><span class="line">		flag = (flag &amp;&amp; (a || b)) || (a &amp;&amp; b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(flag)&#123;</span><br><span class="line">		a = it-&gt;pointer[iu];</span><br><span class="line">		it-&gt;pointer[iu] = a^flag;</span><br><span class="line">		flag = (flag &amp;&amp; a) || a;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	it-&gt;len = it-&gt;pointer[it-&gt;size - <span class="number">1</span>] ? it-&gt;size : it-&gt;size - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> it;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 乘法运算 </span></span><br><span class="line"><span class="function">Int *<span class="title">i_Multi</span><span class="params">(Int *p, Int *q)</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(i_Empty(p) || i_Empty(q))&#123;</span><br><span class="line">		Int *it = i_Init();</span><br><span class="line">		i_Zero(it,<span class="literal">true</span>);</span><br><span class="line">		<span class="keyword">return</span> it;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	Int *it = i_Init(p-&gt;len + q-&gt;len);</span><br><span class="line">	Int *t = i_Init(p-&gt;len + q-&gt;len);</span><br><span class="line">	</span><br><span class="line">	Int *ts, *i;</span><br><span class="line">	<span class="keyword">if</span>(p-&gt;len &lt; q-&gt;len)&#123;</span><br><span class="line">		ts = q;</span><br><span class="line">		i = p;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		ts = p;</span><br><span class="line">		i = q;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">bool</span> a,b;</span><br><span class="line">	<span class="keyword">bool</span> flag;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> tl = ts-&gt;len;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> im = i-&gt;len - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">register</span> <span class="keyword">int</span> tu,itu;</span><br><span class="line">			</span><br><span class="line">	tu = <span class="number">0</span>, itu = tl - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(tu &lt; tl)&#123;</span><br><span class="line">		it-&gt;pointer[itu] = ts-&gt;pointer[tu];</span><br><span class="line">		tu ++,itu --;</span><br><span class="line">	&#125;</span><br><span class="line">	it-&gt;len = im + tl;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(im &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(i-&gt;pointer[im])&#123;</span><br><span class="line">			flag = <span class="literal">false</span>;</span><br><span class="line">					</span><br><span class="line">			itu = it-&gt;len - <span class="number">1</span>;</span><br><span class="line">			tu = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>(itu &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">				a = it-&gt;pointer[itu];</span><br><span class="line">				b = t-&gt;pointer[tu];</span><br><span class="line">				t-&gt;pointer[tu] = (a+b+flag)&amp;<span class="number">1</span>;</span><br><span class="line">				flag = (flag &amp;&amp; (a || b)) || (a &amp;&amp; b);</span><br><span class="line">				itu--, tu++;</span><br><span class="line">			&#125;</span><br><span class="line">					</span><br><span class="line">			<span class="keyword">while</span>(flag)&#123;</span><br><span class="line">				a = t-&gt;pointer[tu];</span><br><span class="line">				t-&gt;pointer[tu] = a^flag;</span><br><span class="line">				flag = (flag &amp;&amp; a) || a;</span><br><span class="line">				tu++;</span><br><span class="line">			&#125;</span><br><span class="line">					</span><br><span class="line">		&#125;</span><br><span class="line">		im --;</span><br><span class="line">		it-&gt;len --;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	t-&gt;len = t-&gt;pointer[t-&gt;size - <span class="number">1</span>] ? t-&gt;size : t-&gt;size - <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">free</span>(it);</span><br><span class="line">	<span class="keyword">return</span> t;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><p>就是说，上述的所有内容，纯属个人无聊的臆想，没有用足够大的测试集测试过，仅能保证在测试章节中所有数据的正确。无法保证理论、其他未测试结果的正确性！然后，该滚去捣鼓合约了！</p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/posts/4021162221/" data-toggle="tooltip" data-placement="top" title="学习笔记 - 数据结构">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。也欢迎您共享此博客，以便更多人可以参与。如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=学习笔记 - 关于非负大整数计算的一些想法&body=Hi,I found this website and thought you might like it https://morblog.cc/posts/3773534811/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 4. disqus comment -->
+
+  <!-- disqus comment start -->
+
+  <div class="comment">
+    <div id="disqus_thread" class="disqus-thread"></div>
+  </div>
+
+  <!-- disqus embedded js code start (one page only need to embed once) -->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "moryyds-1";
+    var disqus_identifier = "https://morblog.cc/posts/3773534811/";
+    var disqus_url = "https://morblog.cc/posts/3773534811/";
+
+    (function () {
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <!-- disqus embedded js code start end -->
+
+  <!-- disqus comment end -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E%E5%A4%A7%E9%9D%9E%E8%B4%9F%E6%95%B4%E6%95%B0%E8%AE%A1%E7%AE%97%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">关于大非负整数计算的一些想法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%AA%E8%AE%BA%EF%BC%88%E7%9E%8E%E6%89%AF%EF%BC%89"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">绪论（瞎扯）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%90%86%E8%AE%BA"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">理论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E5%8A%A0%E6%B3%95"><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">简单加法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%AE%80%E5%8D%95%E4%B9%98%E6%B3%95"><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">简单乘法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B9%82%E6%AC%A1%E4%B9%98%E6%B3%95"><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">幂次乘法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">应用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B1%82%E5%B9%82%E7%AE%97%E6%B3%95"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">求幂算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%8C%9C%E6%83%B3"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">猜想</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">实现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%93%BE%E4%B8%B2%E6%B3%95"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">链串法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%97%E8%8A%82%E6%B3%95"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">字节法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">测试</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%A7%E6%95%B4%E6%95%B0%E5%8A%A0%E6%B3%95"><span class="toc-nav-number">1.6.1.</span> <span class="toc-nav-text">大整数加法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%93%BE%E4%B8%B2%E6%B3%95-1"><span class="toc-nav-number">1.6.1.1.</span> <span class="toc-nav-text">链串法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%97%E8%8A%82%E6%B3%95-1"><span class="toc-nav-number">1.6.1.2.</span> <span class="toc-nav-text">字节法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%A7%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95"><span class="toc-nav-number">1.6.2.</span> <span class="toc-nav-text">大整数乘法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%93%BE%E4%B8%B2%E6%B3%95-2"><span class="toc-nav-number">1.6.2.1.</span> <span class="toc-nav-text">链串法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%97%E8%8A%82%E6%B3%95-2"><span class="toc-nav-number">1.6.2.2.</span> <span class="toc-nav-text">字节法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%A7%E6%95%B4%E6%95%B0%E4%B9%98%E5%B9%82"><span class="toc-nav-number">1.6.3.</span> <span class="toc-nav-text">大整数乘幂</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%93%BE%E4%B8%B2%E6%B3%95-3"><span class="toc-nav-number">1.6.3.1.</span> <span class="toc-nav-text">链串法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%AD%97%E8%8A%82%E6%B3%95-3"><span class="toc-nav-number">1.6.3.2.</span> <span class="toc-nav-text">字节法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%99%84%E5%BD%95"><span class="toc-nav-number">1.7.</span> <span class="toc-nav-text">附录</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AF%9D"><span class="toc-nav-number">1.8.</span> <span class="toc-nav-text">后话</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#程序设计" title="程序设计">程序设计</a>
+            
+            <a class="tag" href="/tags/#算法" title="算法">算法</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>朋友们</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://www.cnblogs.com/Yhck/" target="_blank">Yhck</a>
+          </li>
+          
+          <li>
+            <a href="https://www.cnblogs.com/wkzb/" target="_blank">beiwo</a>
+          </li>
+          
+          <li>
+            <a href="https://leohearts.com/" target="_blank">Leohearts</a>
+          </li>
+          
+          <li>
+            <a href="https://longlone.top/" target="_blank">Longlone</a>
+          </li>
+          
+          <li>
+            <a href="http://na0hblog.top/" target="_blank">Na0h</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/Morouu">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+        </ul>
+        <p class="copyright text-muted">
+         &copy; 2022
+		 <i class="icon-smile"></i>
+          morouu
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        <div class=" copyright text-muted live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"> 0 天 0 小时 0 分 0 秒</span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-12-27T20:23:15');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div>
+		</p>
+		
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='' color=''></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+    <!-- Line start -->
+    <script async="text/javascript" src="/js/line.js"></script>
+    <!-- Line end -->
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("https://morblog.cc/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"right","width":225,"height":225,"right":125},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
