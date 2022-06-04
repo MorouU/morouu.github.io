@@ -242,17 +242,6 @@
           
           
           <li>
-            <a href="/archive/">
-              
-              归档
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/about/">
               
               关于
@@ -264,9 +253,9 @@
           
           
           <li>
-            <a href="/tags/">
+            <a href="/categories/">
               
-              标签
+              分类
               
               
             </a>
@@ -275,9 +264,20 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/archive/">
               
-              分类
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
               
               
             </a>
@@ -467,11 +467,15 @@
       <!-- Post Container -->
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="学习笔记-数据结构"><a href="#学习笔记-数据结构" class="headerlink" title="学习笔记 - 数据结构"></a>学习笔记 - 数据结构</h1><hr>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>太菜了，复习恶补基础中。过了一遍《<strong>数据结构 C语言版</strong>》和《<strong>数据结构教程</strong>》记一些容易模糊的简单概念，其他的结构内容的图形表示、算法具体实现过程之类的就不必了，方便自己以后查看吧。</p>
-<h2 id="知识图"><a href="#知识图" class="headerlink" title="知识图"></a>知识图</h2><p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205051334165.png" alt="page1_1"></p>
+        <h1>学习笔记 - 数据结构</h1>
 <hr>
-<h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p><strong>数据</strong> 是 <strong>客观事物的符号表示，在计算机科学中指所有能输入到计算机中并被计算机程序处理的符号的总称</strong></p>
+<h2 id="前言">前言</h2>
+<p>太菜了，复习恶补基础中。过了一遍《<strong>数据结构 C语言版</strong>》和《<strong>数据结构教程</strong>》记一些容易模糊的简单概念，其他的结构内容的图形表示、算法具体实现过程之类的就不必了，方便自己以后查看吧。</p>
+<h2 id="知识图">知识图</h2>
+<p><img src="https://morblogib.oss-cn-shanghai.aliyuncs.com/self/images/save/202205051334165.png" alt="page1_1"></p>
+<hr>
+<h2 id="绪论">绪论</h2>
+<p><strong>数据</strong> 是 <strong>客观事物的符号表示，在计算机科学中指所有能输入到计算机中并被计算机程序处理的符号的总称</strong></p>
 <p><strong>数据元素</strong> 是 <strong>数据的基本单位，在计算机程序中通常作为一个整体进行考虑和处理</strong></p>
 <p><strong>数据项</strong> 是 <strong>具有独立含义的数据最小单位，也称为字段或域</strong></p>
 <p><strong>数据对象</strong> 是 <strong>性质相同的数据元素的集合，是数据的一个子集</strong></p>
@@ -486,7 +490,8 @@
 <p>对于数据结构：</p>
 <ul>
 <li><strong>逻辑结构</strong> ：由数据元素之间的逻辑关系构成，通常从求解问题中提炼出来。</li>
-<li><strong>存储结构</strong> ：数据元素及其关系在计算机存储器中的存储表示，也称数据的 <strong>物理结构</strong> ，也就是 <strong>逻辑结构</strong> 在计算机中的存储实现。<ul>
+<li><strong>存储结构</strong> ：数据元素及其关系在计算机存储器中的存储表示，也称数据的 <strong>物理结构</strong> ，也就是 <strong>逻辑结构</strong> 在计算机中的存储实现。
+<ul>
 <li><strong>顺序存储结构（顺序映像）</strong> ：采用一组连续的存储单元存放所有的数据元素。</li>
 <li><strong>链式存储结构（非顺序映像）</strong> ：每个逻辑元素用一个内存结点存储，每个结点单独分配，所有的结点地址不一定是连续的（一般非首元元素地址由其直接前驱结点指针域给出）。</li>
 <li><strong>索引存储结构</strong> ：存储数据元素信息的同时还建立附加的索引表，查找效率高，但索引表增加空间的开销。</li>
@@ -538,7 +543,9 @@
 <p><strong>算法空间复杂度</strong> 是 <strong>算法在运行过程中临时占用的存储空间大小的量度</strong></p>
 <p>对于算法空间复杂度，若为常数阶，称为 <strong>原地工作</strong> 或 <strong>就地工作</strong> 。</p>
 <hr>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><p><strong>线性表</strong> 是 <strong>n个数据元素的有限序列</strong></p>
+<h2 id="概念">概念</h2>
+<h3 id="线性表">线性表</h3>
+<p><strong>线性表</strong> 是 <strong>n个数据元素的有限序列</strong></p>
 <p>对于线性结构的特点：</p>
 <p>（在数据元素的非空有限集中）</p>
 <ul>
@@ -563,7 +570,8 @@
 <p><strong>循环链表</strong> 是 <strong>最后一个结点的指针域指向头节点，整个链表形成一个环</strong></p>
 <p><strong>有序表</strong> 是 <strong>所有元素以递增或递减的方式有序排列的线性表</strong></p>
 <hr>
-<h3 id="栈和队列"><a href="#栈和队列" class="headerlink" title="栈和队列"></a>栈和队列</h3><p><strong>栈</strong> 是 <strong>限定仅在表尾进行插入或删除操作的线性表</strong></p>
+<h3 id="栈和队列">栈和队列</h3>
+<p><strong>栈</strong> 是 <strong>限定仅在表尾进行插入或删除操作的线性表</strong></p>
 <p>又称作 <strong>后进先出</strong> 的线性表。</p>
 <p>对于栈：</p>
 <ul>
@@ -584,7 +592,8 @@
 <p><strong>链队列</strong> 是 <strong>采用链式存储结构的队列</strong></p>
 <p><strong>循环队列</strong> 是 <strong>类似循环链表，以便更好利用空间</strong></p>
 <hr>
-<h3 id="串"><a href="#串" class="headerlink" title="串"></a>串</h3><p><strong>串</strong> 是 <strong>由零个或多个字符组成的有限序列</strong></p>
+<h3 id="串">串</h3>
+<p><strong>串</strong> 是 <strong>由零个或多个字符组成的有限序列</strong></p>
 <p>对于串：</p>
 <ul>
 <li><strong>长度</strong> ：串中字符的数目。</li>
@@ -602,7 +611,8 @@
 <li><strong>KMP算法</strong></li>
 </ul>
 <hr>
-<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p><strong>递归</strong> 是 <strong>定义一个过程或函数时出现调用本过程或本函数的成分称为递归</strong>，其中，直接调用自身，称为 <strong>直接递归</strong> ，若过程或函数 <strong>p</strong> 调用过程或函数 <strong>q</strong> ，而 <strong>q</strong> 又调用 <strong>p</strong> ，称为 <strong>间接递归</strong> 。</p>
+<h3 id="递归">递归</h3>
+<p><strong>递归</strong> 是 <strong>定义一个过程或函数时出现调用本过程或本函数的成分称为递归</strong>，其中，直接调用自身，称为 <strong>直接递归</strong> ，若过程或函数 <strong>p</strong> 调用过程或函数 <strong>q</strong> ，而 <strong>q</strong> 又调用 <strong>p</strong> ，称为 <strong>间接递归</strong> 。</p>
 <p>在算法设计中，任何 <strong>间接递归</strong> 都可转换为 <strong>直接递归</strong> 。</p>
 <p>对于与递归有关：</p>
 <ul>
@@ -634,7 +644,8 @@
 </ul>
 <p>对于与数学归纳法的联系，<strong>数学归纳法</strong> 是一种论证方法，而 <strong>递归</strong> 是算法和程序设计的一种实现技术，<strong>数学归纳法</strong> 是 <strong>递归</strong> 求解问题的 <strong>理论基础</strong> 。一般情况下， <strong>尾递归</strong> 算法可以通过 <strong>循环</strong> 或者 <strong>迭代</strong> 方式转换成等价非递归算法，对于不是 <strong>尾递归</strong> 的复杂递归算法，可以用 <strong>栈</strong> 来模拟递归执行的过程。</p>
 <hr>
-<h3 id="数组和广义表"><a href="#数组和广义表" class="headerlink" title="数组和广义表"></a>数组和广义表</h3><p><strong>数组</strong> 是 <strong>具有相同类型的数据元素的有限序列</strong></p>
+<h3 id="数组和广义表">数组和广义表</h3>
+<p><strong>数组</strong> 是 <strong>具有相同类型的数据元素的有限序列</strong></p>
 <p>（在程序设计中 <strong>数组</strong> 是 <strong>由固定多个类型相同，具有一定次序关系的元素组成的复合数据</strong> ）</p>
 <p>对于数组，通常只有两种操作：</p>
 <ul>
@@ -643,8 +654,8 @@
 </ul>
 <p>对于数组的存储：</p>
 <ul>
-<li><strong>行优先存储</strong> </li>
-<li><strong>列优先存储</strong> </li>
+<li><strong>行优先存储</strong></li>
+<li><strong>列优先存储</strong></li>
 </ul>
 <p><strong>压缩存储</strong> 是 <strong>在矩阵中为多个值相同的元只分配一个存储空间；对零元不分配空间</strong></p>
 <p>假若值相同的元素或者零元素在矩阵中分布有一定的规律，则称为 <strong>特殊矩阵</strong> ；反之，称为 <strong>稀疏矩阵</strong> ，通常来说 <strong>稀疏因子</strong> ≤ <strong>0.05</strong> 为 <strong>系数矩阵</strong> 。</p>
@@ -658,7 +669,8 @@
 <li>广义表可以是自己的子表，这种广义表称为 <strong>递归表</strong> ，<strong>递归表</strong> 的深度是 <strong>无穷值</strong> ，长度是 <strong>有限值</strong> 。</li>
 </ul>
 <hr>
-<h3 id="树和二叉树"><a href="#树和二叉树" class="headerlink" title="树和二叉树"></a>树和二叉树</h3><p><strong>树</strong> 是 <strong>由n个结点（或元素）组成的有限集合</strong> ，其中，若 <strong>n = 0</strong> 则称为 <strong>空树</strong> ，若 <strong>n &gt; 0</strong> ，则有且仅有一个节点作为树的 <strong>根节点</strong> 。</p>
+<h3 id="树和二叉树">树和二叉树</h3>
+<p><strong>树</strong> 是 <strong>由n个结点（或元素）组成的有限集合</strong> ，其中，若 <strong>n = 0</strong> 则称为 <strong>空树</strong> ，若 <strong>n &gt; 0</strong> ，则有且仅有一个节点作为树的 <strong>根节点</strong> 。</p>
 <p>对于树的表示法：</p>
 <ul>
 <li><strong>树形表示法</strong></li>
@@ -668,13 +680,16 @@
 </ul>
 <p>对于树：</p>
 <ul>
-<li><strong>结点的度/树的度</strong> ：<ul>
+<li><strong>结点的度/树的度</strong> ：
+<ul>
 <li><strong>结点的度</strong> 是 <strong>树中某个结点的子树的个数</strong></li>
 <li><strong>树的度</strong> 是 <strong>树中所有结点的度中的最大值</strong></li>
 </ul>
 </li>
-<li><strong>分支结点/叶子结点</strong> ：<ul>
-<li><strong>分支结点</strong> 是 <strong>树中度不为零的结点</strong><ul>
+<li><strong>分支结点/叶子结点</strong> ：
+<ul>
+<li><strong>分支结点</strong> 是 <strong>树中度不为零的结点</strong>
+<ul>
 <li><strong>单分支结点</strong> ：度为1的分支结点。</li>
 <li><strong>n分支结点</strong> ：度为n(n&gt;0)的分支结点。</li>
 </ul>
@@ -682,13 +697,15 @@
 <li><strong>叶子结点</strong> 是 <strong>树中度为零的结点</strong></li>
 </ul>
 </li>
-<li><strong>路径/路径长度</strong> ：<ul>
+<li><strong>路径/路径长度</strong> ：
+<ul>
 <li><strong>路径</strong> 是 <strong>对树中任意两个结点i和j，若存在一个结点序列（i,a,b,…,j) 且除i以外，任意结点都是其在序列中的前一个结点的直接后继结点，则称该结点序列为i到j的一条路径</strong></li>
-<li><strong>路径长度</strong> 是 <strong>路径所通过的结点数目（序列长度）减1</strong> </li>
+<li><strong>路径长度</strong> 是 <strong>路径所通过的结点数目（序列长度）减1</strong></li>
 </ul>
 </li>
-<li><strong>结点</strong>：<ul>
-<li><strong>孩子节点</strong> 是 <strong>某个结点的直接后继结点</strong> </li>
+<li><strong>结点</strong>：
+<ul>
+<li><strong>孩子节点</strong> 是 <strong>某个结点的直接后继结点</strong></li>
 <li><strong>双亲结点</strong> 是 <strong>某个后继结点为该结点的结点</strong></li>
 <li><strong>兄弟结点</strong> 是 <strong>具有同一双亲结点的孩子结点</strong></li>
 <li><strong>子孙结点</strong> 是 <strong>某个结点子树中的所有结点</strong></li>
@@ -746,7 +763,8 @@
 <li><strong>性质1</strong> ：非空二叉树的叶子结点数等于双分支结点树加 <code>1</code>。</li>
 <li><strong>性质2</strong> ：非空二叉树的第 <code>i</code> 层上最多有 <code>2^(i-1)</code> 个结点。</li>
 <li><strong>性质3</strong> ：高度为 <code>h</code> 的二叉树至多有 <code>2^h-1</code> 个结点。</li>
-<li><strong>性质4</strong> ：对于完全二叉树中层序编号为 <code>i</code> 的结点 <code>(1≤i≤n,n≥1,n为结点数)</code> 存在：<ol>
+<li><strong>性质4</strong> ：对于完全二叉树中层序编号为 <code>i</code> 的结点 <code>(1≤i≤n,n≥1,n为结点数)</code> 存在：
+<ol>
 <li>若 <code>i≤ [n/2]</code> （向下取整），则编号为 <code>i</code> 的结点为分支结点，否则为叶子结点。</li>
 <li>若 <code>n</code> 为奇数，则每个分支结点有既有左孩子结点，又有右孩子结点。</li>
 <li>若编号为 <code>i</code> 的结点有左孩子，则左孩子结点的编号为 <code>2i</code> ；若有右孩子，则右孩子结点编号为 <code>2i+1</code> 。</li>
@@ -758,29 +776,42 @@
 <p>含有 <code>n</code> 个结点的不相似的二叉树有 <code>1/(n+1)C(n 2n)</code> 棵。</p>
 <p>对于二叉树与树、森林之间的转换：</p>
 <ul>
-<li><p><strong>树</strong> =&gt; <strong>二叉树</strong></p>
+<li>
+<p><strong>树</strong> =&gt; <strong>二叉树</strong></p>
 <ul>
-<li><p>树中所有相邻兄弟之间加上连线。</p>
+<li>
+<p>树中所有相邻兄弟之间加上连线。</p>
 </li>
-<li><p>树中每个结点只保留它与长子（最左孩子）之间的连线，删除与其他孩子之间的连线。</p>
+<li>
+<p>树中每个结点只保留它与长子（最左孩子）之间的连线，删除与其他孩子之间的连线。</p>
 </li>
-<li><p>以树的根节点为轴心，顺时针转动45°。</p>
+<li>
+<p>以树的根节点为轴心，顺时针转动45°。</p>
 </li>
 </ul>
 </li>
-<li><p><strong>森林</strong> =&gt; <strong>二叉树</strong></p>
+<li>
+<p><strong>森林</strong> =&gt; <strong>二叉树</strong></p>
 <ul>
 <li>将森林中每棵树转换成相应的二叉树。</li>
 <li>第一颗二叉树不懂，从第二课开始，依次把最后一棵二叉树的根节点作为前一颗二叉树根结点的右孩子。</li>
 </ul>
 </li>
-<li><strong>二叉树</strong> =&gt; <strong>树</strong><ul>
-<li>若某结点是其双亲的左孩子，则把该结点的右孩子、右孩子的右孩子等都与该结点的双亲结点用连线连起来。</li>
-<li>删除原二叉树所有双亲结点与右孩子结点直接的连线。</li>
-<li>以树的根结点为轴心，逆时针转动45°。</li>
-</ul>
+<li>
+<p><strong>二叉树</strong> =&gt; <strong>树</strong></p>
 </li>
-<li><strong>二叉树</strong> =&gt; <strong>森林</strong><ul>
+<li>
+<p>若某结点是其双亲的左孩子，则把该结点的右孩子、右孩子的右孩子等都与该结点的双亲结点用连线连起来。</p>
+</li>
+<li>
+<p>删除原二叉树所有双亲结点与右孩子结点直接的连线。</p>
+</li>
+<li>
+<p>以树的根结点为轴心，逆时针转动45°。</p>
+</li>
+<li>
+<p><strong>二叉树</strong> =&gt; <strong>森林</strong></p>
+<ul>
 <li>抹掉二叉树根结点右链上的所有结点之间”双亲-右孩子“关系，将其分成若干个以右链上的结点为根结点的二叉树。</li>
 <li>分别将分成的树各自还原成一棵树。</li>
 </ul>
@@ -808,39 +839,47 @@
 <p><strong>赫夫曼树</strong> 是 <strong>带权长度最短的树，又称最优树</strong>，树的 <strong>带权路径长度</strong> 为树中所有叶子结点的带权路径长度之和（WPL）。</p>
 <p><strong>并查集</strong> 是 <strong>支持查找一个元素所属的集合以及两个元素各自所属集合的合并等运算</strong> ，用树来解决集合的 <strong>查找</strong> 和 <strong>合并</strong> 称为 <strong>并查集树</strong></p>
 <hr>
-<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p><strong>图</strong> 是 <strong>由两个集合V和E组成，其中V为顶点有限集合，E是连接V中两个不同顶点的边的有限集合</strong></p>
+<h3 id="图">图</h3>
+<p><strong>图</strong> 是 <strong>由两个集合V和E组成，其中V为顶点有限集合，E是连接V中两个不同顶点的边的有限集合</strong></p>
 <p>对于图：</p>
 <ul>
-<li><p><strong>端点/邻接点</strong> ：</p>
+<li>
+<p><strong>端点/邻接点</strong> ：</p>
 <ul>
 <li><strong>无向图</strong> ：在一个无向图中，若存在一条边 <code>(i,j)</code> 称顶点 <code>i</code> 和顶点 <code>j</code> 为该边的两个 <strong>端点</strong> ，并称它们互为 <strong>邻接点</strong> 。</li>
 <li><strong>有向图</strong> ：在一个有向图中，若存在一条有向边（弧） <code>&lt;i,j&gt;</code> ，则称该边是顶点 <code>i</code> 的一条出边，同时也是顶点 <code>j</code> 的一条入边，其中 <code>i</code> 为 <strong>初始端点（起点）</strong> ，<code>j</code> 为 <strong>终止端点（终点）</strong> ，顶点 <code>j</code> 是顶点 <code>i</code> 的 <strong>出边邻接点</strong> ，顶点 <code>i</code> 是顶点 <code>j</code> 的 <strong>入边邻接点</strong> 。</li>
 </ul>
 </li>
-<li><p><strong>度</strong> ：</p>
+<li>
+<p><strong>度</strong> ：</p>
 <ul>
 <li><strong>无向图</strong> ：一个顶点所关联的边的数目称为该顶点的 <strong>度</strong> 。</li>
 <li><strong>有向图</strong> ：以顶点 <code>j</code> 为终点的边的数目称为顶点 <code>j</code> 的 <strong>入度</strong> ，以顶点 <code>i</code> 为起点的边的数目称为顶点 <code>i</code> 的 <strong>出度</strong> ，一个顶点的 <strong>入度</strong> 和 <strong>出度</strong> 之和为该顶点的 <strong>度</strong> 。</li>
 </ul>
 <p>其中，一个图所有顶点的 <strong>度</strong> 之和等于 <strong>边数</strong> 的 <strong>两倍</strong> 。</p>
 </li>
-<li><p><strong>完全图</strong> ：</p>
+<li>
+<p><strong>完全图</strong> ：</p>
 <ul>
 <li><strong>无向图</strong> ：每两个顶点之间都存在一条边，总边数为 <code>n(n-1)/2</code> 。</li>
 <li><strong>有向图</strong> ：每两个顶点之间都存在着方向相反的两条边，总边数为 <code>n(n-1)</code> 。</li>
 </ul>
 </li>
-<li><p><strong>稠密图/稀疏图</strong> ：</p>
+<li>
+<p><strong>稠密图/稀疏图</strong> ：</p>
 <ul>
 <li><strong>稠密图</strong> ：接近完全图的图。</li>
 <li><strong>稀疏图</strong> ：含有较少的边数（如 <code>e&lt;nlog2(n)</code>）。</li>
 </ul>
 </li>
-<li><p><strong>子图</strong> ：对于两个图 <code>G=(V,E)</code> 和 <code>G1=(V1,E1)</code> ，若 <code>V1</code> 是 <code>V</code> 的子集，且 <code>E1</code> 也是 <code>E</code> 的字节，称 <code>G1</code> 是 <code>G</code> 的 <strong>子图</strong> 。</p>
+<li>
+<p><strong>子图</strong> ：对于两个图 <code>G=(V,E)</code> 和 <code>G1=(V1,E1)</code> ，若 <code>V1</code> 是 <code>V</code> 的子集，且 <code>E1</code> 也是 <code>E</code> 的字节，称 <code>G1</code> 是 <code>G</code> 的 <strong>子图</strong> 。</p>
 </li>
-<li><p><strong>路径/路径长度</strong> ：</p>
+<li>
+<p><strong>路径/路径长度</strong> ：</p>
 <ul>
-<li><strong>路径</strong> ：即从顶点 <code>i</code> 到顶点 <code>j</code> 所经过的顶点序列。<ul>
+<li><strong>路径</strong> ：即从顶点 <code>i</code> 到顶点 <code>j</code> 所经过的顶点序列。
+<ul>
 <li><strong>无向图</strong> ：<code>(i,a)(a,b)(...,...)(u,j)</code></li>
 <li><strong>有向图</strong> ：<code>&lt;i,a&gt;&lt;a,b&gt;&lt;...,...&gt;&lt;u,j&gt;</code></li>
 </ul>
@@ -849,16 +888,20 @@
 </ul>
 <p>若一条路径上除了 <strong>起点</strong> 和 <strong>终点</strong> 可以 <strong>相同</strong> 外，其余顶点均 <strong>不相同</strong> ，则称该路径为 <strong>简单路径</strong> 。</p>
 </li>
-<li><p><strong>回路（环）</strong> ：若一条路径上的 <strong>起点</strong> 和 <strong>终点</strong> 为同一顶点，则此路径称为 <strong>回路</strong> 或 <strong>环</strong> 。</p>
+<li>
+<p><strong>回路（环）</strong> ：若一条路径上的 <strong>起点</strong> 和 <strong>终点</strong> 为同一顶点，则此路径称为 <strong>回路</strong> 或 <strong>环</strong> 。</p>
 <p>同 <strong>简单路径</strong> ，也有对应的 <strong>简单回路</strong> 或 <strong>简单环</strong> 。</p>
 </li>
-<li><p><strong>连通/连通分量</strong> ：在无向图中，若从顶点 <code>i</code> 到顶点 <code>j</code> 有路径，则称顶点 <code>i</code> 到顶点 <code>j</code> 是 <strong>连通</strong> 的，若任意两个顶点都是 <strong>连通</strong> 的，则称该图为 <strong>连通图</strong> ，否则为 <strong>非连通图</strong>。</p>
+<li>
+<p><strong>连通/连通分量</strong> ：在无向图中，若从顶点 <code>i</code> 到顶点 <code>j</code> 有路径，则称顶点 <code>i</code> 到顶点 <code>j</code> 是 <strong>连通</strong> 的，若任意两个顶点都是 <strong>连通</strong> 的，则称该图为 <strong>连通图</strong> ，否则为 <strong>非连通图</strong>。</p>
 <p>无向图的 <strong>最大连通子图</strong> 称为 <strong>连通分量</strong> 。</p>
 </li>
-<li><p><strong>强连通/强连通分量</strong> ：在有向图中，若任意两个顶点都连通，则称该图为 <strong>强连通图</strong> 。</p>
+<li>
+<p><strong>强连通/强连通分量</strong> ：在有向图中，若任意两个顶点都连通，则称该图为 <strong>强连通图</strong> 。</p>
 <p>有向图的 <strong>最大连通子图</strong> 称为 <strong>强连通分量</strong> 。</p>
 </li>
-<li><p><strong>权/网</strong> ：边上带有权的图称为 <strong>带权图</strong> ，也称作 <strong>网</strong> 。</p>
+<li>
+<p><strong>权/网</strong> ：边上带有权的图称为 <strong>带权图</strong> ，也称作 <strong>网</strong> 。</p>
 </li>
 </ul>
 <p>对于连通分量，显然对 <strong>连通图</strong> 只有一个 <strong>连通分量</strong> ；对 <strong>强连通图</strong> 仅有一个 <strong>强连通分量</strong> 。</p>
@@ -914,7 +957,8 @@
 <p>在 <strong>AOE</strong> 网中，通常只有一个入度为0的点（否则可设一个虚点将多个入度为0的点通过权为0的边连接），称为 <strong>源点</strong> ，和一个出度为0的点，称为 <strong>汇点</strong> 。</p>
 <p><strong>关键路径</strong> 是 <strong>在AOE网中，从源点到汇点的所有路径中具有最大路径长度的路径</strong></p>
 <hr>
-<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p><strong>查找表</strong> 是 <strong>同一类型数据元素（记录）构成的集合</strong></p>
+<h3 id="查找">查找</h3>
+<p><strong>查找表</strong> 是 <strong>同一类型数据元素（记录）构成的集合</strong></p>
 <p>对于查找操作：</p>
 <ol>
 <li>查询某个特定的数据元素（记录）是否在查找表中。</li>
@@ -935,11 +979,13 @@
 </ul>
 <p>对于查找表：</p>
 <ul>
-<li><p><strong>静态查找表</strong> ：</p>
+<li>
+<p><strong>静态查找表</strong> ：</p>
 <ul>
 <li><strong>顺序查找</strong> ：从后往前找，平均查找长度为 <code>(n+1)/2</code> 。</li>
 <li><strong>折半查找</strong> ：需关键字有序，<code>l=1,h=n;m=(l+h)/2</code> 依次减半，直到 <code>m=k</code> 或 <code>l&gt;h</code> 未找到，平均查找长度为 <code>(n+1)/nlog2(n+1)-1</code> 近似于 <code>log2(n+1)-1</code> 。</li>
-<li><strong>索引顺序查找</strong> ：设查找表中共有 <code>n</code> 个数据元素，将所查找关键字分为 <code>b</code> 块，每块 <code>s</code> 个数据元素，且用 {块首数据元素开始索引，块最大数据元素值} 作为索引表，确保每块数据元素尽量有序，以块为单位必须有序（左块最大数据元素小于右块最小数据元素）。<ul>
+<li><strong>索引顺序查找</strong> ：设查找表中共有 <code>n</code> 个数据元素，将所查找关键字分为 <code>b</code> 块，每块 <code>s</code> 个数据元素，且用 {块首数据元素开始索引，块最大数据元素值} 作为索引表，确保每块数据元素尽量有序，以块为单位必须有序（左块最大数据元素小于右块最小数据元素）。
+<ul>
 <li>若对 <strong>索引表</strong> 采用 <strong>顺序查找</strong> ：平均查找长度为 <code>(b+1)/2+(s+1)/2</code> ，若块长 <code>s=√n</code>（数据元素总数的平方根），则平均查找长度为 <code>√n+1</code> 。</li>
 <li>若对 <strong>索引表</strong> 采用 <strong>折半查找</strong> ：平均查找长度 <code>≈log2((n/s)+1)+(s/2)</code> 。</li>
 </ul>
@@ -949,11 +995,14 @@
 <li><strong>次优查找树（静态树表）查找</strong> ：近似生成带权路径长度之和最小值的二叉树，靠 <code>P[i]=|Σ[i+1 -&gt; h] - Σ[l -&gt; i-1]|</code> ，取 <code>P[i]=min&#123;P[i∈[l,h]]&#125;</code> ，其中 <code>l≤i≤h</code>，<code>h-l=[当前段关键字数量]</code> ，可得到大值上浮，小值下沉，且 <code>左&lt;根</code> ，<code>右&gt;根</code> 的二叉树，平均查找长度为 <code>Kln(n)</code>（与 <code>log(n)</code> 成正比）。</li>
 </ul>
 </li>
-<li><p><strong>动态查找表</strong> ：</p>
+<li>
+<p><strong>动态查找表</strong> ：</p>
 <ul>
-<li><p><strong>二叉排序树</strong> ：或空树；或左子树不为空，则左子树上所有结点值均&lt;根结点的值，右子树不为空，则右子树所有结点的值均&gt;根节点的值，其左、右子树也为二叉排序树（中序遍历得到关于树结点值的升序序列）。</p>
+<li>
+<p><strong>二叉排序树</strong> ：或空树；或左子树不为空，则左子树上所有结点值均&lt;根结点的值，右子树不为空，则右子树所有结点的值均&gt;根节点的值，其左、右子树也为二叉排序树（中序遍历得到关于树结点值的升序序列）。</p>
 </li>
-<li><p><strong>平衡二叉树</strong> ：或空树；或左、右子树都是平衡二叉树，左、右子树深度之差绝对值≤1（ <code>平衡因子=(-1[左子树层深],0[左、右子树同层],1[右子树层深])</code> ）</p>
+<li>
+<p><strong>平衡二叉树</strong> ：或空树；或左、右子树都是平衡二叉树，左、右子树深度之差绝对值≤1（ <code>平衡因子=(-1[左子树层深],0[左、右子树同层],1[右子树层深])</code> ）</p>
 <p>平衡二叉树的构造：</p>
 <ul>
 <li><strong>(LL)</strong> 根的左子树的左子树插入结点 <strong>导致</strong> 根的 <strong>平衡因子</strong> 由 <code>1</code> 变 <code>2</code> ；<strong>处理方法</strong> 是 <strong>根的左边接根的左子树的右子树，根的左子树的右边接根（单向右旋）</strong>。</li>
@@ -962,7 +1011,8 @@
 <li><strong>(RL)</strong> ：根的右子树的左子树插入结点 <strong>导致</strong> 根的 <strong>平衡因子</strong> 由 <code>-1</code> 变 <code>-2</code>；<strong>处理方法</strong> 是 <strong>先单向右旋，后单向左旋，根的右子树的左边接根的右子树的左子树的右子树，根的右边接根的右子树的左子树的左子树，根的右子树的左子树的左边接根，根的右子树的左子树右边接根的右子树</strong> 。</li>
 </ul>
 </li>
-<li><p><strong>B-树</strong>：或空树；或一颗 <code>m</code> 阶树满足：</p>
+<li>
+<p><strong>B-树</strong>：或空树；或一颗 <code>m</code> 阶树满足：</p>
 <ul>
 <li>树中每个分支结点最多有 <code>m</code> 棵子树。</li>
 <li>若根结点不是叶子结点，至少 <code>2</code> 棵子树。</li>
@@ -972,7 +1022,8 @@
 <li>每个结点子树为其关键字数量加 <code>1</code> 。</li>
 </ul>
 </li>
-<li><p><strong>B+树</strong>：或空树；或一颗 <code>m</code> 阶树满足：</p>
+<li>
+<p><strong>B+树</strong>：或空树；或一颗 <code>m</code> 阶树满足：</p>
 <ul>
 <li>每个分支结点最多有 <code>m</code> 棵子树。</li>
 <li>根结点或者没有子树，或者最少有 <code>2</code> 棵子树。</li>
@@ -982,7 +1033,8 @@
 <li>所有分支结点中仅包含它的各个子结点中最大的关键字以及指向子结点的指针（用作索引项）。</li>
 </ul>
 </li>
-<li><p><strong>键树</strong> ：又称数字查找树，度≥2的树，每个结点包含有组成关键字的符号。</p>
+<li>
+<p><strong>键树</strong> ：又称数字查找树，度≥2的树，每个结点包含有组成关键字的符号。</p>
 <ul>
 <li><strong>存储结构1</strong> ：孩子兄弟链（双链树），<code>3</code> 个域，<strong>标志域</strong> 存放关键字一个字符，<strong>first域</strong> 指向第一棵子树结点（叶子结点存储指向该关键字记录的指针），<strong>next域</strong> 指向有兄弟指针。</li>
 <li><strong>存储结构2</strong> ：又称作tire树，每个结点有 <code>d</code> 个指针域，<code>d</code> 为关键字不重复的字符数量，如纯数字为 <code>11</code> ，纯小写字母为<code>27</code> ；分支节点有 <code>d</code> 个指针域和 <code>d</code> 个指针域中非空指针个数的整数域，叶子结点含有关键字域和指向记录的指针域。</li>
@@ -999,7 +1051,7 @@
 <li>在 <strong>B+树</strong> 中，所有非叶子结点仅起到索引的作用，即结点中的每个索引项只含有对应子树最大关键字和指向该子树的指针，不含有该关键字对应记录的存储地址；而在 <strong>B-</strong> 树中，每个关键字对应一个记录的存储地址。</li>
 <li>在 <strong>B+树</strong> 中，通常有两个头指针，一个指向根结点，一个指向关键字最小的叶子结点，所有叶子结点链接成一个不定长的有序线性链表。因此在 <strong>B+树</strong> 中可以进行 <strong>随即查找</strong> 和 <strong>顺序查找</strong>；而在 <strong>B-</strong> 树中，只能进行 <strong>随机查找</strong>。</li>
 </ul>
-<p><strong>哈希表</strong> 是 <strong>设定一个哈希函数和处理冲突的方法将一组关键字映像到一个有限连续的地址集上，并以关键字在地址集上的像作为记录在表中的存储位置</strong> </p>
+<p><strong>哈希表</strong> 是 <strong>设定一个哈希函数和处理冲突的方法将一组关键字映像到一个有限连续的地址集上，并以关键字在地址集上的像作为记录在表中的存储位置</strong></p>
 <p>设定一个哈希函数和处理冲突的方法，将一组关键字映像到地址集上的过程称为 <strong>哈希造表</strong> ，或 <strong>散列</strong> ，所得存储位置称为 <strong>哈希地址</strong> ，或 <strong>散列地址</strong> 。</p>
 <p>不同关键字可能得到 <strong>同一</strong> 哈希地址，称为 <strong>冲突</strong> ，<strong>冲突</strong> 可以 <strong>尽可能的少</strong> ，但 <strong>不可避免</strong> 。具有相同哈希值的关键字称为 <strong>同义词</strong> 。</p>
 <p>哈希函数构造方法：</p>
@@ -1013,25 +1065,33 @@
 </ul>
 <p>处理冲突方法：</p>
 <ul>
-<li><p><strong>开放定址法</strong>：</p>
+<li>
+<p><strong>开放定址法</strong>：</p>
 <ul>
-<li><p><strong>线性探测再散列</strong> ：若发生冲突则+1并模表长度，易发生“二次聚合”（后一次哈希值和前一次线性再散列的值一致的冲突），必能填满。</p>
+<li>
+<p><strong>线性探测再散列</strong> ：若发生冲突则+1并模表长度，易发生“二次聚合”（后一次哈希值和前一次线性再散列的值一致的冲突），必能填满。</p>
 </li>
-<li><p><strong>二次探测再散列</strong> ：若发生冲突则 <code>×1,×-1,×2,×-2...</code> 等，需表长为形如 <code>4j+3</code> （j为整数）的 <strong>素数</strong> 时才有可能填满。</p>
+<li>
+<p><strong>二次探测再散列</strong> ：若发生冲突则 <code>×1,×-1,×2,×-2...</code> 等，需表长为形如 <code>4j+3</code> （j为整数）的 <strong>素数</strong> 时才有可能填满。</p>
 </li>
-<li><p><strong>随机探测再散列</strong> ：若发生冲突则通过随机函数再分配哈希值，不一定能填满，取决于伪随机数列。</p>
+<li>
+<p><strong>随机探测再散列</strong> ：若发生冲突则通过随机函数再分配哈希值，不一定能填满，取决于伪随机数列。</p>
 </li>
 </ul>
 </li>
-<li><p><strong>再哈希法</strong> ：若发生冲突则用另一个哈希函数进行计算，再发生冲突则用第二个哈希函数进行计算…以此类推，不易产生二次聚合。</p>
+<li>
+<p><strong>再哈希法</strong> ：若发生冲突则用另一个哈希函数进行计算，再发生冲突则用第二个哈希函数进行计算…以此类推，不易产生二次聚合。</p>
 </li>
-<li><p><strong>链地址法</strong> ：类似图的邻接表，哈希值作为图顶点，同义的关键字作为接在哈希值后面的尾巴的链表。</p>
+<li>
+<p><strong>链地址法</strong> ：类似图的邻接表，哈希值作为图顶点，同义的关键字作为接在哈希值后面的尾巴的链表。</p>
 </li>
-<li><p><strong>建立公共溢出区</strong> ：若发生冲突则将冲突内容放到另一个表中。</p>
+<li>
+<p><strong>建立公共溢出区</strong> ：若发生冲突则将冲突内容放到另一个表中。</p>
 </li>
 </ul>
 <hr>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><strong>排序</strong> 是 <strong>将一个数据元素（记录）的任意序列，重新排列成一个按关键字有序的序列</strong></p>
+<h3 id="排序">排序</h3>
+<p><strong>排序</strong> 是 <strong>将一个数据元素（记录）的任意序列，重新排列成一个按关键字有序的序列</strong></p>
 <ul>
 <li><strong>内部排序</strong> ：待排序记录存放在计算机随机存储器中进行的排序过程。</li>
 <li><strong>外部排序</strong> ：待排序记录数量很大，以致内存一次不能容纳全部记录，在排序过程中尚需对外存进行访问的排序过程。</li>
@@ -1052,7 +1112,6 @@
 <li><strong>基数排序</strong> ：时间复杂度为 <code>O(d×n)</code> 。</li>
 </ul>
 <p>各种排序方法性能：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1149,7 +1208,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><strong>磁带</strong> 是 <strong>顺序存取设备，通过读写头读写数据</strong></p>
 <p><strong>磁盘</strong> 是 <strong>直接存取的外存设备，不仅能够进行顺序存取，而且能直接存取任何记录，存取速度比磁带快</strong></p>
 <p>对于磁带，读写一块信息所需时间由两部分组成：</p>
@@ -1173,12 +1231,14 @@
 <p>对于 <strong>败者树</strong> 和 <strong>堆</strong> 区别：<strong>败者树</strong> 是由 <code>n</code> 个叶子组成的完全二叉树；而 <strong>堆</strong> 可看作 <code>n</code> 个结点的完全二叉树。</p>
 <p>在属性选择排序的基础上得来的 <strong>置换-选择排序</strong> ，其特点是 <strong>在整个排序（得到所有初始归并段）的过程中，选择最小（或最大）关键字和输入、输出交叉或平行进行</strong> 。</p>
 <p>对于多路平衡归并，以 <strong>二路平衡归并</strong> 为例，显然每一趟可以从 <code>m</code> 个归并段中得到 <code>[m/2]</code> （向上取整）个归并段，那么这样的归并树就有 <code>[log2(m)]+1</code>（向上取整）层。相应的，对 <code>k</code> 路归并，也就有 <code>[logk(m)]+1</code>（向上取整）层。而最佳归并树，对应的应该为 <code>k</code> 阶的赫夫曼树。</p>
-<p>对于 <code>k</code> 阶赫夫曼树（最佳归并树），仅存在度为 <code>0</code> 或为 <code>k</code> 的结点，因而若需要生成相应的赫夫曼树，可能得附加 <code>k - [(m-1) mod (k-1) + 1]</code> 个虚段。</p>
+<p>对于 <code>k</code> 阶赫夫曼树（最佳归并树），仅存在度为 <code>0</code> 或为 <code>k</code> 的结点，因而若需要生成相应的赫夫曼树，可能得附加 <code>k - [(m-1) mod (k-1) + 1] </code> 个虚段。</p>
 <p>在 <strong>磁带排序</strong> 中，若进行 <code>k</code> 路归并则需要 <code>k+1</code> 台磁带。</p>
 <hr>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>以下是个人对结构的一些书写习惯，假设数据元素的类型为 <strong>int</strong> 。</p>
+<h2 id="附录">附录</h2>
+<p>以下是个人对结构的一些书写习惯，假设数据元素的类型为 <strong>int</strong> 。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> entry;</span><br></pre></td></tr></table></figure>
-<h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3><p>对一些排序算法的实现：</p>
+<h3 id="排序算法">排序算法</h3>
+<p>对一些排序算法的实现：</p>
 <p><strong>1，插入排序</strong></p>
 <ul>
 <li>直接插入排序</li>
@@ -1230,7 +1290,8 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN 26 <span class="comment">// a b c ... z</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pos</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> *d;</span><br><span class="line">    <span class="keyword">int</span> next;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">allocation</span><span class="params">(pos ps[], <span class="keyword">int</span> f[], <span class="keyword">int</span> t[], <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; LEN;i++)&#123;</span><br><span class="line">        f[i] = t[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = ps[<span class="number">0</span>].next;i != <span class="number">0</span>;i = ps[i].next)&#123;</span><br><span class="line">        index = ps[i].d[k] - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span>(f[index] == <span class="number">0</span>)&#123;</span><br><span class="line">            f[index] = i;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            ps[t[index]].next = i;</span><br><span class="line">        &#125;</span><br><span class="line">        t[index] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ps[t[index]].next = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">collection</span><span class="params">(pos ps[], <span class="keyword">int</span> f[], <span class="keyword">int</span> t[], <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(f[k] == <span class="number">0</span>)&#123;</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line">    ps[<span class="number">0</span>].next = f[k];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = k + <span class="number">1</span>;i &lt; LEN;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(f[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            ps[t[k]].next = f[i];</span><br><span class="line">            k = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ps[t[k]].next = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">base_sort</span><span class="params">(<span class="keyword">char</span> *a[], <span class="keyword">int</span> n, <span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    pos *ps = (pos*)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(pos)*(n + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">int</span> *f = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>)*LEN);</span><br><span class="line">    <span class="keyword">int</span> *t = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>)*LEN);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)&#123;</span><br><span class="line">        ps[i] = &#123;a[i<span class="number">-1</span>],i + <span class="number">1</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    ps[n].next = <span class="number">0</span>;</span><br><span class="line">    ps[<span class="number">0</span>].next = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>;i &gt;= <span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="built_in">allocation</span>(ps,f,t,i);</span><br><span class="line">        <span class="built_in">collection</span>(ps,f,t,n);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = ps[<span class="number">0</span>].next;i != <span class="number">0</span>;i = ps[i].next)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,ps[i].d);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>6，k路置换-选择排序</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 10000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN (-10000)</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pos</span>&#123;</span></span><br><span class="line">	entry w;</span><br><span class="line">	<span class="keyword">int</span> l;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">adjust</span><span class="params">(pos L[], <span class="keyword">int</span> R[], <span class="keyword">int</span> i, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = (i + k)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="keyword">while</span>(t &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(L[i].l &gt; L[R[t]].l || (L[i].l == L[R[t]].l &amp;&amp; L[i].w &gt; L[R[t]].w))&#123;</span><br><span class="line">            p = i;</span><br><span class="line">            i = R[t];</span><br><span class="line">            R[t] = p;</span><br><span class="line">        &#125;</span><br><span class="line">        t /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    R[<span class="number">0</span>] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(pos L[], <span class="keyword">int</span> R[], <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    L[k] = &#123;MIN,<span class="number">-1</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; k;i++)&#123;</span><br><span class="line">        R[i] = k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = k - <span class="number">1</span>;i &gt;= <span class="number">0</span>;i--)&#123;</span><br><span class="line">        <span class="built_in">adjust</span>(L,R,i,k);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">(entry a[], <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    pos *L = (pos*)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(pos)*(k + <span class="number">1</span>));</span><br><span class="line">    <span class="keyword">int</span> *R = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>)*k);</span><br><span class="line">    <span class="keyword">int</span> u,q,w,l,h;</span><br><span class="line">    </span><br><span class="line">    u = h = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; k;i++)&#123;</span><br><span class="line">        L[i] = &#123;a[u++],<span class="number">0</span>&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">init</span>(L,R,k);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>((w = L[R[<span class="number">0</span>]].w) != MAX)&#123;</span><br><span class="line">        q = R[<span class="number">0</span>],l = L[q].l;</span><br><span class="line">        <span class="keyword">if</span>(l &gt; h)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">            h = l;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot; %d &quot;</span>,w);</span><br><span class="line">        </span><br><span class="line">        L[q] = &#123;a[u],a[u] &lt; w ? l + <span class="number">1</span> : l&#125;;</span><br><span class="line">        <span class="built_in">adjust</span>(L,R,q,k);</span><br><span class="line">        u++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">free</span>(L);</span><br><span class="line">    <span class="built_in">free</span>(R);</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p>一些基本的结构：</p>
+<h3 id="基本结构">基本结构</h3>
+<p>一些基本的结构：</p>
 <p><strong>1，线性表</strong></p>
 <ul>
 <li>顺序表示：</li>
@@ -1357,7 +1418,8 @@
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">lnode</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> key;</span><br><span class="line">    lnode *n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ht</span>&#123;</span></span><br><span class="line">  	lnode *h;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><p>从3月21号开始，摸了一个月多，这玩意应该是唯一能感受到ak快感的正式课了（笑）。往后继续。另外，<del>小审判是我的！</del>。</p>
+<h2 id="后话">后话</h2>
+<p>从3月21号开始，摸了一个月多，这玩意应该是唯一能感受到ak快感的正式课了（笑）。往后继续。另外，<del>小审判是我的！</del>。</p>
 
 
         <hr>
@@ -1482,7 +1544,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">学习笔记 - 数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9F%A5%E8%AF%86%E5%9B%BE"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">知识图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">绪论</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">线性表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">栈和队列</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%B2"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">串</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%80%92%E5%BD%92"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">递归</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8"><span class="toc-nav-number">1.4.5.</span> <span class="toc-nav-text">数组和广义表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-nav-number">1.4.6.</span> <span class="toc-nav-text">树和二叉树</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9B%BE"><span class="toc-nav-number">1.4.7.</span> <span class="toc-nav-text">图</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-nav-number">1.4.8.</span> <span class="toc-nav-text">查找</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-nav-number">1.4.9.</span> <span class="toc-nav-text">排序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%99%84%E5%BD%95"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">附录</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">排序算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">基本结构</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AF%9D"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">后话</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">学习笔记 - 数据结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%9F%A5%E8%AF%86%E5%9B%BE"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">知识图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">绪论</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8"><span class="toc-nav-number">1.4.1.</span> <span class="toc-nav-text">线性表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97"><span class="toc-nav-number">1.4.2.</span> <span class="toc-nav-text">栈和队列</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%B8%B2"><span class="toc-nav-number">1.4.3.</span> <span class="toc-nav-text">串</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E9%80%92%E5%BD%92"><span class="toc-nav-number">1.4.4.</span> <span class="toc-nav-text">递归</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E5%B9%BF%E4%B9%89%E8%A1%A8"><span class="toc-nav-number">1.4.5.</span> <span class="toc-nav-text">数组和广义表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-nav-number">1.4.6.</span> <span class="toc-nav-text">树和二叉树</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9B%BE"><span class="toc-nav-number">1.4.7.</span> <span class="toc-nav-text">图</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-nav-number">1.4.8.</span> <span class="toc-nav-text">查找</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="toc-nav-number">1.4.9.</span> <span class="toc-nav-text">排序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%99%84%E5%BD%95"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">附录</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-nav-number">1.5.1.</span> <span class="toc-nav-text">排序算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.5.2.</span> <span class="toc-nav-text">基本结构</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%90%8E%E8%AF%9D"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">后话</span></a></li></ol></li></ol>
         
         </div>
       </aside>
